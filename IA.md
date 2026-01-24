@@ -21,8 +21,8 @@ Information about the pages of the website, like the sections and features on a 
 
 - Sections:
   1. Projects Hero
-  2. Filtering / Categorization System
-  3. Projects Grid
+  2. All Projects (+ filter by techs, search and sort)
+  3. Ongoing Projects (same as projects hero + spotlight dev phase and goal)  
 
 ### Individual Project Page \*
 

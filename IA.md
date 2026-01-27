@@ -48,11 +48,11 @@ Information about the pages of the website, like the sections and features on a 
 
 - Sections:
   1. About Hero
-  2. Personal Journey Section
-  3. Technical Expertise
-  4. Hobbies Section
-  5. Current Side Projects
-
+  2. Who am I? Section
+  3. Personal Journey Section
+  4. Technical Expertise
+  5. Hobbies Section
+  
 ### Contact Page
 
 - Sections:

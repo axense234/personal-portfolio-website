@@ -103,3 +103,11 @@ Information about the components of the website, like the navbar and footer layo
   3. Project Desc
   4. Project Tags
   5. Project Externals (github, site, swagger docs)
+
+
+### Technology Accordion Component
+- Content(ltr, not mobile):
+  1. Logo
+  2. Title -> Tech Name, level of expertise
+  3. Subtitle -> very short description of the tech
+  4. Description -> technology description and how I used / use it

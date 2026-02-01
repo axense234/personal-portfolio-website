@@ -50,15 +50,15 @@ Information about the pages of the website, like the sections and features on a 
   1. About Hero
   2. Who am I? Section
   3. Personal Journey Section
-  4. Technical Expertise
+  4. Technical Skills
   5. Hobbies Section
   
 ### Contact Page
 
 - Sections:
   1. Contact Hero
-  2. Email Contact Form
-  3. Contact Methods
+  2. Info (contact info: email, externals, resume download)
+  3. Message Me (message me through email form)
 
 ### Admin Dashboard Page \*
 
@@ -111,3 +111,11 @@ Information about the components of the website, like the navbar and footer layo
   2. Title -> Tech Name, level of expertise
   3. Subtitle -> very short description of the tech
   4. Description -> technology description and how I used / use it
+
+
+### Meal Prep Component
+- Content (general):
+  1. Images
+  2. Ingredients
+  3. Date
+  4. Nb of days covered

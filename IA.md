@@ -28,6 +28,10 @@ Information about the pages of the website, like the sections and features on a 
 
 - Sections:
   1. Individual Project Hero
+  2. Project Description Section
+  3. Project Technologies Section
+  4. Project Images Section
+  5. Project Commit History Messages Section
 
 ### Meal Preps Page
 
@@ -40,9 +44,8 @@ Information about the pages of the website, like the sections and features on a 
 
 - Sections:
   1. Awards Hero
-  2. Bronze Medal Special Section \*
-  3. Filtering / Categorization System
-  4. Awards Grid
+  2. Bronze Medal Section
+  3. Highschool Awards Section
 
 ### About Page
 
@@ -60,10 +63,17 @@ Information about the pages of the website, like the sections and features on a 
   2. Info (contact info: email, externals, resume download)
   3. Message Me (message me through email form)
 
-### Admin Dashboard Page \*
+### Dashboard Page - Unauthenticated
 
 - Sections:
-  1. Admin Dashboard Hero
+  1. Dashboard Hero
+  2. Dashboard Authentication Form
+
+### Admin Dashboard - Authenticated
+
+- Sections:
+  1. Dashboard Hero
+  2. Dashboard Meal Preps Section
 
 ## Components
 

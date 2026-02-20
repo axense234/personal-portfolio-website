@@ -1,0 +1,17 @@
+{
+  "name": "personal-portfolio-website",
+  "version": "1.0.0",
+  "description": "My personal portfolio website.",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axense234/personal-portfolio-website.git"
+  },
+  "keywords": [],
+  "author": "Comanescu Andrei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/axense234/personal-portfolio-website/issues"
+  },
+  "homepage": "https://github.com/axense234/personal-portfolio-website#readme"
+}

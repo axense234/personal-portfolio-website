@@ -1,0 +1,64 @@
+$colors: (
+  "primary-dark": #1F1F1F,
+  "secondary-dark": #181818,
+  "tertiary-dark": #2D2D2D,
+  "body-text-dark": #CCCCCC,
+  "labels-dark": #989898,
+  "placeholder-text-dark": #6E7681,
+  "buttons-dark": #0078D4,
+  "active-dark": #4DA6FF,
+  "warning-yellow": #D29922,
+  "success-green": #3FB950,
+  "primary-light": #F8F9FA,
+  "secondary-light": #FFFFFF,
+  "tertiary-light": #E9ECEF,
+  "body-text-light": #1E1E1E,
+  "labels-light": #616161,
+  "placeholder-text-light": #858585,
+  "purple-special": #BF5AF2,
+  "delete-red": #F85149,
+);
+
+$fontSizes: (
+  "p-small": 16px,
+  "p-medium": 18px,
+  "p-large": 21px,
+
+  "button-label-small": 14px
+  "button-label-medium": 16px,
+  "button-label-large": 20px,
+
+  "h1-laptop": 117.8px,
+  "h2-laptop": 88.4px,
+  "h3-laptop": 66.3px,
+  "h4-laptop": 49.7px,
+  "h5-laptop": 37.3px,
+  "h6-laptop": 28px,
+
+  "h1-tablet": 101px,
+  "h2-tablet": 75.8px,
+  "h3-tablet": 56.8px,
+  "h4-tablet": 42.6px,
+  "h5-tablet": 32px,
+  "h6-tablet": 24px,
+
+  "h1-phone": 68.7px,
+  "h2-phone": 54.9px,
+  "h3-phone": 44px,
+  "h4-phone": 35.2px,
+  "h5-phone": 28.1px,
+  "h6-phone": 22.5px,
+
+  "small-h": 18px
+);
+
+$screenSizes: (
+  "base+": 2560px, // change this later
+  "base": 1800px,
+  "laptop-1": 1500px,
+  "laptop-2": 1200px,
+  "tablet-1": 900px,
+  "tablet-2": 600px,
+  // here might be another range
+  "phone-1": 320px,
+);

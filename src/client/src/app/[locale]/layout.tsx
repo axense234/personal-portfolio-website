@@ -1,8 +1,12 @@
+// SCSS
+import "@/src/scss/abstracts/globals.scss"
 // Next Intl
-import { routing } from "@/src/i18n/routing";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
+// Zustand Providers
+import { CounterStoreProvider } from "@/zustand/provider-test";
 
 
 type RootLayoutProps = {
@@ -26,7 +30,9 @@ const RootLayout = async ({
       <body>
         <div className="app-container">
           <NextIntlClientProvider messages={messages}>
-            {children}
+            <CounterStoreProvider>
+              {children}
+            </CounterStoreProvider>
           </NextIntlClientProvider>
         </div>
       </body>

@@ -1,36 +1,6 @@
 @use "./variables" as *;
 @use "sass:color";
 
-@function getColor($color) {
-  $found: null;
-  @each $name, $value in $colors {
-    @if $name == $color {
-      $found: $value;
-    }
-  }
-
-  @if $found == null {
-    @error "Color '#{$color}' not found in $colors map";
-  }
-
-  @return $found;
-}
-
-@function getColorWithOpacity($color, $opacity) {
-  $found: null;
-  @each $name, $value in $colors {
-    @if $name == $color {
-      $found: $value;
-    }
-  }
-
-  @if $found == null {
-    @error "Color '#{$color}' not found in $colors map";
-  }
-
-  @return color.change($found, $alpha: $opacity);
-}
-
 @function getFontSize($fontSize) {
   $found: null;
 

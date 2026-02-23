@@ -3,14 +3,13 @@
 import { type ReactNode, createContext, useState, useContext } from 'react'
 import { useStore } from 'zustand'
 
-import { type CounterStore, createCounterStore } from '@/zustand/store-test'
+import { type CounterStore, createCounterStore } from '@/zustand/practice/store-test'
 
 export type CounterStoreApi = ReturnType<typeof createCounterStore>
 
 export const CounterStoreContext = createContext<CounterStoreApi | undefined>(
   undefined
 )
-
 
 export interface CounterStoreProviderProps {
   children: ReactNode

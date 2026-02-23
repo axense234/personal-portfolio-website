@@ -1,5 +1,6 @@
 @use "../functions" as *;
 @use "../variables" as *;
+@use "sass:map";
 
 @mixin flexCenter($direction) {
   display: flex;
@@ -11,4 +12,14 @@
 @mixin pageLayout() {
   width: 100%;
   @include flexCenter(column);
+}
+
+@mixin setVariablesBasedOnGivenTheme($theme) {
+  @each $key, $value in map.get($colors, $theme) {
+    --#{$key}: #{$value};
+  }
+
+  @each $key, $value in map.get($colors, extra) {
+    --#{$key}: #{$value};
+  }
 }

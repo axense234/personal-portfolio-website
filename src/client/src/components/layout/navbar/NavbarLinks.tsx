@@ -13,7 +13,7 @@ const NavbarLinks:FC = () => {
       <ul className={navbarLinksStyles.navbarLinks}>
         {navLinks.map((navLink)=>{
           return (
-            <li key={navLink.id}>
+            <li key={navLink.id} title={navLink.label} aria-label={navLink.label}>
               <Link href={navLink.dest}>
                 {navLink.label}
               </Link>

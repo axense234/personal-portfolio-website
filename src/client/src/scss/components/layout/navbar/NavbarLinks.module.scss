@@ -1,0 +1,27 @@
+@use "../../../abstracts" as *;
+
+.navbarLinksContainer {
+  @include flexCenter(row);
+}
+
+.navbarLinks {
+  @include flexCenter(row);
+  gap: 2rem;
+  list-style: none;
+
+  > li {
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.035);
+      font-style: italic;
+    }
+    > a {
+      width: 100%;
+      font-size: getFontSize("p-medium");
+      letter-spacing: 2px;
+      text-decoration: none;
+      color: var(--labels);
+    }
+  }
+}

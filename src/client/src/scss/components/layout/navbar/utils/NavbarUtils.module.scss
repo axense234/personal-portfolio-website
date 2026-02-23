@@ -1,0 +1,6 @@
+@use "../../../../abstracts" as *;
+
+.navbarUtilsContainer{
+    @include flexCenter(row);
+    gap: 1rem;
+}

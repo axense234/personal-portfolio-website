@@ -1,0 +1,30 @@
+@use "../../abstracts" as *;
+
+.appContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+
+  // initial setting of theme
+  @include setVariablesBasedOnGivenTheme("dark");
+
+  @media (prefers-color-scheme: light) {
+    @include setVariablesBasedOnGivenTheme("light");
+  }
+
+  // setting of theme through a component
+  &[data-theme="dark"] {
+    @include setVariablesBasedOnGivenTheme("dark");
+  }
+
+  &[data-theme="dlightk"] {
+    @include setVariablesBasedOnGivenTheme("light");
+  }
+}

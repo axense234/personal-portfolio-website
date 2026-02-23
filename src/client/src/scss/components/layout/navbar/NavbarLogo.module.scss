@@ -1,11 +1,18 @@
 @use "../../../abstracts" as *;
 
-.navbarLogoContainer{
-    @include flexCenter(row);
+.navbarLogoContainer {
+  @include flexCenter(row);
 
-    > h6 {
-         font-size: getFontSize("h6-tablet");
-         color: getColor("labels-dark");
-         letter-spacing: 0.75px;
+  > h6 {
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.035);
+      font-style: italic;
     }
+
+    font-size: getFontSize("h6-tablet");
+    color: var(--labels);
+    letter-spacing: 1px;
+  }
 }

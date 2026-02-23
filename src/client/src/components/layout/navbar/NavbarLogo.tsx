@@ -6,7 +6,7 @@ import navbarLogoStyles from "@/scss/components/layout/navbar/NavbarLogo.module.
 const NavbarLogo:FC = () => {
   return (
     <div className={navbarLogoStyles.navbarLogoContainer}>
-      <h6>Comanescu Andrei</h6>
+      <h6 title="Comanescu Andrei" aria-label="Comanescu Andrei">Comanescu Andrei</h6>
     </div>
   )
 }

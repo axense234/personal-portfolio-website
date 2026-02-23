@@ -15,19 +15,6 @@ body {
   height: 100%;
 }
 
-.app-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-
-  position: relative;
-
-  width: 100%;
-  min-height: 100vh;
-  height: 100%;
-}
-
 button:disabled {
   opacity: 0.6;
   cursor: not-allowed;

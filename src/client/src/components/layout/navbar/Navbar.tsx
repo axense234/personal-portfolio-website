@@ -5,7 +5,7 @@ import navbarStyles from "@/scss/components/layout/navbar/Navbar.module.scss"
 // Components
 import NavbarLogo from "./NavbarLogo"
 import NavbarLinks from "./NavbarLinks"
-import NavbarUtils from "./NavbarUtils"
+import NavbarUtils from "./utils/NavbarUtils"
 
 const Navbar: FC = () => {
   return (

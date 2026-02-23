@@ -1,0 +1,44 @@
+@use "../../../../abstracts" as *;
+
+.colorSchemeToggleContainer {
+  @include flexCenter(row);
+  gap: 1rem;
+
+  > label {
+    font-size: getFontSize("p-large");
+    letter-spacing: 2px;
+  }
+
+  > div {
+    @include flexCenter(row);
+    position: relative;
+
+    border-radius: 50rem;
+    background-color: getLightColor(primary);
+    padding: 1.25rem 0;
+    padding-right: 2.75em;
+    padding-left: 1.25rem;
+
+    > input {
+      cursor: pointer;
+      position: absolute;
+      opacity: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 2;
+
+      &:checked + svg {
+        transform: translateX(1.45rem) rotate(180deg);
+      }
+    }
+
+    > svg {
+      position: absolute;
+      color: getDarkColor(primary);
+      width: 2rem;
+      height: 2rem;
+
+      transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+  }
+}

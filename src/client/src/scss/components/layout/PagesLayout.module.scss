@@ -24,7 +24,7 @@
     @include setVariablesBasedOnGivenTheme("dark");
   }
 
-  &[data-theme="dlightk"] {
+  &[data-theme="light"] {
     @include setVariablesBasedOnGivenTheme("light");
   }
 }

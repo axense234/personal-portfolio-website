@@ -1,8 +1,8 @@
 // Types
+import { SetGeneralStoreFunctionType } from "@/core/interfaces";
 import { GeneralState } from "@/core/types";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const toggleColorTheme = (set: any) =>
+export const toggleColorTheme = (set: SetGeneralStoreFunctionType) =>
   set((state: GeneralState) => ({
-    colorTheme: state.colorTheme === "dark" ? "light" : "dark",
+    colorTheme: state?.colorTheme === "dark" ? "light" : "dark",
   }));

@@ -1,7 +1,7 @@
 // Types
 import { GeneralState, GeneralStore } from "@/core/types";
 // Zustand
-import { createStore } from "zustand";
+import { createStore } from "zustand/vanilla";
 // Default Data
 import { defaultInitState } from "./init";
 // Actions
@@ -12,6 +12,6 @@ export const createGeneralStore = (
 ) => {
   return createStore<GeneralStore>()((set) => ({
     ...initState,
-    toggleColorTheme: toggleColorTheme(set),
+    toggleColorTheme: () => toggleColorTheme(set),
   }));
 };

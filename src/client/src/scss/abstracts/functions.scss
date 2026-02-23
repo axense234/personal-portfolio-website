@@ -1,5 +1,66 @@
 @use "./variables" as *;
 @use "sass:color";
+@use "sass:map";
+
+@function getDarkColor($color) {
+  $found: null;
+  @each $name, $value in map.get($colors, dark) {
+    @if $name == $color {
+      $found: $value;
+    }
+  }
+
+  @if $found == null {
+    @error "Color '#{$color}' not found in $colors dark map";
+  }
+
+  @return $found;
+}
+
+@function getLightColor($color) {
+  $found: null;
+  @each $name, $value in map.get($colors, light) {
+    @if $name == $color {
+      $found: $value;
+    }
+  }
+
+  @if $found == null {
+    @error "Color '#{$color}' not found in $colors dark map";
+  }
+
+  @return $found;
+}
+
+@function getDarkColorWithOpacity($color, $opacity) {
+  $found: null;
+  @each $name, $value in map.get($colors, dark) {
+    @if $name == $color {
+      $found: $value;
+    }
+  }
+
+  @if $found == null {
+    @error "Color '#{$color}' not found in $colors map";
+  }
+
+  @return color.change($found, $alpha: $opacity);
+}
+
+@function getLightColorWithOpacity($color, $opacity) {
+  $found: null;
+  @each $name, $value in map.get($colors, light) {
+    @if $name == $color {
+      $found: $value;
+    }
+  }
+
+  @if $found == null {
+    @error "Color '#{$color}' not found in $colors map";
+  }
+
+  @return color.change($found, $alpha: $opacity);
+}
 
 @function getFontSize($fontSize) {
   $found: null;

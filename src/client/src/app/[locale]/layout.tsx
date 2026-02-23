@@ -1,5 +1,7 @@
 // SCSS
-import "@/src/scss/abstracts/globals.scss"
+import "@/scss/abstracts/globals.scss"
+// Fonts
+import { Manrope } from "next/font/google"
 // Next Intl
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -8,11 +10,14 @@ import { routing } from "@/i18n/routing";
 // Zustand Providers
 import { CounterStoreProvider } from "@/zustand/provider-test";
 
-
 type RootLayoutProps = {
   children: React.ReactNode;
   params: Promise<{locale: string}>;
 };
+
+// Global Font (Headings)
+const manrope = Manrope({})
+
 
 const RootLayout = async ({
   children,
@@ -28,7 +33,7 @@ const RootLayout = async ({
   return (
     <html lang={locale}>
       <body>
-        <div className="app-container">
+        <div className={`app-container ${manrope.className}`}>
           <NextIntlClientProvider messages={messages}>
             <CounterStoreProvider>
               {children}

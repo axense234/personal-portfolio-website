@@ -1,6 +1,6 @@
 @use "../../../abstracts" as *;
 
-.navbarLogoContainer {
+.container {
   @include flexCenter(row);
 
   > h6 {

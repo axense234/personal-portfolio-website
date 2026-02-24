@@ -1,5 +1,10 @@
 // Types
-import { LangFlagImageType, NavLinkType } from "@/core/types";
+import {
+  CommonPageHeroSectionDataType,
+  LangFlagImageType,
+  NavLinkType,
+  SocialMediaIconType,
+} from "@/core/types";
 
 export const navLinks: NavLinkType[] = [
   {
@@ -65,3 +70,31 @@ export const languageFlagsImages: LangFlagImageType[] = [
     value: "de",
   },
 ];
+
+export const footerCopyright = "© 2026 Comanescu Andrei. All rights reserved.";
+
+export const socialMediaIcons: SocialMediaIconType[] = [
+  {
+    id: 1,
+    dest: "https://github.com/axense234",
+    rel: "/social/github-logo-transparent-background-free-png.png",
+    label: "My Github",
+  },
+  {
+    id: 2,
+    dest: "https://www.linkedin.com/in/comanescu-andrei-22b13a3b0/", // this might not be the right link but ehh
+    rel: "/social/linkedin-logo-linkedin-icon-transparent-free-png.png",
+    label: "My LinkedIn",
+  },
+];
+
+export const homePageHeroSectionData: CommonPageHeroSectionDataType = {
+  title: "Comănescu Andrei",
+  subtitle: "Web Developer",
+  desc: "Full-stack web developer passionate about building websites. Currently studying Computer Science at UBB.",
+  image: "/misc/placeholder.jpg",
+  buttons: [
+    { id: 1, color: "warning", dest: "/projects", label: "My Projects" },
+    { id: 2, color: "success", dest: "/about", label: "My Journey" },
+  ],
+};

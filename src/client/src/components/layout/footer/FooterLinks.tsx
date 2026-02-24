@@ -1,16 +1,16 @@
 // React
 import { FC } from "react";
 // SCSS
-import navbarLinksStyles from "@/scss/components/layout/navbar/NavbarLinks.module.scss";
-// Nav Link
-import { Link } from "@/i18n/navigation";
+import footerLinksStyles from "@/scss/components/layout/footer/FooterLinks.module.scss";
 // Data
 import { navLinks } from "@/data";
+// i18n
+import { Link } from "@/i18n/navigation";
 
-const NavbarLinks: FC = () => {
+const FooterLinks: FC = () => {
   return (
-    <nav className={navbarLinksStyles.container}>
-      <ul className={navbarLinksStyles.links}>
+    <nav className={footerLinksStyles.container}>
+      <ul className={footerLinksStyles.links}>
         {navLinks.map((navLink) => {
           return (
             <li
@@ -27,4 +27,4 @@ const NavbarLinks: FC = () => {
   );
 };
 
-export default NavbarLinks;
+export default FooterLinks;

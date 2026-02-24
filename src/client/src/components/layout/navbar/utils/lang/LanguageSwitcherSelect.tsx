@@ -20,13 +20,13 @@ const LanguageSwitcherSelect: FC<LanguageSwitcherSelectProps> = ({
     languageFlagsImages.find((flagImage) => flagImage.value === locale) ||
     languageFlagsImages[0];
 
-    console.log(locale)
+  console.log(locale);
 
   const navigateToPathname = useNavigateToPathname();
 
   return (
     <div
-      className={languageSwitcherSelectStyles.languageSwitcherSelectContainer}
+      className={languageSwitcherSelectStyles.container}
       title={label}
       aria-label={label}
     >
@@ -38,7 +38,7 @@ const LanguageSwitcherSelect: FC<LanguageSwitcherSelectProps> = ({
         width={64}
         height={48}
       />
-      <div className={languageSwitcherSelectStyles.languageSwitcherSelectFormControl}>
+      <div className={languageSwitcherSelectStyles.selectFormControl}>
         <select
           name="languageSwitcher"
           id="languageSwitcher"

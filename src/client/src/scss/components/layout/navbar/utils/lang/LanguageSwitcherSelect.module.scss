@@ -1,6 +1,6 @@
 @use "../../../../../abstracts" as *;
 
-.languageSwitcherSelectContainer {
+.container {
   @include flexCenter(row);
   width: max-content;
   height: max-content;
@@ -19,7 +19,7 @@
   }
 }
 
-.languageSwitcherSelectFormControl {
+.selectFormControl {
   @include flexCenter(column);
   height: 100%;
   width: 100%;

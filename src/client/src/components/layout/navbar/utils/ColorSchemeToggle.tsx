@@ -18,7 +18,7 @@ const ColorSchemeToggle: FC = () => {
   const svgColor = colorTheme === "light" ? "#f8f9fa" : "#1f1f1f";
 
   return (
-    <div className={colorSchemeToggleStyles.colorSchemeToggleContainer}>
+    <div className={colorSchemeToggleStyles.container}>
       <label
         style={{ color: labelTextColor }}
         className={karla.className}

@@ -3,11 +3,5 @@
 .container {
   @include flexCenter(row);
   justify-content: space-between;
-  gap: 1rem;
-
   width: 100%;
-
-  padding: 1rem 8rem;
-
-  background-color: var(--tertiary);
 }

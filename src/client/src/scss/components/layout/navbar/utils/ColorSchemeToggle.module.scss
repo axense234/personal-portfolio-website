@@ -1,6 +1,6 @@
 @use "../../../../abstracts" as *;
 
-.colorSchemeToggleContainer {
+.container {
   @include flexCenter(row);
   gap: 1rem;
 

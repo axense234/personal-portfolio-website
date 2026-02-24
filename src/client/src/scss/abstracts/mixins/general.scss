@@ -17,6 +17,8 @@
 @mixin setVariablesBasedOnGivenTheme($theme) {
   @each $key, $value in map.get($colors, $theme) {
     --#{$key}: #{$value};
+    // opposite colors, i know this is probably not the best way of handling it but ehh
+    --#{$key}-opposite: #{opposite($key, $theme)};
   }
 
   @each $key, $value in map.get($colors, extra) {

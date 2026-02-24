@@ -1,0 +1,11 @@
+@use "../../../abstracts" as *;
+
+.container {
+  @include flexCenter(row);
+
+  > p {
+    color: var(--labels);
+    font-size: getFontSize("p-medium");
+    letter-spacing: 2px;
+  }
+}

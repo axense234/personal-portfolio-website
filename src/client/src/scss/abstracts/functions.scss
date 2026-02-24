@@ -32,34 +32,8 @@
   @return $found;
 }
 
-@function getDarkColorWithOpacity($color, $opacity) {
-  $found: null;
-  @each $name, $value in map.get($colors, dark) {
-    @if $name == $color {
-      $found: $value;
-    }
-  }
-
-  @if $found == null {
-    @error "Color '#{$color}' not found in $colors map";
-  }
-
-  @return color.change($found, $alpha: $opacity);
-}
-
-@function getLightColorWithOpacity($color, $opacity) {
-  $found: null;
-  @each $name, $value in map.get($colors, light) {
-    @if $name == $color {
-      $found: $value;
-    }
-  }
-
-  @if $found == null {
-    @error "Color '#{$color}' not found in $colors map";
-  }
-
-  @return color.change($found, $alpha: $opacity);
+@function getColorWithOpacity($color, $opacity) {
+  @return color.change($color, $alpha: $opacity);
 }
 
 @function getFontSize($fontSize) {
@@ -80,4 +54,12 @@
 
 @function getScreenSize($size) {
   @return map-get($map: $screenSizes, $key: $size);
+}
+
+@function opposite($color, $theme) {
+  @if $theme == "dark" {
+    @return getLightColor($color);
+  } @else {
+    @return getDarkColor($color);
+  }
 }

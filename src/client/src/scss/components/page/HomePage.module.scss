@@ -1,0 +1,11 @@
+@use "../../abstracts" as *;
+
+.container {
+  @include flexCenter(column);
+  width: 100%;
+
+  padding: 13.5rem 0rem;
+  gap: 13.5rem;
+
+  background-color: var(--primary);
+}

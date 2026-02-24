@@ -1,0 +1,52 @@
+@use "../../abstracts" as *;
+
+.container {
+  @include flexCenter(row);
+  width: 100%;
+  justify-content: space-between;
+
+  padding: 0 20rem;
+
+  > img {
+    width: 25rem;
+    height: 25rem;
+    border-radius: 5%;
+  }
+}
+
+.content {
+  @include flexCenter(column);
+  align-items: flex-start;
+  gap: 2rem;
+
+  > p {
+    color: var(--body-text);
+    font-size: getFontSize("p-large");
+    letter-spacing: 0.35px;
+    width: 80%;
+  }
+}
+
+.header {
+  @include flexCenter(column);
+  align-items: flex-start;
+  gap: 1rem;
+
+  > h1 {
+    font-size: getFontSize("h2-tablet");
+    letter-spacing: 3.5px;
+    color: var(--primary-opposite);
+  }
+
+  > h2 {
+    font-size: getFontSize("h3-tablet");
+    letter-spacing: 3px;
+    color: var(--primary-opposite);
+  }
+}
+
+.buttons {
+  @include flexCenter(row);
+  gap: 4rem;
+  margin-top: 2rem;
+}

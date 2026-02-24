@@ -1,10 +1,12 @@
 "use client";
 // Components
 import Navbar from "@/components/layout/navbar/Navbar";
+import Footer from "@/components/layout/footer/Footer";
 // SCSS
 import pagesLayoutStyles from "@/scss/components/layout/PagesLayout.module.scss";
 // Fonts
 import { manrope } from "@/app/fonts";
+// Zustand
 import { useGeneralStore } from "@/zustand/general/context";
 
 const PagesLayout = ({ children }: { children: React.ReactNode }) => {
@@ -17,6 +19,7 @@ const PagesLayout = ({ children }: { children: React.ReactNode }) => {
     >
       <Navbar />
       {children}
+      <Footer />
     </div>
   );
 };

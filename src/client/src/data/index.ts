@@ -1,8 +1,10 @@
 // Types
+import { TechCategoryProps } from "@/core/interfaces";
 import {
   CommonPageHeroSectionDataType,
   LangFlagImageType,
   NavLinkType,
+  SectionDataType,
   SocialMediaIconType,
 } from "@/core/types";
 
@@ -98,3 +100,171 @@ export const homePageHeroSectionData: CommonPageHeroSectionDataType = {
     { id: 2, color: "success", dest: "/about", label: "My Journey" },
   ],
 };
+
+export const homePageAboutTeaserSectionData: SectionDataType = {
+  title: "A Bit About Me",
+  paragraphs: [
+    "As a Computer Science student at UBB and full-stack web developer I work on my projects out of a combination of self-satisfaction and pure enjoyment of the craft.",
+    "Also won a few county level web dev competitions and even got a bronze medal at a national one during my high school years.",
+  ],
+  buttons: [{ id: 1, color: "delete", dest: "/about", label: "Read More" }],
+};
+
+export const homePageContactTeaserSectionData: SectionDataType = {
+  title: "Mayhaps Contact Me?",
+  paragraphs: [
+    "If there is a will there is a way as they say.",
+    "Also open to internships or other types of work. Also also, I wouldn’t mind collaborating on web dev / python projects.",
+  ],
+  buttons: [
+    { id: 1, color: "warning", dest: "/contact", label: "Contact Me" },
+    { id: 2, color: "success", dest: "/home", label: "My Resume" },
+  ],
+};
+
+export const technicalSkillsData: TechCategoryProps[] = [
+  {
+    id: 1,
+    label: "Frontend",
+    skills: [
+      {
+        id: 1,
+        rel: "/skills/frontend/html.png",
+        label: "HTML5",
+        dest: "https://www.geeksforgeeks.org/html/html5-introduction/",
+      },
+      {
+        id: 2,
+        rel: "/skills/frontend/css.png",
+        label: "CSS3",
+        dest: "https://www.w3schools.com/css/",
+      },
+      {
+        id: 3,
+        rel: "/skills/frontend/javascript.png",
+        label: "Javascript",
+        dest: "https://www.w3schools.com/js/",
+      },
+      {
+        id: 4,
+        rel: "/skills/frontend/react.png",
+        label: "React",
+        dest: "https://react.dev/",
+      },
+      {
+        id: 5,
+        rel: "/skills/frontend/nextjs.png",
+        label: "NextJS",
+        dest: "https://nextjs.org/",
+      },
+      {
+        id: 6,
+        rel: "/skills/frontend/redux.webp",
+        label: "Redux",
+        dest: "https://redux.js.org/",
+      },
+      {
+        id: 7,
+        rel: "/skills/frontend/sass.png",
+        label: "Sass",
+        dest: "https://sass-lang.com/",
+      },
+      {
+        id: 8,
+        rel: "/skills/frontend/typescript.png",
+        label: "Typescript",
+        dest: "https://www.typescriptlang.org/",
+      },
+    ],
+  },
+  {
+    id: 2,
+    label: "Backend",
+    skills: [
+      {
+        id: 1,
+        rel: "/skills/backend/nodejs.png",
+        label: "NodeJS",
+        dest: "https://nodejs.org/en",
+      },
+      {
+        id: 2,
+        rel: "/skills/backend/express.png",
+        label: "ExpressJS",
+        dest: "https://expressjs.com/",
+      },
+      {
+        id: 3,
+        rel: "/skills/backend/mongo-db.png",
+        label: "Mongo DB",
+        dest: "https://www.mongodb.com/",
+      },
+      {
+        id: 4,
+        rel: "/skills/backend/mongoose.png",
+        label: "Mongoose",
+        dest: "https://mongoosejs.com/docs/",
+      },
+      {
+        id: 5,
+        rel: "/skills/backend/nestjs.png",
+        label: "NestJS",
+        dest: "https://nestjs.com/",
+      },
+      {
+        id: 6,
+        rel: "/skills/backend/postgresql.png",
+        label: "PostgreSQL",
+        dest: "https://www.postgresql.org/",
+      },
+      {
+        id: 7,
+        rel: "/skills/backend/redis.png",
+        label: "Redis",
+        dest: "https://redis.io/",
+      },
+      {
+        id: 8,
+        rel: "/skills/backend/prisma.png",
+        label: "Prisma",
+        dest: "https://www.prisma.io/",
+      },
+      {
+        id: 9,
+        rel: "/skills/backend/typescript.png",
+        label: "Typescript",
+        dest: "https://www.typescriptlang.org/",
+      },
+    ],
+  },
+  {
+    id: 3,
+    label: "Tools",
+    skills: [
+      {
+        id: 1,
+        rel: "/skills/tools/github.png",
+        label: "Github",
+        dest: "https://github.com/",
+      },
+      {
+        id: 2,
+        rel: "/skills/tools/netlify.png",
+        label: "Netlify",
+        dest: "https://www.netlify.com/blog/2019/10/07/complete-intro-to-netlify-in-3.5-hours/",
+      },
+      {
+        id: 3,
+        rel: "/skills/tools/render.png",
+        label: "Render",
+        dest: "https://render.com/docs/render-dashboard",
+      },
+      {
+        id: 4,
+        rel: "/skills/tools/cloudinary.png",
+        label: "Cloudinary",
+        dest: "https://cloudinary.com/documentation",
+      },
+    ],
+  },
+];

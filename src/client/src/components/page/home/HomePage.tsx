@@ -1,5 +1,5 @@
 // SCSS
-import homePageStyles from "@/scss/components/page/HomePage.module.scss";
+import homePageStyles from "@/scss/components/page/home/HomePage.module.scss";
 // Components
 import WeeklyMealPrep from "@/components/shared/WeeklyMealPrep";
 import HomeAboutTeaser from "./HomeAboutTeaser";

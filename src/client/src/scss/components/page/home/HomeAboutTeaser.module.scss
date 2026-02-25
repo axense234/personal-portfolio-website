@@ -1,0 +1,38 @@
+@use "../../../abstracts" as *;
+
+.container {
+  @include flexCenter(column);
+  gap: 4rem;
+  width: 100%;
+  padding: 0 20rem;
+}
+
+.content {
+  @include flexCenter(column);
+  width: 100%;
+  gap: 3rem;
+
+  > h2 {
+    font-size: getFontSize("h2-laptop");
+    letter-spacing: 3px;
+    color: var(--primary-opposite);
+  }
+}
+
+.paragraphs {
+  @include flexCenter(column);
+  gap: 2rem;
+
+  > p {
+    color: var(--body-text);
+    font-size: getFontSize("p-large");
+    letter-spacing: 0.35px;
+    width: 60%;
+    text-align: center;
+  }
+}
+
+.buttons {
+  @include flexCenter(row);
+  gap: 4rem;
+}

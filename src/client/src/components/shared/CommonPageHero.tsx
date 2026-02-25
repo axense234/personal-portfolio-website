@@ -37,6 +37,8 @@ const CommonPageHero: FC<CommonPageHeroProps> = ({
         src={image}
         width={400}
         height={400}
+        title="Placeholder: Change this"
+        aria-label="Placeholder: Change this"
       />
     </section>
   );

@@ -1,0 +1,46 @@
+@use "../../../abstracts" as *;
+
+.container {
+  @include flexCenter(column);
+  width: 100%;
+  gap: 4rem;
+  padding: 0rem 20rem;
+}
+
+.content {
+  @include flexCenter(column);
+  width: 100%;
+  gap: 4rem;
+}
+
+.intro {
+  @include flexCenter(column);
+  width: 100%;
+  gap: 3rem;
+
+  > h2 {
+    font-size: getFontSize("h2-laptop");
+    letter-spacing: 3px;
+    color: var(--primary-opposite);
+  }
+
+  > p {
+    color: var(--body-text);
+    font-size: getFontSize("p-large");
+    letter-spacing: 0.35px;
+    width: 60%;
+    text-align: center;
+  }
+}
+
+.skills {
+  @include flexCenter(row);
+  align-items: flex-start;
+  list-style: none;
+  width: 100%;
+  gap: 8rem;
+
+  > li {
+    width: 100%;
+  }
+}

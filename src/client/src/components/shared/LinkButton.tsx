@@ -30,6 +30,8 @@ const LinkButton: FC<LinkButtonProps> = ({ color, dest, label }) => {
       href={dest}
       style={{ backgroundColor: linkButtonColor }}
       className={linkButtonStyles.link}
+      title={label}
+      aria-label={label}
     >
       {label}
     </Link>

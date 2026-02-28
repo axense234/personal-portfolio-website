@@ -17,7 +17,7 @@ const TechSkill: FC<TechSkillProps> = ({ dest, label, rel }) => {
         aria-label={label}
         src={rel}
         height={48}
-        width={128} // want this width for the fat ahh mongoose logo
+        width={128}
       />
     </Link>
   );

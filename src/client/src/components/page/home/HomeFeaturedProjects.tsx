@@ -4,7 +4,7 @@ import useGetProjects from "@/hooks/api/github/useGetProjects";
 
 const HomeFeaturedProjects = () => {
   const featuredProjects = useGetProjects({
-    rawTopics: ["personal-project", "featured"],
+    topicsCSV: "personal-project, featured",
   });
 
   if (!featuredProjects) {

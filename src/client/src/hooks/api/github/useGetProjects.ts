@@ -1,33 +1,30 @@
 // Interfaces
 import { GithubRepository, GitHubSearchResponse } from "@/core/interfaces";
 // ky
-import { KyResponse } from "ky";
-import customKy from "@/config/ky";
+import ky from "ky";
 // React
 import { useEffect, useState } from "react";
 
-const useGetProjects = ({ rawTopics = [] }: { rawTopics: string[] }) => {
+const useGetProjects = ({ topicsCSV }: { topicsCSV: string }) => {
   const [projects, setProjects] = useState<GithubRepository[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const getProjects = async () => {
       try {
-        const topics =
-          rawTopics.length > 0
-            ? `${rawTopics.map((rt: string) => `topic:${rt}`).join(" ")}`
-            : "";
+        const topics = topicsCSV
+          .split(", ")
+          .map((topic) => `topic:${topic} `)
+          .join(" ");
 
-        const res: KyResponse<GitHubSearchResponse> = await customKy.get(
-          "search/repositories",
-          { searchParams: { q: `user:axense234 ${topics}` } },
-        );
+        const query = `user:axense234 ${topics}`;
+        const url = `/api/github/projects?${query}`;
 
-        console.log(res);
+        const res = (await ky(url, {
+          searchParams: { q: query },
+        }).json()) as GitHubSearchResponse;
 
-        const projects = (await res.json())?.items;
-
-        setProjects(projects);
+        setProjects(res.items);
         setIsLoading(false);
       } catch (error) {
         console.log(error);
@@ -35,7 +32,7 @@ const useGetProjects = ({ rawTopics = [] }: { rawTopics: string[] }) => {
       }
     };
     getProjects();
-  }, [rawTopics]);
+  }, []);
 
   return { projects, isLoading };
 };

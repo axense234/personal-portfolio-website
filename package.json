@@ -1,17 +1,28 @@
 {
   "name": "personal-portfolio-website",
   "version": "1.0.0",
-  "description": "My personal portfolio website.",
-  "scripts": {},
+  "private": true,
+  "scripts": {
+    "build": "lerna run build",
+    "clean": "lerna clean",
+    "migrate": "cd ./src/server && npx prisma migrate dev",
+    "generate": "cd ./src/server && npx prisma generate"
+  },
+  "workspaces": [
+    "src/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/axense234/personal-portfolio-website.git"
   },
   "keywords": [],
-  "author": "Comanescu Andrei",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/axense234/personal-portfolio-website/issues"
   },
-  "homepage": "https://github.com/axense234/personal-portfolio-website#readme"
+  "homepage": "https://github.com/axense234/personal-portfolio-website#readme",
+  "devDependencies": {
+    "lerna": "^9.0.5"
+  }
 }

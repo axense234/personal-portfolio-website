@@ -1,0 +1,19 @@
+{
+  "name": "@personal-portfolio-website/shared",
+  "version": "1.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "class-validator": "^0.15.1"
+  },
+  "devDependencies": {
+    "@prisma/client": "^7.4.2",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,87 @@
+generator client {
+  provider     = "prisma-client"
+  output       = "../../shared/types/prisma"
+  moduleFormat = "cjs"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model TechSkill {
+  id        String       @id @default(uuid())
+  local_rel String
+  label     String
+  dest      String
+  category  TechCategory
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+}
+
+model ProjectImages {
+  id          String   @id @default(uuid())
+  screenshots String[] @default([])
+  thumb       String   @default("https://res.cloudinary.com/birthdayreminder/image/upload/v1772455490/Personal%20Website/jpeg_i3bsqf.jpg")
+  project_id  String   @unique
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  project     Project  @relation(fields: [project_id], references: [id])
+}
+
+model Project {
+  id                    String         @id @default(uuid())
+  name                  String         @unique @default("Project")
+  short_desc            String         @default("Project short description.")
+  long_desc             String         @default("Project long description.")
+  overview_desc         String         @default("Project overview description.")
+  architecture_desc     String         @default("Project architecture description.")
+  practiced_skills_desc String         @default("Project practiced skills description.")
+  goal_desc             String         @default("Project goal description.")
+  project_phase         String?
+  video_preview         String?
+  github_url            String?
+  website_url           String?
+  docs_url              String?
+  createdAt             DateTime       @default(now())
+  updatedAt             DateTime       @updatedAt
+  images                ProjectImages?
+  type                  ProjectType    @default(HIDDEN)
+}
+
+model Ingredient {
+  id         String     @id @default(uuid())
+  label      String
+  unit       Unit
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+  meal_preps MealPrep[]
+}
+
+model MealPrep {
+  id          String       @id @default(uuid())
+  name        String       @default("Meal Prep")
+  coverage    Int
+  images      String[]     @default([])
+  cookedAt    DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  ingredients Ingredient[]
+}
+
+enum ProjectType {
+  FEATURED
+  DISPLAYED
+  HIDDEN
+}
+
+enum TechCategory {
+  FRONTEND
+  BACKEND
+  OTHER
+}
+
+enum Unit {
+  GRAM
+  STALK
+  UNIT
+  HEAD
+}

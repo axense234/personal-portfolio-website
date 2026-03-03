@@ -1,0 +1,28 @@
+// Nest
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+// Config Module
+import { ConfigModule } from '@nestjs/config';
+// Rate Limiter
+import { ThrottlerModule } from '@nestjs/throttler';
+// Modules
+import { PrismaModule } from './modules/db';
+import { ProjectModule } from './modules/entity/project/project.module';
+import { MealPrepModule } from './modules';
+
+@Module({
+  imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
+    ThrottlerModule.forRoot({
+      throttlers: [
+        {
+          ttl: Number(process.env.RATE_TTL),
+          limit: Number(process.env.RATE_LIMIT),
+        },
+      ],
+    }),
+    PrismaModule,
+    ProjectModule,
+    MealPrepModule,
+  ],
+})
+export class AppModule {}

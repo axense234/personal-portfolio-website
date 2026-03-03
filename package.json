@@ -9,7 +9,7 @@
     "generate": "cd ./src/server && npx prisma generate"
   },
   "workspaces": [
-    "src/*"
+    "packages/*"
   ],
   "repository": {
     "type": "git",

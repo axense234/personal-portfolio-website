@@ -22,9 +22,9 @@ model ProjectImages {
   id          String   @id @default(uuid())
   screenshots String[] @default([])
   thumb       String   @default("https://res.cloudinary.com/birthdayreminder/image/upload/v1772455490/Personal%20Website/jpeg_i3bsqf.jpg")
-  project_id  String   @unique
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+  project_id  String   @unique
   project     Project  @relation(fields: [project_id], references: [id])
 }
 
@@ -41,11 +41,12 @@ model Project {
   video_preview         String?
   github_url            String?
   website_url           String?
+  website_logo_url      String?
   docs_url              String?
   createdAt             DateTime       @default(now())
   updatedAt             DateTime       @updatedAt
   images                ProjectImages?
-  type                  ProjectType    @default(HIDDEN)
+  project_type          ProjectType    @default(HIDDEN)
 }
 
 model Ingredient {

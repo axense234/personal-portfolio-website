@@ -834,9 +834,9 @@ export const ProjectImagesScalarFieldEnum = {
   id: 'id',
   screenshots: 'screenshots',
   thumb: 'thumb',
-  project_id: 'project_id',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  project_id: 'project_id'
 } as const
 
 export type ProjectImagesScalarFieldEnum = (typeof ProjectImagesScalarFieldEnum)[keyof typeof ProjectImagesScalarFieldEnum]
@@ -855,10 +855,11 @@ export const ProjectScalarFieldEnum = {
   video_preview: 'video_preview',
   github_url: 'github_url',
   website_url: 'website_url',
+  website_logo_url: 'website_logo_url',
   docs_url: 'docs_url',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  type: 'type'
+  project_type: 'project_type'
 } as const
 
 export type ProjectScalarFieldEnum = (typeof ProjectScalarFieldEnum)[keyof typeof ProjectScalarFieldEnum]

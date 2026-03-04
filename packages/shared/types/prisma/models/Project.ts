@@ -37,10 +37,11 @@ export type ProjectMinAggregateOutputType = {
   video_preview: string | null
   github_url: string | null
   website_url: string | null
+  website_logo_url: string | null
   docs_url: string | null
   createdAt: Date | null
   updatedAt: Date | null
-  type: $Enums.ProjectType | null
+  project_type: $Enums.ProjectType | null
 }
 
 export type ProjectMaxAggregateOutputType = {
@@ -56,10 +57,11 @@ export type ProjectMaxAggregateOutputType = {
   video_preview: string | null
   github_url: string | null
   website_url: string | null
+  website_logo_url: string | null
   docs_url: string | null
   createdAt: Date | null
   updatedAt: Date | null
-  type: $Enums.ProjectType | null
+  project_type: $Enums.ProjectType | null
 }
 
 export type ProjectCountAggregateOutputType = {
@@ -75,10 +77,11 @@ export type ProjectCountAggregateOutputType = {
   video_preview: number
   github_url: number
   website_url: number
+  website_logo_url: number
   docs_url: number
   createdAt: number
   updatedAt: number
-  type: number
+  project_type: number
   _all: number
 }
 
@@ -96,10 +99,11 @@ export type ProjectMinAggregateInputType = {
   video_preview?: true
   github_url?: true
   website_url?: true
+  website_logo_url?: true
   docs_url?: true
   createdAt?: true
   updatedAt?: true
-  type?: true
+  project_type?: true
 }
 
 export type ProjectMaxAggregateInputType = {
@@ -115,10 +119,11 @@ export type ProjectMaxAggregateInputType = {
   video_preview?: true
   github_url?: true
   website_url?: true
+  website_logo_url?: true
   docs_url?: true
   createdAt?: true
   updatedAt?: true
-  type?: true
+  project_type?: true
 }
 
 export type ProjectCountAggregateInputType = {
@@ -134,10 +139,11 @@ export type ProjectCountAggregateInputType = {
   video_preview?: true
   github_url?: true
   website_url?: true
+  website_logo_url?: true
   docs_url?: true
   createdAt?: true
   updatedAt?: true
-  type?: true
+  project_type?: true
   _all?: true
 }
 
@@ -226,10 +232,11 @@ export type ProjectGroupByOutputType = {
   video_preview: string | null
   github_url: string | null
   website_url: string | null
+  website_logo_url: string | null
   docs_url: string | null
   createdAt: Date
   updatedAt: Date
-  type: $Enums.ProjectType
+  project_type: $Enums.ProjectType
   _count: ProjectCountAggregateOutputType | null
   _min: ProjectMinAggregateOutputType | null
   _max: ProjectMaxAggregateOutputType | null
@@ -266,10 +273,11 @@ export type ProjectWhereInput = {
   video_preview?: Prisma.StringNullableFilter<"Project"> | string | null
   github_url?: Prisma.StringNullableFilter<"Project"> | string | null
   website_url?: Prisma.StringNullableFilter<"Project"> | string | null
+  website_logo_url?: Prisma.StringNullableFilter<"Project"> | string | null
   docs_url?: Prisma.StringNullableFilter<"Project"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Project"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Project"> | Date | string
-  type?: Prisma.EnumProjectTypeFilter<"Project"> | $Enums.ProjectType
+  project_type?: Prisma.EnumProjectTypeFilter<"Project"> | $Enums.ProjectType
   images?: Prisma.XOR<Prisma.ProjectImagesNullableScalarRelationFilter, Prisma.ProjectImagesWhereInput> | null
 }
 
@@ -286,10 +294,11 @@ export type ProjectOrderByWithRelationInput = {
   video_preview?: Prisma.SortOrderInput | Prisma.SortOrder
   github_url?: Prisma.SortOrderInput | Prisma.SortOrder
   website_url?: Prisma.SortOrderInput | Prisma.SortOrder
+  website_logo_url?: Prisma.SortOrderInput | Prisma.SortOrder
   docs_url?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  type?: Prisma.SortOrder
+  project_type?: Prisma.SortOrder
   images?: Prisma.ProjectImagesOrderByWithRelationInput
 }
 
@@ -309,10 +318,11 @@ export type ProjectWhereUniqueInput = Prisma.AtLeast<{
   video_preview?: Prisma.StringNullableFilter<"Project"> | string | null
   github_url?: Prisma.StringNullableFilter<"Project"> | string | null
   website_url?: Prisma.StringNullableFilter<"Project"> | string | null
+  website_logo_url?: Prisma.StringNullableFilter<"Project"> | string | null
   docs_url?: Prisma.StringNullableFilter<"Project"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Project"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Project"> | Date | string
-  type?: Prisma.EnumProjectTypeFilter<"Project"> | $Enums.ProjectType
+  project_type?: Prisma.EnumProjectTypeFilter<"Project"> | $Enums.ProjectType
   images?: Prisma.XOR<Prisma.ProjectImagesNullableScalarRelationFilter, Prisma.ProjectImagesWhereInput> | null
 }, "id" | "name">
 
@@ -329,10 +339,11 @@ export type ProjectOrderByWithAggregationInput = {
   video_preview?: Prisma.SortOrderInput | Prisma.SortOrder
   github_url?: Prisma.SortOrderInput | Prisma.SortOrder
   website_url?: Prisma.SortOrderInput | Prisma.SortOrder
+  website_logo_url?: Prisma.SortOrderInput | Prisma.SortOrder
   docs_url?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  type?: Prisma.SortOrder
+  project_type?: Prisma.SortOrder
   _count?: Prisma.ProjectCountOrderByAggregateInput
   _max?: Prisma.ProjectMaxOrderByAggregateInput
   _min?: Prisma.ProjectMinOrderByAggregateInput
@@ -354,10 +365,11 @@ export type ProjectScalarWhereWithAggregatesInput = {
   video_preview?: Prisma.StringNullableWithAggregatesFilter<"Project"> | string | null
   github_url?: Prisma.StringNullableWithAggregatesFilter<"Project"> | string | null
   website_url?: Prisma.StringNullableWithAggregatesFilter<"Project"> | string | null
+  website_logo_url?: Prisma.StringNullableWithAggregatesFilter<"Project"> | string | null
   docs_url?: Prisma.StringNullableWithAggregatesFilter<"Project"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Project"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Project"> | Date | string
-  type?: Prisma.EnumProjectTypeWithAggregatesFilter<"Project"> | $Enums.ProjectType
+  project_type?: Prisma.EnumProjectTypeWithAggregatesFilter<"Project"> | $Enums.ProjectType
 }
 
 export type ProjectCreateInput = {
@@ -373,10 +385,11 @@ export type ProjectCreateInput = {
   video_preview?: string | null
   github_url?: string | null
   website_url?: string | null
+  website_logo_url?: string | null
   docs_url?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  type?: $Enums.ProjectType
+  project_type?: $Enums.ProjectType
   images?: Prisma.ProjectImagesCreateNestedOneWithoutProjectInput
 }
 
@@ -393,10 +406,11 @@ export type ProjectUncheckedCreateInput = {
   video_preview?: string | null
   github_url?: string | null
   website_url?: string | null
+  website_logo_url?: string | null
   docs_url?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  type?: $Enums.ProjectType
+  project_type?: $Enums.ProjectType
   images?: Prisma.ProjectImagesUncheckedCreateNestedOneWithoutProjectInput
 }
 
@@ -413,10 +427,11 @@ export type ProjectUpdateInput = {
   video_preview?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   github_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   website_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  website_logo_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   docs_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumProjectTypeFieldUpdateOperationsInput | $Enums.ProjectType
+  project_type?: Prisma.EnumProjectTypeFieldUpdateOperationsInput | $Enums.ProjectType
   images?: Prisma.ProjectImagesUpdateOneWithoutProjectNestedInput
 }
 
@@ -433,10 +448,11 @@ export type ProjectUncheckedUpdateInput = {
   video_preview?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   github_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   website_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  website_logo_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   docs_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumProjectTypeFieldUpdateOperationsInput | $Enums.ProjectType
+  project_type?: Prisma.EnumProjectTypeFieldUpdateOperationsInput | $Enums.ProjectType
   images?: Prisma.ProjectImagesUncheckedUpdateOneWithoutProjectNestedInput
 }
 
@@ -453,10 +469,11 @@ export type ProjectCreateManyInput = {
   video_preview?: string | null
   github_url?: string | null
   website_url?: string | null
+  website_logo_url?: string | null
   docs_url?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  type?: $Enums.ProjectType
+  project_type?: $Enums.ProjectType
 }
 
 export type ProjectUpdateManyMutationInput = {
@@ -472,10 +489,11 @@ export type ProjectUpdateManyMutationInput = {
   video_preview?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   github_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   website_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  website_logo_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   docs_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumProjectTypeFieldUpdateOperationsInput | $Enums.ProjectType
+  project_type?: Prisma.EnumProjectTypeFieldUpdateOperationsInput | $Enums.ProjectType
 }
 
 export type ProjectUncheckedUpdateManyInput = {
@@ -491,10 +509,11 @@ export type ProjectUncheckedUpdateManyInput = {
   video_preview?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   github_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   website_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  website_logo_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   docs_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumProjectTypeFieldUpdateOperationsInput | $Enums.ProjectType
+  project_type?: Prisma.EnumProjectTypeFieldUpdateOperationsInput | $Enums.ProjectType
 }
 
 export type ProjectScalarRelationFilter = {
@@ -515,10 +534,11 @@ export type ProjectCountOrderByAggregateInput = {
   video_preview?: Prisma.SortOrder
   github_url?: Prisma.SortOrder
   website_url?: Prisma.SortOrder
+  website_logo_url?: Prisma.SortOrder
   docs_url?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  type?: Prisma.SortOrder
+  project_type?: Prisma.SortOrder
 }
 
 export type ProjectMaxOrderByAggregateInput = {
@@ -534,10 +554,11 @@ export type ProjectMaxOrderByAggregateInput = {
   video_preview?: Prisma.SortOrder
   github_url?: Prisma.SortOrder
   website_url?: Prisma.SortOrder
+  website_logo_url?: Prisma.SortOrder
   docs_url?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  type?: Prisma.SortOrder
+  project_type?: Prisma.SortOrder
 }
 
 export type ProjectMinOrderByAggregateInput = {
@@ -553,10 +574,11 @@ export type ProjectMinOrderByAggregateInput = {
   video_preview?: Prisma.SortOrder
   github_url?: Prisma.SortOrder
   website_url?: Prisma.SortOrder
+  website_logo_url?: Prisma.SortOrder
   docs_url?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  type?: Prisma.SortOrder
+  project_type?: Prisma.SortOrder
 }
 
 export type ProjectCreateNestedOneWithoutImagesInput = {
@@ -594,10 +616,11 @@ export type ProjectCreateWithoutImagesInput = {
   video_preview?: string | null
   github_url?: string | null
   website_url?: string | null
+  website_logo_url?: string | null
   docs_url?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  type?: $Enums.ProjectType
+  project_type?: $Enums.ProjectType
 }
 
 export type ProjectUncheckedCreateWithoutImagesInput = {
@@ -613,10 +636,11 @@ export type ProjectUncheckedCreateWithoutImagesInput = {
   video_preview?: string | null
   github_url?: string | null
   website_url?: string | null
+  website_logo_url?: string | null
   docs_url?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  type?: $Enums.ProjectType
+  project_type?: $Enums.ProjectType
 }
 
 export type ProjectCreateOrConnectWithoutImagesInput = {
@@ -648,10 +672,11 @@ export type ProjectUpdateWithoutImagesInput = {
   video_preview?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   github_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   website_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  website_logo_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   docs_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumProjectTypeFieldUpdateOperationsInput | $Enums.ProjectType
+  project_type?: Prisma.EnumProjectTypeFieldUpdateOperationsInput | $Enums.ProjectType
 }
 
 export type ProjectUncheckedUpdateWithoutImagesInput = {
@@ -667,10 +692,11 @@ export type ProjectUncheckedUpdateWithoutImagesInput = {
   video_preview?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   github_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   website_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  website_logo_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   docs_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumProjectTypeFieldUpdateOperationsInput | $Enums.ProjectType
+  project_type?: Prisma.EnumProjectTypeFieldUpdateOperationsInput | $Enums.ProjectType
 }
 
 
@@ -688,10 +714,11 @@ export type ProjectSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   video_preview?: boolean
   github_url?: boolean
   website_url?: boolean
+  website_logo_url?: boolean
   docs_url?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  type?: boolean
+  project_type?: boolean
   images?: boolean | Prisma.Project$imagesArgs<ExtArgs>
 }, ExtArgs["result"]["project"]>
 
@@ -708,10 +735,11 @@ export type ProjectSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   video_preview?: boolean
   github_url?: boolean
   website_url?: boolean
+  website_logo_url?: boolean
   docs_url?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  type?: boolean
+  project_type?: boolean
 }, ExtArgs["result"]["project"]>
 
 export type ProjectSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -727,10 +755,11 @@ export type ProjectSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   video_preview?: boolean
   github_url?: boolean
   website_url?: boolean
+  website_logo_url?: boolean
   docs_url?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  type?: boolean
+  project_type?: boolean
 }, ExtArgs["result"]["project"]>
 
 export type ProjectSelectScalar = {
@@ -746,13 +775,14 @@ export type ProjectSelectScalar = {
   video_preview?: boolean
   github_url?: boolean
   website_url?: boolean
+  website_logo_url?: boolean
   docs_url?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  type?: boolean
+  project_type?: boolean
 }
 
-export type ProjectOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "short_desc" | "long_desc" | "overview_desc" | "architecture_desc" | "practiced_skills_desc" | "goal_desc" | "project_phase" | "video_preview" | "github_url" | "website_url" | "docs_url" | "createdAt" | "updatedAt" | "type", ExtArgs["result"]["project"]>
+export type ProjectOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "short_desc" | "long_desc" | "overview_desc" | "architecture_desc" | "practiced_skills_desc" | "goal_desc" | "project_phase" | "video_preview" | "github_url" | "website_url" | "website_logo_url" | "docs_url" | "createdAt" | "updatedAt" | "project_type", ExtArgs["result"]["project"]>
 export type ProjectInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   images?: boolean | Prisma.Project$imagesArgs<ExtArgs>
 }
@@ -777,10 +807,11 @@ export type $ProjectPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     video_preview: string | null
     github_url: string | null
     website_url: string | null
+    website_logo_url: string | null
     docs_url: string | null
     createdAt: Date
     updatedAt: Date
-    type: $Enums.ProjectType
+    project_type: $Enums.ProjectType
   }, ExtArgs["result"]["project"]>
   composites: {}
 }
@@ -1217,10 +1248,11 @@ export interface ProjectFieldRefs {
   readonly video_preview: Prisma.FieldRef<"Project", 'String'>
   readonly github_url: Prisma.FieldRef<"Project", 'String'>
   readonly website_url: Prisma.FieldRef<"Project", 'String'>
+  readonly website_logo_url: Prisma.FieldRef<"Project", 'String'>
   readonly docs_url: Prisma.FieldRef<"Project", 'String'>
   readonly createdAt: Prisma.FieldRef<"Project", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Project", 'DateTime'>
-  readonly type: Prisma.FieldRef<"Project", 'ProjectType'>
+  readonly project_type: Prisma.FieldRef<"Project", 'ProjectType'>
 }
     
 

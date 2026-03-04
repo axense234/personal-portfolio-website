@@ -5,7 +5,11 @@ import {
   Injectable,
 } from '@nestjs/common';
 // Shared package
-import { ProjectCreateInput } from '@personal-portfolio-website/shared';
+import {
+  CreateProjectResponse,
+  ProjectCreateInput,
+} from '@personal-portfolio-website/shared';
+// Status Codes
 import { StatusCodes } from 'http-status-codes';
 // Services
 import { PrismaService } from 'src/modules/db';
@@ -14,7 +18,7 @@ import { PrismaService } from 'src/modules/db';
 export class CreateProjectService {
   constructor(private prisma: PrismaService) {}
 
-  async createProject(dto: ProjectCreateInput) {
+  async createProject(dto: ProjectCreateInput): Promise<CreateProjectResponse> {
     try {
       if (!dto || Object.keys(dto).length == 0) {
         throw new BadRequestException('No body found.');

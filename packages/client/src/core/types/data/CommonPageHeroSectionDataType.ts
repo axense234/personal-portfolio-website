@@ -1,6 +1,6 @@
 import { LinkHrefType } from "@/core/types";
 
-type ExperimentalButtonType = {
+export type ExperimentalButtonType = {
   id: number;
   color: "warning" | "success" | "delete";
   label: string;

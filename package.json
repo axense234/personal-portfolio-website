@@ -5,8 +5,8 @@
   "scripts": {
     "build": "lerna run build",
     "clean": "lerna clean",
-    "migrate": "cd ./src/server && npx prisma migrate dev",
-    "generate": "cd ./src/server && npx prisma generate"
+    "migrate": "cd ./packages/server && npx prisma migrate dev",
+    "generate": "cd ./packages/server && npx prisma generate"
   },
   "workspaces": [
     "packages/*"

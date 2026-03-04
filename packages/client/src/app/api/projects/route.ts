@@ -1,11 +1,12 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { customKy } from "../_config";
 
-export async function GET(req: NextRequest) {
+export async function GET() {
   try {
-    const res = await customKy("GET /projects").json();
-    console.log(await res);
+    const res = await customKy("projects").json();
+    return NextResponse.json(await res);
   } catch (error) {
+    console.log(error);
     return NextResponse.json(error);
   }
 }

@@ -18,4 +18,9 @@ export class ProjectController {
   createProject(@Body() dto: ProjectCreateInput) {
     return this.projectServices.createProject(dto);
   }
+
+  @Post('featured')
+  injectFeaturedProjects() {
+    return this.projectServices.insertFeaturedProjects();
+  }
 }

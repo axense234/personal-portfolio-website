@@ -5,8 +5,14 @@ import {
   LangFlagImageType,
   NavLinkType,
   SectionDataType,
-  SocialMediaIconType,
+  ExternalMediaIconType,
 } from "@/core/types";
+
+export const buttonColors: ("warning" | "success" | "delete")[] = [
+  "warning",
+  "success",
+  "delete",
+];
 
 export const navLinks: NavLinkType[] = [
   {
@@ -75,7 +81,7 @@ export const languageFlagsImages: LangFlagImageType[] = [
 
 export const footerCopyright = "© 2026 Comanescu Andrei. All rights reserved.";
 
-export const socialMediaIcons: SocialMediaIconType[] = [
+export const socialMediaIcons: ExternalMediaIconType[] = [
   {
     id: 1,
     dest: "https://github.com/axense234",

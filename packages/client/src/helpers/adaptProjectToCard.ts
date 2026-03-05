@@ -45,6 +45,7 @@ export const adaptProjectToCard = (
       color: buttonColor,
       dest: "/projects",
       label: "See More",
+      size: "medium",
     },
     externals,
   };

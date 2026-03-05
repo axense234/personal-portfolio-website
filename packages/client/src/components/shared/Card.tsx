@@ -21,30 +21,34 @@ const Card: FC<CardProps> = ({ desc, image, label, button, externals }) => {
         title={`${label} Thumbnail Image`}
         aria-label={`${label} Thumbnail Image`}
       />
-      <div className={cardStyles.content}>
-        <h6>{label}</h6>
-        <p>{desc}</p>
-      </div>
-      <div className={cardStyles.buttons}>
-        {button && <LinkButton {...button} />}
-        {externals && (
-          <div className={cardStyles.externals}>
-            {externals.map((external) => {
-              return (
-                <Link href={external.dest} target="_blank" key={external.id}>
-                  <Image
-                    src={external.rel}
-                    alt={external.label}
-                    title={external.label}
-                    aria-label={external.label}
-                    width={48}
-                    height={48}
-                  />
-                </Link>
-              );
-            })}
-          </div>
-        )}
+      <div className={cardStyles.contentWrapper}>
+        <div className={cardStyles.content}>
+          <h6 title={label} aria-label={label}>
+            {label}
+          </h6>
+          <p>{desc}</p>
+        </div>
+        <div className={cardStyles.buttons}>
+          {button && <LinkButton {...button} />}
+          {externals && (
+            <div className={cardStyles.externals}>
+              {externals.map((external) => {
+                return (
+                  <Link href={external.dest} target="_blank" key={external.id}>
+                    <Image
+                      src={external.rel}
+                      alt={external.label}
+                      title={external.label}
+                      aria-label={external.label}
+                      width={48}
+                      height={48}
+                    />
+                  </Link>
+                );
+              })}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-@use "../../../abstracts" as *;
+@use "../../abstracts" as *;
 
 .container {
   @include flexCenter(column);
@@ -30,17 +30,5 @@
     letter-spacing: 0.35px;
     width: 60%;
     text-align: center;
-  }
-}
-
-.skills {
-  @include flexCenter(row);
-  align-items: flex-start;
-  list-style: none;
-  width: 100%;
-  gap: 8rem;
-
-  > li {
-    width: 25%;
   }
 }

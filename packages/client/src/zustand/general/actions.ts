@@ -6,3 +6,11 @@ export const toggleColorTheme = (set: SetGeneralStoreFunctionType) =>
   set((state: GeneralState) => ({
     colorTheme: state?.colorTheme === "dark" ? "light" : "dark",
   }));
+
+export const handleWeeklyMealPrepImagesCarousel = (
+  set: SetGeneralStoreFunctionType,
+  index: number,
+) =>
+  set((state: GeneralState) => ({
+    weeklyMealPrepCurrentImageIndex: index,
+  }));

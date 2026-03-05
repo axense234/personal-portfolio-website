@@ -5,21 +5,45 @@
   background-color: var(--tertiary);
   gap: 1.5rem;
   width: 31.25rem;
+  padding-bottom: 1.5rem;
+
+  transition: transform 0.2s ease-in;
 
   > img {
     width: 100%;
     height: auto;
+  }
+
+  &:hover {
+    transform: scale(1.01);
   }
 }
 
 .content {
   @include flexCenter(column);
   width: 100%;
+  gap: 1rem;
+  padding: 0 1rem;
 
   > h6 {
+    color: var(--primary-opposite);
+    font-size: getFontSize("h6-laptop");
+    letter-spacing: 1.5px;
+
+    transition: transform 0.2s ease;
+
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.035);
+      font-style: italic;
+    }
   }
 
   > p {
+    color: var(--primary-opposite);
+    font-size: getFontSize("p-medium");
+    letter-spacing: 0.25px;
   }
 }
 
@@ -27,6 +51,7 @@
   @include flexCenter(row);
   width: 100%;
   justify-content: space-between;
+  padding: 0 1rem;
 }
 
 .externals {
@@ -34,8 +59,8 @@
   gap: 1rem;
 
   > a > img {
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
     cursor: pointer;
 
     transition: transform 0.2s ease-in;
@@ -44,4 +69,10 @@
       transform: rotate(-15deg) scale(1.1);
     }
   }
+}
+
+.contentWrapper {
+  @include flexCenter(column);
+  width: 100%;
+  gap: 2rem;
 }

@@ -113,7 +113,47 @@ export const homePageAboutTeaserSectionData: SectionDataType = {
     "As a Computer Science student at UBB and full-stack web developer I work on my projects out of a combination of self-satisfaction and pure enjoyment of the craft.",
     "Also won a few county level web dev competitions and even got a bronze medal at a national one during my high school years.",
   ],
-  buttons: [{ id: 1, color: "delete", dest: "/about", label: "Read More" }],
+  buttons: [
+    {
+      id: 1,
+      color: "delete",
+      dest: "/about",
+      label: "Read More",
+      size: "large",
+    },
+  ],
+};
+
+export const homePageFeaturedProjectsSectionData: SectionDataType = {
+  title: "Featured Projects",
+  paragraphs: [
+    "Here are displayed some of my best / favorite web dev projects. Had a lot of fun working on them even tho I most likely consumed a bit too much pepsi max.",
+  ],
+  buttons: [
+    {
+      id: 1,
+      color: "warning",
+      dest: "/projects",
+      label: "More Projects",
+      size: "large",
+    },
+  ],
+};
+
+export const weeklyMealPrepSectionData: SectionDataType = {
+  title: "Weekly Meal Prep",
+  paragraphs: [
+    "I do indeed like cooking up some meals in advance at least once a week. It tastes even better than it looks. Yummy. Very Yummy Yes.",
+  ],
+  buttons: [
+    {
+      id: 1,
+      color: "delete",
+      dest: "/meal-prep",
+      label: "Meals Gallery",
+      size: "large",
+    },
+  ],
 };
 
 export const homePageContactTeaserSectionData: SectionDataType = {
@@ -123,8 +163,20 @@ export const homePageContactTeaserSectionData: SectionDataType = {
     "Also open to internships or other types of work. Also also, I wouldn’t mind collaborating on web dev / python projects.",
   ],
   buttons: [
-    { id: 1, color: "warning", dest: "/contact", label: "Contact Me" },
-    { id: 2, color: "success", dest: "/home", label: "My Resume" },
+    {
+      id: 1,
+      color: "warning",
+      dest: "/contact",
+      label: "Contact Me",
+      size: "large",
+    },
+    {
+      id: 2,
+      color: "success",
+      dest: "/home",
+      label: "My Resume",
+      size: "large",
+    },
   ],
 };
 

@@ -1,7 +1,10 @@
 // NestJS
 import { BadRequestException, Injectable } from '@nestjs/common';
 // DTO
-import { MealPrepCreateInput } from '@personal-portfolio-website/shared';
+import {
+  CreateMealPrepResponse,
+  MealPrepCreateInput,
+} from '@personal-portfolio-website/shared';
 // Status Codes
 import { StatusCodes } from 'http-status-codes';
 // Services
@@ -11,15 +14,17 @@ import { PrismaService } from 'src/modules/db';
 export class CreateMealPrepService {
   constructor(private prisma: PrismaService) {}
 
-  async createMealPrep(dto: MealPrepCreateInput) {
+  async createMealPrep(
+    dto: MealPrepCreateInput,
+  ): Promise<CreateMealPrepResponse> {
     try {
-      console.log(dto);
       if (!dto || Object.keys(dto).length == 0) {
         throw new BadRequestException('No body found.');
       }
 
       const createdMealPrep = await this.prisma.mealPrep.create({
         data: { ...dto },
+        include: { ingredients: true },
       });
 
       if (!createdMealPrep) {

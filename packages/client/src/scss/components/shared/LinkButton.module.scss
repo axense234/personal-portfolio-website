@@ -9,12 +9,13 @@
   font-size: getFontSize("button-label-large");
   color: getDarkColor("primary");
   font-weight: 600;
-  letter-spacing: 0.25px;
+  letter-spacing: 0.5px;
 
   text-decoration: none;
 
   box-shadow: 0 2px 4px
     color-mix(in srgb, var(--primary-opposite) 10%, transparent);
+
   &:hover {
     box-shadow: 0 4px 8px
       color-mix(in srgb, var(--primary-opposite) 20%, transparent);

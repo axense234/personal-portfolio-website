@@ -3,4 +3,5 @@ import { GeneralState } from "@/core/types";
 
 export const defaultInitState: GeneralState = {
   colorTheme: "dark",
+  weeklyMealPrepCurrentImageIndex: 0,
 };

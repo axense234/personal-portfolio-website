@@ -3,7 +3,7 @@
 .container {
   @include flexCenter(column);
   width: 100%;
-  gap: 4rem;
+  gap: 6rem;
   padding: 0rem 20rem;
 }
 
@@ -33,14 +33,17 @@
   }
 }
 
-.skills {
-  @include flexCenter(row);
-  align-items: flex-start;
+.projects {
+  display: grid;
   list-style: none;
+  justify-content: center;
+  align-items: flex-start;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
   width: 100%;
-  gap: 8rem;
+  gap: 4rem;
 
   > li {
-    width: 100%;
+    @include flexCenter(row);
   }
 }

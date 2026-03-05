@@ -50,9 +50,11 @@ model Project {
 }
 
 model Ingredient {
-  id         String     @id @default(uuid())
-  label      String
-  unit       Unit
+  id     String @id @default(uuid())
+  label  String
+  unit   Unit
+  amount Int
+
   createdAt  DateTime   @default(now())
   updatedAt  DateTime   @updatedAt
   meal_preps MealPrep[]

@@ -126,6 +126,7 @@ export const IngredientScalarFieldEnum = {
   id: 'id',
   label: 'label',
   unit: 'unit',
+  amount: 'amount',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const

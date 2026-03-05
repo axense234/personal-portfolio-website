@@ -5,7 +5,10 @@ import { createStore } from "zustand/vanilla";
 // Default Data
 import { defaultInitState } from "./init";
 // Actions
-import { toggleColorTheme } from "./actions";
+import {
+  toggleColorTheme,
+  handleWeeklyMealPrepImagesCarousel,
+} from "./actions";
 
 export const createGeneralStore = (
   initState: GeneralState = defaultInitState,
@@ -13,5 +16,7 @@ export const createGeneralStore = (
   return createStore<GeneralStore>()((set) => ({
     ...initState,
     toggleColorTheme: () => toggleColorTheme(set),
+    handleWeeklyMealPrepImagesCarousel: (index: number) =>
+      handleWeeklyMealPrepImagesCarousel(set, index),
   }));
 };

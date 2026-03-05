@@ -3,7 +3,7 @@ import Card from "@/components/shared/Card";
 // Components
 import LinkButton from "@/components/shared/LinkButton";
 // Data
-import { buttonColors } from "@/data";
+import { buttonColors, homePageFeaturedProjectsSectionData } from "@/data";
 // Helpers
 import { adaptProjectToCard } from "@/helpers";
 // Hooks
@@ -23,33 +23,40 @@ const FeaturedProjects = () => {
   }
 
   return (
-    <div className={homeFeaturedProjectsStyles.projects}>
+    <ul className={homeFeaturedProjectsStyles.projects}>
       {projects.map((project, index) => {
-        const buttonColorsCurrentColorIndex = (index % buttonColors.length) - 1;
+        const buttonColorsCurrentColorIndex = index % buttonColors.length;
         const buttonColor = buttonColors[buttonColorsCurrentColorIndex];
 
         const cardProps = adaptProjectToCard(project, buttonColor);
-        return <Card {...cardProps} key={project.id} />;
+        return (
+          <li key={project.id}>
+            <Card {...cardProps} />;
+          </li>
+        );
       })}
-    </div>
+    </ul>
   );
 };
 
 const HomeFeaturedProjects = () => {
+  const { buttons, paragraphs, title } = homePageFeaturedProjectsSectionData;
   return (
     <section className={homeFeaturedProjectsStyles.container}>
       <div className={homeFeaturedProjectsStyles.content}>
         <div className={homeFeaturedProjectsStyles.intro}>
-          <h2>Featured Projects</h2>
-          <p>
-            Here are displayed some of my best / favorite web dev projects. Had
-            a lot of fun working on them even tho I most likely consumed a bit
-            too much pepsi max.
-          </p>
+          <h2 title={title} aria-label={title}>
+            {title}
+          </h2>
+          {paragraphs.map((paragraph, index) => {
+            return <p key={index}>{paragraph}</p>;
+          })}
         </div>
         <FeaturedProjects />
       </div>
-      <LinkButton color="warning" dest="/projects" label="More Projects" />
+      {buttons.map((button) => {
+        return <LinkButton {...button} key={button.id} />;
+      })}
     </section>
   );
 };

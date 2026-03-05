@@ -5,4 +5,5 @@ export interface LinkButtonProps {
   color: "warning" | "success" | "delete";
   label: string;
   dest: LinkHrefType;
+  size: "large" | "medium" | "small";
 }

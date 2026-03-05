@@ -1,6 +1,7 @@
 // NextJS
 import { Injectable, NotFoundException } from '@nestjs/common';
-// The shared packed which i don't know if it's implemented correctly or if it's even necessary but idk man ya know just yapping
+// Shared
+import { GetWeeklyMealPrepResponse } from '@personal-portfolio-website/shared';
 // Status Codes
 import { StatusCodes } from 'http-status-codes';
 // Services
@@ -10,11 +11,14 @@ import { PrismaService } from 'src/modules/db';
 export class GetWeeklyMealPrepService {
   constructor(private prisma: PrismaService) {}
 
-  async getWeeklyMealPrepService() {
+  async getWeeklyMealPrepService(): Promise<GetWeeklyMealPrepResponse> {
     try {
       const foundWeeklyMealPrep = await this.prisma.mealPrep.findFirst({
         orderBy: {
           cookedAt: 'desc',
+        },
+        include: {
+          ingredients: true,
         },
       });
 

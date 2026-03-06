@@ -212,6 +212,7 @@ export type TechSkillOrderByWithRelationInput = {
 
 export type TechSkillWhereUniqueInput = Prisma.AtLeast<{
   id?: string
+  label_category?: Prisma.TechSkillLabelCategoryCompoundUniqueInput
   AND?: Prisma.TechSkillWhereInput | Prisma.TechSkillWhereInput[]
   OR?: Prisma.TechSkillWhereInput[]
   NOT?: Prisma.TechSkillWhereInput | Prisma.TechSkillWhereInput[]
@@ -221,7 +222,7 @@ export type TechSkillWhereUniqueInput = Prisma.AtLeast<{
   category?: Prisma.EnumTechCategoryFilter<"TechSkill"> | $Enums.TechCategory
   createdAt?: Prisma.DateTimeFilter<"TechSkill"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"TechSkill"> | Date | string
-}, "id">
+}, "id" | "label_category">
 
 export type TechSkillOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
@@ -317,6 +318,11 @@ export type TechSkillUncheckedUpdateManyInput = {
   category?: Prisma.EnumTechCategoryFieldUpdateOperationsInput | $Enums.TechCategory
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type TechSkillLabelCategoryCompoundUniqueInput = {
+  label: string
+  category: $Enums.TechCategory
 }
 
 export type TechSkillCountOrderByAggregateInput = {

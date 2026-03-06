@@ -1,13 +1,16 @@
 // Nest
-import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 // Config Module
 import { ConfigModule } from '@nestjs/config';
 // Rate Limiter
 import { ThrottlerModule } from '@nestjs/throttler';
 // Modules
-import { PrismaModule } from './modules/db';
-import { ProjectModule } from './modules/entity/project/project.module';
-import { MealPrepModule } from './modules';
+import {
+  ProjectModule,
+  TechSkillModule,
+  MealPrepModule,
+  PrismaModule,
+} from './modules';
 
 @Module({
   imports: [
@@ -23,6 +26,7 @@ import { MealPrepModule } from './modules';
     PrismaModule,
     ProjectModule,
     MealPrepModule,
+    TechSkillModule,
   ],
 })
 export class AppModule {}

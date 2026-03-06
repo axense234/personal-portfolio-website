@@ -102,8 +102,50 @@ export const homePageHeroSectionData: CommonPageHeroSectionDataType = {
   desc: "Full-stack web developer passionate about building websites. Currently studying Computer Science at UBB.",
   image: "/misc/placeholder.jpg",
   buttons: [
-    { id: 1, color: "warning", dest: "/projects", label: "My Projects" },
-    { id: 2, color: "success", dest: "/about", label: "My Journey" },
+    {
+      id: 1,
+      color: "warning",
+      dest: "/projects",
+      label: "My Projects",
+      size: "large",
+    },
+    {
+      id: 2,
+      color: "success",
+      dest: "/about",
+      label: "My Journey",
+      size: "large",
+    },
+  ],
+};
+
+export const aboutPageHeroSectionData: CommonPageHeroSectionDataType = {
+  title: "About Me",
+  subtitle: "mischevious information",
+  desc: "I am a romanian student passionate about web development. Check out my projects, my programing journey and my hobbies.",
+  image: "/misc/placeholder.jpg",
+  buttons: [
+    {
+      id: 1,
+      color: "warning",
+      dest: "/projects",
+      label: "My Projects",
+      size: "large",
+    },
+    {
+      id: 2,
+      color: "success",
+      dest: "/about",
+      label: "My Journey",
+      size: "large",
+    },
+    {
+      id: 3,
+      color: "delete",
+      dest: "/about",
+      label: "My Hobbies",
+      size: "large",
+    },
   ],
 };
 
@@ -119,6 +161,23 @@ export const homePageAboutTeaserSectionData: SectionDataType = {
       color: "delete",
       dest: "/about",
       label: "Read More",
+      size: "large",
+    },
+  ],
+};
+
+export const aboutPageAboutMeSectionData: SectionDataType = {
+  title: "Who am I?",
+  paragraphs: [
+    "My name is Comanescu Andrei, I am a romanian student currently attending the Faculty of Mathematics and Computer Science at Babes-Bolyai University, studying Computer Science in English as an undergraduate.",
+    "In my free time, I usually like doing web development, learning any technologies.  I also like cooking, long walks and playing some games when im free.",
+  ],
+  buttons: [
+    {
+      id: 1,
+      color: "warning",
+      dest: "/contact",
+      label: "Contact Me",
       size: "large",
     },
   ],
@@ -177,6 +236,13 @@ export const homePageContactTeaserSectionData: SectionDataType = {
       label: "My Resume",
       size: "large",
     },
+  ],
+};
+
+export const aboutPageTechnicalSkillsSectionData: SectionDataType = {
+  title: "Technical Skils",
+  paragraphs: [
+    "Here are all the technologies I know with some varying level of expertise.",
   ],
 };
 

@@ -5,3 +5,4 @@ export * from "./TechSkillProps";
 export * from "./CardProps";
 export * from "./MealPrepDetailsProps";
 export * from "./MealPrepImagesProps";
+export * from "./TechnicalSkillsProps";

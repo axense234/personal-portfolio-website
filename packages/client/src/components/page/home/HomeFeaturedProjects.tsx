@@ -54,7 +54,7 @@ const HomeFeaturedProjects = () => {
         </div>
         <FeaturedProjects />
       </div>
-      {buttons.map((button) => {
+      {buttons?.map((button) => {
         return <LinkButton {...button} key={button.id} />;
       })}
     </section>

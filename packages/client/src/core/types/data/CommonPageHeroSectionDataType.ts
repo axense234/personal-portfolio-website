@@ -1,11 +1,4 @@
-import { LinkHrefType } from "@/core/types";
-
-export type ExperimentalButtonType = {
-  id: number;
-  color: "warning" | "success" | "delete";
-  label: string;
-  dest: LinkHrefType;
-};
+import { LinkButtonProps } from "@/core/interfaces";
 
 export type CommonPageHeroSectionDataType = {
   title: string;
@@ -13,5 +6,5 @@ export type CommonPageHeroSectionDataType = {
   desc: string;
   image: string;
 
-  buttons: ExperimentalButtonType[];
+  buttons: LinkButtonProps[];
 };

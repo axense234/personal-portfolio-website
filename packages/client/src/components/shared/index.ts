@@ -6,3 +6,4 @@ export * from "./Card";
 export * from "./MealPrepDetails";
 export * from "./MealPrepImages";
 export * from "./MealPrepView";
+export * from "./TechnicalSkills";

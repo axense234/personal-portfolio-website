@@ -39,6 +39,7 @@ export type MealPrepMinAggregateOutputType = {
   name: string | null
   coverage: number | null
   cookedAt: Date | null
+  createdAt: Date | null
   updatedAt: Date | null
 }
 
@@ -47,6 +48,7 @@ export type MealPrepMaxAggregateOutputType = {
   name: string | null
   coverage: number | null
   cookedAt: Date | null
+  createdAt: Date | null
   updatedAt: Date | null
 }
 
@@ -56,6 +58,7 @@ export type MealPrepCountAggregateOutputType = {
   coverage: number
   images: number
   cookedAt: number
+  createdAt: number
   updatedAt: number
   _all: number
 }
@@ -74,6 +77,7 @@ export type MealPrepMinAggregateInputType = {
   name?: true
   coverage?: true
   cookedAt?: true
+  createdAt?: true
   updatedAt?: true
 }
 
@@ -82,6 +86,7 @@ export type MealPrepMaxAggregateInputType = {
   name?: true
   coverage?: true
   cookedAt?: true
+  createdAt?: true
   updatedAt?: true
 }
 
@@ -91,6 +96,7 @@ export type MealPrepCountAggregateInputType = {
   coverage?: true
   images?: true
   cookedAt?: true
+  createdAt?: true
   updatedAt?: true
   _all?: true
 }
@@ -187,6 +193,7 @@ export type MealPrepGroupByOutputType = {
   coverage: number
   images: string[]
   cookedAt: Date
+  createdAt: Date
   updatedAt: Date
   _count: MealPrepCountAggregateOutputType | null
   _avg: MealPrepAvgAggregateOutputType | null
@@ -219,6 +226,7 @@ export type MealPrepWhereInput = {
   coverage?: Prisma.IntFilter<"MealPrep"> | number
   images?: Prisma.StringNullableListFilter<"MealPrep">
   cookedAt?: Prisma.DateTimeFilter<"MealPrep"> | Date | string
+  createdAt?: Prisma.DateTimeFilter<"MealPrep"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"MealPrep"> | Date | string
   ingredients?: Prisma.IngredientListRelationFilter
 }
@@ -229,6 +237,7 @@ export type MealPrepOrderByWithRelationInput = {
   coverage?: Prisma.SortOrder
   images?: Prisma.SortOrder
   cookedAt?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   ingredients?: Prisma.IngredientOrderByRelationAggregateInput
 }
@@ -242,6 +251,7 @@ export type MealPrepWhereUniqueInput = Prisma.AtLeast<{
   coverage?: Prisma.IntFilter<"MealPrep"> | number
   images?: Prisma.StringNullableListFilter<"MealPrep">
   cookedAt?: Prisma.DateTimeFilter<"MealPrep"> | Date | string
+  createdAt?: Prisma.DateTimeFilter<"MealPrep"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"MealPrep"> | Date | string
   ingredients?: Prisma.IngredientListRelationFilter
 }, "id">
@@ -252,6 +262,7 @@ export type MealPrepOrderByWithAggregationInput = {
   coverage?: Prisma.SortOrder
   images?: Prisma.SortOrder
   cookedAt?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   _count?: Prisma.MealPrepCountOrderByAggregateInput
   _avg?: Prisma.MealPrepAvgOrderByAggregateInput
@@ -269,15 +280,17 @@ export type MealPrepScalarWhereWithAggregatesInput = {
   coverage?: Prisma.IntWithAggregatesFilter<"MealPrep"> | number
   images?: Prisma.StringNullableListFilter<"MealPrep">
   cookedAt?: Prisma.DateTimeWithAggregatesFilter<"MealPrep"> | Date | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"MealPrep"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"MealPrep"> | Date | string
 }
 
 export type MealPrepCreateInput = {
   id?: string
   name?: string
-  coverage: number
+  coverage?: number
   images?: Prisma.MealPrepCreateimagesInput | string[]
   cookedAt?: Date | string
+  createdAt?: Date | string
   updatedAt?: Date | string
   ingredients?: Prisma.IngredientCreateNestedManyWithoutMeal_prepsInput
 }
@@ -285,9 +298,10 @@ export type MealPrepCreateInput = {
 export type MealPrepUncheckedCreateInput = {
   id?: string
   name?: string
-  coverage: number
+  coverage?: number
   images?: Prisma.MealPrepCreateimagesInput | string[]
   cookedAt?: Date | string
+  createdAt?: Date | string
   updatedAt?: Date | string
   ingredients?: Prisma.IngredientUncheckedCreateNestedManyWithoutMeal_prepsInput
 }
@@ -298,6 +312,7 @@ export type MealPrepUpdateInput = {
   coverage?: Prisma.IntFieldUpdateOperationsInput | number
   images?: Prisma.MealPrepUpdateimagesInput | string[]
   cookedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   ingredients?: Prisma.IngredientUpdateManyWithoutMeal_prepsNestedInput
 }
@@ -308,6 +323,7 @@ export type MealPrepUncheckedUpdateInput = {
   coverage?: Prisma.IntFieldUpdateOperationsInput | number
   images?: Prisma.MealPrepUpdateimagesInput | string[]
   cookedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   ingredients?: Prisma.IngredientUncheckedUpdateManyWithoutMeal_prepsNestedInput
 }
@@ -315,9 +331,10 @@ export type MealPrepUncheckedUpdateInput = {
 export type MealPrepCreateManyInput = {
   id?: string
   name?: string
-  coverage: number
+  coverage?: number
   images?: Prisma.MealPrepCreateimagesInput | string[]
   cookedAt?: Date | string
+  createdAt?: Date | string
   updatedAt?: Date | string
 }
 
@@ -327,6 +344,7 @@ export type MealPrepUpdateManyMutationInput = {
   coverage?: Prisma.IntFieldUpdateOperationsInput | number
   images?: Prisma.MealPrepUpdateimagesInput | string[]
   cookedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -336,6 +354,7 @@ export type MealPrepUncheckedUpdateManyInput = {
   coverage?: Prisma.IntFieldUpdateOperationsInput | number
   images?: Prisma.MealPrepUpdateimagesInput | string[]
   cookedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -355,6 +374,7 @@ export type MealPrepCountOrderByAggregateInput = {
   coverage?: Prisma.SortOrder
   images?: Prisma.SortOrder
   cookedAt?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
@@ -367,6 +387,7 @@ export type MealPrepMaxOrderByAggregateInput = {
   name?: Prisma.SortOrder
   coverage?: Prisma.SortOrder
   cookedAt?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
@@ -375,6 +396,7 @@ export type MealPrepMinOrderByAggregateInput = {
   name?: Prisma.SortOrder
   coverage?: Prisma.SortOrder
   cookedAt?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
@@ -432,18 +454,20 @@ export type MealPrepUpdateimagesInput = {
 export type MealPrepCreateWithoutIngredientsInput = {
   id?: string
   name?: string
-  coverage: number
+  coverage?: number
   images?: Prisma.MealPrepCreateimagesInput | string[]
   cookedAt?: Date | string
+  createdAt?: Date | string
   updatedAt?: Date | string
 }
 
 export type MealPrepUncheckedCreateWithoutIngredientsInput = {
   id?: string
   name?: string
-  coverage: number
+  coverage?: number
   images?: Prisma.MealPrepCreateimagesInput | string[]
   cookedAt?: Date | string
+  createdAt?: Date | string
   updatedAt?: Date | string
 }
 
@@ -477,6 +501,7 @@ export type MealPrepScalarWhereInput = {
   coverage?: Prisma.IntFilter<"MealPrep"> | number
   images?: Prisma.StringNullableListFilter<"MealPrep">
   cookedAt?: Prisma.DateTimeFilter<"MealPrep"> | Date | string
+  createdAt?: Prisma.DateTimeFilter<"MealPrep"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"MealPrep"> | Date | string
 }
 
@@ -486,6 +511,7 @@ export type MealPrepUpdateWithoutIngredientsInput = {
   coverage?: Prisma.IntFieldUpdateOperationsInput | number
   images?: Prisma.MealPrepUpdateimagesInput | string[]
   cookedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -495,6 +521,7 @@ export type MealPrepUncheckedUpdateWithoutIngredientsInput = {
   coverage?: Prisma.IntFieldUpdateOperationsInput | number
   images?: Prisma.MealPrepUpdateimagesInput | string[]
   cookedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -504,6 +531,7 @@ export type MealPrepUncheckedUpdateManyWithoutIngredientsInput = {
   coverage?: Prisma.IntFieldUpdateOperationsInput | number
   images?: Prisma.MealPrepUpdateimagesInput | string[]
   cookedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -544,6 +572,7 @@ export type MealPrepSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   coverage?: boolean
   images?: boolean
   cookedAt?: boolean
+  createdAt?: boolean
   updatedAt?: boolean
   ingredients?: boolean | Prisma.MealPrep$ingredientsArgs<ExtArgs>
   _count?: boolean | Prisma.MealPrepCountOutputTypeDefaultArgs<ExtArgs>
@@ -555,6 +584,7 @@ export type MealPrepSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
   coverage?: boolean
   images?: boolean
   cookedAt?: boolean
+  createdAt?: boolean
   updatedAt?: boolean
 }, ExtArgs["result"]["mealPrep"]>
 
@@ -564,6 +594,7 @@ export type MealPrepSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
   coverage?: boolean
   images?: boolean
   cookedAt?: boolean
+  createdAt?: boolean
   updatedAt?: boolean
 }, ExtArgs["result"]["mealPrep"]>
 
@@ -573,10 +604,11 @@ export type MealPrepSelectScalar = {
   coverage?: boolean
   images?: boolean
   cookedAt?: boolean
+  createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type MealPrepOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "coverage" | "images" | "cookedAt" | "updatedAt", ExtArgs["result"]["mealPrep"]>
+export type MealPrepOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "coverage" | "images" | "cookedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["mealPrep"]>
 export type MealPrepInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   ingredients?: boolean | Prisma.MealPrep$ingredientsArgs<ExtArgs>
   _count?: boolean | Prisma.MealPrepCountOutputTypeDefaultArgs<ExtArgs>
@@ -595,6 +627,7 @@ export type $MealPrepPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
     coverage: number
     images: string[]
     cookedAt: Date
+    createdAt: Date
     updatedAt: Date
   }, ExtArgs["result"]["mealPrep"]>
   composites: {}
@@ -1025,6 +1058,7 @@ export interface MealPrepFieldRefs {
   readonly coverage: Prisma.FieldRef<"MealPrep", 'Int'>
   readonly images: Prisma.FieldRef<"MealPrep", 'String[]'>
   readonly cookedAt: Prisma.FieldRef<"MealPrep", 'DateTime'>
+  readonly createdAt: Prisma.FieldRef<"MealPrep", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"MealPrep", 'DateTime'>
 }
     

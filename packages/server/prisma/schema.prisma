@@ -8,14 +8,62 @@ datasource db {
   provider = "postgresql"
 }
 
+model TechSkillContentSection {
+  id String @id @default(uuid())
+
+  title      String   @default("Section Title")
+  paragraphs String[] @default([])
+
+  content    TechSkillContent @relation(fields: [content_id], references: [id])
+  content_id String           @unique
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model TechSkillContent {
+  id String @id @default(uuid())
+
+  skill    TechSkill @relation(fields: [skill_id], references: [id])
+  skill_id String    @unique
+
+  sections TechSkillContentSection[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
 model TechSkill {
-  id        String       @id @default(uuid())
-  local_rel String
-  label     String
-  dest      String
-  category  TechCategory
-  createdAt DateTime     @default(now())
-  updatedAt DateTime     @updatedAt
+  id String @id @default(uuid())
+
+  tech    Tech   @relation(fields: [tech_id], references: [id])
+  tech_id String @unique
+
+  scope TechSkillScope @default(GENERAL)
+
+  content TechSkillContent?
+
+  projects Project[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([tech_id, scope])
+}
+
+model Tech {
+  id         String @id @default(uuid())
+  icon_src   String
+  label      String
+  dest       String
+  short_desc String
+
+  category TechCategory
+
+  skills TechSkill[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   @@unique([label, category])
 }
@@ -24,31 +72,39 @@ model ProjectImages {
   id          String   @id @default(uuid())
   screenshots String[] @default([])
   thumb       String   @default("https://res.cloudinary.com/birthdayreminder/image/upload/v1772455490/Personal%20Website/jpeg_i3bsqf.jpg")
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  project_id  String   @unique
-  project     Project  @relation(fields: [project_id], references: [id])
+
+  project_id String  @unique
+  project    Project @relation(fields: [project_id], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Project {
-  id                    String         @id @default(uuid())
-  name                  String         @unique @default("Project")
-  short_desc            String         @default("Project short description.")
-  long_desc             String         @default("Project long description.")
-  overview_desc         String         @default("Project overview description.")
-  architecture_desc     String         @default("Project architecture description.")
-  practiced_skills_desc String         @default("Project practiced skills description.")
-  goal_desc             String         @default("Project goal description.")
-  project_phase         String?
-  video_preview         String?
-  github_url            String?
-  website_url           String?
-  website_logo_url      String?
-  docs_url              String?
-  createdAt             DateTime       @default(now())
-  updatedAt             DateTime       @updatedAt
-  images                ProjectImages?
-  project_type          ProjectType    @default(HIDDEN)
+  id                    String @id @default(uuid())
+  name                  String @unique @default("Project")
+  short_desc            String @default("Project short description.")
+  long_desc             String @default("Project long description.")
+  overview_desc         String @default("Project overview description.")
+  architecture_desc     String @default("Project architecture description.")
+  practiced_skills_desc String @default("Project practiced skills description.")
+  goal_desc             String @default("Project goal description.")
+
+  project_phase String?
+  video_preview String?
+
+  github_url       String?
+  website_url      String?
+  website_logo_url String?
+  docs_url         String?
+
+  images       ProjectImages?
+  project_type ProjectType    @default(HIDDEN)
+
+  skills TechSkill[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Ingredient {
@@ -57,19 +113,28 @@ model Ingredient {
   unit   Unit
   amount Int
 
-  createdAt  DateTime   @default(now())
-  updatedAt  DateTime   @updatedAt
   meal_preps MealPrep[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model MealPrep {
-  id          String       @id @default(uuid())
-  name        String       @default("Meal Prep")
-  coverage    Int
-  images      String[]     @default([])
-  cookedAt    DateTime     @default(now())
-  updatedAt   DateTime     @updatedAt
+  id       String   @id @default(uuid())
+  name     String   @default("Meal Prep")
+  coverage Int      @default(3)
+  images   String[] @default([])
+
   ingredients Ingredient[]
+
+  cookedAt  DateTime @default(now())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum TechSkillScope {
+  GENERAL
+  PROJECT
 }
 
 enum ProjectType {

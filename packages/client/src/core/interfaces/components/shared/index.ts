@@ -5,4 +5,7 @@ export * from "./TechSkillProps";
 export * from "./CardProps";
 export * from "./MealPrepDetailsProps";
 export * from "./MealPrepImagesProps";
-export * from "./TechnicalSkillsProps";
+export * from "./TechSkillsProps";
+export * from "./TechSkillsTabNavProps";
+export * from "./TechSkillsTabOptionsProps";
+export * from "./TechSkillsTabViewProps";

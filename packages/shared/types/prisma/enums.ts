@@ -9,6 +9,14 @@
 * 🟢 You can import this file directly.
 */
 
+export const TechSkillScope = {
+  GENERAL: 'GENERAL',
+  PROJECT: 'PROJECT'
+} as const
+
+export type TechSkillScope = (typeof TechSkillScope)[keyof typeof TechSkillScope]
+
+
 export const ProjectType = {
   FEATURED: 'FEATURED',
   DISPLAYED: 'DISPLAYED',

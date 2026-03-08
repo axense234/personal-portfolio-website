@@ -6,4 +6,7 @@ export * from "./Card";
 export * from "./MealPrepDetails";
 export * from "./MealPrepImages";
 export * from "./MealPrepView";
-export * from "./TechnicalSkills";
+export * from "./TechSkills";
+export * from "./TechSkillsTabNav";
+export * from "./TechSkillsTabOptions";
+export * from "./TechSkillsTabView";

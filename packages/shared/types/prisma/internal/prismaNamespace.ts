@@ -384,7 +384,10 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 
 export const ModelName = {
+  TechSkillContentSection: 'TechSkillContentSection',
+  TechSkillContent: 'TechSkillContent',
   TechSkill: 'TechSkill',
+  Tech: 'Tech',
   ProjectImages: 'ProjectImages',
   Project: 'Project',
   Ingredient: 'Ingredient',
@@ -404,10 +407,158 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "techSkill" | "projectImages" | "project" | "ingredient" | "mealPrep"
+    modelProps: "techSkillContentSection" | "techSkillContent" | "techSkill" | "tech" | "projectImages" | "project" | "ingredient" | "mealPrep"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
+    TechSkillContentSection: {
+      payload: Prisma.$TechSkillContentSectionPayload<ExtArgs>
+      fields: Prisma.TechSkillContentSectionFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.TechSkillContentSectionFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechSkillContentSectionPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.TechSkillContentSectionFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechSkillContentSectionPayload>
+        }
+        findFirst: {
+          args: Prisma.TechSkillContentSectionFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechSkillContentSectionPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.TechSkillContentSectionFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechSkillContentSectionPayload>
+        }
+        findMany: {
+          args: Prisma.TechSkillContentSectionFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechSkillContentSectionPayload>[]
+        }
+        create: {
+          args: Prisma.TechSkillContentSectionCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechSkillContentSectionPayload>
+        }
+        createMany: {
+          args: Prisma.TechSkillContentSectionCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.TechSkillContentSectionCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechSkillContentSectionPayload>[]
+        }
+        delete: {
+          args: Prisma.TechSkillContentSectionDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechSkillContentSectionPayload>
+        }
+        update: {
+          args: Prisma.TechSkillContentSectionUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechSkillContentSectionPayload>
+        }
+        deleteMany: {
+          args: Prisma.TechSkillContentSectionDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.TechSkillContentSectionUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.TechSkillContentSectionUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechSkillContentSectionPayload>[]
+        }
+        upsert: {
+          args: Prisma.TechSkillContentSectionUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechSkillContentSectionPayload>
+        }
+        aggregate: {
+          args: Prisma.TechSkillContentSectionAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateTechSkillContentSection>
+        }
+        groupBy: {
+          args: Prisma.TechSkillContentSectionGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TechSkillContentSectionGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.TechSkillContentSectionCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TechSkillContentSectionCountAggregateOutputType> | number
+        }
+      }
+    }
+    TechSkillContent: {
+      payload: Prisma.$TechSkillContentPayload<ExtArgs>
+      fields: Prisma.TechSkillContentFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.TechSkillContentFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechSkillContentPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.TechSkillContentFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechSkillContentPayload>
+        }
+        findFirst: {
+          args: Prisma.TechSkillContentFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechSkillContentPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.TechSkillContentFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechSkillContentPayload>
+        }
+        findMany: {
+          args: Prisma.TechSkillContentFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechSkillContentPayload>[]
+        }
+        create: {
+          args: Prisma.TechSkillContentCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechSkillContentPayload>
+        }
+        createMany: {
+          args: Prisma.TechSkillContentCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.TechSkillContentCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechSkillContentPayload>[]
+        }
+        delete: {
+          args: Prisma.TechSkillContentDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechSkillContentPayload>
+        }
+        update: {
+          args: Prisma.TechSkillContentUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechSkillContentPayload>
+        }
+        deleteMany: {
+          args: Prisma.TechSkillContentDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.TechSkillContentUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.TechSkillContentUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechSkillContentPayload>[]
+        }
+        upsert: {
+          args: Prisma.TechSkillContentUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechSkillContentPayload>
+        }
+        aggregate: {
+          args: Prisma.TechSkillContentAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateTechSkillContent>
+        }
+        groupBy: {
+          args: Prisma.TechSkillContentGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TechSkillContentGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.TechSkillContentCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TechSkillContentCountAggregateOutputType> | number
+        }
+      }
+    }
     TechSkill: {
       payload: Prisma.$TechSkillPayload<ExtArgs>
       fields: Prisma.TechSkillFieldRefs
@@ -479,6 +630,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.TechSkillCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.TechSkillCountAggregateOutputType> | number
+        }
+      }
+    }
+    Tech: {
+      payload: Prisma.$TechPayload<ExtArgs>
+      fields: Prisma.TechFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.TechFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.TechFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechPayload>
+        }
+        findFirst: {
+          args: Prisma.TechFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.TechFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechPayload>
+        }
+        findMany: {
+          args: Prisma.TechFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechPayload>[]
+        }
+        create: {
+          args: Prisma.TechCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechPayload>
+        }
+        createMany: {
+          args: Prisma.TechCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.TechCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechPayload>[]
+        }
+        delete: {
+          args: Prisma.TechDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechPayload>
+        }
+        update: {
+          args: Prisma.TechUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechPayload>
+        }
+        deleteMany: {
+          args: Prisma.TechDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.TechUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.TechUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechPayload>[]
+        }
+        upsert: {
+          args: Prisma.TechUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TechPayload>
+        }
+        aggregate: {
+          args: Prisma.TechAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateTech>
+        }
+        groupBy: {
+          args: Prisma.TechGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TechGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.TechCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TechCountAggregateOutputType> | number
         }
       }
     }
@@ -817,12 +1042,32 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
+export const TechSkillContentSectionScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  paragraphs: 'paragraphs',
+  content_id: 'content_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type TechSkillContentSectionScalarFieldEnum = (typeof TechSkillContentSectionScalarFieldEnum)[keyof typeof TechSkillContentSectionScalarFieldEnum]
+
+
+export const TechSkillContentScalarFieldEnum = {
+  id: 'id',
+  skill_id: 'skill_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type TechSkillContentScalarFieldEnum = (typeof TechSkillContentScalarFieldEnum)[keyof typeof TechSkillContentScalarFieldEnum]
+
+
 export const TechSkillScalarFieldEnum = {
   id: 'id',
-  local_rel: 'local_rel',
-  label: 'label',
-  dest: 'dest',
-  category: 'category',
+  tech_id: 'tech_id',
+  scope: 'scope',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
@@ -830,13 +1075,27 @@ export const TechSkillScalarFieldEnum = {
 export type TechSkillScalarFieldEnum = (typeof TechSkillScalarFieldEnum)[keyof typeof TechSkillScalarFieldEnum]
 
 
+export const TechScalarFieldEnum = {
+  id: 'id',
+  icon_src: 'icon_src',
+  label: 'label',
+  dest: 'dest',
+  short_desc: 'short_desc',
+  category: 'category',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type TechScalarFieldEnum = (typeof TechScalarFieldEnum)[keyof typeof TechScalarFieldEnum]
+
+
 export const ProjectImagesScalarFieldEnum = {
   id: 'id',
   screenshots: 'screenshots',
   thumb: 'thumb',
+  project_id: 'project_id',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt',
-  project_id: 'project_id'
+  updatedAt: 'updatedAt'
 } as const
 
 export type ProjectImagesScalarFieldEnum = (typeof ProjectImagesScalarFieldEnum)[keyof typeof ProjectImagesScalarFieldEnum]
@@ -857,9 +1116,9 @@ export const ProjectScalarFieldEnum = {
   website_url: 'website_url',
   website_logo_url: 'website_logo_url',
   docs_url: 'docs_url',
+  project_type: 'project_type',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt',
-  project_type: 'project_type'
+  updatedAt: 'updatedAt'
 } as const
 
 export type ProjectScalarFieldEnum = (typeof ProjectScalarFieldEnum)[keyof typeof ProjectScalarFieldEnum]
@@ -883,6 +1142,7 @@ export const MealPrepScalarFieldEnum = {
   coverage: 'coverage',
   images: 'images',
   cookedAt: 'cookedAt',
+  createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
 
@@ -934,20 +1194,6 @@ export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaMod
 
 
 /**
- * Reference to a field of type 'TechCategory'
- */
-export type EnumTechCategoryFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TechCategory'>
-    
-
-
-/**
- * Reference to a field of type 'TechCategory[]'
- */
-export type ListEnumTechCategoryFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TechCategory[]'>
-    
-
-
-/**
  * Reference to a field of type 'DateTime'
  */
 export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
@@ -958,6 +1204,34 @@ export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel
  * Reference to a field of type 'DateTime[]'
  */
 export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
+    
+
+
+/**
+ * Reference to a field of type 'TechSkillScope'
+ */
+export type EnumTechSkillScopeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TechSkillScope'>
+    
+
+
+/**
+ * Reference to a field of type 'TechSkillScope[]'
+ */
+export type ListEnumTechSkillScopeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TechSkillScope[]'>
+    
+
+
+/**
+ * Reference to a field of type 'TechCategory'
+ */
+export type EnumTechCategoryFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TechCategory'>
+    
+
+
+/**
+ * Reference to a field of type 'TechCategory[]'
+ */
+export type ListEnumTechCategoryFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TechCategory[]'>
     
 
 
@@ -1111,7 +1385,10 @@ export type PrismaClientOptions = ({
   comments?: runtime.SqlCommenterPlugin[]
 }
 export type GlobalOmitConfig = {
+  techSkillContentSection?: Prisma.TechSkillContentSectionOmit
+  techSkillContent?: Prisma.TechSkillContentOmit
   techSkill?: Prisma.TechSkillOmit
+  tech?: Prisma.TechOmit
   projectImages?: Prisma.ProjectImagesOmit
   project?: Prisma.ProjectOmit
   ingredient?: Prisma.IngredientOmit

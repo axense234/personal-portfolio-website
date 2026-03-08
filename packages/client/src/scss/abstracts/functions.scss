@@ -17,6 +17,16 @@
   @return $found;
 }
 
+@function getLinearGradient($label) {
+  $found: map.get($linearGradients, $label);
+
+  @if $found == null {
+    @error "Linear gradient '#{$label}' not found in $linearGradients map";
+  }
+
+  @return $found;
+}
+
 @function getLightColor($color) {
   $found: null;
   @each $name, $value in map.get($colors, light) {

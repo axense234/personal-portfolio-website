@@ -29,8 +29,8 @@ export * from "./enums"
  * const prisma = new PrismaClient({
  *   adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
  * })
- * // Fetch zero or more TechSkills
- * const techSkills = await prisma.techSkill.findMany()
+ * // Fetch zero or more TechSkillContentSections
+ * const techSkillContentSections = await prisma.techSkillContentSection.findMany()
  * ```
  * 
  * Read more in our [docs](https://pris.ly/d/client).
@@ -40,10 +40,25 @@ export type PrismaClient<LogOpts extends Prisma.LogLevel = never, OmitOpts exten
 export { Prisma }
 
 /**
+ * Model TechSkillContentSection
+ * 
+ */
+export type TechSkillContentSection = Prisma.TechSkillContentSectionModel
+/**
+ * Model TechSkillContent
+ * 
+ */
+export type TechSkillContent = Prisma.TechSkillContentModel
+/**
  * Model TechSkill
  * 
  */
 export type TechSkill = Prisma.TechSkillModel
+/**
+ * Model Tech
+ * 
+ */
+export type Tech = Prisma.TechModel
 /**
  * Model ProjectImages
  * 

@@ -29,6 +29,30 @@ $colors: (
 
 $theme: "dark";
 
+$linearGradients: (
+  "HTML5": linear-gradient(
+      90deg,
+      #e44d26 0%,
+      #e44d26 25%,
+      #f68554 75%,
+      #f68554 100%
+    ),
+  "CSS3": linear-gradient(
+      90deg,
+      #1b73ba 0%,
+      #1b73ba 25%,
+      #489ed0 75%,
+      #489ed0 100%
+    ),
+  "Javascript": linear-gradient(
+      90deg,
+      #d6ba32 0%,
+      #d6ba32 25%,
+      #ffe159 75%,
+      #ffe159 100%
+    ),
+);
+
 $fontSizes: (
   "p-small": 16px,
   "p-medium": 18px,

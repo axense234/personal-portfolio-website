@@ -1,16 +1,16 @@
 "use client";
+// ZZZZZustand
+import { useGeneralStore } from "@/zustand/general/context";
 // Shared Types
-import {
-  GetTechSkillsResponse,
-  TechSkill,
-} from "@personal-portfolio-website/shared";
+import { GetTechSkillsResponse } from "@personal-portfolio-website/shared";
 // Ky
 import ky from "ky";
 // React
 import { useEffect, useState } from "react";
 
 export const useGetTechSkills = () => {
-  const [techSkills, setTechSkills] = useState<TechSkill[]>([]);
+  const { setTechSkills, techSkills } = useGeneralStore((state) => state);
+
   const [isError, setIsError] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 

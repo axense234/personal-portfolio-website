@@ -4,7 +4,7 @@ import aboutTechnicalSkillsStyles from "@/scss/components/page/about/AboutTechni
 // Data
 import { aboutPageTechnicalSkillsSectionData } from "@/data";
 // Components
-import TechnicalSkills from "@/components/shared/TechnicalSkills";
+import TechSkills from "@/components/shared/TechSkills";
 // Hooks
 import { useGetTechSkills } from "@/hooks";
 
@@ -32,7 +32,7 @@ const AboutTechnicalSkills = () => {
             return <p key={index}>{paragraph}</p>;
           })}
         </div>
-        <TechnicalSkills techSkills={techSkills} />
+        <TechSkills techSkills={techSkills} />
       </div>
     </section>
   );

@@ -51,7 +51,10 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
+  TechSkillContentSection: 'TechSkillContentSection',
+  TechSkillContent: 'TechSkillContent',
   TechSkill: 'TechSkill',
+  Tech: 'Tech',
   ProjectImages: 'ProjectImages',
   Project: 'Project',
   Ingredient: 'Ingredient',
@@ -74,12 +77,32 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
+export const TechSkillContentSectionScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  paragraphs: 'paragraphs',
+  content_id: 'content_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type TechSkillContentSectionScalarFieldEnum = (typeof TechSkillContentSectionScalarFieldEnum)[keyof typeof TechSkillContentSectionScalarFieldEnum]
+
+
+export const TechSkillContentScalarFieldEnum = {
+  id: 'id',
+  skill_id: 'skill_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type TechSkillContentScalarFieldEnum = (typeof TechSkillContentScalarFieldEnum)[keyof typeof TechSkillContentScalarFieldEnum]
+
+
 export const TechSkillScalarFieldEnum = {
   id: 'id',
-  local_rel: 'local_rel',
-  label: 'label',
-  dest: 'dest',
-  category: 'category',
+  tech_id: 'tech_id',
+  scope: 'scope',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
@@ -87,13 +110,27 @@ export const TechSkillScalarFieldEnum = {
 export type TechSkillScalarFieldEnum = (typeof TechSkillScalarFieldEnum)[keyof typeof TechSkillScalarFieldEnum]
 
 
+export const TechScalarFieldEnum = {
+  id: 'id',
+  icon_src: 'icon_src',
+  label: 'label',
+  dest: 'dest',
+  short_desc: 'short_desc',
+  category: 'category',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type TechScalarFieldEnum = (typeof TechScalarFieldEnum)[keyof typeof TechScalarFieldEnum]
+
+
 export const ProjectImagesScalarFieldEnum = {
   id: 'id',
   screenshots: 'screenshots',
   thumb: 'thumb',
+  project_id: 'project_id',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt',
-  project_id: 'project_id'
+  updatedAt: 'updatedAt'
 } as const
 
 export type ProjectImagesScalarFieldEnum = (typeof ProjectImagesScalarFieldEnum)[keyof typeof ProjectImagesScalarFieldEnum]
@@ -114,9 +151,9 @@ export const ProjectScalarFieldEnum = {
   website_url: 'website_url',
   website_logo_url: 'website_logo_url',
   docs_url: 'docs_url',
+  project_type: 'project_type',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt',
-  project_type: 'project_type'
+  updatedAt: 'updatedAt'
 } as const
 
 export type ProjectScalarFieldEnum = (typeof ProjectScalarFieldEnum)[keyof typeof ProjectScalarFieldEnum]
@@ -140,6 +177,7 @@ export const MealPrepScalarFieldEnum = {
   coverage: 'coverage',
   images: 'images',
   cookedAt: 'cookedAt',
+  createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
 

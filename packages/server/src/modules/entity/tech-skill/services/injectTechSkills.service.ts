@@ -10,6 +10,7 @@ import { PrismaService } from 'src/modules/db';
 import { techSkillsCreateData } from '../data';
 // Status Codes
 import { StatusCodes } from 'http-status-codes';
+// Shared
 import { InjectTechSkillsResponse } from '@personal-portfolio-website/shared';
 
 @Injectable()

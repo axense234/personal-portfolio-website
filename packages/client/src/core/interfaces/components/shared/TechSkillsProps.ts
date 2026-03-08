@@ -1,6 +1,6 @@
 // Shared
 import { TechSkill } from "@personal-portfolio-website/shared";
 
-export interface TechnicalSkillsProps {
+export interface TechSkillsProps {
   techSkills: TechSkill[];
 }

@@ -33,7 +33,12 @@ const HomeTechnicalSkills = () => {
         </div>
         <Skills />
       </div>
-      <LinkButton color="success" dest="/about" label="More Details" />
+      <LinkButton
+        color="success"
+        dest="/about"
+        label="More Details"
+        size="large"
+      />
     </section>
   );
 };

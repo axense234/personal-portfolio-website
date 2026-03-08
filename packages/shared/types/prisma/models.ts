@@ -8,7 +8,10 @@
  *
  * 🟢 You can import this file directly.
  */
+export type * from './models/TechSkillContentSection'
+export type * from './models/TechSkillContent'
 export type * from './models/TechSkill'
+export type * from './models/Tech'
 export type * from './models/ProjectImages'
 export type * from './models/Project'
 export type * from './models/Ingredient'

@@ -6,7 +6,8 @@
     "build": "lerna run build",
     "clean": "lerna clean",
     "migrate": "cd ./packages/server && npx prisma migrate dev",
-    "generate": "cd ./packages/server && npx prisma generate"
+    "generate": "cd ./packages/server && npx prisma generate",
+    "reset:db": "cd ./packages/server && npx prisma migrate reset"
   },
   "workspaces": [
     "packages/*"

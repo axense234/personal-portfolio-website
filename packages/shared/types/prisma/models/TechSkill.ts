@@ -26,30 +26,24 @@ export type AggregateTechSkill = {
 
 export type TechSkillMinAggregateOutputType = {
   id: string | null
-  local_rel: string | null
-  label: string | null
-  dest: string | null
-  category: $Enums.TechCategory | null
+  tech_id: string | null
+  scope: $Enums.TechSkillScope | null
   createdAt: Date | null
   updatedAt: Date | null
 }
 
 export type TechSkillMaxAggregateOutputType = {
   id: string | null
-  local_rel: string | null
-  label: string | null
-  dest: string | null
-  category: $Enums.TechCategory | null
+  tech_id: string | null
+  scope: $Enums.TechSkillScope | null
   createdAt: Date | null
   updatedAt: Date | null
 }
 
 export type TechSkillCountAggregateOutputType = {
   id: number
-  local_rel: number
-  label: number
-  dest: number
-  category: number
+  tech_id: number
+  scope: number
   createdAt: number
   updatedAt: number
   _all: number
@@ -58,30 +52,24 @@ export type TechSkillCountAggregateOutputType = {
 
 export type TechSkillMinAggregateInputType = {
   id?: true
-  local_rel?: true
-  label?: true
-  dest?: true
-  category?: true
+  tech_id?: true
+  scope?: true
   createdAt?: true
   updatedAt?: true
 }
 
 export type TechSkillMaxAggregateInputType = {
   id?: true
-  local_rel?: true
-  label?: true
-  dest?: true
-  category?: true
+  tech_id?: true
+  scope?: true
   createdAt?: true
   updatedAt?: true
 }
 
 export type TechSkillCountAggregateInputType = {
   id?: true
-  local_rel?: true
-  label?: true
-  dest?: true
-  category?: true
+  tech_id?: true
+  scope?: true
   createdAt?: true
   updatedAt?: true
   _all?: true
@@ -161,10 +149,8 @@ export type TechSkillGroupByArgs<ExtArgs extends runtime.Types.Extensions.Intern
 
 export type TechSkillGroupByOutputType = {
   id: string
-  local_rel: string
-  label: string
-  dest: string
-  category: $Enums.TechCategory
+  tech_id: string
+  scope: $Enums.TechSkillScope
   createdAt: Date
   updatedAt: Date
   _count: TechSkillCountAggregateOutputType | null
@@ -192,44 +178,45 @@ export type TechSkillWhereInput = {
   OR?: Prisma.TechSkillWhereInput[]
   NOT?: Prisma.TechSkillWhereInput | Prisma.TechSkillWhereInput[]
   id?: Prisma.StringFilter<"TechSkill"> | string
-  local_rel?: Prisma.StringFilter<"TechSkill"> | string
-  label?: Prisma.StringFilter<"TechSkill"> | string
-  dest?: Prisma.StringFilter<"TechSkill"> | string
-  category?: Prisma.EnumTechCategoryFilter<"TechSkill"> | $Enums.TechCategory
+  tech_id?: Prisma.StringFilter<"TechSkill"> | string
+  scope?: Prisma.EnumTechSkillScopeFilter<"TechSkill"> | $Enums.TechSkillScope
   createdAt?: Prisma.DateTimeFilter<"TechSkill"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"TechSkill"> | Date | string
+  tech?: Prisma.XOR<Prisma.TechScalarRelationFilter, Prisma.TechWhereInput>
+  content?: Prisma.XOR<Prisma.TechSkillContentNullableScalarRelationFilter, Prisma.TechSkillContentWhereInput> | null
+  projects?: Prisma.ProjectListRelationFilter
 }
 
 export type TechSkillOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  local_rel?: Prisma.SortOrder
-  label?: Prisma.SortOrder
-  dest?: Prisma.SortOrder
-  category?: Prisma.SortOrder
+  tech_id?: Prisma.SortOrder
+  scope?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  tech?: Prisma.TechOrderByWithRelationInput
+  content?: Prisma.TechSkillContentOrderByWithRelationInput
+  projects?: Prisma.ProjectOrderByRelationAggregateInput
 }
 
 export type TechSkillWhereUniqueInput = Prisma.AtLeast<{
   id?: string
-  label_category?: Prisma.TechSkillLabelCategoryCompoundUniqueInput
+  tech_id?: string
+  tech_id_scope?: Prisma.TechSkillTech_idScopeCompoundUniqueInput
   AND?: Prisma.TechSkillWhereInput | Prisma.TechSkillWhereInput[]
   OR?: Prisma.TechSkillWhereInput[]
   NOT?: Prisma.TechSkillWhereInput | Prisma.TechSkillWhereInput[]
-  local_rel?: Prisma.StringFilter<"TechSkill"> | string
-  label?: Prisma.StringFilter<"TechSkill"> | string
-  dest?: Prisma.StringFilter<"TechSkill"> | string
-  category?: Prisma.EnumTechCategoryFilter<"TechSkill"> | $Enums.TechCategory
+  scope?: Prisma.EnumTechSkillScopeFilter<"TechSkill"> | $Enums.TechSkillScope
   createdAt?: Prisma.DateTimeFilter<"TechSkill"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"TechSkill"> | Date | string
-}, "id" | "label_category">
+  tech?: Prisma.XOR<Prisma.TechScalarRelationFilter, Prisma.TechWhereInput>
+  content?: Prisma.XOR<Prisma.TechSkillContentNullableScalarRelationFilter, Prisma.TechSkillContentWhereInput> | null
+  projects?: Prisma.ProjectListRelationFilter
+}, "id" | "tech_id" | "tech_id_scope">
 
 export type TechSkillOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  local_rel?: Prisma.SortOrder
-  label?: Prisma.SortOrder
-  dest?: Prisma.SortOrder
-  category?: Prisma.SortOrder
+  tech_id?: Prisma.SortOrder
+  scope?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   _count?: Prisma.TechSkillCountOrderByAggregateInput
@@ -242,184 +229,515 @@ export type TechSkillScalarWhereWithAggregatesInput = {
   OR?: Prisma.TechSkillScalarWhereWithAggregatesInput[]
   NOT?: Prisma.TechSkillScalarWhereWithAggregatesInput | Prisma.TechSkillScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"TechSkill"> | string
-  local_rel?: Prisma.StringWithAggregatesFilter<"TechSkill"> | string
-  label?: Prisma.StringWithAggregatesFilter<"TechSkill"> | string
-  dest?: Prisma.StringWithAggregatesFilter<"TechSkill"> | string
-  category?: Prisma.EnumTechCategoryWithAggregatesFilter<"TechSkill"> | $Enums.TechCategory
+  tech_id?: Prisma.StringWithAggregatesFilter<"TechSkill"> | string
+  scope?: Prisma.EnumTechSkillScopeWithAggregatesFilter<"TechSkill"> | $Enums.TechSkillScope
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"TechSkill"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"TechSkill"> | Date | string
 }
 
 export type TechSkillCreateInput = {
   id?: string
-  local_rel: string
-  label: string
-  dest: string
-  category: $Enums.TechCategory
+  scope?: $Enums.TechSkillScope
   createdAt?: Date | string
   updatedAt?: Date | string
+  tech: Prisma.TechCreateNestedOneWithoutSkillsInput
+  content?: Prisma.TechSkillContentCreateNestedOneWithoutSkillInput
+  projects?: Prisma.ProjectCreateNestedManyWithoutSkillsInput
 }
 
 export type TechSkillUncheckedCreateInput = {
   id?: string
-  local_rel: string
-  label: string
-  dest: string
-  category: $Enums.TechCategory
+  tech_id: string
+  scope?: $Enums.TechSkillScope
   createdAt?: Date | string
   updatedAt?: Date | string
+  content?: Prisma.TechSkillContentUncheckedCreateNestedOneWithoutSkillInput
+  projects?: Prisma.ProjectUncheckedCreateNestedManyWithoutSkillsInput
 }
 
 export type TechSkillUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  local_rel?: Prisma.StringFieldUpdateOperationsInput | string
-  label?: Prisma.StringFieldUpdateOperationsInput | string
-  dest?: Prisma.StringFieldUpdateOperationsInput | string
-  category?: Prisma.EnumTechCategoryFieldUpdateOperationsInput | $Enums.TechCategory
+  scope?: Prisma.EnumTechSkillScopeFieldUpdateOperationsInput | $Enums.TechSkillScope
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  tech?: Prisma.TechUpdateOneRequiredWithoutSkillsNestedInput
+  content?: Prisma.TechSkillContentUpdateOneWithoutSkillNestedInput
+  projects?: Prisma.ProjectUpdateManyWithoutSkillsNestedInput
 }
 
 export type TechSkillUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  local_rel?: Prisma.StringFieldUpdateOperationsInput | string
-  label?: Prisma.StringFieldUpdateOperationsInput | string
-  dest?: Prisma.StringFieldUpdateOperationsInput | string
-  category?: Prisma.EnumTechCategoryFieldUpdateOperationsInput | $Enums.TechCategory
+  tech_id?: Prisma.StringFieldUpdateOperationsInput | string
+  scope?: Prisma.EnumTechSkillScopeFieldUpdateOperationsInput | $Enums.TechSkillScope
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  content?: Prisma.TechSkillContentUncheckedUpdateOneWithoutSkillNestedInput
+  projects?: Prisma.ProjectUncheckedUpdateManyWithoutSkillsNestedInput
 }
 
 export type TechSkillCreateManyInput = {
   id?: string
-  local_rel: string
-  label: string
-  dest: string
-  category: $Enums.TechCategory
+  tech_id: string
+  scope?: $Enums.TechSkillScope
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
 export type TechSkillUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  local_rel?: Prisma.StringFieldUpdateOperationsInput | string
-  label?: Prisma.StringFieldUpdateOperationsInput | string
-  dest?: Prisma.StringFieldUpdateOperationsInput | string
-  category?: Prisma.EnumTechCategoryFieldUpdateOperationsInput | $Enums.TechCategory
+  scope?: Prisma.EnumTechSkillScopeFieldUpdateOperationsInput | $Enums.TechSkillScope
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type TechSkillUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  local_rel?: Prisma.StringFieldUpdateOperationsInput | string
-  label?: Prisma.StringFieldUpdateOperationsInput | string
-  dest?: Prisma.StringFieldUpdateOperationsInput | string
-  category?: Prisma.EnumTechCategoryFieldUpdateOperationsInput | $Enums.TechCategory
+  tech_id?: Prisma.StringFieldUpdateOperationsInput | string
+  scope?: Prisma.EnumTechSkillScopeFieldUpdateOperationsInput | $Enums.TechSkillScope
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type TechSkillLabelCategoryCompoundUniqueInput = {
-  label: string
-  category: $Enums.TechCategory
+export type TechSkillScalarRelationFilter = {
+  is?: Prisma.TechSkillWhereInput
+  isNot?: Prisma.TechSkillWhereInput
+}
+
+export type TechSkillTech_idScopeCompoundUniqueInput = {
+  tech_id: string
+  scope: $Enums.TechSkillScope
 }
 
 export type TechSkillCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  local_rel?: Prisma.SortOrder
-  label?: Prisma.SortOrder
-  dest?: Prisma.SortOrder
-  category?: Prisma.SortOrder
+  tech_id?: Prisma.SortOrder
+  scope?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
 export type TechSkillMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  local_rel?: Prisma.SortOrder
-  label?: Prisma.SortOrder
-  dest?: Prisma.SortOrder
-  category?: Prisma.SortOrder
+  tech_id?: Prisma.SortOrder
+  scope?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
 export type TechSkillMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  local_rel?: Prisma.SortOrder
-  label?: Prisma.SortOrder
-  dest?: Prisma.SortOrder
-  category?: Prisma.SortOrder
+  tech_id?: Prisma.SortOrder
+  scope?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
-export type StringFieldUpdateOperationsInput = {
-  set?: string
+export type TechSkillListRelationFilter = {
+  every?: Prisma.TechSkillWhereInput
+  some?: Prisma.TechSkillWhereInput
+  none?: Prisma.TechSkillWhereInput
 }
 
-export type EnumTechCategoryFieldUpdateOperationsInput = {
-  set?: $Enums.TechCategory
+export type TechSkillOrderByRelationAggregateInput = {
+  _count?: Prisma.SortOrder
 }
 
-export type DateTimeFieldUpdateOperationsInput = {
-  set?: Date | string
+export type TechSkillCreateNestedOneWithoutContentInput = {
+  create?: Prisma.XOR<Prisma.TechSkillCreateWithoutContentInput, Prisma.TechSkillUncheckedCreateWithoutContentInput>
+  connectOrCreate?: Prisma.TechSkillCreateOrConnectWithoutContentInput
+  connect?: Prisma.TechSkillWhereUniqueInput
 }
 
+export type TechSkillUpdateOneRequiredWithoutContentNestedInput = {
+  create?: Prisma.XOR<Prisma.TechSkillCreateWithoutContentInput, Prisma.TechSkillUncheckedCreateWithoutContentInput>
+  connectOrCreate?: Prisma.TechSkillCreateOrConnectWithoutContentInput
+  upsert?: Prisma.TechSkillUpsertWithoutContentInput
+  connect?: Prisma.TechSkillWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.TechSkillUpdateToOneWithWhereWithoutContentInput, Prisma.TechSkillUpdateWithoutContentInput>, Prisma.TechSkillUncheckedUpdateWithoutContentInput>
+}
+
+export type EnumTechSkillScopeFieldUpdateOperationsInput = {
+  set?: $Enums.TechSkillScope
+}
+
+export type TechSkillCreateNestedManyWithoutTechInput = {
+  create?: Prisma.XOR<Prisma.TechSkillCreateWithoutTechInput, Prisma.TechSkillUncheckedCreateWithoutTechInput> | Prisma.TechSkillCreateWithoutTechInput[] | Prisma.TechSkillUncheckedCreateWithoutTechInput[]
+  connectOrCreate?: Prisma.TechSkillCreateOrConnectWithoutTechInput | Prisma.TechSkillCreateOrConnectWithoutTechInput[]
+  createMany?: Prisma.TechSkillCreateManyTechInputEnvelope
+  connect?: Prisma.TechSkillWhereUniqueInput | Prisma.TechSkillWhereUniqueInput[]
+}
+
+export type TechSkillUncheckedCreateNestedManyWithoutTechInput = {
+  create?: Prisma.XOR<Prisma.TechSkillCreateWithoutTechInput, Prisma.TechSkillUncheckedCreateWithoutTechInput> | Prisma.TechSkillCreateWithoutTechInput[] | Prisma.TechSkillUncheckedCreateWithoutTechInput[]
+  connectOrCreate?: Prisma.TechSkillCreateOrConnectWithoutTechInput | Prisma.TechSkillCreateOrConnectWithoutTechInput[]
+  createMany?: Prisma.TechSkillCreateManyTechInputEnvelope
+  connect?: Prisma.TechSkillWhereUniqueInput | Prisma.TechSkillWhereUniqueInput[]
+}
+
+export type TechSkillUpdateManyWithoutTechNestedInput = {
+  create?: Prisma.XOR<Prisma.TechSkillCreateWithoutTechInput, Prisma.TechSkillUncheckedCreateWithoutTechInput> | Prisma.TechSkillCreateWithoutTechInput[] | Prisma.TechSkillUncheckedCreateWithoutTechInput[]
+  connectOrCreate?: Prisma.TechSkillCreateOrConnectWithoutTechInput | Prisma.TechSkillCreateOrConnectWithoutTechInput[]
+  upsert?: Prisma.TechSkillUpsertWithWhereUniqueWithoutTechInput | Prisma.TechSkillUpsertWithWhereUniqueWithoutTechInput[]
+  createMany?: Prisma.TechSkillCreateManyTechInputEnvelope
+  set?: Prisma.TechSkillWhereUniqueInput | Prisma.TechSkillWhereUniqueInput[]
+  disconnect?: Prisma.TechSkillWhereUniqueInput | Prisma.TechSkillWhereUniqueInput[]
+  delete?: Prisma.TechSkillWhereUniqueInput | Prisma.TechSkillWhereUniqueInput[]
+  connect?: Prisma.TechSkillWhereUniqueInput | Prisma.TechSkillWhereUniqueInput[]
+  update?: Prisma.TechSkillUpdateWithWhereUniqueWithoutTechInput | Prisma.TechSkillUpdateWithWhereUniqueWithoutTechInput[]
+  updateMany?: Prisma.TechSkillUpdateManyWithWhereWithoutTechInput | Prisma.TechSkillUpdateManyWithWhereWithoutTechInput[]
+  deleteMany?: Prisma.TechSkillScalarWhereInput | Prisma.TechSkillScalarWhereInput[]
+}
+
+export type TechSkillUncheckedUpdateManyWithoutTechNestedInput = {
+  create?: Prisma.XOR<Prisma.TechSkillCreateWithoutTechInput, Prisma.TechSkillUncheckedCreateWithoutTechInput> | Prisma.TechSkillCreateWithoutTechInput[] | Prisma.TechSkillUncheckedCreateWithoutTechInput[]
+  connectOrCreate?: Prisma.TechSkillCreateOrConnectWithoutTechInput | Prisma.TechSkillCreateOrConnectWithoutTechInput[]
+  upsert?: Prisma.TechSkillUpsertWithWhereUniqueWithoutTechInput | Prisma.TechSkillUpsertWithWhereUniqueWithoutTechInput[]
+  createMany?: Prisma.TechSkillCreateManyTechInputEnvelope
+  set?: Prisma.TechSkillWhereUniqueInput | Prisma.TechSkillWhereUniqueInput[]
+  disconnect?: Prisma.TechSkillWhereUniqueInput | Prisma.TechSkillWhereUniqueInput[]
+  delete?: Prisma.TechSkillWhereUniqueInput | Prisma.TechSkillWhereUniqueInput[]
+  connect?: Prisma.TechSkillWhereUniqueInput | Prisma.TechSkillWhereUniqueInput[]
+  update?: Prisma.TechSkillUpdateWithWhereUniqueWithoutTechInput | Prisma.TechSkillUpdateWithWhereUniqueWithoutTechInput[]
+  updateMany?: Prisma.TechSkillUpdateManyWithWhereWithoutTechInput | Prisma.TechSkillUpdateManyWithWhereWithoutTechInput[]
+  deleteMany?: Prisma.TechSkillScalarWhereInput | Prisma.TechSkillScalarWhereInput[]
+}
+
+export type TechSkillCreateNestedManyWithoutProjectsInput = {
+  create?: Prisma.XOR<Prisma.TechSkillCreateWithoutProjectsInput, Prisma.TechSkillUncheckedCreateWithoutProjectsInput> | Prisma.TechSkillCreateWithoutProjectsInput[] | Prisma.TechSkillUncheckedCreateWithoutProjectsInput[]
+  connectOrCreate?: Prisma.TechSkillCreateOrConnectWithoutProjectsInput | Prisma.TechSkillCreateOrConnectWithoutProjectsInput[]
+  connect?: Prisma.TechSkillWhereUniqueInput | Prisma.TechSkillWhereUniqueInput[]
+}
+
+export type TechSkillUncheckedCreateNestedManyWithoutProjectsInput = {
+  create?: Prisma.XOR<Prisma.TechSkillCreateWithoutProjectsInput, Prisma.TechSkillUncheckedCreateWithoutProjectsInput> | Prisma.TechSkillCreateWithoutProjectsInput[] | Prisma.TechSkillUncheckedCreateWithoutProjectsInput[]
+  connectOrCreate?: Prisma.TechSkillCreateOrConnectWithoutProjectsInput | Prisma.TechSkillCreateOrConnectWithoutProjectsInput[]
+  connect?: Prisma.TechSkillWhereUniqueInput | Prisma.TechSkillWhereUniqueInput[]
+}
+
+export type TechSkillUpdateManyWithoutProjectsNestedInput = {
+  create?: Prisma.XOR<Prisma.TechSkillCreateWithoutProjectsInput, Prisma.TechSkillUncheckedCreateWithoutProjectsInput> | Prisma.TechSkillCreateWithoutProjectsInput[] | Prisma.TechSkillUncheckedCreateWithoutProjectsInput[]
+  connectOrCreate?: Prisma.TechSkillCreateOrConnectWithoutProjectsInput | Prisma.TechSkillCreateOrConnectWithoutProjectsInput[]
+  upsert?: Prisma.TechSkillUpsertWithWhereUniqueWithoutProjectsInput | Prisma.TechSkillUpsertWithWhereUniqueWithoutProjectsInput[]
+  set?: Prisma.TechSkillWhereUniqueInput | Prisma.TechSkillWhereUniqueInput[]
+  disconnect?: Prisma.TechSkillWhereUniqueInput | Prisma.TechSkillWhereUniqueInput[]
+  delete?: Prisma.TechSkillWhereUniqueInput | Prisma.TechSkillWhereUniqueInput[]
+  connect?: Prisma.TechSkillWhereUniqueInput | Prisma.TechSkillWhereUniqueInput[]
+  update?: Prisma.TechSkillUpdateWithWhereUniqueWithoutProjectsInput | Prisma.TechSkillUpdateWithWhereUniqueWithoutProjectsInput[]
+  updateMany?: Prisma.TechSkillUpdateManyWithWhereWithoutProjectsInput | Prisma.TechSkillUpdateManyWithWhereWithoutProjectsInput[]
+  deleteMany?: Prisma.TechSkillScalarWhereInput | Prisma.TechSkillScalarWhereInput[]
+}
+
+export type TechSkillUncheckedUpdateManyWithoutProjectsNestedInput = {
+  create?: Prisma.XOR<Prisma.TechSkillCreateWithoutProjectsInput, Prisma.TechSkillUncheckedCreateWithoutProjectsInput> | Prisma.TechSkillCreateWithoutProjectsInput[] | Prisma.TechSkillUncheckedCreateWithoutProjectsInput[]
+  connectOrCreate?: Prisma.TechSkillCreateOrConnectWithoutProjectsInput | Prisma.TechSkillCreateOrConnectWithoutProjectsInput[]
+  upsert?: Prisma.TechSkillUpsertWithWhereUniqueWithoutProjectsInput | Prisma.TechSkillUpsertWithWhereUniqueWithoutProjectsInput[]
+  set?: Prisma.TechSkillWhereUniqueInput | Prisma.TechSkillWhereUniqueInput[]
+  disconnect?: Prisma.TechSkillWhereUniqueInput | Prisma.TechSkillWhereUniqueInput[]
+  delete?: Prisma.TechSkillWhereUniqueInput | Prisma.TechSkillWhereUniqueInput[]
+  connect?: Prisma.TechSkillWhereUniqueInput | Prisma.TechSkillWhereUniqueInput[]
+  update?: Prisma.TechSkillUpdateWithWhereUniqueWithoutProjectsInput | Prisma.TechSkillUpdateWithWhereUniqueWithoutProjectsInput[]
+  updateMany?: Prisma.TechSkillUpdateManyWithWhereWithoutProjectsInput | Prisma.TechSkillUpdateManyWithWhereWithoutProjectsInput[]
+  deleteMany?: Prisma.TechSkillScalarWhereInput | Prisma.TechSkillScalarWhereInput[]
+}
+
+export type TechSkillCreateWithoutContentInput = {
+  id?: string
+  scope?: $Enums.TechSkillScope
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  tech: Prisma.TechCreateNestedOneWithoutSkillsInput
+  projects?: Prisma.ProjectCreateNestedManyWithoutSkillsInput
+}
+
+export type TechSkillUncheckedCreateWithoutContentInput = {
+  id?: string
+  tech_id: string
+  scope?: $Enums.TechSkillScope
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  projects?: Prisma.ProjectUncheckedCreateNestedManyWithoutSkillsInput
+}
+
+export type TechSkillCreateOrConnectWithoutContentInput = {
+  where: Prisma.TechSkillWhereUniqueInput
+  create: Prisma.XOR<Prisma.TechSkillCreateWithoutContentInput, Prisma.TechSkillUncheckedCreateWithoutContentInput>
+}
+
+export type TechSkillUpsertWithoutContentInput = {
+  update: Prisma.XOR<Prisma.TechSkillUpdateWithoutContentInput, Prisma.TechSkillUncheckedUpdateWithoutContentInput>
+  create: Prisma.XOR<Prisma.TechSkillCreateWithoutContentInput, Prisma.TechSkillUncheckedCreateWithoutContentInput>
+  where?: Prisma.TechSkillWhereInput
+}
+
+export type TechSkillUpdateToOneWithWhereWithoutContentInput = {
+  where?: Prisma.TechSkillWhereInput
+  data: Prisma.XOR<Prisma.TechSkillUpdateWithoutContentInput, Prisma.TechSkillUncheckedUpdateWithoutContentInput>
+}
+
+export type TechSkillUpdateWithoutContentInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  scope?: Prisma.EnumTechSkillScopeFieldUpdateOperationsInput | $Enums.TechSkillScope
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  tech?: Prisma.TechUpdateOneRequiredWithoutSkillsNestedInput
+  projects?: Prisma.ProjectUpdateManyWithoutSkillsNestedInput
+}
+
+export type TechSkillUncheckedUpdateWithoutContentInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  tech_id?: Prisma.StringFieldUpdateOperationsInput | string
+  scope?: Prisma.EnumTechSkillScopeFieldUpdateOperationsInput | $Enums.TechSkillScope
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  projects?: Prisma.ProjectUncheckedUpdateManyWithoutSkillsNestedInput
+}
+
+export type TechSkillCreateWithoutTechInput = {
+  id?: string
+  scope?: $Enums.TechSkillScope
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  content?: Prisma.TechSkillContentCreateNestedOneWithoutSkillInput
+  projects?: Prisma.ProjectCreateNestedManyWithoutSkillsInput
+}
+
+export type TechSkillUncheckedCreateWithoutTechInput = {
+  id?: string
+  scope?: $Enums.TechSkillScope
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  content?: Prisma.TechSkillContentUncheckedCreateNestedOneWithoutSkillInput
+  projects?: Prisma.ProjectUncheckedCreateNestedManyWithoutSkillsInput
+}
+
+export type TechSkillCreateOrConnectWithoutTechInput = {
+  where: Prisma.TechSkillWhereUniqueInput
+  create: Prisma.XOR<Prisma.TechSkillCreateWithoutTechInput, Prisma.TechSkillUncheckedCreateWithoutTechInput>
+}
+
+export type TechSkillCreateManyTechInputEnvelope = {
+  data: Prisma.TechSkillCreateManyTechInput | Prisma.TechSkillCreateManyTechInput[]
+  skipDuplicates?: boolean
+}
+
+export type TechSkillUpsertWithWhereUniqueWithoutTechInput = {
+  where: Prisma.TechSkillWhereUniqueInput
+  update: Prisma.XOR<Prisma.TechSkillUpdateWithoutTechInput, Prisma.TechSkillUncheckedUpdateWithoutTechInput>
+  create: Prisma.XOR<Prisma.TechSkillCreateWithoutTechInput, Prisma.TechSkillUncheckedCreateWithoutTechInput>
+}
+
+export type TechSkillUpdateWithWhereUniqueWithoutTechInput = {
+  where: Prisma.TechSkillWhereUniqueInput
+  data: Prisma.XOR<Prisma.TechSkillUpdateWithoutTechInput, Prisma.TechSkillUncheckedUpdateWithoutTechInput>
+}
+
+export type TechSkillUpdateManyWithWhereWithoutTechInput = {
+  where: Prisma.TechSkillScalarWhereInput
+  data: Prisma.XOR<Prisma.TechSkillUpdateManyMutationInput, Prisma.TechSkillUncheckedUpdateManyWithoutTechInput>
+}
+
+export type TechSkillScalarWhereInput = {
+  AND?: Prisma.TechSkillScalarWhereInput | Prisma.TechSkillScalarWhereInput[]
+  OR?: Prisma.TechSkillScalarWhereInput[]
+  NOT?: Prisma.TechSkillScalarWhereInput | Prisma.TechSkillScalarWhereInput[]
+  id?: Prisma.StringFilter<"TechSkill"> | string
+  tech_id?: Prisma.StringFilter<"TechSkill"> | string
+  scope?: Prisma.EnumTechSkillScopeFilter<"TechSkill"> | $Enums.TechSkillScope
+  createdAt?: Prisma.DateTimeFilter<"TechSkill"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"TechSkill"> | Date | string
+}
+
+export type TechSkillCreateWithoutProjectsInput = {
+  id?: string
+  scope?: $Enums.TechSkillScope
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  tech: Prisma.TechCreateNestedOneWithoutSkillsInput
+  content?: Prisma.TechSkillContentCreateNestedOneWithoutSkillInput
+}
+
+export type TechSkillUncheckedCreateWithoutProjectsInput = {
+  id?: string
+  tech_id: string
+  scope?: $Enums.TechSkillScope
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  content?: Prisma.TechSkillContentUncheckedCreateNestedOneWithoutSkillInput
+}
+
+export type TechSkillCreateOrConnectWithoutProjectsInput = {
+  where: Prisma.TechSkillWhereUniqueInput
+  create: Prisma.XOR<Prisma.TechSkillCreateWithoutProjectsInput, Prisma.TechSkillUncheckedCreateWithoutProjectsInput>
+}
+
+export type TechSkillUpsertWithWhereUniqueWithoutProjectsInput = {
+  where: Prisma.TechSkillWhereUniqueInput
+  update: Prisma.XOR<Prisma.TechSkillUpdateWithoutProjectsInput, Prisma.TechSkillUncheckedUpdateWithoutProjectsInput>
+  create: Prisma.XOR<Prisma.TechSkillCreateWithoutProjectsInput, Prisma.TechSkillUncheckedCreateWithoutProjectsInput>
+}
+
+export type TechSkillUpdateWithWhereUniqueWithoutProjectsInput = {
+  where: Prisma.TechSkillWhereUniqueInput
+  data: Prisma.XOR<Prisma.TechSkillUpdateWithoutProjectsInput, Prisma.TechSkillUncheckedUpdateWithoutProjectsInput>
+}
+
+export type TechSkillUpdateManyWithWhereWithoutProjectsInput = {
+  where: Prisma.TechSkillScalarWhereInput
+  data: Prisma.XOR<Prisma.TechSkillUpdateManyMutationInput, Prisma.TechSkillUncheckedUpdateManyWithoutProjectsInput>
+}
+
+export type TechSkillCreateManyTechInput = {
+  id?: string
+  scope?: $Enums.TechSkillScope
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type TechSkillUpdateWithoutTechInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  scope?: Prisma.EnumTechSkillScopeFieldUpdateOperationsInput | $Enums.TechSkillScope
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  content?: Prisma.TechSkillContentUpdateOneWithoutSkillNestedInput
+  projects?: Prisma.ProjectUpdateManyWithoutSkillsNestedInput
+}
+
+export type TechSkillUncheckedUpdateWithoutTechInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  scope?: Prisma.EnumTechSkillScopeFieldUpdateOperationsInput | $Enums.TechSkillScope
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  content?: Prisma.TechSkillContentUncheckedUpdateOneWithoutSkillNestedInput
+  projects?: Prisma.ProjectUncheckedUpdateManyWithoutSkillsNestedInput
+}
+
+export type TechSkillUncheckedUpdateManyWithoutTechInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  scope?: Prisma.EnumTechSkillScopeFieldUpdateOperationsInput | $Enums.TechSkillScope
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type TechSkillUpdateWithoutProjectsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  scope?: Prisma.EnumTechSkillScopeFieldUpdateOperationsInput | $Enums.TechSkillScope
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  tech?: Prisma.TechUpdateOneRequiredWithoutSkillsNestedInput
+  content?: Prisma.TechSkillContentUpdateOneWithoutSkillNestedInput
+}
+
+export type TechSkillUncheckedUpdateWithoutProjectsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  tech_id?: Prisma.StringFieldUpdateOperationsInput | string
+  scope?: Prisma.EnumTechSkillScopeFieldUpdateOperationsInput | $Enums.TechSkillScope
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  content?: Prisma.TechSkillContentUncheckedUpdateOneWithoutSkillNestedInput
+}
+
+export type TechSkillUncheckedUpdateManyWithoutProjectsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  tech_id?: Prisma.StringFieldUpdateOperationsInput | string
+  scope?: Prisma.EnumTechSkillScopeFieldUpdateOperationsInput | $Enums.TechSkillScope
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+
+/**
+ * Count Type TechSkillCountOutputType
+ */
+
+export type TechSkillCountOutputType = {
+  projects: number
+}
+
+export type TechSkillCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  projects?: boolean | TechSkillCountOutputTypeCountProjectsArgs
+}
+
+/**
+ * TechSkillCountOutputType without action
+ */
+export type TechSkillCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the TechSkillCountOutputType
+   */
+  select?: Prisma.TechSkillCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * TechSkillCountOutputType without action
+ */
+export type TechSkillCountOutputTypeCountProjectsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ProjectWhereInput
+}
 
 
 export type TechSkillSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  local_rel?: boolean
-  label?: boolean
-  dest?: boolean
-  category?: boolean
+  tech_id?: boolean
+  scope?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  tech?: boolean | Prisma.TechDefaultArgs<ExtArgs>
+  content?: boolean | Prisma.TechSkill$contentArgs<ExtArgs>
+  projects?: boolean | Prisma.TechSkill$projectsArgs<ExtArgs>
+  _count?: boolean | Prisma.TechSkillCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["techSkill"]>
 
 export type TechSkillSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  local_rel?: boolean
-  label?: boolean
-  dest?: boolean
-  category?: boolean
+  tech_id?: boolean
+  scope?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  tech?: boolean | Prisma.TechDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["techSkill"]>
 
 export type TechSkillSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  local_rel?: boolean
-  label?: boolean
-  dest?: boolean
-  category?: boolean
+  tech_id?: boolean
+  scope?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  tech?: boolean | Prisma.TechDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["techSkill"]>
 
 export type TechSkillSelectScalar = {
   id?: boolean
-  local_rel?: boolean
-  label?: boolean
-  dest?: boolean
-  category?: boolean
+  tech_id?: boolean
+  scope?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type TechSkillOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "local_rel" | "label" | "dest" | "category" | "createdAt" | "updatedAt", ExtArgs["result"]["techSkill"]>
+export type TechSkillOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "tech_id" | "scope" | "createdAt" | "updatedAt", ExtArgs["result"]["techSkill"]>
+export type TechSkillInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  tech?: boolean | Prisma.TechDefaultArgs<ExtArgs>
+  content?: boolean | Prisma.TechSkill$contentArgs<ExtArgs>
+  projects?: boolean | Prisma.TechSkill$projectsArgs<ExtArgs>
+  _count?: boolean | Prisma.TechSkillCountOutputTypeDefaultArgs<ExtArgs>
+}
+export type TechSkillIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  tech?: boolean | Prisma.TechDefaultArgs<ExtArgs>
+}
+export type TechSkillIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  tech?: boolean | Prisma.TechDefaultArgs<ExtArgs>
+}
 
 export type $TechSkillPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "TechSkill"
-  objects: {}
+  objects: {
+    tech: Prisma.$TechPayload<ExtArgs>
+    content: Prisma.$TechSkillContentPayload<ExtArgs> | null
+    projects: Prisma.$ProjectPayload<ExtArgs>[]
+  }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
-    local_rel: string
-    label: string
-    dest: string
-    category: $Enums.TechCategory
+    tech_id: string
+    scope: $Enums.TechSkillScope
     createdAt: Date
     updatedAt: Date
   }, ExtArgs["result"]["techSkill"]>
@@ -816,6 +1134,9 @@ readonly fields: TechSkillFieldRefs;
  */
 export interface Prisma__TechSkillClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  tech<T extends Prisma.TechDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.TechDefaultArgs<ExtArgs>>): Prisma.Prisma__TechClient<runtime.Types.Result.GetResult<Prisma.$TechPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  content<T extends Prisma.TechSkill$contentArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.TechSkill$contentArgs<ExtArgs>>): Prisma.Prisma__TechSkillContentClient<runtime.Types.Result.GetResult<Prisma.$TechSkillContentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  projects<T extends Prisma.TechSkill$projectsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.TechSkill$projectsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProjectPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -846,10 +1167,8 @@ export interface Prisma__TechSkillClient<T, Null = never, ExtArgs extends runtim
  */
 export interface TechSkillFieldRefs {
   readonly id: Prisma.FieldRef<"TechSkill", 'String'>
-  readonly local_rel: Prisma.FieldRef<"TechSkill", 'String'>
-  readonly label: Prisma.FieldRef<"TechSkill", 'String'>
-  readonly dest: Prisma.FieldRef<"TechSkill", 'String'>
-  readonly category: Prisma.FieldRef<"TechSkill", 'TechCategory'>
+  readonly tech_id: Prisma.FieldRef<"TechSkill", 'String'>
+  readonly scope: Prisma.FieldRef<"TechSkill", 'TechSkillScope'>
   readonly createdAt: Prisma.FieldRef<"TechSkill", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"TechSkill", 'DateTime'>
 }
@@ -869,6 +1188,10 @@ export type TechSkillFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.Int
    */
   omit?: Prisma.TechSkillOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TechSkillInclude<ExtArgs> | null
+  /**
    * Filter, which TechSkill to fetch.
    */
   where: Prisma.TechSkillWhereUniqueInput
@@ -887,6 +1210,10 @@ export type TechSkillFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensi
    */
   omit?: Prisma.TechSkillOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TechSkillInclude<ExtArgs> | null
+  /**
    * Filter, which TechSkill to fetch.
    */
   where: Prisma.TechSkillWhereUniqueInput
@@ -904,6 +1231,10 @@ export type TechSkillFindFirstArgs<ExtArgs extends runtime.Types.Extensions.Inte
    * Omit specific fields from the TechSkill
    */
   omit?: Prisma.TechSkillOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TechSkillInclude<ExtArgs> | null
   /**
    * Filter, which TechSkill to fetch.
    */
@@ -953,6 +1284,10 @@ export type TechSkillFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensio
    */
   omit?: Prisma.TechSkillOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TechSkillInclude<ExtArgs> | null
+  /**
    * Filter, which TechSkill to fetch.
    */
   where?: Prisma.TechSkillWhereInput
@@ -1001,6 +1336,10 @@ export type TechSkillFindManyArgs<ExtArgs extends runtime.Types.Extensions.Inter
    */
   omit?: Prisma.TechSkillOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TechSkillInclude<ExtArgs> | null
+  /**
    * Filter, which TechSkills to fetch.
    */
   where?: Prisma.TechSkillWhereInput
@@ -1044,6 +1383,10 @@ export type TechSkillCreateArgs<ExtArgs extends runtime.Types.Extensions.Interna
    */
   omit?: Prisma.TechSkillOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TechSkillInclude<ExtArgs> | null
+  /**
    * The data needed to create a TechSkill.
    */
   data: Prisma.XOR<Prisma.TechSkillCreateInput, Prisma.TechSkillUncheckedCreateInput>
@@ -1077,6 +1420,10 @@ export type TechSkillCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Exten
    */
   data: Prisma.TechSkillCreateManyInput | Prisma.TechSkillCreateManyInput[]
   skipDuplicates?: boolean
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TechSkillIncludeCreateManyAndReturn<ExtArgs> | null
 }
 
 /**
@@ -1091,6 +1438,10 @@ export type TechSkillUpdateArgs<ExtArgs extends runtime.Types.Extensions.Interna
    * Omit specific fields from the TechSkill
    */
   omit?: Prisma.TechSkillOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TechSkillInclude<ExtArgs> | null
   /**
    * The data needed to update a TechSkill.
    */
@@ -1143,6 +1494,10 @@ export type TechSkillUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Exten
    * Limit how many TechSkills to update.
    */
   limit?: number
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TechSkillIncludeUpdateManyAndReturn<ExtArgs> | null
 }
 
 /**
@@ -1157,6 +1512,10 @@ export type TechSkillUpsertArgs<ExtArgs extends runtime.Types.Extensions.Interna
    * Omit specific fields from the TechSkill
    */
   omit?: Prisma.TechSkillOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TechSkillInclude<ExtArgs> | null
   /**
    * The filter to search for the TechSkill to update in case it exists.
    */
@@ -1184,6 +1543,10 @@ export type TechSkillDeleteArgs<ExtArgs extends runtime.Types.Extensions.Interna
    */
   omit?: Prisma.TechSkillOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TechSkillInclude<ExtArgs> | null
+  /**
    * Filter which TechSkill to delete.
    */
   where: Prisma.TechSkillWhereUniqueInput
@@ -1204,6 +1567,49 @@ export type TechSkillDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Int
 }
 
 /**
+ * TechSkill.content
+ */
+export type TechSkill$contentArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the TechSkillContent
+   */
+  select?: Prisma.TechSkillContentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the TechSkillContent
+   */
+  omit?: Prisma.TechSkillContentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TechSkillContentInclude<ExtArgs> | null
+  where?: Prisma.TechSkillContentWhereInput
+}
+
+/**
+ * TechSkill.projects
+ */
+export type TechSkill$projectsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Project
+   */
+  select?: Prisma.ProjectSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Project
+   */
+  omit?: Prisma.ProjectOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProjectInclude<ExtArgs> | null
+  where?: Prisma.ProjectWhereInput
+  orderBy?: Prisma.ProjectOrderByWithRelationInput | Prisma.ProjectOrderByWithRelationInput[]
+  cursor?: Prisma.ProjectWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ProjectScalarFieldEnum | Prisma.ProjectScalarFieldEnum[]
+}
+
+/**
  * TechSkill without action
  */
 export type TechSkillDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1215,4 +1621,8 @@ export type TechSkillDefaultArgs<ExtArgs extends runtime.Types.Extensions.Intern
    * Omit specific fields from the TechSkill
    */
   omit?: Prisma.TechSkillOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TechSkillInclude<ExtArgs> | null
 }

@@ -29,13 +29,6 @@ export type StringFilter<$PrismaModel = never> = {
   not?: Prisma.NestedStringFilter<$PrismaModel> | string
 }
 
-export type EnumTechCategoryFilter<$PrismaModel = never> = {
-  equals?: $Enums.TechCategory | Prisma.EnumTechCategoryFieldRefInput<$PrismaModel>
-  in?: $Enums.TechCategory[] | Prisma.ListEnumTechCategoryFieldRefInput<$PrismaModel>
-  notIn?: $Enums.TechCategory[] | Prisma.ListEnumTechCategoryFieldRefInput<$PrismaModel>
-  not?: Prisma.NestedEnumTechCategoryFilter<$PrismaModel> | $Enums.TechCategory
-}
-
 export type DateTimeFilter<$PrismaModel = never> = {
   equals?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
   in?: Date[] | string[] | Prisma.ListDateTimeFieldRefInput<$PrismaModel>
@@ -65,16 +58,6 @@ export type StringWithAggregatesFilter<$PrismaModel = never> = {
   _max?: Prisma.NestedStringFilter<$PrismaModel>
 }
 
-export type EnumTechCategoryWithAggregatesFilter<$PrismaModel = never> = {
-  equals?: $Enums.TechCategory | Prisma.EnumTechCategoryFieldRefInput<$PrismaModel>
-  in?: $Enums.TechCategory[] | Prisma.ListEnumTechCategoryFieldRefInput<$PrismaModel>
-  notIn?: $Enums.TechCategory[] | Prisma.ListEnumTechCategoryFieldRefInput<$PrismaModel>
-  not?: Prisma.NestedEnumTechCategoryWithAggregatesFilter<$PrismaModel> | $Enums.TechCategory
-  _count?: Prisma.NestedIntFilter<$PrismaModel>
-  _min?: Prisma.NestedEnumTechCategoryFilter<$PrismaModel>
-  _max?: Prisma.NestedEnumTechCategoryFilter<$PrismaModel>
-}
-
 export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
   equals?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
   in?: Date[] | string[] | Prisma.ListDateTimeFieldRefInput<$PrismaModel>
@@ -87,6 +70,40 @@ export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedDateTimeFilter<$PrismaModel>
   _max?: Prisma.NestedDateTimeFilter<$PrismaModel>
+}
+
+export type EnumTechSkillScopeFilter<$PrismaModel = never> = {
+  equals?: $Enums.TechSkillScope | Prisma.EnumTechSkillScopeFieldRefInput<$PrismaModel>
+  in?: $Enums.TechSkillScope[] | Prisma.ListEnumTechSkillScopeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TechSkillScope[] | Prisma.ListEnumTechSkillScopeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTechSkillScopeFilter<$PrismaModel> | $Enums.TechSkillScope
+}
+
+export type EnumTechSkillScopeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TechSkillScope | Prisma.EnumTechSkillScopeFieldRefInput<$PrismaModel>
+  in?: $Enums.TechSkillScope[] | Prisma.ListEnumTechSkillScopeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TechSkillScope[] | Prisma.ListEnumTechSkillScopeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTechSkillScopeWithAggregatesFilter<$PrismaModel> | $Enums.TechSkillScope
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTechSkillScopeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTechSkillScopeFilter<$PrismaModel>
+}
+
+export type EnumTechCategoryFilter<$PrismaModel = never> = {
+  equals?: $Enums.TechCategory | Prisma.EnumTechCategoryFieldRefInput<$PrismaModel>
+  in?: $Enums.TechCategory[] | Prisma.ListEnumTechCategoryFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TechCategory[] | Prisma.ListEnumTechCategoryFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTechCategoryFilter<$PrismaModel> | $Enums.TechCategory
+}
+
+export type EnumTechCategoryWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TechCategory | Prisma.EnumTechCategoryFieldRefInput<$PrismaModel>
+  in?: $Enums.TechCategory[] | Prisma.ListEnumTechCategoryFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TechCategory[] | Prisma.ListEnumTechCategoryFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTechCategoryWithAggregatesFilter<$PrismaModel> | $Enums.TechCategory
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTechCategoryFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTechCategoryFilter<$PrismaModel>
 }
 
 export type StringNullableFilter<$PrismaModel = never> = {
@@ -202,13 +219,6 @@ export type NestedStringFilter<$PrismaModel = never> = {
   not?: Prisma.NestedStringFilter<$PrismaModel> | string
 }
 
-export type NestedEnumTechCategoryFilter<$PrismaModel = never> = {
-  equals?: $Enums.TechCategory | Prisma.EnumTechCategoryFieldRefInput<$PrismaModel>
-  in?: $Enums.TechCategory[] | Prisma.ListEnumTechCategoryFieldRefInput<$PrismaModel>
-  notIn?: $Enums.TechCategory[] | Prisma.ListEnumTechCategoryFieldRefInput<$PrismaModel>
-  not?: Prisma.NestedEnumTechCategoryFilter<$PrismaModel> | $Enums.TechCategory
-}
-
 export type NestedDateTimeFilter<$PrismaModel = never> = {
   equals?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
   in?: Date[] | string[] | Prisma.ListDateTimeFieldRefInput<$PrismaModel>
@@ -248,16 +258,6 @@ export type NestedIntFilter<$PrismaModel = never> = {
   not?: Prisma.NestedIntFilter<$PrismaModel> | number
 }
 
-export type NestedEnumTechCategoryWithAggregatesFilter<$PrismaModel = never> = {
-  equals?: $Enums.TechCategory | Prisma.EnumTechCategoryFieldRefInput<$PrismaModel>
-  in?: $Enums.TechCategory[] | Prisma.ListEnumTechCategoryFieldRefInput<$PrismaModel>
-  notIn?: $Enums.TechCategory[] | Prisma.ListEnumTechCategoryFieldRefInput<$PrismaModel>
-  not?: Prisma.NestedEnumTechCategoryWithAggregatesFilter<$PrismaModel> | $Enums.TechCategory
-  _count?: Prisma.NestedIntFilter<$PrismaModel>
-  _min?: Prisma.NestedEnumTechCategoryFilter<$PrismaModel>
-  _max?: Prisma.NestedEnumTechCategoryFilter<$PrismaModel>
-}
-
 export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
   equals?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
   in?: Date[] | string[] | Prisma.ListDateTimeFieldRefInput<$PrismaModel>
@@ -270,6 +270,40 @@ export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedDateTimeFilter<$PrismaModel>
   _max?: Prisma.NestedDateTimeFilter<$PrismaModel>
+}
+
+export type NestedEnumTechSkillScopeFilter<$PrismaModel = never> = {
+  equals?: $Enums.TechSkillScope | Prisma.EnumTechSkillScopeFieldRefInput<$PrismaModel>
+  in?: $Enums.TechSkillScope[] | Prisma.ListEnumTechSkillScopeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TechSkillScope[] | Prisma.ListEnumTechSkillScopeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTechSkillScopeFilter<$PrismaModel> | $Enums.TechSkillScope
+}
+
+export type NestedEnumTechSkillScopeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TechSkillScope | Prisma.EnumTechSkillScopeFieldRefInput<$PrismaModel>
+  in?: $Enums.TechSkillScope[] | Prisma.ListEnumTechSkillScopeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TechSkillScope[] | Prisma.ListEnumTechSkillScopeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTechSkillScopeWithAggregatesFilter<$PrismaModel> | $Enums.TechSkillScope
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTechSkillScopeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTechSkillScopeFilter<$PrismaModel>
+}
+
+export type NestedEnumTechCategoryFilter<$PrismaModel = never> = {
+  equals?: $Enums.TechCategory | Prisma.EnumTechCategoryFieldRefInput<$PrismaModel>
+  in?: $Enums.TechCategory[] | Prisma.ListEnumTechCategoryFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TechCategory[] | Prisma.ListEnumTechCategoryFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTechCategoryFilter<$PrismaModel> | $Enums.TechCategory
+}
+
+export type NestedEnumTechCategoryWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TechCategory | Prisma.EnumTechCategoryFieldRefInput<$PrismaModel>
+  in?: $Enums.TechCategory[] | Prisma.ListEnumTechCategoryFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TechCategory[] | Prisma.ListEnumTechCategoryFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTechCategoryWithAggregatesFilter<$PrismaModel> | $Enums.TechCategory
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTechCategoryFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTechCategoryFilter<$PrismaModel>
 }
 
 export type NestedStringNullableFilter<$PrismaModel = never> = {

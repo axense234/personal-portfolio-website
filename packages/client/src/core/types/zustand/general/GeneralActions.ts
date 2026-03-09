@@ -1,11 +1,14 @@
-import { TechCategory, TechSkill } from "@personal-portfolio-website/shared";
+import {
+  TechCategory,
+  TechSkillWithTechWithContent,
+} from "@personal-portfolio-website/shared";
 
 export type GeneralActions = {
   toggleColorTheme: () => void;
   handleWeeklyMealPrepImagesCarousel: (index: number) => void;
   setCurrentTechSkillCategory: (category: TechCategory) => void;
-  setCurrentTechSkill: (skill: string) => void;
+  setCurrentTechSkill: (skill: TechSkillWithTechWithContent) => void;
 
-  setTechSkills: (techSkills: TechSkill[]) => void;
+  setTechSkills: (techSkills: TechSkillWithTechWithContent[]) => void;
   handleOnTechSkillCategoryTabClick: (category: TechCategory) => void;
 };

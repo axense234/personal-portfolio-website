@@ -24,6 +24,7 @@ export class CreateTechSkillService {
 
       const createdTechSkill = await this.prisma.techSkill.create({
         data: { ...dto },
+        include: { tech: true, content: { include: { sections: true } } },
       });
 
       if (!createdTechSkill) {
@@ -34,7 +35,7 @@ export class CreateTechSkillService {
 
       return {
         status: StatusCodes.CREATED,
-        message: `Successfully created TechSkill: ${createdTechSkill.label}.`,
+        message: `Successfully created TechSkill.`,
         techSkill: createdTechSkill,
       };
     } catch (error) {

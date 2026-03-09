@@ -15,7 +15,7 @@ const MealPrepImages: FC<MealPrepImagesProps> = ({ images, mealPrepName }) => {
     handleWeeklyMealPrepImagesCarousel,
   } = useGeneralStore((state) => state);
 
-  if (images.length < 1) {
+  if (!images || images.length < 1) {
     return <div>no images</div>;
   }
 

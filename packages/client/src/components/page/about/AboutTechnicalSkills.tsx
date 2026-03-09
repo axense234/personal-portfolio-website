@@ -9,8 +9,6 @@ import TechSkills from "@/components/shared/TechSkills";
 import { useGetTechSkills } from "@/hooks";
 
 const AboutTechnicalSkills = () => {
-  const { title, paragraphs } = aboutPageTechnicalSkillsSectionData;
-
   const { techSkills, isError, isLoading } = useGetTechSkills();
 
   if (isError) {
@@ -20,6 +18,8 @@ const AboutTechnicalSkills = () => {
   if (isLoading) {
     return <div>isloading</div>;
   }
+
+  const { title, paragraphs } = aboutPageTechnicalSkillsSectionData;
 
   return (
     <section className={aboutTechnicalSkillsStyles.container}>

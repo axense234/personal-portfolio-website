@@ -6,12 +6,12 @@ import {
 } from '@nestjs/common';
 // Services
 import { PrismaService } from 'src/modules/db';
-// Data
-import { techSkillsCreateData } from '../data';
 // Status Codes
 import { StatusCodes } from 'http-status-codes';
 // Shared
 import { InjectTechSkillsResponse } from '@personal-portfolio-website/shared';
+// Data
+import { techSkillsCreateData } from '../data';
 
 @Injectable()
 export class InjectTechSkillsService {
@@ -23,6 +23,7 @@ export class InjectTechSkillsService {
         techSkillsCreateData.map((techSkillData) =>
           this.prisma.techSkill.create({
             data: techSkillData,
+            include: { tech: true, content: { include: { sections: true } } },
           }),
         ),
       );

@@ -1,12 +1,15 @@
 import { NextResponse } from "next/server";
 import { customKy } from "../_config";
+import { GetProjectsResponse } from "@personal-portfolio-website/shared";
 
 export async function GET() {
   try {
-    const res = await customKy("projects").json();
-    return NextResponse.json(await res);
-  } catch (error) {
-    console.log(error);
-    return NextResponse.json(error);
+    const kyRes = (await customKy("projects").json()) as GetProjectsResponse;
+
+    return NextResponse.json(kyRes, { status: kyRes.status });
+  } catch (error: any) {
+    return NextResponse.json(error?.response, {
+      status: error?.response?.status,
+    });
   }
 }

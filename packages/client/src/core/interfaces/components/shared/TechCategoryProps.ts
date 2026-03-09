@@ -1,7 +1,7 @@
-import { TechSkillProps } from "./TechSkillProps";
+import { Tech } from "@personal-portfolio-website/shared";
 
 export interface TechCategoryProps {
   id?: number;
   label: string;
-  skills: TechSkillProps[];
+  skills: Tech[];
 }

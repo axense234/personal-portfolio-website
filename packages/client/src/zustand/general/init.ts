@@ -5,7 +5,7 @@ export const defaultInitState: GeneralState = {
   colorTheme: "dark",
   weeklyMealPrepCurrentImageIndex: 0,
   currentTechSkillCategory: "FRONTEND",
-  currentTechSkill: "React",
+  currentTechSkill: undefined,
 
   techSkills: [],
 };

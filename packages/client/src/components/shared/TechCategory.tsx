@@ -3,25 +3,9 @@ import techCategoryStyles from "@/scss/components/shared/TechCategory.module.scs
 // React
 import { FC } from "react";
 // Interfaces
-import { TechCategoryProps, TechSkillProps } from "@/core/interfaces";
-// Next
-import Image from "next/image";
-import Link from "next/link";
-
-const TechSkill: FC<TechSkillProps> = ({ dest, label, rel }) => {
-  return (
-    <Link href={dest} className={techCategoryStyles.skill} target="_blank">
-      <Image
-        alt={label}
-        title={label}
-        aria-label={label}
-        src={rel}
-        height={48}
-        width={128}
-      />
-    </Link>
-  );
-};
+import { TechCategoryProps } from "@/core/interfaces";
+// Components
+import TechIcon from "./TechIcon";
 
 const TechCategory: FC<TechCategoryProps> = ({ label, skills }) => {
   return (
@@ -31,7 +15,7 @@ const TechCategory: FC<TechCategoryProps> = ({ label, skills }) => {
         {skills.map((skill) => {
           return (
             <li key={skill.id}>
-              <TechSkill {...skill} />
+              <TechIcon {...skill} />
             </li>
           );
         })}

@@ -2,10 +2,96 @@
 
 .container {
   @include flexCenter(column);
+  position: relative;
   width: 100%;
-  height: 100%;
   max-height: 100%;
-  border: 1px solid red;
+  height: 38rem;
+
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 14px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--primary-opposite);
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--primary);
+  }
 
   border-radius: round(5);
+}
+
+.logo {
+  @include flexCenter(row);
+  position: absolute;
+  top: 1.5rem;
+  left: 3rem;
+  padding: 1rem;
+  border-radius: round(10);
+  background-color: getLightColor(primary);
+}
+
+.content {
+  @include flexCenter(column);
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  gap: 3rem;
+
+  padding: 3rem 2rem;
+
+  background-color: var(--tertiary);
+}
+
+.header {
+  @include flexCenter(column);
+  width: 100%;
+  gap: 0.5rem;
+
+  > h4 {
+    font-size: getFontSize("h4-laptop");
+    letter-spacing: 3px;
+    color: var(--primary-opposite);
+  }
+
+  > p {
+    color: var(--primary-opposite);
+    font-size: getFontSize("p-large");
+    letter-spacing: 2px;
+    font-style: italic;
+  }
+}
+
+.techContent {
+  @include flexCenter(column);
+  width: 100%;
+  gap: 2rem;
+}
+
+.article {
+  @include flexCenter(column);
+  align-items: flex-start;
+  width: 100%;
+  gap: 1rem;
+
+  > h5 {
+    font-size: getFontSize("h5-tablet");
+    letter-spacing: 2px;
+    color: var(--primary-opposite);
+  }
+}
+
+.paragraphs {
+  @include flexCenter(column);
+  width: 100%;
+  gap: 1.5rem;
+
+  > p {
+    color: var(--primary-opposite);
+    font-size: getFontSize("p-medium");
+    letter-spacing: 2px;
+  }
 }

@@ -1,39 +1,37 @@
 "use client";
 // Shared Types
-import {
-  GetProjectsResponse,
-  ProjectWithImages,
-} from "@personal-portfolio-website/shared";
+import { GetTechResponse, Tech } from "@personal-portfolio-website/shared";
 // Ky
 import ky from "ky";
 // React
 import { useEffect, useState } from "react";
 
-export const useGetProjects = () => {
-  const [projects, setProjects] = useState<ProjectWithImages[]>([]);
+export const useGetTech = () => {
   const [isError, setIsError] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [tech, setTech] = useState<Tech[]>([]);
 
   useEffect(() => {
-    const getProjects = async () => {
+    const getTech = async () => {
       try {
-        const res = (await ky("/api/projects", {
+        const res = (await ky("/api/tech", {
           method: "get",
-        }).json()) as GetProjectsResponse;
-        setProjects(res.projects);
+        }).json()) as GetTechResponse;
+        setTech(res.tech);
 
         setIsError(false);
         setIsLoading(false);
       } catch (error) {
+        console.log(error);
         setIsError(true);
         setIsLoading(false);
       }
     };
-    getProjects();
+    getTech();
   }, []);
 
   return {
-    projects,
+    tech,
     isError,
     isLoading,
   };

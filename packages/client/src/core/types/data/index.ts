@@ -3,3 +3,4 @@ export * from "./LangFlagImageType";
 export * from "./ExternalMediaIconType";
 export * from "./CommonPageHeroSectionDataType";
 export * from "./SectionDataType";
+export * from "./AboutJourneyDataType";

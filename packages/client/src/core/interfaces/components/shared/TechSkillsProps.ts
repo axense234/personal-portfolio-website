@@ -1,6 +1,6 @@
 // Shared
-import { TechSkill } from "@personal-portfolio-website/shared";
+import { TechSkillWithTechWithContent } from "@personal-portfolio-website/shared";
 
 export interface TechSkillsProps {
-  techSkills: TechSkill[];
+  techSkills: TechSkillWithTechWithContent[];
 }

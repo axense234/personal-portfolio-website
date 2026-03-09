@@ -1,7 +1,11 @@
 // Types
 import { SetGeneralStoreFunctionType } from "@/core/interfaces";
 import { GeneralState } from "@/core/types";
-import { TechCategory, TechSkill } from "@personal-portfolio-website/shared";
+import {
+  TechCategory,
+  TechSkill,
+  TechSkillWithTechWithContent,
+} from "@personal-portfolio-website/shared";
 
 export const toggleColorTheme = (set: SetGeneralStoreFunctionType) =>
   set((state: GeneralState) => ({
@@ -16,16 +20,6 @@ export const handleWeeklyMealPrepImagesCarousel = (
     weeklyMealPrepCurrentImageIndex: index,
   }));
 
-export const getTechSkillsOfCurrentCategory = (
-  state: GeneralState,
-  techSkills: TechSkill[],
-) => {
-  const skillsBasedOnCategory = techSkills?.filter(
-    (skill) => skill.category == state.currentTechSkillCategory,
-  );
-  return skillsBasedOnCategory;
-};
-
 export const setCurrentTechCategory = (
   set: SetGeneralStoreFunctionType,
   category: TechCategory,
@@ -36,7 +30,7 @@ export const setCurrentTechCategory = (
 
 export const setCurrentTechSkill = (
   set: SetGeneralStoreFunctionType,
-  skill: string,
+  skill: TechSkillWithTechWithContent,
 ) =>
   set((state: GeneralState) => ({
     currentTechSkill: skill,
@@ -44,7 +38,7 @@ export const setCurrentTechSkill = (
 
 export const setTechSkills = (
   set: SetGeneralStoreFunctionType,
-  techSkills: TechSkill[],
+  techSkills: TechSkillWithTechWithContent[],
 ) =>
   set((state: GeneralState) => ({
     techSkills,
@@ -57,6 +51,6 @@ export const handleOnTechSkillCategoryTabClick = (
   set((state: GeneralState) => ({
     currentTechSkillCategory: category,
     currentTechSkill: state.techSkills.filter(
-      (skill) => skill.category == category,
-    )[0].label,
+      (skill) => skill.tech.category == category,
+    )[0],
   }));

@@ -1,18 +1,35 @@
+"use client";
 // SCSS
 import homeTechnicalSkillsStyles from "@/scss/components/page/home/HomeTechnicalSkills.module.scss";
 // Components
 import LinkButton from "@/components/shared/LinkButton";
 import TechCategory from "@/components/shared/TechCategory";
+// Custom Hooks
+import { useGetTech } from "@/hooks";
 // Data
-import { technicalSkillsData } from "@/data";
+import { homePageTechnicalSkillsSectionData } from "@/data";
 
 const Skills = () => {
+  const { isError, isLoading, tech } = useGetTech();
+
+  if (isError) {
+    return <div>iserror</div>;
+  }
+
+  if (isLoading) {
+    return <div>isloading</div>;
+  }
+
+  const techCategories = Array.from(new Set(tech?.map((t) => t.category)));
+
   return (
     <ul className={homeTechnicalSkillsStyles.skills}>
-      {technicalSkillsData.map((category) => {
+      {techCategories?.map((category, index) => {
+        const skillsByCategory = tech.filter((t) => t.category === category);
+
         return (
-          <li key={category.id}>
-            <TechCategory {...category} />
+          <li key={index}>
+            <TechCategory label={category} skills={skillsByCategory} />
           </li>
         );
       })}
@@ -21,24 +38,22 @@ const Skills = () => {
 };
 
 const HomeTechnicalSkills = () => {
+  const { buttons, paragraphs, title } = homePageTechnicalSkillsSectionData;
+
   return (
     <section className={homeTechnicalSkillsStyles.container}>
       <div className={homeTechnicalSkillsStyles.content}>
         <div className={homeTechnicalSkillsStyles.intro}>
-          <h2>Technical Skills</h2>
-          <p>
-            A list of the most important technologies I know. Frontend
-            technologies, backend technologies and other tools.
-          </p>
+          <h2>{title}</h2>
+          {paragraphs.map((paragraph, index) => {
+            return <p key={index}>{paragraph}</p>;
+          })}
         </div>
         <Skills />
       </div>
-      <LinkButton
-        color="success"
-        dest="/about"
-        label="More Details"
-        size="large"
-      />
+      {buttons?.map((button) => {
+        return <LinkButton {...button} key={button.id} />;
+      })}
     </section>
   );
 };

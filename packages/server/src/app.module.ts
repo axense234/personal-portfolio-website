@@ -10,6 +10,7 @@ import {
   TechSkillModule,
   MealPrepModule,
   PrismaModule,
+  TechModule,
 } from './modules';
 
 @Module({
@@ -27,6 +28,7 @@ import {
     ProjectModule,
     MealPrepModule,
     TechSkillModule,
+    TechModule,
   ],
 })
 export class AppModule {}

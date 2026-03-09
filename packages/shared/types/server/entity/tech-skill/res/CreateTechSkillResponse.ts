@@ -1,8 +1,8 @@
 import { StatusCodes } from "http-status-codes";
-import { TechSkill } from "../../../../prisma/client";
+import { TechSkillWithTechWithContent } from "../extra";
 
 export interface CreateTechSkillResponse {
   status: StatusCodes;
   message: string;
-  techSkill: TechSkill;
+  techSkill: TechSkillWithTechWithContent;
 }

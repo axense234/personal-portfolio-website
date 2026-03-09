@@ -6,26 +6,12 @@ import { LinkButtonProps } from "@/core/interfaces";
 import { Link } from "@/i18n/navigation";
 // SCSS
 import linkButtonStyles from "@/scss/components/shared/LinkButton.module.scss";
+import { getSpecificButtonColor } from "@/helpers";
 
 const LinkButton: FC<LinkButtonProps> = ({ color, dest, label, size }) => {
-  let linkButtonColor: string = "#d29922";
+  const linkButtonColor = getSpecificButtonColor(color);
   let linkButtonFontSize = "20px";
   let linkButtonPadding = "0.5rem 1.5rem";
-
-  switch (color) {
-    case "warning":
-      linkButtonColor = "#d29922";
-      break;
-    case "success":
-      linkButtonColor = "#3fb950";
-      break;
-    case "delete":
-      linkButtonColor = "#f85149";
-      break;
-    default:
-      linkButtonColor = "#d29922";
-      break;
-  }
 
   switch (size) {
     case "large":

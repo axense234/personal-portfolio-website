@@ -1,3 +1,5 @@
+import { TechSkillWithTechWithContent } from "@personal-portfolio-website/shared";
+
 export interface TechSkillsTabViewProps {
-  currentTechSkill: string;
+  currentTechSkill: TechSkillWithTechWithContent | undefined;
 }

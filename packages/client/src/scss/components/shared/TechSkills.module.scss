@@ -8,6 +8,7 @@
 
 .wrapper {
   @include flexCenter(row);
+  align-items: flex-start;
   width: 100%;
   gap: 4rem;
   justify-content: space-between;

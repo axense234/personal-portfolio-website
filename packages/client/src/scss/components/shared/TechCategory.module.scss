@@ -28,21 +28,3 @@
     max-width: 30%;
   }
 }
-
-.skill {
-  @include flexCenter(row);
-  text-decoration: none;
-
-  > img {
-    width: auto !important;
-    height: 3rem !important;
-
-    cursor: pointer;
-
-    transition: transform 0.2s ease-in;
-
-    &:hover {
-      transform: rotate(10deg) scale(1.05);
-    }
-  }
-}

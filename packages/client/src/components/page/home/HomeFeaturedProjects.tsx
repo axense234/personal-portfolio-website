@@ -24,7 +24,7 @@ const FeaturedProjects = () => {
 
   return (
     <ul className={homeFeaturedProjectsStyles.projects}>
-      {projects.map((project, index) => {
+      {projects?.map((project, index) => {
         const buttonColorsCurrentColorIndex = index % buttonColors.length;
         const buttonColor = buttonColors[buttonColorsCurrentColorIndex];
 

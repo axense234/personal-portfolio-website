@@ -13,7 +13,9 @@ export class GetTechSkillsService {
 
   async getTechSkills(): Promise<GetTechSkillsResponse> {
     try {
-      const foundTechSkills = await this.prisma.techSkill.findMany({});
+      const foundTechSkills = await this.prisma.techSkill.findMany({
+        include: { tech: true, content: { include: { sections: true } } },
+      });
 
       if (foundTechSkills.length < 1) {
         throw new NotFoundException('No tech skills found.');

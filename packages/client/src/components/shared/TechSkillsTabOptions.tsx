@@ -16,20 +16,20 @@ const TechSkillsTabOptions: FC<TechSkillsTabOptionsProps> = ({
     <div className={techSkillsTabOptionsStyles.container}>
       <ul className={techSkillsTabOptionsStyles.wrapper}>
         {skills?.map((skill) => {
-          const isSelected = currentSkill == skill.label;
+          const isSelected = currentSkill?.id === skill.id;
           return (
             <li
               key={skill.id}
-              onClick={() => onTabOptionClickFunc(skill.label)}
+              onClick={() => onTabOptionClickFunc(skill)}
               style={{ opacity: isSelected ? "1" : "0.5" }}
             >
               <Image
-                alt={`${skill.label} Icon`}
-                src={skill.local_rel}
+                alt={`${skill.tech.label} Icon`}
+                src={skill.tech.icon_src}
                 height={48}
                 width={128}
               />
-              <span>{skill.label}</span>
+              <span>{skill.tech.label}</span>
             </li>
           );
         })}

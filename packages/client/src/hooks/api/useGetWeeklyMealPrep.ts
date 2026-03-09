@@ -21,12 +21,12 @@ export const useGetWeeklyMealPrep = () => {
         const res = (await ky("/api/meal-preps/weekly", {
           method: "get",
         }).json()) as GetWeeklyMealPrepResponse;
+
         setWeeklyMealPrep(res.mealPrep);
 
         setIsError(false);
         setIsLoading(false);
       } catch (error) {
-        console.log(error);
         setIsError(true);
         setIsLoading(false);
       }

@@ -13,7 +13,7 @@ import TechSkillsTabNav from "./TechSkillsTabNav";
 import { useGeneralStore } from "@/zustand/general/context";
 
 const TechSkills: FC<TechSkillsProps> = ({ techSkills }) => {
-  const categories = new Set(techSkills.map((skill) => skill.category));
+  const categories = new Set(techSkills?.map((skill) => skill.tech.category));
 
   const {
     currentTechSkillCategory: currentCategory,
@@ -27,7 +27,7 @@ const TechSkills: FC<TechSkillsProps> = ({ techSkills }) => {
   };
 
   const skillsBasedOnCategory = techSkills?.filter(
-    (skill) => skill.category == currentCategory,
+    (skill) => skill.tech.category == currentCategory,
   );
 
   return (

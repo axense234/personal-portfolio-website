@@ -1,28 +1,31 @@
 // Interfaces
 import { FC } from "react";
 import { TechSkillsTabViewProps } from "@/core/interfaces";
-// Data
-import { technicalSkillsViewsData } from "@/data";
 // SCSS
 import techSkillsTabViewStyles from "@/scss/components/shared/TechSkillsTabView.module.scss";
+// Components
+import {} from "@/components/shared";
+import TechIcon from "./TechIcon";
 
 const TechSkillsTabView: FC<TechSkillsTabViewProps> = ({
   currentTechSkill,
 }) => {
-  const currentViewData = technicalSkillsViewsData.find(
-    (viewData) => viewData.matcher == currentTechSkill,
-  );
+  if (!currentTechSkill) {
+    return <div>loading</div>;
+  }
 
   return (
     <div className={techSkillsTabViewStyles.container}>
-      <div className={techSkillsTabViewStyles.logo}></div>
+      <div className={techSkillsTabViewStyles.logo}>
+        <TechIcon {...currentTechSkill.tech} height={64} />
+      </div>
       <div className={techSkillsTabViewStyles.content}>
         <div className={techSkillsTabViewStyles.header}>
-          <h4>{currentViewData?.matcher}</h4>
-          <p>{currentViewData?.subtitle}</p>
+          <h4>{currentTechSkill.tech.label}</h4>
+          <p>{currentTechSkill.tech.short_desc}</p>
         </div>
         <div className={techSkillsTabViewStyles.techContent}>
-          {currentViewData?.articles?.map((article) => {
+          {currentTechSkill.content?.sections.map((article) => {
             return (
               <div className={techSkillsTabViewStyles.article} key={article.id}>
                 <h5>{article.title}</h5>

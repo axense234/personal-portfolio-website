@@ -22,7 +22,7 @@ const WeeklyMealPrep = () => {
         </div>
         <MealPrepView />
       </div>
-      {buttons.map((button) => {
+      {buttons?.map((button) => {
         return <LinkButton {...button} key={button.id} />;
       })}
     </section>

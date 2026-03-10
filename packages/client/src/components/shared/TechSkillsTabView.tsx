@@ -4,8 +4,7 @@ import { TechSkillsTabViewProps } from "@/core/interfaces";
 // SCSS
 import techSkillsTabViewStyles from "@/scss/components/shared/TechSkillsTabView.module.scss";
 // Components
-import {} from "@/components/shared";
-import TechIcon from "./TechIcon";
+import IconComponent from "./IconComponent";
 
 const TechSkillsTabView: FC<TechSkillsTabViewProps> = ({
   currentTechSkill,
@@ -17,7 +16,7 @@ const TechSkillsTabView: FC<TechSkillsTabViewProps> = ({
   return (
     <div className={techSkillsTabViewStyles.container}>
       <div className={techSkillsTabViewStyles.logo}>
-        <TechIcon {...currentTechSkill.tech} height={64} />
+        <IconComponent {...currentTechSkill.tech} height={64} />
       </div>
       <div className={techSkillsTabViewStyles.content}>
         <div className={techSkillsTabViewStyles.header}>

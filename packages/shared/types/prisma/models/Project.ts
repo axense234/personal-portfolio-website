@@ -279,6 +279,7 @@ export type ProjectWhereInput = {
   createdAt?: Prisma.DateTimeFilter<"Project"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Project"> | Date | string
   images?: Prisma.XOR<Prisma.ProjectImagesNullableScalarRelationFilter, Prisma.ProjectImagesWhereInput> | null
+  awards?: Prisma.ProjectAwardListRelationFilter
   skills?: Prisma.TechSkillListRelationFilter
 }
 
@@ -301,6 +302,7 @@ export type ProjectOrderByWithRelationInput = {
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   images?: Prisma.ProjectImagesOrderByWithRelationInput
+  awards?: Prisma.ProjectAwardOrderByRelationAggregateInput
   skills?: Prisma.TechSkillOrderByRelationAggregateInput
 }
 
@@ -326,6 +328,7 @@ export type ProjectWhereUniqueInput = Prisma.AtLeast<{
   createdAt?: Prisma.DateTimeFilter<"Project"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Project"> | Date | string
   images?: Prisma.XOR<Prisma.ProjectImagesNullableScalarRelationFilter, Prisma.ProjectImagesWhereInput> | null
+  awards?: Prisma.ProjectAwardListRelationFilter
   skills?: Prisma.TechSkillListRelationFilter
 }, "id" | "name">
 
@@ -394,6 +397,7 @@ export type ProjectCreateInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   images?: Prisma.ProjectImagesCreateNestedOneWithoutProjectInput
+  awards?: Prisma.ProjectAwardCreateNestedManyWithoutProjectInput
   skills?: Prisma.TechSkillCreateNestedManyWithoutProjectsInput
 }
 
@@ -416,6 +420,7 @@ export type ProjectUncheckedCreateInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   images?: Prisma.ProjectImagesUncheckedCreateNestedOneWithoutProjectInput
+  awards?: Prisma.ProjectAwardUncheckedCreateNestedManyWithoutProjectInput
   skills?: Prisma.TechSkillUncheckedCreateNestedManyWithoutProjectsInput
 }
 
@@ -438,6 +443,7 @@ export type ProjectUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   images?: Prisma.ProjectImagesUpdateOneWithoutProjectNestedInput
+  awards?: Prisma.ProjectAwardUpdateManyWithoutProjectNestedInput
   skills?: Prisma.TechSkillUpdateManyWithoutProjectsNestedInput
 }
 
@@ -460,6 +466,7 @@ export type ProjectUncheckedUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   images?: Prisma.ProjectImagesUncheckedUpdateOneWithoutProjectNestedInput
+  awards?: Prisma.ProjectAwardUncheckedUpdateManyWithoutProjectNestedInput
   skills?: Prisma.TechSkillUncheckedUpdateManyWithoutProjectsNestedInput
 }
 
@@ -636,6 +643,20 @@ export type ProjectUncheckedUpdateManyWithoutSkillsNestedInput = {
   deleteMany?: Prisma.ProjectScalarWhereInput | Prisma.ProjectScalarWhereInput[]
 }
 
+export type ProjectCreateNestedOneWithoutAwardsInput = {
+  create?: Prisma.XOR<Prisma.ProjectCreateWithoutAwardsInput, Prisma.ProjectUncheckedCreateWithoutAwardsInput>
+  connectOrCreate?: Prisma.ProjectCreateOrConnectWithoutAwardsInput
+  connect?: Prisma.ProjectWhereUniqueInput
+}
+
+export type ProjectUpdateOneRequiredWithoutAwardsNestedInput = {
+  create?: Prisma.XOR<Prisma.ProjectCreateWithoutAwardsInput, Prisma.ProjectUncheckedCreateWithoutAwardsInput>
+  connectOrCreate?: Prisma.ProjectCreateOrConnectWithoutAwardsInput
+  upsert?: Prisma.ProjectUpsertWithoutAwardsInput
+  connect?: Prisma.ProjectWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ProjectUpdateToOneWithWhereWithoutAwardsInput, Prisma.ProjectUpdateWithoutAwardsInput>, Prisma.ProjectUncheckedUpdateWithoutAwardsInput>
+}
+
 export type ProjectCreateNestedOneWithoutImagesInput = {
   create?: Prisma.XOR<Prisma.ProjectCreateWithoutImagesInput, Prisma.ProjectUncheckedCreateWithoutImagesInput>
   connectOrCreate?: Prisma.ProjectCreateOrConnectWithoutImagesInput
@@ -677,6 +698,7 @@ export type ProjectCreateWithoutSkillsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   images?: Prisma.ProjectImagesCreateNestedOneWithoutProjectInput
+  awards?: Prisma.ProjectAwardCreateNestedManyWithoutProjectInput
 }
 
 export type ProjectUncheckedCreateWithoutSkillsInput = {
@@ -698,6 +720,7 @@ export type ProjectUncheckedCreateWithoutSkillsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   images?: Prisma.ProjectImagesUncheckedCreateNestedOneWithoutProjectInput
+  awards?: Prisma.ProjectAwardUncheckedCreateNestedManyWithoutProjectInput
 }
 
 export type ProjectCreateOrConnectWithoutSkillsInput = {
@@ -744,6 +767,110 @@ export type ProjectScalarWhereInput = {
   updatedAt?: Prisma.DateTimeFilter<"Project"> | Date | string
 }
 
+export type ProjectCreateWithoutAwardsInput = {
+  id?: string
+  name?: string
+  short_desc?: string
+  long_desc?: string
+  overview_desc?: string
+  architecture_desc?: string
+  practiced_skills_desc?: string
+  goal_desc?: string
+  project_phase?: string | null
+  video_preview?: string | null
+  github_url?: string | null
+  website_url?: string | null
+  website_logo_url?: string | null
+  docs_url?: string | null
+  project_type?: $Enums.ProjectType
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  images?: Prisma.ProjectImagesCreateNestedOneWithoutProjectInput
+  skills?: Prisma.TechSkillCreateNestedManyWithoutProjectsInput
+}
+
+export type ProjectUncheckedCreateWithoutAwardsInput = {
+  id?: string
+  name?: string
+  short_desc?: string
+  long_desc?: string
+  overview_desc?: string
+  architecture_desc?: string
+  practiced_skills_desc?: string
+  goal_desc?: string
+  project_phase?: string | null
+  video_preview?: string | null
+  github_url?: string | null
+  website_url?: string | null
+  website_logo_url?: string | null
+  docs_url?: string | null
+  project_type?: $Enums.ProjectType
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  images?: Prisma.ProjectImagesUncheckedCreateNestedOneWithoutProjectInput
+  skills?: Prisma.TechSkillUncheckedCreateNestedManyWithoutProjectsInput
+}
+
+export type ProjectCreateOrConnectWithoutAwardsInput = {
+  where: Prisma.ProjectWhereUniqueInput
+  create: Prisma.XOR<Prisma.ProjectCreateWithoutAwardsInput, Prisma.ProjectUncheckedCreateWithoutAwardsInput>
+}
+
+export type ProjectUpsertWithoutAwardsInput = {
+  update: Prisma.XOR<Prisma.ProjectUpdateWithoutAwardsInput, Prisma.ProjectUncheckedUpdateWithoutAwardsInput>
+  create: Prisma.XOR<Prisma.ProjectCreateWithoutAwardsInput, Prisma.ProjectUncheckedCreateWithoutAwardsInput>
+  where?: Prisma.ProjectWhereInput
+}
+
+export type ProjectUpdateToOneWithWhereWithoutAwardsInput = {
+  where?: Prisma.ProjectWhereInput
+  data: Prisma.XOR<Prisma.ProjectUpdateWithoutAwardsInput, Prisma.ProjectUncheckedUpdateWithoutAwardsInput>
+}
+
+export type ProjectUpdateWithoutAwardsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  short_desc?: Prisma.StringFieldUpdateOperationsInput | string
+  long_desc?: Prisma.StringFieldUpdateOperationsInput | string
+  overview_desc?: Prisma.StringFieldUpdateOperationsInput | string
+  architecture_desc?: Prisma.StringFieldUpdateOperationsInput | string
+  practiced_skills_desc?: Prisma.StringFieldUpdateOperationsInput | string
+  goal_desc?: Prisma.StringFieldUpdateOperationsInput | string
+  project_phase?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  video_preview?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  github_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  website_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  website_logo_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  docs_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  project_type?: Prisma.EnumProjectTypeFieldUpdateOperationsInput | $Enums.ProjectType
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  images?: Prisma.ProjectImagesUpdateOneWithoutProjectNestedInput
+  skills?: Prisma.TechSkillUpdateManyWithoutProjectsNestedInput
+}
+
+export type ProjectUncheckedUpdateWithoutAwardsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  short_desc?: Prisma.StringFieldUpdateOperationsInput | string
+  long_desc?: Prisma.StringFieldUpdateOperationsInput | string
+  overview_desc?: Prisma.StringFieldUpdateOperationsInput | string
+  architecture_desc?: Prisma.StringFieldUpdateOperationsInput | string
+  practiced_skills_desc?: Prisma.StringFieldUpdateOperationsInput | string
+  goal_desc?: Prisma.StringFieldUpdateOperationsInput | string
+  project_phase?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  video_preview?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  github_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  website_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  website_logo_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  docs_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  project_type?: Prisma.EnumProjectTypeFieldUpdateOperationsInput | $Enums.ProjectType
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  images?: Prisma.ProjectImagesUncheckedUpdateOneWithoutProjectNestedInput
+  skills?: Prisma.TechSkillUncheckedUpdateManyWithoutProjectsNestedInput
+}
+
 export type ProjectCreateWithoutImagesInput = {
   id?: string
   name?: string
@@ -762,6 +889,7 @@ export type ProjectCreateWithoutImagesInput = {
   project_type?: $Enums.ProjectType
   createdAt?: Date | string
   updatedAt?: Date | string
+  awards?: Prisma.ProjectAwardCreateNestedManyWithoutProjectInput
   skills?: Prisma.TechSkillCreateNestedManyWithoutProjectsInput
 }
 
@@ -783,6 +911,7 @@ export type ProjectUncheckedCreateWithoutImagesInput = {
   project_type?: $Enums.ProjectType
   createdAt?: Date | string
   updatedAt?: Date | string
+  awards?: Prisma.ProjectAwardUncheckedCreateNestedManyWithoutProjectInput
   skills?: Prisma.TechSkillUncheckedCreateNestedManyWithoutProjectsInput
 }
 
@@ -820,6 +949,7 @@ export type ProjectUpdateWithoutImagesInput = {
   project_type?: Prisma.EnumProjectTypeFieldUpdateOperationsInput | $Enums.ProjectType
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  awards?: Prisma.ProjectAwardUpdateManyWithoutProjectNestedInput
   skills?: Prisma.TechSkillUpdateManyWithoutProjectsNestedInput
 }
 
@@ -841,6 +971,7 @@ export type ProjectUncheckedUpdateWithoutImagesInput = {
   project_type?: Prisma.EnumProjectTypeFieldUpdateOperationsInput | $Enums.ProjectType
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  awards?: Prisma.ProjectAwardUncheckedUpdateManyWithoutProjectNestedInput
   skills?: Prisma.TechSkillUncheckedUpdateManyWithoutProjectsNestedInput
 }
 
@@ -863,6 +994,7 @@ export type ProjectUpdateWithoutSkillsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   images?: Prisma.ProjectImagesUpdateOneWithoutProjectNestedInput
+  awards?: Prisma.ProjectAwardUpdateManyWithoutProjectNestedInput
 }
 
 export type ProjectUncheckedUpdateWithoutSkillsInput = {
@@ -884,6 +1016,7 @@ export type ProjectUncheckedUpdateWithoutSkillsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   images?: Prisma.ProjectImagesUncheckedUpdateOneWithoutProjectNestedInput
+  awards?: Prisma.ProjectAwardUncheckedUpdateManyWithoutProjectNestedInput
 }
 
 export type ProjectUncheckedUpdateManyWithoutSkillsInput = {
@@ -912,10 +1045,12 @@ export type ProjectUncheckedUpdateManyWithoutSkillsInput = {
  */
 
 export type ProjectCountOutputType = {
+  awards: number
   skills: number
 }
 
 export type ProjectCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  awards?: boolean | ProjectCountOutputTypeCountAwardsArgs
   skills?: boolean | ProjectCountOutputTypeCountSkillsArgs
 }
 
@@ -927,6 +1062,13 @@ export type ProjectCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Exte
    * Select specific fields to fetch from the ProjectCountOutputType
    */
   select?: Prisma.ProjectCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * ProjectCountOutputType without action
+ */
+export type ProjectCountOutputTypeCountAwardsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ProjectAwardWhereInput
 }
 
 /**
@@ -956,6 +1098,7 @@ export type ProjectSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   createdAt?: boolean
   updatedAt?: boolean
   images?: boolean | Prisma.Project$imagesArgs<ExtArgs>
+  awards?: boolean | Prisma.Project$awardsArgs<ExtArgs>
   skills?: boolean | Prisma.Project$skillsArgs<ExtArgs>
   _count?: boolean | Prisma.ProjectCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["project"]>
@@ -1023,6 +1166,7 @@ export type ProjectSelectScalar = {
 export type ProjectOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "short_desc" | "long_desc" | "overview_desc" | "architecture_desc" | "practiced_skills_desc" | "goal_desc" | "project_phase" | "video_preview" | "github_url" | "website_url" | "website_logo_url" | "docs_url" | "project_type" | "createdAt" | "updatedAt", ExtArgs["result"]["project"]>
 export type ProjectInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   images?: boolean | Prisma.Project$imagesArgs<ExtArgs>
+  awards?: boolean | Prisma.Project$awardsArgs<ExtArgs>
   skills?: boolean | Prisma.Project$skillsArgs<ExtArgs>
   _count?: boolean | Prisma.ProjectCountOutputTypeDefaultArgs<ExtArgs>
 }
@@ -1033,6 +1177,7 @@ export type $ProjectPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
   name: "Project"
   objects: {
     images: Prisma.$ProjectImagesPayload<ExtArgs> | null
+    awards: Prisma.$ProjectAwardPayload<ExtArgs>[]
     skills: Prisma.$TechSkillPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
@@ -1448,6 +1593,7 @@ readonly fields: ProjectFieldRefs;
 export interface Prisma__ProjectClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   images<T extends Prisma.Project$imagesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Project$imagesArgs<ExtArgs>>): Prisma.Prisma__ProjectImagesClient<runtime.Types.Result.GetResult<Prisma.$ProjectImagesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  awards<T extends Prisma.Project$awardsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Project$awardsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProjectAwardPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   skills<T extends Prisma.Project$skillsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Project$skillsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TechSkillPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -1899,6 +2045,30 @@ export type Project$imagesArgs<ExtArgs extends runtime.Types.Extensions.Internal
    */
   include?: Prisma.ProjectImagesInclude<ExtArgs> | null
   where?: Prisma.ProjectImagesWhereInput
+}
+
+/**
+ * Project.awards
+ */
+export type Project$awardsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ProjectAward
+   */
+  select?: Prisma.ProjectAwardSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the ProjectAward
+   */
+  omit?: Prisma.ProjectAwardOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProjectAwardInclude<ExtArgs> | null
+  where?: Prisma.ProjectAwardWhereInput
+  orderBy?: Prisma.ProjectAwardOrderByWithRelationInput | Prisma.ProjectAwardOrderByWithRelationInput[]
+  cursor?: Prisma.ProjectAwardWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ProjectAwardScalarFieldEnum | Prisma.ProjectAwardScalarFieldEnum[]
 }
 
 /**

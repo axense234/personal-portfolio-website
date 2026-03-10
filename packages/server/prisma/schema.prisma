@@ -68,6 +68,19 @@ model Tech {
   @@unique([label, category])
 }
 
+model ProjectAward {
+  id String @id @default(uuid())
+
+  project_id String
+  project    Project @relation(fields: [project_id], references: [id])
+
+  image_src String @default("https://res.cloudinary.com/birthdayreminder/image/upload/v1772455490/Personal%20Website/jpeg_i3bsqf.jpg")
+  desc      String @default("Award default description.")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
 model ProjectImages {
   id          String   @id @default(uuid())
   screenshots String[] @default([])
@@ -99,6 +112,7 @@ model Project {
   docs_url         String?
 
   images       ProjectImages?
+  awards       ProjectAward[]
   project_type ProjectType    @default(HIDDEN)
 
   skills TechSkill[]

@@ -22,7 +22,7 @@ export class InjectFeaturedProjectsService {
         featuredProjectsCreateData.map((projectData) =>
           this.prisma.project.create({
             data: projectData,
-            include: { images: true },
+            include: { images: true, awards: true },
           }),
         ),
       );
@@ -40,6 +40,7 @@ export class InjectFeaturedProjectsService {
       };
     } catch (error) {
       if (error.code === 'P2002') {
+        console.log(error);
         throw new ConflictException(
           'Already have some featured projects in the data base which match the provided data.',
         );

@@ -60,6 +60,11 @@ export type TechSkill = Prisma.TechSkillModel
  */
 export type Tech = Prisma.TechModel
 /**
+ * Model ProjectAward
+ * 
+ */
+export type ProjectAward = Prisma.ProjectAwardModel
+/**
  * Model ProjectImages
  * 
  */

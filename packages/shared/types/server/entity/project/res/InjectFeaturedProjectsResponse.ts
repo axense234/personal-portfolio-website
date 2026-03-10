@@ -1,8 +1,8 @@
 import { StatusCodes } from "http-status-codes";
-import { Project } from "../../../../prisma/client";
+import { ProjectWithImagesWithAwards } from "../extra";
 
 export interface InjectFeaturedProjectsResponse {
   status: StatusCodes;
   message: string;
-  projects: Project[];
+  projects: ProjectWithImagesWithAwards[];
 }

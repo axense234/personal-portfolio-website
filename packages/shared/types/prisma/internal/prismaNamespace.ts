@@ -388,6 +388,7 @@ export const ModelName = {
   TechSkillContent: 'TechSkillContent',
   TechSkill: 'TechSkill',
   Tech: 'Tech',
+  ProjectAward: 'ProjectAward',
   ProjectImages: 'ProjectImages',
   Project: 'Project',
   Ingredient: 'Ingredient',
@@ -407,7 +408,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "techSkillContentSection" | "techSkillContent" | "techSkill" | "tech" | "projectImages" | "project" | "ingredient" | "mealPrep"
+    modelProps: "techSkillContentSection" | "techSkillContent" | "techSkill" | "tech" | "projectAward" | "projectImages" | "project" | "ingredient" | "mealPrep"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -704,6 +705,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.TechCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.TechCountAggregateOutputType> | number
+        }
+      }
+    }
+    ProjectAward: {
+      payload: Prisma.$ProjectAwardPayload<ExtArgs>
+      fields: Prisma.ProjectAwardFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ProjectAwardFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProjectAwardPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ProjectAwardFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProjectAwardPayload>
+        }
+        findFirst: {
+          args: Prisma.ProjectAwardFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProjectAwardPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ProjectAwardFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProjectAwardPayload>
+        }
+        findMany: {
+          args: Prisma.ProjectAwardFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProjectAwardPayload>[]
+        }
+        create: {
+          args: Prisma.ProjectAwardCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProjectAwardPayload>
+        }
+        createMany: {
+          args: Prisma.ProjectAwardCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ProjectAwardCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProjectAwardPayload>[]
+        }
+        delete: {
+          args: Prisma.ProjectAwardDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProjectAwardPayload>
+        }
+        update: {
+          args: Prisma.ProjectAwardUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProjectAwardPayload>
+        }
+        deleteMany: {
+          args: Prisma.ProjectAwardDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ProjectAwardUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ProjectAwardUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProjectAwardPayload>[]
+        }
+        upsert: {
+          args: Prisma.ProjectAwardUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProjectAwardPayload>
+        }
+        aggregate: {
+          args: Prisma.ProjectAwardAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateProjectAward>
+        }
+        groupBy: {
+          args: Prisma.ProjectAwardGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ProjectAwardGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ProjectAwardCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ProjectAwardCountAggregateOutputType> | number
         }
       }
     }
@@ -1089,6 +1164,18 @@ export const TechScalarFieldEnum = {
 export type TechScalarFieldEnum = (typeof TechScalarFieldEnum)[keyof typeof TechScalarFieldEnum]
 
 
+export const ProjectAwardScalarFieldEnum = {
+  id: 'id',
+  project_id: 'project_id',
+  image_src: 'image_src',
+  desc: 'desc',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ProjectAwardScalarFieldEnum = (typeof ProjectAwardScalarFieldEnum)[keyof typeof ProjectAwardScalarFieldEnum]
+
+
 export const ProjectImagesScalarFieldEnum = {
   id: 'id',
   screenshots: 'screenshots',
@@ -1389,6 +1476,7 @@ export type GlobalOmitConfig = {
   techSkillContent?: Prisma.TechSkillContentOmit
   techSkill?: Prisma.TechSkillOmit
   tech?: Prisma.TechOmit
+  projectAward?: Prisma.ProjectAwardOmit
   projectImages?: Prisma.ProjectImagesOmit
   project?: Prisma.ProjectOmit
   ingredient?: Prisma.IngredientOmit

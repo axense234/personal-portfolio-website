@@ -55,6 +55,7 @@ export const ModelName = {
   TechSkillContent: 'TechSkillContent',
   TechSkill: 'TechSkill',
   Tech: 'Tech',
+  ProjectAward: 'ProjectAward',
   ProjectImages: 'ProjectImages',
   Project: 'Project',
   Ingredient: 'Ingredient',
@@ -122,6 +123,18 @@ export const TechScalarFieldEnum = {
 } as const
 
 export type TechScalarFieldEnum = (typeof TechScalarFieldEnum)[keyof typeof TechScalarFieldEnum]
+
+
+export const ProjectAwardScalarFieldEnum = {
+  id: 'id',
+  project_id: 'project_id',
+  image_src: 'image_src',
+  desc: 'desc',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ProjectAwardScalarFieldEnum = (typeof ProjectAwardScalarFieldEnum)[keyof typeof ProjectAwardScalarFieldEnum]
 
 
 export const ProjectImagesScalarFieldEnum = {

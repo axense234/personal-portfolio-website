@@ -4,11 +4,11 @@ import { CardProps } from "@/core/interfaces";
 import cardStyles from "@/scss/components/shared/Card.module.scss";
 // Next
 import Image from "next/image";
-import Link from "next/link";
 // React
 import { FC } from "react";
 // Components
 import LinkButton from "./LinkButton";
+import IconComponent from "./IconComponent";
 
 const Card: FC<CardProps> = ({ desc, image, label, button, externals }) => {
   return (
@@ -34,16 +34,13 @@ const Card: FC<CardProps> = ({ desc, image, label, button, externals }) => {
             <div className={cardStyles.externals}>
               {externals.map((external) => {
                 return (
-                  <Link href={external.dest} target="_blank" key={external.id}>
-                    <Image
-                      src={external.rel}
-                      alt={external.label}
-                      title={external.label}
-                      aria-label={external.label}
-                      width={48}
-                      height={48}
-                    />
-                  </Link>
+                  <IconComponent
+                    height={32}
+                    dest={external.dest}
+                    icon_src={external.rel}
+                    label={external.label}
+                    key={external.id}
+                  />
                 );
               })}
             </div>

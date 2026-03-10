@@ -9,4 +9,6 @@ export * from "./TechSkillsProps";
 export * from "./TechSkillsTabNavProps";
 export * from "./TechSkillsTabOptionsProps";
 export * from "./TechSkillsTabViewProps";
-export * from "./TechIconProps";
+export * from "./IconComponentProps";
+export * from "./ViewBasedPageHeroProps";
+export * from "./ProjectViewDetailsProps";

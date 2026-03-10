@@ -15,6 +15,27 @@ export const featuredProjectsCreateData: ProjectCreateInput[] = [
     website_logo_url:
       'https://res.cloudinary.com/birthdayreminder/image/upload/v1716209021/VitalPrep/brandmark-design-256x256_zdzu6z.png',
     project_type: 'FEATURED',
+    awards: {
+      createMany: {
+        data: [
+          {
+            image_src:
+              'https://res.cloudinary.com/birthdayreminder/image/upload/v1773144335/Personal%20Website/vitalprep/oncs_2024_vital_prep_jud_n5u9sg.jpg',
+            desc: 'First place at “Olimpiada Nationala de Creativitate Stiintifica 2024”, county stage',
+          },
+          {
+            image_src:
+              'https://res.cloudinary.com/birthdayreminder/image/upload/r_0/a_90/v1773144334/Personal%20Website/vitalprep/medalie_de_bronz_diploma_r0bi4f.jpg',
+            desc: 'Bronze Medal at “Olimpiada Nationala de Creativitate Stiintifica 2024”, national stage',
+          },
+          {
+            image_src:
+              'https://res.cloudinary.com/birthdayreminder/image/upload/v1773144335/Personal%20Website/vitalprep/vital_prep_infoed_loc_1_pjcfei.jpg',
+            desc: 'First Place at “Olimpiada de Inovare si Creatie Digitala - Infoeducatie 2024”, county stage',
+          },
+        ],
+      },
+    },
     images: {
       create: {
         screenshots: [],
@@ -38,6 +59,27 @@ export const featuredProjectsCreateData: ProjectCreateInput[] = [
     project_type: 'FEATURED',
     docs_url:
       'https://highschool-site-app-server-ca.onrender.com/api/1.0.0/en/docs/',
+    awards: {
+      createMany: {
+        data: [
+          {
+            image_src:
+              'https://res.cloudinary.com/birthdayreminder/image/upload/v1773144629/Personal%20Website/hsa/scoala_intre_viziune_si_misiune_premiul_2_tcl0ff.jpg',
+            desc: 'Second Place at “Scoala Intre Viziune si Misiune - 10th edition - web section 2023”, county stage ',
+          },
+          {
+            image_src:
+              'https://res.cloudinary.com/birthdayreminder/image/upload/a_-90/v1773144628/Personal%20Website/hsa/infoed_2023_epefwe.jpg',
+            desc: 'First Place at “Olimpiada de Inovare si Creatie Digitala - Infoeducatie 2023”, county stage',
+          },
+          {
+            image_src:
+              'https://res.cloudinary.com/birthdayreminder/image/upload/a_-90/v1773144629/Personal%20Website/hsa/scoala_intre_viziune_si_misiune_premiul_1_bvj0wz.jpg',
+            desc: 'First place at “Scoala Intre Viziune si Misiune - 11th edition - web section 2024”, county stage (refactored project)',
+          },
+        ],
+      },
+    },
     images: {
       create: {
         screenshots: [],
@@ -59,6 +101,22 @@ export const featuredProjectsCreateData: ProjectCreateInput[] = [
     website_logo_url:
       'https://res.cloudinary.com/birthdayreminder/image/upload/v1742642023/Research%20Manager/brandmark-design-1024x0g1_ekxcnm.png',
     project_type: 'FEATURED',
+    awards: {
+      createMany: {
+        data: [
+          {
+            image_src:
+              'https://res.cloudinary.com/birthdayreminder/image/upload/v1773144873/Personal%20Website/researchmanager/oncs_2025_jud_loc_1_uq5fno.jpg',
+            desc: 'First place at “Olimpiada Nationala de Creativitate Stiintifica 2025”, county stage',
+          },
+          {
+            image_src:
+              'https://res.cloudinary.com/birthdayreminder/image/upload/v1773144874/Personal%20Website/researchmanager/infoeducatie_2025_gfgdro.jpg',
+            desc: 'First Place at “Olimpiada de Inovare si Creatie Digitala - Infoeducatie 2025”, county stage ',
+          },
+        ],
+      },
+    },
     images: {
       create: {
         screenshots: [],

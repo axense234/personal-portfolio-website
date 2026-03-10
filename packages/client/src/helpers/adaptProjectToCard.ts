@@ -13,7 +13,7 @@ export const adaptProjectToCard = (
       dest: project.github_url,
       id: project.github_url,
       label: `${project.name} Source Code`,
-      rel: "/social/github-logo-transparent-background-free-png.png",
+      rel: "https://res.cloudinary.com/birthdayreminder/image/upload/v1772997441/Personal%20Website/tech-icons/other/github_haotje.png",
     });
   }
 

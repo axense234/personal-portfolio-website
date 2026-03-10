@@ -5,7 +5,7 @@ import { FC } from "react";
 // Interfaces
 import { TechCategoryProps } from "@/core/interfaces";
 // Components
-import TechIcon from "./TechIcon";
+import IconComponent from "./IconComponent";
 
 const TechCategory: FC<TechCategoryProps> = ({ label, skills }) => {
   return (
@@ -15,7 +15,7 @@ const TechCategory: FC<TechCategoryProps> = ({ label, skills }) => {
         {skills.map((skill) => {
           return (
             <li key={skill.id}>
-              <TechIcon {...skill} />
+              <IconComponent {...skill} />
             </li>
           );
         })}

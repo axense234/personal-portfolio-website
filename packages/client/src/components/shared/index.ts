@@ -10,4 +10,7 @@ export * from "./TechSkills";
 export * from "./TechSkillsTabNav";
 export * from "./TechSkillsTabOptions";
 export * from "./TechSkillsTabView";
-export * from "./TechIcon";
+export * from "./IconComponent";
+export * from "./EntityNavigationDots";
+export * from "./EntityViewImages";
+export * from "./ProjectViewDetails";

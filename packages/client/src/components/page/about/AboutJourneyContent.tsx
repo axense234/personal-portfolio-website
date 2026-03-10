@@ -3,17 +3,14 @@
 import aboutJourneyContentStyles from "@/scss/components/page/about/AboutJourneyContent.module.scss";
 // Data
 import { aboutPageJourneyContentData } from "@/data";
-// Components
-import TechIcon from "@/components/shared/TechIcon";
 // Zustand
 import { useGetTech } from "@/hooks";
-// Shared
-import { Tech } from "@personal-portfolio-website/shared";
 // Next
 import Link from "next/link";
-import Image from "next/image";
 // Helpers
 import { getSpecificButtonColor } from "@/helpers";
+// Components
+import IconComponent from "@/components/shared/IconComponent";
 
 const AboutJourneyContent = () => {
   const { isError, isLoading, tech } = useGetTech();
@@ -26,9 +23,8 @@ const AboutJourneyContent = () => {
     return <div>isloading</div>;
   }
 
-  const getTechById = (id: string): Tech => {
-    // this is dogshit
-    return tech.find((tech) => tech.id === id) || tech[0];
+  const getTechById = (id: string) => {
+    return tech.find((tech) => tech.id === id);
   };
 
   return (
@@ -37,31 +33,17 @@ const AboutJourneyContent = () => {
         const shownIcons = articleData?.tech_ids ? (
           <div className={aboutJourneyContentStyles.icons}>
             {articleData?.tech_ids?.map((icon, index) => {
-              const usedTech: Tech = getTechById(icon);
-              return <TechIcon {...usedTech} key={index} height={48} />;
+              const usedTech = getTechById(icon);
+
+              if (usedTech) {
+                return <IconComponent {...usedTech} key={index} height={48} />;
+              }
             })}
           </div>
         ) : (
           <div className={aboutJourneyContentStyles.icons}>
             {articleData?.icons?.map((icon, index) => {
-              return (
-                <Link
-                  href={icon.dest}
-                  className={aboutJourneyContentStyles.whatever}
-                  target="_blank"
-                  key={index}
-                >
-                  <Image
-                    alt={icon.label}
-                    title={icon.label}
-                    aria-label={icon.label}
-                    src={icon.icon_src}
-                    height={64}
-                    width={256}
-                    style={{ width: "auto", height: 48 }}
-                  />
-                </Link>
-              );
+              return <IconComponent {...icon} key={index} />;
             })}
           </div>
         );

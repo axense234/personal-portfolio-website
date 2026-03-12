@@ -10,7 +10,7 @@
 
 .header {
   @include flexCenter(column);
-  gap: 1rem;
+  gap: 1.5rem;
 
   > h1 {
     font-size: getFontSize("h1-laptop");

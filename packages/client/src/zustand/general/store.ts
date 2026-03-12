@@ -1,6 +1,10 @@
 // Types
-import { GeneralState, GeneralStore } from "@/core/types";
-import { TechCategory, TechSkill } from "@personal-portfolio-website/shared";
+import { GeneralState, GeneralStore, GetProjectsDataType } from "@/core/types";
+import {
+  TechCategory,
+  TechSkill,
+  TechSkillWithTechWithContent,
+} from "@personal-portfolio-website/shared";
 // Zustand
 import { createStore } from "zustand/vanilla";
 // Default Data
@@ -13,6 +17,9 @@ import {
   setCurrentTechSkill,
   setTechSkills,
   handleOnTechSkillCategoryTabClick,
+  setGetProjectsData,
+  setCurrentProjectId,
+  setCurrentProjectImage,
 } from "./actions";
 
 export const createGeneralStore = (
@@ -20,6 +27,14 @@ export const createGeneralStore = (
 ) => {
   return createStore<GeneralStore>()((set) => ({
     ...initState,
+
+    setCurrentProjectImage: (img: string) => setCurrentProjectImage(set, img),
+
+    setCurrentProjectId: (id: string) => setCurrentProjectId(set, id),
+
+    setGetProjectsData: (data: GetProjectsDataType) =>
+      setGetProjectsData(set, data),
+
     toggleColorTheme: () => toggleColorTheme(set),
 
     handleWeeklyMealPrepImagesCarousel: (index: number) =>
@@ -28,9 +43,11 @@ export const createGeneralStore = (
     setCurrentTechSkillCategory: (category: TechCategory) =>
       setCurrentTechCategory(set, category),
 
-    setCurrentTechSkill: (skill: string) => setCurrentTechSkill(set, skill),
+    setCurrentTechSkill: (skill: TechSkillWithTechWithContent) =>
+      setCurrentTechSkill(set, skill),
 
-    setTechSkills: (techSkills: TechSkill[]) => setTechSkills(set, techSkills),
+    setTechSkills: (techSkills: TechSkillWithTechWithContent[]) =>
+      setTechSkills(set, techSkills),
 
     handleOnTechSkillCategoryTabClick: (category: TechCategory) =>
       handleOnTechSkillCategoryTabClick(set, category),

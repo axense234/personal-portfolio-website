@@ -3,6 +3,7 @@ import { Injectable } from '@nestjs/common';
 // Shared package <3
 import {
   CreateProjectResponse,
+  GetProjectsQueryParams,
   GetProjectsResponse,
   InjectFeaturedProjectsResponse,
   ProjectCreateInput,
@@ -20,8 +21,10 @@ export class ProjectServices {
     private insertFeaturedProjectsService: InjectFeaturedProjectsService,
   ) {}
 
-  async getProjects(): Promise<GetProjectsResponse> {
-    return await this.getProjectsService.getProjects();
+  async getProjects(
+    params: GetProjectsQueryParams,
+  ): Promise<GetProjectsResponse> {
+    return await this.getProjectsService.getProjects(params);
   }
 
   async createProject(dto: ProjectCreateInput): Promise<CreateProjectResponse> {

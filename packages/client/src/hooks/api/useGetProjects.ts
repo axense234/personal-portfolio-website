@@ -1,40 +1,39 @@
 "use client";
+import { useGeneralStore } from "@/zustand/general/context";
 // Shared Types
 import {
   GetProjectsResponse,
-  ProjectWithImages,
+  ProjectTopic,
 } from "@personal-portfolio-website/shared";
 // Ky
 import ky from "ky";
 // React
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-export const useGetProjects = () => {
-  const [projects, setProjects] = useState<ProjectWithImages[]>([]);
-  const [isError, setIsError] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+export const useGetProjects = (topics: ProjectTopic[]) => {
+  const { setGetProjectsData } = useGeneralStore((state) => state);
 
   useEffect(() => {
     const getProjects = async () => {
       try {
-        const res = (await ky("/api/projects", {
+        const res = (await ky(`/api/projects`, {
           method: "get",
+          searchParams: { topics: JSON.stringify(topics) },
         }).json()) as GetProjectsResponse;
-        setProjects(res.projects);
 
-        setIsError(false);
-        setIsLoading(false);
+        setGetProjectsData({
+          isError: false,
+          isLoading: false,
+          projects: res?.projects,
+        });
       } catch (error) {
-        setIsError(true);
-        setIsLoading(false);
+        setGetProjectsData({
+          isError: true,
+          isLoading: false,
+          projects: [],
+        });
       }
     };
     getProjects();
   }, []);
-
-  return {
-    projects,
-    isError,
-    isLoading,
-  };
 };

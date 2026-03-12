@@ -111,9 +111,12 @@ model Project {
   website_logo_url String?
   docs_url         String?
 
-  images       ProjectImages?
-  awards       ProjectAward[]
-  project_type ProjectType    @default(HIDDEN)
+  images ProjectImages?
+  awards ProjectAward[]
+
+  topics ProjectTopic[]
+
+  is_visible Boolean @default(true)
 
   skills TechSkill[]
 
@@ -146,15 +149,18 @@ model MealPrep {
   updatedAt DateTime @updatedAt
 }
 
+enum ProjectTopic {
+  FEATURED
+  PRACTICE
+  HIGHSCHOOL
+  UNIVERSITY
+  AWARDED
+  BRONZE_MEDAL
+}
+
 enum TechSkillScope {
   GENERAL
   PROJECT
-}
-
-enum ProjectType {
-  FEATURED
-  DISPLAYED
-  HIDDEN
 }
 
 enum TechCategory {

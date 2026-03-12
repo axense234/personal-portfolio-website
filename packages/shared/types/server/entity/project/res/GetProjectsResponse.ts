@@ -1,8 +1,8 @@
 import { StatusCodes } from "http-status-codes";
-import { ProjectWithImages } from "../extra";
+import { ProjectWithEverything } from "../extra";
 
 export interface GetProjectsResponse {
   status: StatusCodes;
   message: string;
-  projects: ProjectWithImages[];
+  projects: ProjectWithEverything[];
 }

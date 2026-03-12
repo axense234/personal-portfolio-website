@@ -1,6 +1,6 @@
 // Types
 import { SetGeneralStoreFunctionType } from "@/core/interfaces";
-import { GeneralState } from "@/core/types";
+import { GeneralState, GetProjectsDataType } from "@/core/types";
 import {
   TechCategory,
   TechSkill,
@@ -53,4 +53,28 @@ export const handleOnTechSkillCategoryTabClick = (
     currentTechSkill: state.techSkills.filter(
       (skill) => skill.tech.category == category,
     )[0],
+  }));
+
+export const setGetProjectsData = (
+  set: SetGeneralStoreFunctionType,
+  data: GetProjectsDataType,
+) =>
+  set((state: GeneralState) => ({
+    getProjectsData: data,
+  }));
+
+export const setCurrentProjectId = (
+  set: SetGeneralStoreFunctionType,
+  id: string,
+) =>
+  set((state: GeneralState) => ({
+    currentProjectId: id,
+  }));
+
+export const setCurrentProjectImage = (
+  set: SetGeneralStoreFunctionType,
+  image: string,
+) =>
+  set((state: GeneralState) => ({
+    currentProjectImage: image,
   }));

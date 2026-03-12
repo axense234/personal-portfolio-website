@@ -164,7 +164,8 @@ export const ProjectScalarFieldEnum = {
   website_url: 'website_url',
   website_logo_url: 'website_logo_url',
   docs_url: 'docs_url',
-  project_type: 'project_type',
+  topics: 'topics',
+  is_visible: 'is_visible',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const

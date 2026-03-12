@@ -21,8 +21,6 @@ const MealPrepView = () => {
 
   const mealPrep = weeklyMealPrep as MealPrepWithIngredients;
 
-  console.log(isError);
-
   return (
     <div className={mealPrepViewStyles.container}>
       <MealPrepDetails {...mealPrep} />

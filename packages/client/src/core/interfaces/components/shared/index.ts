@@ -12,3 +12,7 @@ export * from "./TechSkillsTabViewProps";
 export * from "./IconComponentProps";
 export * from "./ViewBasedPageHeroProps";
 export * from "./ProjectViewDetailsProps";
+export * from "./EntityNavigationDotsProps";
+export * from "./ProjectViewProps";
+export * from "./EntityViewImagesProps";
+export * from "./ViewContentProps";

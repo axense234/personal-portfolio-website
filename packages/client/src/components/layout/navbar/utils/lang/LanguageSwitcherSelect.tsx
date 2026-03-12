@@ -20,8 +20,6 @@ const LanguageSwitcherSelect: FC<LanguageSwitcherSelectProps> = ({
     languageFlagsImages.find((flagImage) => flagImage.value === locale) ||
     languageFlagsImages[0];
 
-  console.log(locale);
-
   const navigateToPathname = useNavigateToPathname();
 
   return (

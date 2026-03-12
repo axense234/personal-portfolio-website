@@ -9,6 +9,7 @@ import { FC } from "react";
 // Zuuuuuuuuuuuuuuuuuuuuustand or smth idk
 import { useGeneralStore } from "@/zustand/general/context";
 
+// REFACTOR THIS
 const MealPrepImages: FC<MealPrepImagesProps> = ({ images, mealPrepName }) => {
   const {
     weeklyMealPrepCurrentImageIndex,

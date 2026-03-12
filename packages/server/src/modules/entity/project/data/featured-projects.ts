@@ -4,6 +4,7 @@ import { ProjectCreateInput } from '@personal-portfolio-website/shared';
 export const featuredProjectsCreateData: ProjectCreateInput[] = [
   {
     name: 'Vital Prep - Meal Prep Helper',
+    topics: ['AWARDED', 'BRONZE_MEDAL', 'HIGHSCHOOL', 'FEATURED'],
     short_desc:
       'A full-stack project about managing meal prepping as an activity.',
     long_desc:
@@ -14,7 +15,6 @@ export const featuredProjectsCreateData: ProjectCreateInput[] = [
     website_url: 'https://vitalprep-meal.com',
     website_logo_url:
       'https://res.cloudinary.com/birthdayreminder/image/upload/v1716209021/VitalPrep/brandmark-design-256x256_zdzu6z.png',
-    project_type: 'FEATURED',
     awards: {
       createMany: {
         data: [
@@ -46,6 +46,7 @@ export const featuredProjectsCreateData: ProjectCreateInput[] = [
   },
   {
     name: 'Highschool Site App',
+    topics: ['AWARDED', 'HIGHSCHOOL', 'FEATURED'],
     short_desc:
       'A full-stack project about recreating my highschool’s site with modern technologies and complex functionalities.',
     long_desc:
@@ -56,7 +57,6 @@ export const featuredProjectsCreateData: ProjectCreateInput[] = [
     website_url: 'https://highschool-site-app-ca.com/',
     website_logo_url:
       'https://res.cloudinary.com/birthdayreminder/image/upload/v1689691850/Highschool%20Site%20App/ltibp_logo_ptonmd_oirhs1.png',
-    project_type: 'FEATURED',
     docs_url:
       'https://highschool-site-app-server-ca.onrender.com/api/1.0.0/en/docs/',
     awards: {
@@ -90,6 +90,7 @@ export const featuredProjectsCreateData: ProjectCreateInput[] = [
   },
   {
     name: 'Research Manager',
+    topics: ['AWARDED', 'HIGHSCHOOL', 'FEATURED'],
     short_desc:
       'A full-stack project about handling researching activities in a methodical way.',
     long_desc:
@@ -100,7 +101,6 @@ export const featuredProjectsCreateData: ProjectCreateInput[] = [
     website_url: 'https://researchmanager-ca.com/',
     website_logo_url:
       'https://res.cloudinary.com/birthdayreminder/image/upload/v1742642023/Research%20Manager/brandmark-design-1024x0g1_ekxcnm.png',
-    project_type: 'FEATURED',
     awards: {
       createMany: {
         data: [
@@ -127,12 +127,12 @@ export const featuredProjectsCreateData: ProjectCreateInput[] = [
   },
   {
     name: 'NOTES NETPPR API',
+    topics: ['HIGHSCHOOL', 'FEATURED'],
     short_desc: 'A backend project about authors, notes, folders and such.',
     long_desc: 'A backend project about authors, notes, folders and such.',
     overview_desc: 'A backend project about authors, notes, folders and such.',
     github_url: 'https://github.com/axense234/Notes-NETPPR-API',
     docs_url: 'https://notes-api-netppr-ca.onrender.com/api/1.0.0/docs',
-    project_type: 'FEATURED',
     images: {
       create: {
         screenshots: [],

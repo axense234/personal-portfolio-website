@@ -10,9 +10,15 @@ import { adaptProjectToCard } from "@/helpers";
 import { useGetProjects } from "@/hooks";
 // SCSS
 import homeFeaturedProjectsStyles from "@/scss/components/page/home/HomeFeaturedProjects.module.scss";
+// zus
+import { useGeneralStore } from "@/zustand/general/context";
 
 const FeaturedProjects = () => {
-  const { projects, isError, isLoading } = useGetProjects();
+  useGetProjects(["FEATURED"]);
+
+  const { isError, isLoading, projects } = useGeneralStore(
+    (state) => state.getProjectsData,
+  );
 
   if (isError) {
     return <div>iserror</div>;
@@ -48,7 +54,7 @@ const HomeFeaturedProjects = () => {
           <h2 title={title} aria-label={title}>
             {title}
           </h2>
-          {paragraphs.map((paragraph, index) => {
+          {paragraphs?.map((paragraph, index) => {
             return <p key={index}>{paragraph}</p>;
           })}
         </div>

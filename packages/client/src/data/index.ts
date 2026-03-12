@@ -9,6 +9,9 @@ import {
   AboutJourneyDataType,
 } from "@/core/types";
 
+export const bronzeMedalImageSrc =
+  "https://res.cloudinary.com/birthdayreminder/image/upload/v1773335277/Personal%20Website/vitalprep/bronze_modeal_ct7b4p.jpg";
+
 export const buttonColors: ("warning" | "success" | "delete")[] = [
   "warning",
   "success",
@@ -497,5 +500,17 @@ export const awardsPageHeroContentData: SectionDataType = {
       label: "Highschool Awards",
       size: "large",
     },
+  ],
+};
+
+export const awardsPageBronzeMedalSectionData: SectionDataType = {
+  title: "Bronze Medal Award",
+  subtitle: "shiny round thing",
+};
+
+export const awardsPageHighschoolAwardsSectionData: SectionDataType = {
+  title: "Highschool Awards",
+  paragraphs: [
+    "All my programming (mostly web dev) related highschool awards in chronological order.",
   ],
 };

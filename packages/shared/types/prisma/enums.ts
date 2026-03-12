@@ -9,21 +9,24 @@
 * 🟢 You can import this file directly.
 */
 
+export const ProjectTopic = {
+  FEATURED: 'FEATURED',
+  PRACTICE: 'PRACTICE',
+  HIGHSCHOOL: 'HIGHSCHOOL',
+  UNIVERSITY: 'UNIVERSITY',
+  AWARDED: 'AWARDED',
+  BRONZE_MEDAL: 'BRONZE_MEDAL'
+} as const
+
+export type ProjectTopic = (typeof ProjectTopic)[keyof typeof ProjectTopic]
+
+
 export const TechSkillScope = {
   GENERAL: 'GENERAL',
   PROJECT: 'PROJECT'
 } as const
 
 export type TechSkillScope = (typeof TechSkillScope)[keyof typeof TechSkillScope]
-
-
-export const ProjectType = {
-  FEATURED: 'FEATURED',
-  DISPLAYED: 'DISPLAYED',
-  HIDDEN: 'HIDDEN'
-} as const
-
-export type ProjectType = (typeof ProjectType)[keyof typeof ProjectType]
 
 
 export const TechCategory = {

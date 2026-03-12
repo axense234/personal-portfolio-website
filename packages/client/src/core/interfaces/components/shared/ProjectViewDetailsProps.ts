@@ -1,7 +1,7 @@
 // Shared
-import { ProjectWithImagesWithAwards } from "@personal-portfolio-website/shared";
+import { ProjectWithEverything } from "@personal-portfolio-website/shared";
 
 export interface ProjectViewDetailsProps {
-  project: ProjectWithImagesWithAwards;
+  project: ProjectWithEverything;
   viewType: "awards" | "normal";
 }

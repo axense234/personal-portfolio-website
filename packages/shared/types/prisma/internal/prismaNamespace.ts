@@ -1203,7 +1203,8 @@ export const ProjectScalarFieldEnum = {
   website_url: 'website_url',
   website_logo_url: 'website_logo_url',
   docs_url: 'docs_url',
-  project_type: 'project_type',
+  topics: 'topics',
+  is_visible: 'is_visible',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
@@ -1323,16 +1324,23 @@ export type ListEnumTechCategoryFieldRefInput<$PrismaModel> = FieldRefInputType<
 
 
 /**
- * Reference to a field of type 'ProjectType'
+ * Reference to a field of type 'ProjectTopic[]'
  */
-export type EnumProjectTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ProjectType'>
+export type ListEnumProjectTopicFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ProjectTopic[]'>
     
 
 
 /**
- * Reference to a field of type 'ProjectType[]'
+ * Reference to a field of type 'ProjectTopic'
  */
-export type ListEnumProjectTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ProjectType[]'>
+export type EnumProjectTopicFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ProjectTopic'>
+    
+
+
+/**
+ * Reference to a field of type 'Boolean'
+ */
+export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
     
 
 

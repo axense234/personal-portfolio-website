@@ -1,5 +1,7 @@
 // Types
 import { GeneralState } from "@/core/types";
+// Data
+import { defaultContactFormData } from "@/data";
 
 export const defaultInitState: GeneralState = {
   colorTheme: "dark",
@@ -16,4 +18,6 @@ export const defaultInitState: GeneralState = {
   currentProjectId: "",
 
   currentProjectImage: "",
+
+  contactFormData: defaultContactFormData,
 };

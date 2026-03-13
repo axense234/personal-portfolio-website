@@ -1,4 +1,5 @@
 import {
+  SendEmailOptions,
   TechCategory,
   TechSkillWithTechWithContent,
 } from "@personal-portfolio-website/shared";
@@ -18,4 +19,6 @@ export type GeneralState = {
   currentProjectId: string;
 
   currentProjectImage: string;
+
+  contactFormData: SendEmailOptions;
 };

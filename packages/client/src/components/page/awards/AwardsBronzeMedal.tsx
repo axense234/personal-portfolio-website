@@ -36,7 +36,11 @@ const AwardsBronzeMedal = () => {
           src={bronzeMedalImageSrc}
           alt="Bronze Medal Image"
         />
-        <ProjectViewDetails project={bronzeMedalProject} viewType="awards" />
+        <ProjectViewDetails
+          project={bronzeMedalProject}
+          viewType="awards"
+          index={1}
+        />
       </div>
     </section>
   );

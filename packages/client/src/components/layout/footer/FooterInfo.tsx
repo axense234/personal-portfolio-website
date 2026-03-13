@@ -2,13 +2,13 @@
 import footerInfoStyles from "@/scss/components/layout/footer/FooterInfo.module.scss";
 // Components
 import FooterCopy from "./FooterCopy";
-import FooterSocial from "./FooterSocial";
+import SocialIcons from "@/components/shared/SocialIcons";
 
 const FooterInfo = () => {
   return (
     <div className={footerInfoStyles.container}>
       <FooterCopy />
-      <FooterSocial />
+      <SocialIcons iconHeight={32} />
     </div>
   );
 };

@@ -5,19 +5,21 @@ import ProjectViewDetails from "./ProjectViewDetails";
 // SCSS
 import projectViewStyles from "@/scss/components/shared/ProjectView.module.scss";
 // React
-import { FC, useEffect, useMemo, useState } from "react";
+import { FC, useEffect } from "react";
 // zusstradn
 import { useGeneralStore } from "@/zustand/general/context";
 // Interfaces
 import { ProjectViewProps } from "@/core/interfaces";
-// Helpers
-import { getProjectViewData } from "@/helpers";
+// Hooks
+import { useGetProjectViewDetails } from "@/hooks";
+// Shared
+import { ProjectWithEverything } from "@personal-portfolio-website/shared";
 
-// TODO: create 2 custom hooks for this boy
 const ProjectView: FC<ProjectViewProps> = ({
   viewType,
   displayMode,
   project,
+  index,
 }) => {
   const {
     currentProjectId,
@@ -26,17 +28,23 @@ const ProjectView: FC<ProjectViewProps> = ({
     setCurrentProjectImage,
   } = useGeneralStore((state) => state);
 
-  const usedProjectsData = useMemo(
-    () =>
-      displayMode === "static" && project
-        ? [project]
-        : getProjectsData?.projects,
-    [displayMode, project, getProjectsData?.projects],
-  );
-  const { currentProject, viewImages } = getProjectViewData(
-    usedProjectsData,
-    currentProjectId,
+  const projects =
+    displayMode === "static"
+      ? ([project] as ProjectWithEverything[])
+      : getProjectsData?.projects;
+
+  const {
+    viewImages,
+    currentProject,
+    currentProjectImageUsed,
+    currentProjectImageUsedSetter,
+  } = useGetProjectViewDetails(
+    displayMode,
     viewType,
+    projects,
+    currentProjectId,
+    currentProjectImage,
+    setCurrentProjectImage,
   );
 
   useEffect(() => {
@@ -45,30 +53,13 @@ const ProjectView: FC<ProjectViewProps> = ({
     }
   }, [currentProjectId]);
 
-  const [currentEntityImageLocal, setCurrentEntityImageLocal] =
-    useState<string>(viewImages[0]);
-
-  const currentProjectImageWithDefault =
-    currentProjectImage?.length === 0 ? viewImages[0] : currentProjectImage;
-
-  const currentProjectImageLocalWithDefault =
-    currentEntityImageLocal?.length === 0
-      ? viewImages[0]
-      : currentEntityImageLocal;
-
-  const currentProjectImageUsed =
-    displayMode === "dynamic"
-      ? currentProjectImageWithDefault
-      : currentProjectImageLocalWithDefault;
-
-  const currentProjectImageUsedSetter =
-    displayMode === "dynamic"
-      ? setCurrentProjectImage
-      : setCurrentEntityImageLocal;
-
   return (
     <div className={projectViewStyles.container}>
-      <ProjectViewDetails project={currentProject} viewType={viewType} />
+      <ProjectViewDetails
+        project={currentProject}
+        viewType={viewType}
+        index={index}
+      />
       <EntityViewImages
         images={viewImages}
         entityType="project"

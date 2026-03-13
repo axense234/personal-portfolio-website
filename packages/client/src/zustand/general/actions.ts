@@ -2,10 +2,12 @@
 import { SetGeneralStoreFunctionType } from "@/core/interfaces";
 import { GeneralState, GetProjectsDataType } from "@/core/types";
 import {
+  SendEmailOptions,
   TechCategory,
   TechSkill,
   TechSkillWithTechWithContent,
 } from "@personal-portfolio-website/shared";
+import ky from "ky";
 
 export const toggleColorTheme = (set: SetGeneralStoreFunctionType) =>
   set((state: GeneralState) => ({
@@ -77,4 +79,13 @@ export const setCurrentProjectImage = (
 ) =>
   set((state: GeneralState) => ({
     currentProjectImage: image,
+  }));
+
+export const setContactFormDataKeyValue = (
+  set: SetGeneralStoreFunctionType,
+  key: string,
+  value: string,
+) =>
+  set((state: GeneralState) => ({
+    contactFormData: { ...state.contactFormData, [key]: value },
   }));

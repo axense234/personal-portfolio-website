@@ -23,7 +23,7 @@
     color: var(--body-text);
     font-size: getFontSize("p-large");
     letter-spacing: 0.35px;
-    width: 80%;
+    max-width: 72ch;
   }
 }
 

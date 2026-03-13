@@ -11,6 +11,8 @@ import {
   MealPrepModule,
   PrismaModule,
   TechModule,
+  NodeMailerModule,
+  MailerModule,
 } from './modules';
 
 @Module({
@@ -25,6 +27,8 @@ import {
       ],
     }),
     PrismaModule,
+    NodeMailerModule,
+    MailerModule,
     ProjectModule,
     MealPrepModule,
     TechSkillModule,

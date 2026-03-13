@@ -2,8 +2,16 @@ import { LinkHrefType } from "@/core/types";
 
 export interface LinkButtonProps {
   id?: number;
-  color: "warning" | "success" | "delete";
-  label: string;
-  dest: LinkHrefType;
+  colorSpecifier: "warning" | "success" | "delete" | number;
   size: "large" | "medium" | "small";
+  label: string;
+
+  dest?: LinkHrefType;
+
+  download?: boolean;
+  downloadFilename?: string;
+
+  onClick?: () => void;
+
+  buttonType: "link" | "download" | "submit";
 }

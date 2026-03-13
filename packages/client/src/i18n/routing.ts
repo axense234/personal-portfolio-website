@@ -5,6 +5,7 @@ export const routing = defineRouting({
   defaultLocale: "en",
   localePrefix: "always",
   pathnames: {
+    "/misc/resume.pdf": "/misc/resume.pdf",
     "/": { ro: "/", en: "/", fr: "/", de: "/" },
     "/home": {
       ro: "/acasa",

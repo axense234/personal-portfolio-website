@@ -42,7 +42,7 @@ export const adaptProjectToCard = (
     label: project.name,
     desc: project.short_desc,
     button: {
-      color: buttonColor,
+      colorSpecifier: buttonColor,
       dest: "/projects",
       label: "See More",
       size: "medium",

@@ -12,6 +12,7 @@ import { ProjectViewDetailsProps } from "@/core/interfaces";
 const ProjectViewDetails: FC<ProjectViewDetailsProps> = ({
   project,
   viewType,
+  index,
 }) => {
   return (
     <div className={projectViewDetailsStyles.container}>
@@ -53,7 +54,7 @@ const ProjectViewDetails: FC<ProjectViewDetailsProps> = ({
       </div>
       <div className={projectViewDetailsStyles.buttons}>
         <LinkButton
-          color="warning"
+          colorSpecifier={index}
           dest="/projects"
           label="See More"
           size="large"

@@ -15,3 +15,4 @@ export * from "./EntityNavigationDots";
 export * from "./EntityViewImages";
 export * from "./ProjectViewDetails";
 export * from "./ProjectExternals";
+export * from "./SocialIcons";

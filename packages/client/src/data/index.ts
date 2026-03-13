@@ -8,6 +8,10 @@ import {
   ExternalMediaIconType,
   AboutJourneyDataType,
 } from "@/core/types";
+// Shared
+import { SendEmailOptions } from "@personal-portfolio-website/shared";
+
+export const proEmail = "andreicomanescuonline@gmail.com";
 
 export const bronzeMedalImageSrc =
   "https://res.cloudinary.com/birthdayreminder/image/upload/v1773335277/Personal%20Website/vitalprep/bronze_modeal_ct7b4p.jpg";
@@ -108,14 +112,14 @@ export const homePageHeroSectionData: CommonPageHeroSectionDataType = {
   buttons: [
     {
       id: 1,
-      color: "warning",
+      colorSpecifier: "warning",
       dest: "/projects",
       label: "My Projects",
       size: "large",
     },
     {
       id: 2,
-      color: "success",
+      colorSpecifier: "success",
       dest: "/about",
       label: "My Journey",
       size: "large",
@@ -131,21 +135,21 @@ export const aboutPageHeroSectionData: CommonPageHeroSectionDataType = {
   buttons: [
     {
       id: 1,
-      color: "warning",
+      colorSpecifier: "warning",
       dest: "/projects",
       label: "My Projects",
       size: "large",
     },
     {
       id: 2,
-      color: "success",
+      colorSpecifier: "success",
       dest: "/about",
       label: "My Journey",
       size: "large",
     },
     {
       id: 3,
-      color: "delete",
+      colorSpecifier: "delete",
       dest: "/about",
       label: "My Hobbies",
       size: "large",
@@ -162,7 +166,7 @@ export const homePageAboutTeaserSectionData: SectionDataType = {
   buttons: [
     {
       id: 1,
-      color: "delete",
+      colorSpecifier: "delete",
       dest: "/about",
       label: "Read More",
       size: "large",
@@ -179,7 +183,7 @@ export const aboutPageAboutMeSectionData: SectionDataType = {
   buttons: [
     {
       id: 1,
-      color: "warning",
+      colorSpecifier: "warning",
       dest: "/contact",
       label: "Contact Me",
       size: "large",
@@ -195,7 +199,7 @@ export const homePageFeaturedProjectsSectionData: SectionDataType = {
   buttons: [
     {
       id: 1,
-      color: "warning",
+      colorSpecifier: "warning",
       dest: "/projects",
       label: "More Projects",
       size: "large",
@@ -211,7 +215,7 @@ export const homePageTechnicalSkillsSectionData: SectionDataType = {
   buttons: [
     {
       id: 1,
-      color: "success",
+      colorSpecifier: "success",
       dest: "/about",
       label: "More Details",
       size: "large",
@@ -227,7 +231,7 @@ export const weeklyMealPrepSectionData: SectionDataType = {
   buttons: [
     {
       id: 1,
-      color: "delete",
+      colorSpecifier: "delete",
       dest: "/meal-prep",
       label: "Meals Gallery",
       size: "large",
@@ -244,14 +248,14 @@ export const homePageContactTeaserSectionData: SectionDataType = {
   buttons: [
     {
       id: 1,
-      color: "warning",
+      colorSpecifier: "warning",
       dest: "/contact",
       label: "Contact Me",
       size: "large",
     },
     {
       id: 2,
-      color: "success",
+      colorSpecifier: "success",
       dest: "/home",
       label: "My Resume",
       size: "large",
@@ -274,7 +278,7 @@ export const aboutPageJourneySectionData: SectionDataType = {
   buttons: [
     {
       id: 1,
-      color: "success",
+      colorSpecifier: "success",
       dest: "/projects",
       label: "My Projects",
       size: "large",
@@ -445,7 +449,7 @@ export const aboutPageHobbiesContentData: CardProps[] = [
     image: "/hobbies/webdev.png",
     desc: "The main thing I like about web development that some might dislike is the “gluing together” technologies part. Also it is kinda relaxing in a wierd way.",
     button: {
-      color: "warning",
+      colorSpecifier: "warning",
       dest: "/projects",
       label: "My Projects",
       size: "large",
@@ -464,7 +468,7 @@ export const aboutPageHobbiesContentData: CardProps[] = [
     image: "/hobbies/mealprep.png",
     desc: "I only cook 1-2 times a week to prepare meals in advance. Cooking is relaxing asf, the reliability and the nutritional value of the meals is really appreciated.",
     button: {
-      color: "success",
+      colorSpecifier: "success",
       dest: "/meal-prep",
       label: "My Meal Preps",
       size: "large",
@@ -488,14 +492,14 @@ export const awardsPageHeroContentData: SectionDataType = {
   buttons: [
     {
       id: 1,
-      color: "warning",
+      colorSpecifier: "warning",
       dest: "/awards",
       label: "Bronze Medal Award",
       size: "large",
     },
     {
       id: 2,
-      color: "success",
+      colorSpecifier: "success",
       dest: "/awards",
       label: "Highschool Awards",
       size: "large",
@@ -513,4 +517,60 @@ export const awardsPageHighschoolAwardsSectionData: SectionDataType = {
   paragraphs: [
     "All my programming (mostly web dev) related highschool awards in chronological order.",
   ],
+};
+
+export const contactPageHeroSectionData: CommonPageHeroSectionDataType = {
+  title: "Contact Me",
+  subtitle: "communication",
+  desc: "I am a romanian student passionate about web development. Feel free to contact me for any type of project related reason or just for the fun of it I guess.",
+  image: "/misc/placeholder.jpg",
+  buttons: [
+    {
+      id: 1,
+      colorSpecifier: "warning",
+      dest: "/contact",
+      label: "Contact Me",
+      size: "large",
+    },
+    {
+      id: 2,
+      colorSpecifier: "success",
+      dest: "/contact",
+      label: "Message Me",
+      size: "large",
+    },
+    {
+      id: 3,
+      colorSpecifier: "delete",
+      dest: "/contact",
+      label: "My Resume",
+      size: "large",
+    },
+  ],
+};
+
+export const contactPageContactMethodsSectionData: SectionDataType = {
+  title: "Methods & Resume",
+  paragraphs: [
+    "Here are all the methods you can contact me. Also my resume is available for download as a PDF.",
+  ],
+};
+
+export const contactPageContactMessageMeSectionData: SectionDataType = {
+  title: "Message Me",
+  paragraphs: [
+    "Through this form you can send me a message through email. I usually respond within 24 hours.",
+  ],
+};
+
+export const defaultContactFormEmail = "johnlikescheese@gmail.com";
+export const defaultContactFormName = "John Cheese";
+export const defaultContactFormMessage = "I am watching.";
+export const defaultContactFormSubject = "I Like Cheese";
+
+export const defaultContactFormData: SendEmailOptions = {
+  email: "",
+  name: "",
+  message: "",
+  subject: "",
 };

@@ -21,3 +21,19 @@ button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
+
+button:focus-within {
+  outline: 1px solid #f85149;
+}
+
+input:focus-within {
+  outline: 1px solid #f85149;
+}
+
+textarea:focus-within {
+  outline: 1px solid #f85149;
+}
+
+select:focus-within {
+  outline: 1px solid #f85149;
+}

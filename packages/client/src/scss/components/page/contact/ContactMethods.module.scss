@@ -1,0 +1,54 @@
+@use "../../../abstracts" as *;
+
+.container {
+  @include flexCenter(column);
+  width: 100%;
+  gap: 6rem;
+  padding: 0rem 40rem;
+}
+
+.intro {
+  @include flexCenter(column);
+  width: 100%;
+  gap: 3rem;
+
+  > h2 {
+    font-size: getFontSize("h2-laptop");
+    letter-spacing: 3px;
+    color: var(--primary-opposite);
+  }
+
+  > p {
+    color: var(--body-text);
+    font-size: getFontSize("p-large");
+    letter-spacing: 0.35px;
+    width: 60%;
+    text-align: center;
+  }
+}
+
+.content {
+  @include flexCenter(column);
+  width: 100%;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.method {
+  @include flexCenter(row);
+  gap: 3rem;
+  justify-content: flex-start;
+  width: 100%;
+
+  > h4 {
+    font-size: getFontSize("h4-tablet");
+    letter-spacing: 5px;
+    color: var(--primary-opposite);
+  }
+
+  > h5 {
+    font-size: getFontSize("h5-tablet");
+    letter-spacing: 2px;
+    color: var(--primary-opposite);
+  }
+}

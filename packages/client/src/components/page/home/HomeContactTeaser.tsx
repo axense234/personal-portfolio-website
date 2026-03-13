@@ -12,13 +12,13 @@ const HomeContactTeaser = () => {
       <div className={homeContactTeaserStyles.content}>
         <h2>{title}</h2>
         <div className={homeContactTeaserStyles.paragraphs}>
-          {paragraphs.map((paragraph, index) => {
+          {paragraphs?.map((paragraph, index) => {
             return <p key={index}>{paragraph}</p>;
           })}
         </div>
       </div>
       <div className={homeContactTeaserStyles.buttons}>
-        {buttons.map((button) => {
+        {buttons?.map((button) => {
           return <LinkButton {...button} key={button.id} />;
         })}
       </div>

@@ -16,3 +16,6 @@ export * from "./EntityNavigationDotsProps";
 export * from "./ProjectViewProps";
 export * from "./EntityViewImagesProps";
 export * from "./ViewContentProps";
+export * from "./SocialIconsProps";
+export * from "./TextFormControlProps";
+export * from "./TextAreaFormControlProps";

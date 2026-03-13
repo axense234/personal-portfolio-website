@@ -25,6 +25,7 @@ const ViewContent: FC<ViewContentProps> = ({ page, isError, isLoading }) => {
     <ProjectView
       viewType={page == "awards" ? "awards" : "normal"}
       displayMode="dynamic"
+      index={0}
     />
   );
 };

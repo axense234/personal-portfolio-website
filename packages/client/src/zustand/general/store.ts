@@ -1,8 +1,8 @@
 // Types
 import { GeneralState, GeneralStore, GetProjectsDataType } from "@/core/types";
 import {
+  SendEmailOptions,
   TechCategory,
-  TechSkill,
   TechSkillWithTechWithContent,
 } from "@personal-portfolio-website/shared";
 // Zustand
@@ -20,13 +20,18 @@ import {
   setGetProjectsData,
   setCurrentProjectId,
   setCurrentProjectImage,
+  setContactFormDataKeyValue,
 } from "./actions";
+// Thunks
+import { sendEmailWithContactForm } from "./thunks";
 
 export const createGeneralStore = (
   initState: GeneralState = defaultInitState,
 ) => {
-  return createStore<GeneralStore>()((set) => ({
+  return createStore<GeneralStore>()((set, get) => ({
     ...initState,
+    setContactFormDataKeyValue: (key: string, value: string) =>
+      setContactFormDataKeyValue(set, key, value),
 
     setCurrentProjectImage: (img: string) => setCurrentProjectImage(set, img),
 
@@ -51,5 +56,8 @@ export const createGeneralStore = (
 
     handleOnTechSkillCategoryTabClick: (category: TechCategory) =>
       handleOnTechSkillCategoryTabClick(set, category),
+
+    sendEmailWithContactForm: (dto: SendEmailOptions) =>
+      sendEmailWithContactForm(dto),
   }));
 };

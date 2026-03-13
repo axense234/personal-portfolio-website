@@ -6,4 +6,6 @@ export interface ProjectViewProps {
   displayMode: "dynamic" | "static";
 
   project?: ProjectWithEverything;
+
+  index: number;
 }

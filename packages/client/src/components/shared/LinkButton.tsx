@@ -2,16 +2,30 @@
 import { FC } from "react";
 // Types
 import { LinkButtonProps } from "@/core/interfaces";
-// i18n
-import { Link } from "@/i18n/navigation";
+import { LinkHrefType } from "@/core/types";
+// Links and stuff man
+import { Link as Linki18n } from "@/i18n/navigation";
+import Link from "next/link";
 // SCSS
 import linkButtonStyles from "@/scss/components/shared/LinkButton.module.scss";
+// Helpers
 import { getSpecificButtonColor } from "@/helpers";
 
-const LinkButton: FC<LinkButtonProps> = ({ color, dest, label, size }) => {
-  const linkButtonColor = getSpecificButtonColor(color);
+const LinkButton: FC<LinkButtonProps> = ({
+  colorSpecifier,
+  dest,
+  label,
+  size,
+  download,
+  downloadFilename,
+  buttonType,
+  onClick,
+}) => {
+  const linkButtonColor = getSpecificButtonColor(colorSpecifier);
   let linkButtonFontSize = "20px";
   let linkButtonPadding = "0.5rem 1.5rem";
+
+  const LinkUsed = buttonType === "download" ? Link : Linki18n;
 
   switch (size) {
     case "large":
@@ -32,20 +46,40 @@ const LinkButton: FC<LinkButtonProps> = ({ color, dest, label, size }) => {
       break;
   }
 
+  if (buttonType === "submit") {
+    return (
+      <button
+        style={{
+          backgroundColor: linkButtonColor,
+          fontSize: linkButtonFontSize,
+          padding: linkButtonPadding,
+        }}
+        className={linkButtonStyles.link}
+        title={label}
+        aria-label={label}
+        onClick={onClick}
+      >
+        {label}
+      </button>
+    );
+  }
+
   return (
-    <Link
-      href={dest}
+    <LinkUsed
+      href={dest as LinkHrefType}
       style={{
         backgroundColor: linkButtonColor,
         fontSize: linkButtonFontSize,
         padding: linkButtonPadding,
       }}
+      download={download && downloadFilename}
       className={linkButtonStyles.link}
       title={label}
       aria-label={label}
+      onClick={onClick}
     >
       {label}
-    </Link>
+    </LinkUsed>
   );
 };
 

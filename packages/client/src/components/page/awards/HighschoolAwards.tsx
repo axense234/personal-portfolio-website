@@ -21,13 +21,14 @@ const Awards = () => {
 
   return (
     <div className={highschoolAwardsStyles.awards}>
-      {getProjectsData?.projects?.map((project) => {
+      {getProjectsData?.projects?.map((project, index) => {
         return (
           <ProjectView
             viewType="awards"
             key={project.id}
             displayMode="static"
             project={project}
+            index={index}
           />
         );
       })}

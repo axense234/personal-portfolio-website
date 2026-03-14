@@ -33,6 +33,9 @@ const ProjectView: FC<ProjectViewProps> = ({
       ? ([project] as ProjectWithEverything[])
       : getProjectsData?.projects;
 
+  const specificEntityImagesType =
+    viewType === "awards" ? "project-awards" : "project-images";
+
   const {
     viewImages,
     currentProject,
@@ -62,7 +65,7 @@ const ProjectView: FC<ProjectViewProps> = ({
       />
       <EntityViewImages
         images={viewImages}
-        entityType="project"
+        entityType={specificEntityImagesType}
         currentEntityImage={currentProjectImageUsed}
         setCurrentEntityImage={currentProjectImageUsedSetter}
       />

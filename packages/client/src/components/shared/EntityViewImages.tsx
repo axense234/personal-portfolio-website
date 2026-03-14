@@ -15,10 +15,13 @@ const EntityViewImages: FC<EntityViewImagesProps> = ({
   currentEntityImage,
   setCurrentEntityImage,
 }) => {
-  const reservedImageAmount =
-    entityType === "meal-prep"
-      ? { width: 480, height: 640 }
-      : { width: 640, height: 480 };
+  const proportionsMap = {
+    "meal-prep": { width: 480, height: 640 },
+    "project-awards": { width: 640, height: 480 },
+    "project-images": { width: 800, height: 450 },
+  };
+
+  const reservedImageAmount = proportionsMap[entityType];
 
   if (!currentEntityImage) {
     return <div>loading image</div>;

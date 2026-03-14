@@ -32,15 +32,3 @@
     text-align: center;
   }
 }
-
-.skills {
-  @include flexCenter(row);
-  align-items: flex-start;
-  list-style: none;
-  width: 100%;
-  gap: 8rem;
-
-  > li {
-    width: 25%;
-  }
-}

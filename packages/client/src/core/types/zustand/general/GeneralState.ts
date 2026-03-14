@@ -3,7 +3,7 @@ import {
   TechCategory,
   TechSkillWithTechWithContent,
 } from "@personal-portfolio-website/shared";
-import { GetProjectsDataType } from "../entity";
+import { GetProjectsDataType, ProjectsQueryDataType } from "../entity";
 
 export type GeneralState = {
   colorTheme: "dark" | "light";
@@ -17,8 +17,9 @@ export type GeneralState = {
   getProjectsData: GetProjectsDataType;
 
   currentProjectId: string;
-
   currentProjectImage: string;
 
   contactFormData: SendEmailOptions;
+
+  projectsQueryData: ProjectsQueryDataType;
 };

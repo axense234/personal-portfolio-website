@@ -7,15 +7,28 @@ import { TechCategoryProps } from "@/core/interfaces";
 // Components
 import IconComponent from "./IconComponent";
 
-const TechCategory: FC<TechCategoryProps> = ({ label, skills }) => {
+const TechCategory: FC<TechCategoryProps> = ({
+  label,
+  skills,
+  isFunctional,
+  onTechIconClick,
+  selectedTech,
+}) => {
   return (
     <div className={techCategoryStyles.container}>
       <h6>{label}</h6>
       <ul className={techCategoryStyles.skills}>
         {skills.map((skill) => {
+          const isTechSelected = selectedTech?.includes(skill.id);
+
           return (
             <li key={skill.id}>
-              <IconComponent {...skill} />
+              <IconComponent
+                {...skill}
+                isFunctional={isFunctional}
+                onTechIconClick={onTechIconClick}
+                isSelected={isTechSelected}
+              />
             </li>
           );
         })}

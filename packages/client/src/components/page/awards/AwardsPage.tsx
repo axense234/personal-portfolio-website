@@ -6,10 +6,8 @@ import AwardsPageHero from "./AwardsPageHero";
 import AwardsBronzeMedal from "./AwardsBronzeMedal";
 import HighschoolAwards from "./HighschoolAwards";
 // Hooks
-import { useGetProjects } from "@/hooks";
+import { useGetProjects, useSetCurrentEntityIdBasedOnData } from "@/hooks";
 import { useGeneralStore } from "@/zustand/general/context";
-// React
-import { useEffect } from "react";
 
 const AwardsPage = () => {
   useGetProjects(["AWARDED"]);
@@ -17,11 +15,11 @@ const AwardsPage = () => {
   const { setCurrentProjectId, getProjectsData, currentProjectId } =
     useGeneralStore((state) => state);
 
-  useEffect(() => {
-    if (getProjectsData?.projects.length > 0 && !currentProjectId) {
-      setCurrentProjectId(getProjectsData?.projects[0]?.id);
-    }
-  }, [getProjectsData]);
+  useSetCurrentEntityIdBasedOnData(
+    getProjectsData,
+    currentProjectId,
+    setCurrentProjectId,
+  );
 
   return (
     <section className={awardsPageStyles.container}>

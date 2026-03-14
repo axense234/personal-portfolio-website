@@ -1,11 +1,9 @@
 "use client";
-import Card from "@/components/shared/Card";
 // Components
 import LinkButton from "@/components/shared/LinkButton";
+import ProjectCards from "@/components/shared/ProjectCards";
 // Data
-import { buttonColors, homePageFeaturedProjectsSectionData } from "@/data";
-// Helpers
-import { adaptProjectToCard } from "@/helpers";
+import { homePageFeaturedProjectsSectionData } from "@/data";
 // Hooks
 import { useGetProjects } from "@/hooks";
 // SCSS
@@ -28,21 +26,7 @@ const FeaturedProjects = () => {
     return <div>isloading</div>;
   }
 
-  return (
-    <ul className={homeFeaturedProjectsStyles.projects}>
-      {projects?.map((project, index) => {
-        const buttonColorsCurrentColorIndex = index % buttonColors.length;
-        const buttonColor = buttonColors[buttonColorsCurrentColorIndex];
-
-        const cardProps = adaptProjectToCard(project, buttonColor);
-        return (
-          <li key={project.id}>
-            <Card {...cardProps} />;
-          </li>
-        );
-      })}
-    </ul>
-  );
+  return <ProjectCards projects={projects} />;
 };
 
 const HomeFeaturedProjects = () => {

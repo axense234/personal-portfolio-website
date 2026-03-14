@@ -20,4 +20,10 @@ export const defaultInitState: GeneralState = {
   currentProjectImage: "",
 
   contactFormData: defaultContactFormData,
+
+  projectsQueryData: {
+    searchValue: "",
+    sortByTest: "",
+    selectedTech: [],
+  },
 };

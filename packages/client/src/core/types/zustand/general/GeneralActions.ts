@@ -22,4 +22,6 @@ export type GeneralActions = {
   setCurrentProjectImage: (img: string) => void;
 
   setContactFormDataKeyValue: (key: string, value: string) => void;
+
+  setProjectsQueryDataKeyValue: (key: string, value: any) => void;
 };

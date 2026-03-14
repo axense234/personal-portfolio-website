@@ -574,3 +574,31 @@ export const defaultContactFormData: SendEmailOptions = {
   message: "",
   subject: "",
 };
+
+export const projectsPageHeroContentData: SectionDataType = {
+  title: "My Projects",
+  subtitle: "effloresced passion",
+  buttons: [
+    {
+      id: 1,
+      colorSpecifier: "warning",
+      dest: "/projects",
+      label: "All Projects",
+      size: "large",
+    },
+    {
+      id: 2,
+      colorSpecifier: "success",
+      dest: "/projects",
+      label: "Ongoing Projects",
+      size: "large",
+    },
+  ],
+};
+
+export const projectsPageProjectsSectionData: SectionDataType = {
+  title: "Projects",
+  paragraphs: [
+    "All the projects that I have worked on so far. Through those projects I have learned quite a lot about modern web development, yet I feel like I still don’t know anything. Curious how that works huh.",
+  ],
+};

@@ -1,0 +1,14 @@
+@use "../../../abstracts" as *;
+
+.container {
+  @include flexCenter(row);
+  width: 100%;
+  align-items: flex-start;
+  gap: 4rem;
+}
+
+.content {
+  @include flexCenter(column);
+  width: 100%;
+  gap: 2rem;
+}

@@ -24,7 +24,11 @@ export const useGetProjectViewDetails = (
   const viewImages =
     viewType == "awards"
       ? currentProject?.awards.map((award) => award.image_src) || []
-      : currentProject?.images?.screenshots || [];
+      : currentProject?.images?.thumb && currentProject?.images?.screenshots
+        ? [currentProject?.images?.thumb].concat(
+            currentProject?.images?.screenshots,
+          )
+        : [];
 
   const [currentEntityImageLocal, setCurrentEntityImageLocal] =
     useState<string>(viewImages[0]);

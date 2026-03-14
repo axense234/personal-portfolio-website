@@ -10,7 +10,7 @@ import ky from "ky";
 // React
 import { useEffect } from "react";
 
-export const useGetProjects = (topics: ProjectTopic[]) => {
+export const useGetProjects = (topics?: ProjectTopic[]) => {
   const { setGetProjectsData } = useGeneralStore((state) => state);
 
   useEffect(() => {

@@ -3,17 +3,17 @@
 .container {
   @include flexCenter(row);
   text-decoration: none;
+}
 
-  > img {
-    width: auto;
-    height: 3rem;
+.image {
+  width: auto;
+  height: 3rem;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    transition: transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
 
-    &:hover {
-      transform: rotate(10deg) scale(1.05);
-    }
+  &:hover {
+    transform: rotate(10deg) scale(1.05);
   }
 }

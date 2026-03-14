@@ -18,7 +18,7 @@ const LinkButton: FC<LinkButtonProps> = ({
   size,
   download,
   downloadFilename,
-  buttonType,
+  buttonType = "link",
   onClick,
 }) => {
   const linkButtonColor = getSpecificButtonColor(colorSpecifier);

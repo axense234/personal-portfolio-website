@@ -4,7 +4,6 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import {
   GetProjectsQueryParams,
   GetProjectsResponse,
-  ProjectFindManyArgs,
   ProjectWhereInput,
 } from '@personal-portfolio-website/shared';
 // Status Codes
@@ -21,7 +20,7 @@ export class GetProjectsService {
   ): Promise<GetProjectsResponse> {
     try {
       const queryObject: ProjectWhereInput = {
-        topics: { hasEvery: JSON.parse(params?.topics) || [] },
+        topics: { hasEvery: params?.topics ? JSON.parse(params.topics) : [] },
       };
 
       const foundProjects = await this.prisma.project.findMany({

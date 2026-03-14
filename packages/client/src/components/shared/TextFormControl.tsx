@@ -11,11 +11,18 @@ const TextFormControl: FC<TextFormControlProps> = ({
   onChange,
   value,
   inputPlaceholder,
+  flow,
 }) => {
   const placeholder = `ex: ${inputPlaceholder}`;
 
   return (
-    <div className={textFormControlStyles.container}>
+    <div
+      className={textFormControlStyles.container}
+      style={{
+        flexDirection: flow,
+        alignItems: flow === "row" ? "center" : "flex-start",
+      }}
+    >
       <label htmlFor={label}>{label}</label>
       <input
         type={inputType}

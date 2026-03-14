@@ -13,5 +13,5 @@ export interface LinkButtonProps {
 
   onClick?: () => void;
 
-  buttonType: "link" | "download" | "submit";
+  buttonType?: "link" | "download" | "submit";
 }

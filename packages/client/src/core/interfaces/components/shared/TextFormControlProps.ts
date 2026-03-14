@@ -6,4 +6,6 @@ export interface TextFormControlProps {
 
   inputType: "text" | "email";
   inputPlaceholder: string;
+
+  flow: "row" | "column";
 }

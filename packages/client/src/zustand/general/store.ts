@@ -21,6 +21,7 @@ import {
   setCurrentProjectId,
   setCurrentProjectImage,
   setContactFormDataKeyValue,
+  setProjectsQueryDataKeyValue,
 } from "./actions";
 // Thunks
 import { sendEmailWithContactForm } from "./thunks";
@@ -30,6 +31,10 @@ export const createGeneralStore = (
 ) => {
   return createStore<GeneralStore>()((set, get) => ({
     ...initState,
+
+    setProjectsQueryDataKeyValue: (key: string, value: string) =>
+      setProjectsQueryDataKeyValue(set, key, value),
+
     setContactFormDataKeyValue: (key: string, value: string) =>
       setContactFormDataKeyValue(set, key, value),
 

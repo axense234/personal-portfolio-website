@@ -4,6 +4,9 @@
   @include flexCenter(column);
   align-items: flex-start;
   gap: 2rem;
+
+  min-width: 30%;
+  max-width: 40%;
 }
 
 .header {

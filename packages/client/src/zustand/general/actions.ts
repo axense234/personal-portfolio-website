@@ -89,3 +89,12 @@ export const setContactFormDataKeyValue = (
   set((state: GeneralState) => ({
     contactFormData: { ...state.contactFormData, [key]: value },
   }));
+
+export const setProjectsQueryDataKeyValue = (
+  set: SetGeneralStoreFunctionType,
+  key: string,
+  value: string,
+) =>
+  set((state: GeneralState) => ({
+    projectsQueryData: { ...state.projectsQueryData, [key]: value },
+  }));

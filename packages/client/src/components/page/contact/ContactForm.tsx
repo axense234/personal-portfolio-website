@@ -35,6 +35,7 @@ const ContactForm = () => {
               setContactFormDataKeyValue("name", name)
             }
             value={contactFormData.name}
+            flow="column"
           />
           <TextFormControl
             label="Your Email"
@@ -44,6 +45,7 @@ const ContactForm = () => {
               setContactFormDataKeyValue("email", email)
             }
             value={contactFormData.email}
+            flow="column"
           />
         </div>
         <TextFormControl
@@ -54,6 +56,7 @@ const ContactForm = () => {
             setContactFormDataKeyValue("subject", subject)
           }
           value={contactFormData.subject}
+          flow="column"
         />
         <TextAreaFormControl
           label="Message"

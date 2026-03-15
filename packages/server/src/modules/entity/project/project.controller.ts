@@ -5,6 +5,7 @@ import { ProjectServices } from './services';
 // E
 import type {
   GetProjectsQueryParams,
+  InjectProjectsQueryParams,
   ProjectCreateInput,
 } from '@personal-portfolio-website/shared';
 
@@ -22,8 +23,8 @@ export class ProjectController {
     return this.projectServices.createProject(dto);
   }
 
-  @Post('featured')
-  injectFeaturedProjects() {
-    return this.projectServices.insertFeaturedProjects();
+  @Post('inject')
+  injectProjects(@Query() params: InjectProjectsQueryParams) {
+    return this.projectServices.insertProjects(params);
   }
 }

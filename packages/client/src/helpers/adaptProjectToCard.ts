@@ -1,6 +1,9 @@
+// Data
+import { websiteLogoPlaceholder } from "@/data";
+// Types
 import { CardProps } from "@/core/interfaces";
-import { ExternalMediaIconType } from "@/core/types";
 import { ProjectWithImages } from "@personal-portfolio-website/shared";
+import { ExternalMediaIconType } from "@/core/types";
 
 export const adaptProjectToCard = (
   project: ProjectWithImages,
@@ -22,7 +25,9 @@ export const adaptProjectToCard = (
       dest: project.website_url,
       id: project.website_url,
       label: `${project.name} Website`,
-      rel: project.website_logo_url as string,
+      rel: project.website_logo_url
+        ? project.website_logo_url
+        : websiteLogoPlaceholder,
     });
   }
 

@@ -13,6 +13,11 @@ import { SendEmailOptions } from "@personal-portfolio-website/shared";
 
 export const proEmail = "andreicomanescuonline@gmail.com";
 
+export const projectCardsNoProjectsFoundMessage = "No Projects Found. >:(";
+
+export const websiteLogoPlaceholder =
+  "https://res.cloudinary.com/birthdayreminder/image/upload/v1773597808/Personal%20Website/minimalist-white-browser-icon-free-png_rqywrt.png";
+
 export const bronzeMedalImageSrc =
   "https://res.cloudinary.com/birthdayreminder/image/upload/v1773335277/Personal%20Website/vitalprep/bronze_modeal_ct7b4p.jpg";
 
@@ -601,4 +606,9 @@ export const projectsPageProjectsSectionData: SectionDataType = {
   paragraphs: [
     "All the projects that I have worked on so far. Through those projects I have learned quite a lot about modern web development, yet I feel like I still don’t know anything. Curious how that works huh.",
   ],
+};
+
+export const projectsPageOngoingProjectsContentData: SectionDataType = {
+  title: "Ongoing Projects",
+  subtitle: "the ones and only",
 };

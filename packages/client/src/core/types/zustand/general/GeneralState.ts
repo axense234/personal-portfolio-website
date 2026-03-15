@@ -17,7 +17,9 @@ export type GeneralState = {
   getProjectsData: GetProjectsDataType;
 
   currentProjectId: string;
+  currentOngoingProjectId: string;
   currentProjectImage: string;
+  currentOngoingProjectImage: string;
 
   contactFormData: SendEmailOptions;
 

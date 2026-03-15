@@ -7,16 +7,26 @@ import { projectsPageHeroContentData } from "@/data";
 import { useGeneralStore } from "@/zustand/general";
 
 const ProjectsHero = () => {
-  const { currentProjectId, setCurrentProjectId, getProjectsData } =
-    useGeneralStore((state) => state);
+  const {
+    currentProjectId,
+    setCurrentProjectId,
+    getProjectsData,
+    currentProjectImage,
+    setCurrentProjectImage,
+  } = useGeneralStore((state) => state);
 
   return (
     <ViewBasedPageHero
       heroData={projectsPageHeroContentData}
       page="projects"
+      sectionType="hero"
       currentEntityId={currentProjectId}
-      entityIds={getProjectsData?.projects.map((project) => project.id)}
       setCurrentEntityId={setCurrentProjectId}
+      currentEntityImage={currentProjectImage}
+      setCurrentEntityImage={setCurrentProjectImage}
+      entities={getProjectsData?.projects}
+      isError={getProjectsData.isError}
+      isLoading={getProjectsData.isLoading}
     />
   );
 };

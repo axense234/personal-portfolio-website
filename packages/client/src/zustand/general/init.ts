@@ -16,14 +16,29 @@ export const defaultInitState: GeneralState = {
   getProjectsData: { isError: false, isLoading: true, projects: [] },
 
   currentProjectId: "",
+  currentOngoingProjectId: "",
 
   currentProjectImage: "",
+  currentOngoingProjectImage: "",
 
   contactFormData: defaultContactFormData,
 
   projectsQueryData: {
-    searchValue: "",
+    search: {
+      current: "",
+      searchFormControlData: (
+        current: string,
+        setter: (value: string) => void,
+      ) => ({
+        inputPlaceholder: "VitalPrep",
+        label: "Search",
+        inputType: "text",
+        flow: "row",
+        value: current,
+        onChange: setter,
+      }),
+    },
     sortByTest: "",
-    selectedTech: [],
+    filterValues: [],
   },
 };

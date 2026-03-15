@@ -1,4 +1,3 @@
-"use client";
 // Interfaces
 import { ViewBasedPageHeroProps, ViewContentProps } from "@/core/interfaces";
 // React
@@ -9,10 +8,16 @@ import viewBasedPageHeroStyles from "@/scss/components/shared/ViewBasedPageHero.
 import LinkButton from "./LinkButton";
 import ProjectView from "./ProjectView";
 import EntityNavigationDots from "./EntityNavigationDots";
-// Zus
-import { useGeneralStore } from "@/zustand/general/context";
 
-const ViewContent: FC<ViewContentProps> = ({ page, isError, isLoading }) => {
+const ViewContent: FC<ViewContentProps> = ({
+  page,
+  isError,
+  isLoading,
+  currentEntityId,
+  currentEntityImage,
+  setCurrentEntityImage,
+  entities,
+}) => {
   if (isError) {
     return <div>is error</div>;
   }
@@ -21,39 +26,61 @@ const ViewContent: FC<ViewContentProps> = ({ page, isError, isLoading }) => {
     return <div>is loading</div>;
   }
 
+  if (!entities || entities.length < 1) {
+    return <div>not found</div>;
+  }
+
   return (
     <ProjectView
       viewType={page == "awards" ? "awards" : "normal"}
       displayMode="dynamic"
       index={0}
+      currentProjectId={currentEntityId}
+      currentProjectImage={currentEntityImage}
+      setCurrentProjectImage={setCurrentEntityImage}
+      projects={entities}
     />
   );
 };
 
 const ViewBasedPageHero: FC<ViewBasedPageHeroProps> = ({
   heroData,
+  page,
+  sectionType,
   currentEntityId,
   setCurrentEntityId,
-  entityIds,
-  page,
+  currentEntityImage,
+  setCurrentEntityImage,
+  entities,
+  isError,
+  isLoading,
 }) => {
-  const { getProjectsData } = useGeneralStore((state) => state);
+  const titleShown =
+    sectionType === "hero" ? (
+      <h1>{heroData.title}</h1>
+    ) : (
+      <h2>{heroData.title}</h2>
+    );
 
   return (
     <section className={viewBasedPageHeroStyles.container}>
       <div className={viewBasedPageHeroStyles.header}>
-        <h1>{heroData.title}</h1>
+        {titleShown}
         <h4>{heroData.subtitle}</h4>
       </div>
       <ViewContent
         page={page}
-        isError={getProjectsData.isError}
-        isLoading={getProjectsData.isLoading}
+        isError={isError}
+        isLoading={isLoading}
+        currentEntityId={currentEntityId}
+        currentEntityImage={currentEntityImage}
+        setCurrentEntityImage={setCurrentEntityImage}
+        entities={entities}
       />
       <EntityNavigationDots
         currentEntityId={currentEntityId}
         setCurrentEntityId={setCurrentEntityId}
-        entityIds={entityIds}
+        entityIds={entities.map((entity) => entity.id)}
         useCase="entities"
       />
       <div className={viewBasedPageHeroStyles.buttons}>

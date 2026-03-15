@@ -4,7 +4,7 @@ import { Module } from '@nestjs/common';
 import {
   CreateProjectService,
   GetProjectsService,
-  InjectFeaturedProjectsService,
+  InjectProjectsService,
   ProjectServices,
 } from './services';
 // Controllers
@@ -15,7 +15,7 @@ import { ProjectController } from './project.controller';
     ProjectServices,
     GetProjectsService,
     CreateProjectService,
-    InjectFeaturedProjectsService,
+    InjectProjectsService,
   ],
   controllers: [ProjectController],
 })

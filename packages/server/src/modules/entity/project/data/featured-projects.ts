@@ -1,5 +1,7 @@
 // Shared Types
 import { ProjectCreateInput } from '@personal-portfolio-website/shared';
+// Utils
+import { connectProjectTech } from 'src/utils';
 
 export const featuredProjectsCreateData: ProjectCreateInput[] = [
   {
@@ -15,6 +17,20 @@ export const featuredProjectsCreateData: ProjectCreateInput[] = [
     website_url: 'https://vitalprep-meal.com',
     website_logo_url:
       'https://res.cloudinary.com/birthdayreminder/image/upload/v1716209021/VitalPrep/brandmark-design-256x256_zdzu6z.png',
+    skills: {
+      connect: connectProjectTech([
+        'next',
+        'redux',
+        'scss',
+        'ts-frontend',
+        'node',
+        'express',
+        'ts-backend',
+        'postgresql',
+        'prisma',
+        'redis',
+      ]),
+    },
     awards: {
       createMany: {
         data: [
@@ -59,6 +75,23 @@ export const featuredProjectsCreateData: ProjectCreateInput[] = [
       'https://res.cloudinary.com/birthdayreminder/image/upload/v1689691850/Highschool%20Site%20App/ltibp_logo_ptonmd_oirhs1.png',
     docs_url:
       'https://highschool-site-app-server-ca.onrender.com/api/1.0.0/en/docs/',
+    skills: {
+      connect: connectProjectTech([
+        'html',
+        'css',
+        'ts-frontend',
+        'react',
+        'next',
+        'scss',
+        'redux',
+        'node',
+        'express',
+        'ts-backend',
+        'postgresql',
+        'prisma',
+        'redis',
+      ]),
+    },
     awards: {
       createMany: {
         data: [
@@ -101,6 +134,23 @@ export const featuredProjectsCreateData: ProjectCreateInput[] = [
     website_url: 'https://researchmanager-ca.com/',
     website_logo_url:
       'https://res.cloudinary.com/birthdayreminder/image/upload/v1742642023/Research%20Manager/brandmark-design-1024x0g1_ekxcnm.png',
+
+    skills: {
+      connect: connectProjectTech([
+        'ts-frontend',
+        'react',
+        'scss',
+        'redux',
+        'next',
+        'ts-backend',
+        'node',
+        'express',
+        'nest',
+        'postgresql',
+        'redis',
+        'prisma',
+      ]),
+    },
     awards: {
       createMany: {
         data: [
@@ -133,6 +183,16 @@ export const featuredProjectsCreateData: ProjectCreateInput[] = [
     overview_desc: 'A backend project about authors, notes, folders and such.',
     github_url: 'https://github.com/axense234/Notes-NETPPR-API',
     docs_url: 'https://notes-api-netppr-ca.onrender.com/api/1.0.0/docs',
+    skills: {
+      connect: connectProjectTech([
+        'node',
+        'ts-backend',
+        'express',
+        'postgresql',
+        'prisma',
+        'redis',
+      ]),
+    },
     images: {
       create: {
         screenshots: [],

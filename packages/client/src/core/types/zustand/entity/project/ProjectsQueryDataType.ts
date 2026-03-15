@@ -1,7 +1,15 @@
+import { TextFormControlProps } from "@/core/interfaces";
+
 export type ProjectsQueryDataType = {
-  searchValue: string;
+  filterValues: string[];
 
   sortByTest: string;
 
-  selectedTech: string[];
+  search: {
+    current: string;
+    searchFormControlData: (
+      current: string,
+      setter: (value: string) => void,
+    ) => TextFormControlProps;
+  };
 };

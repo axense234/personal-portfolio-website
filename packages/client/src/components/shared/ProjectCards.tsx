@@ -1,5 +1,5 @@
 // Data
-import { buttonColors } from "@/data";
+import { buttonColors, projectCardsNoProjectsFoundMessage } from "@/data";
 // Helpers
 import { adaptProjectToCard } from "@/helpers";
 // Components
@@ -11,6 +11,16 @@ import { ProjectCardsProps } from "@/core/interfaces";
 import { FC } from "react";
 
 const ProjectCards: FC<ProjectCardsProps> = ({ projects }) => {
+  if (projects.length < 1) {
+    return (
+      <div className={projectCardsStyles.zeroProjects}>
+        <p title="Hello" aria-label="Hello">
+          {projectCardsNoProjectsFoundMessage}
+        </p>
+      </div>
+    );
+  }
+
   return (
     <ul className={projectCardsStyles.projects}>
       {projects?.map((project, index) => {

@@ -5,5 +5,5 @@ export interface SortByFormControlProps {
   sortingOptions: SelectFormControlProps[] | string;
 
   scope: "sort" | "filter";
-  label: string;
+  label?: string;
 }

@@ -1,3 +1,3 @@
 export * from "./CreateProjectResponse";
 export * from "./GetProjectsResponse";
-export * from "./InjectFeaturedProjectsResponse";
+export * from "./InjectProjectsResponse";

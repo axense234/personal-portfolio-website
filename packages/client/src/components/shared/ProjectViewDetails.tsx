@@ -14,6 +14,10 @@ const ProjectViewDetails: FC<ProjectViewDetailsProps> = ({
   viewType,
   index,
 }) => {
+  const projectSkillsShown = project?.skills?.filter(
+    (skill) => skill.tech_id !== "ts-backend",
+  );
+
   return (
     <div className={projectViewDetailsStyles.container}>
       <div className={projectViewDetailsStyles.header}>
@@ -42,7 +46,7 @@ const ProjectViewDetails: FC<ProjectViewDetailsProps> = ({
         <div className={projectViewDetailsStyles.tech}>
           <h6>Technologies Used</h6>
           <ul className={projectViewDetailsStyles.techWrapper}>
-            {project.skills.map((skill) => {
+            {projectSkillsShown.map((skill) => {
               return (
                 <li key={skill.id}>
                   <IconComponent {...skill.tech} />

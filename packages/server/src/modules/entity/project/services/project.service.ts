@@ -5,20 +5,21 @@ import {
   CreateProjectResponse,
   GetProjectsQueryParams,
   GetProjectsResponse,
-  InjectFeaturedProjectsResponse,
+  InjectProjectsQueryParams,
+  InjectProjectsResponse,
   ProjectCreateInput,
 } from '@personal-portfolio-website/shared';
 // Services
 import { CreateProjectService } from './createProject.service';
 import { GetProjectsService } from './getProjects.service';
-import { InjectFeaturedProjectsService } from './injectFeaturedProjects.service';
+import { InjectProjectsService } from './injectProjects.service';
 
 @Injectable()
 export class ProjectServices {
   constructor(
     private createProjectService: CreateProjectService,
     private getProjectsService: GetProjectsService,
-    private insertFeaturedProjectsService: InjectFeaturedProjectsService,
+    private insertProjectsService: InjectProjectsService,
   ) {}
 
   async getProjects(
@@ -31,7 +32,9 @@ export class ProjectServices {
     return await this.createProjectService.createProject(dto);
   }
 
-  async insertFeaturedProjects(): Promise<InjectFeaturedProjectsResponse> {
-    return await this.insertFeaturedProjectsService.injectFeaturedProjects();
+  async insertProjects(
+    params: InjectProjectsQueryParams,
+  ): Promise<InjectProjectsResponse> {
+    return await this.insertProjectsService.injectProjects(params);
   }
 }

@@ -11,6 +11,10 @@ const EntityNavigationDots: FC<EntityNavigationDotsProps> = ({
   setCurrentEntityId,
   useCase,
 }) => {
+  if (entityIds.length === 1) {
+    return null;
+  }
+
   return (
     <ul className={entityNavigationDotsStyles[useCase]}>
       {entityIds?.map((id) => {

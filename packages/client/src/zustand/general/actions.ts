@@ -2,12 +2,9 @@
 import { SetGeneralStoreFunctionType } from "@/core/interfaces";
 import { GeneralState, GetProjectsDataType } from "@/core/types";
 import {
-  SendEmailOptions,
   TechCategory,
-  TechSkill,
   TechSkillWithTechWithContent,
 } from "@personal-portfolio-website/shared";
-import ky from "ky";
 
 export const toggleColorTheme = (set: SetGeneralStoreFunctionType) =>
   set((state: GeneralState) => ({
@@ -73,12 +70,28 @@ export const setCurrentProjectId = (
     currentProjectId: id,
   }));
 
+export const setCurrentOngoingProjectId = (
+  set: SetGeneralStoreFunctionType,
+  id: string,
+) =>
+  set((state: GeneralState) => ({
+    currentOngoingProjectId: id,
+  }));
+
 export const setCurrentProjectImage = (
   set: SetGeneralStoreFunctionType,
   image: string,
 ) =>
   set((state: GeneralState) => ({
     currentProjectImage: image,
+  }));
+
+export const setCurrentOngoingProjectImage = (
+  set: SetGeneralStoreFunctionType,
+  image: string,
+) =>
+  set((state: GeneralState) => ({
+    currentOngoingProjectImage: image,
   }));
 
 export const setContactFormDataKeyValue = (
@@ -97,4 +110,15 @@ export const setProjectsQueryDataKeyValue = (
 ) =>
   set((state: GeneralState) => ({
     projectsQueryData: { ...state.projectsQueryData, [key]: value },
+  }));
+
+export const setProjectsQueryDataSearch = (
+  set: SetGeneralStoreFunctionType,
+  value: string,
+) =>
+  set((state: GeneralState) => ({
+    projectsQueryData: {
+      ...state.projectsQueryData,
+      search: { ...state.projectsQueryData.search, current: value },
+    },
   }));

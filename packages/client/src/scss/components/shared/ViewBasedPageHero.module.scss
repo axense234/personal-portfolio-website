@@ -18,6 +18,12 @@
     color: var(--primary-opposite);
   }
 
+  > h2 {
+    font-size: getFontSize("h2-laptop");
+    letter-spacing: 3px;
+    color: var(--primary-opposite);
+  }
+
   > h4 {
     font-size: getFontSize("h4-tablet");
     letter-spacing: 5px;

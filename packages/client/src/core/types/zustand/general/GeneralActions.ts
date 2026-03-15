@@ -18,10 +18,14 @@ export type GeneralActions = {
   setGetProjectsData: (data: GetProjectsDataType) => void;
 
   setCurrentProjectId: (id: string) => void;
+  setCurrentOngoingProjectId: (id: string) => void;
 
   setCurrentProjectImage: (img: string) => void;
+  setCurrentOngoingProjectImage: (img: string) => void;
 
   setContactFormDataKeyValue: (key: string, value: string) => void;
 
   setProjectsQueryDataKeyValue: (key: string, value: any) => void;
+
+  setProjectsQueryDataSearch: (value: string) => void;
 };

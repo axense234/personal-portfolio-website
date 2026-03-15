@@ -149,9 +149,11 @@
 }
 
 .techWrapper {
-  @include flexCenter(column);
-  align-items: flex-start;
-  list-style-position: inside;
+  @include flexCenter(row);
+  width: 100%;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1.5rem;
 
   > li {
     @include flexCenter(column);

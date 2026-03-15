@@ -22,6 +22,9 @@ import {
   setCurrentProjectImage,
   setContactFormDataKeyValue,
   setProjectsQueryDataKeyValue,
+  setProjectsQueryDataSearch,
+  setCurrentOngoingProjectId,
+  setCurrentOngoingProjectImage,
 } from "./actions";
 // Thunks
 import { sendEmailWithContactForm } from "./thunks";
@@ -32,6 +35,9 @@ export const createGeneralStore = (
   return createStore<GeneralStore>()((set, get) => ({
     ...initState,
 
+    setProjectsQueryDataSearch: (value: string) =>
+      setProjectsQueryDataSearch(set, value),
+
     setProjectsQueryDataKeyValue: (key: string, value: string) =>
       setProjectsQueryDataKeyValue(set, key, value),
 
@@ -39,8 +45,12 @@ export const createGeneralStore = (
       setContactFormDataKeyValue(set, key, value),
 
     setCurrentProjectImage: (img: string) => setCurrentProjectImage(set, img),
+    setCurrentOngoingProjectImage: (img: string) =>
+      setCurrentOngoingProjectImage(set, img),
 
     setCurrentProjectId: (id: string) => setCurrentProjectId(set, id),
+    setCurrentOngoingProjectId: (id: string) =>
+      setCurrentOngoingProjectId(set, id),
 
     setGetProjectsData: (data: GetProjectsDataType) =>
       setGetProjectsData(set, data),

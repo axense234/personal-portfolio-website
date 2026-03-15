@@ -1,4 +1,3 @@
-"use client";
 // Components
 import EntityViewImages from "./EntityViewImages";
 import ProjectViewDetails from "./ProjectViewDetails";
@@ -6,8 +5,6 @@ import ProjectViewDetails from "./ProjectViewDetails";
 import projectViewStyles from "@/scss/components/shared/ProjectView.module.scss";
 // React
 import { FC, useEffect } from "react";
-// zusstradn
-import { useGeneralStore } from "@/zustand/general/context";
 // Interfaces
 import { ProjectViewProps } from "@/core/interfaces";
 // Hooks
@@ -20,18 +17,15 @@ const ProjectView: FC<ProjectViewProps> = ({
   displayMode,
   project,
   index,
+  currentProjectId,
+  currentProjectImage,
+  projects,
+  setCurrentProjectImage,
 }) => {
-  const {
-    currentProjectId,
-    getProjectsData,
-    currentProjectImage,
-    setCurrentProjectImage,
-  } = useGeneralStore((state) => state);
-
-  const projects =
+  const usedProjects =
     displayMode === "static"
       ? ([project] as ProjectWithEverything[])
-      : getProjectsData?.projects;
+      : projects;
 
   const specificEntityImagesType =
     viewType === "awards" ? "project-awards" : "project-images";
@@ -44,7 +38,7 @@ const ProjectView: FC<ProjectViewProps> = ({
   } = useGetProjectViewDetails(
     displayMode,
     viewType,
-    projects,
+    usedProjects,
     currentProjectId,
     currentProjectImage,
     setCurrentProjectImage,

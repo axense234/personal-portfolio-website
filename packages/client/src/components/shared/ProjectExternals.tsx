@@ -6,6 +6,8 @@ import { FC } from "react";
 import IconComponent from "./IconComponent";
 // SCSS
 import projectExternalsStyles from "@/scss/components/shared/ProjectExternals.module.scss";
+// Data
+import { websiteLogoPlaceholder } from "@/data";
 
 const ProjectExternals: FC<Project> = ({
   github_url,
@@ -22,14 +24,18 @@ const ProjectExternals: FC<Project> = ({
           icon_src="https://res.cloudinary.com/birthdayreminder/image/upload/v1772997441/Personal%20Website/tech-icons/other/github_haotje.png"
           label={`${name} Source Code`}
           height={32}
+          id=""
         />
       )}
       {website_url && (
         <IconComponent
           dest={website_url}
-          icon_src={website_logo_url as string}
+          icon_src={
+            website_logo_url ? website_logo_url : websiteLogoPlaceholder
+          }
           label={`${name} Website`}
           height={32}
+          id=""
         />
       )}
       {docs_url && (
@@ -38,6 +44,7 @@ const ProjectExternals: FC<Project> = ({
           icon_src="/misc/swagger.png"
           label={`${name} Swagger Api Docs`}
           height={32}
+          id=""
         />
       )}
     </div>

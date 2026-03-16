@@ -14,12 +14,21 @@ export const defaultInitState: GeneralState = {
   techSkills: [],
 
   getProjectsData: { isError: false, isLoading: true, projects: [] },
+  getMealPrepsData: { isError: false, isLoading: true, mealPreps: [] },
+  getWeeklyMealPrepData: {
+    isError: false,
+    isLoading: true,
+    mealPrep: undefined,
+  },
 
   currentProjectId: "",
   currentOngoingProjectId: "",
 
   currentProjectImage: "",
   currentOngoingProjectImage: "",
+
+  currentMealPrepId: "",
+  currentMealPrepImage: "",
 
   contactFormData: defaultContactFormData,
 

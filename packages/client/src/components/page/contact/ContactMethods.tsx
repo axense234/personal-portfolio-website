@@ -15,7 +15,7 @@ const ContactMethodsContent = () => {
       </div>
       <div className={contactMethodsStyles.method}>
         <h4>Externals:</h4>
-        <SocialIcons iconHeight={48} />
+        <SocialIcons iconHeight={48} focus="contact" />
       </div>
       <div className={contactMethodsStyles.method}>
         <h4>Resume (PDF): </h4>

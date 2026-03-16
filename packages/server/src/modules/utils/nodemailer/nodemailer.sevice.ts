@@ -13,11 +13,18 @@ export class NodeMailerService {
 
   constructor() {
     this.transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: process.env.MAIL_HOST,
+      port: Number(process.env.MAIL_HOST_PORT),
+      secure: true,
       auth: {
         user: process.env.USER_EMAIL,
         pass: process.env.APP_PASSWORD,
       },
+      tls: {
+        rejectUnauthorized: false,
+      },
+      debug: true,
+      logger: true,
     });
 
     this.getMailOptionsTemplate = (dto: SendEmailOptions) => {

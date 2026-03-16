@@ -1,9 +1,12 @@
 // NextJS
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 // Services
 import { MealPrepServices } from './services/meal-prep.service';
 // Shared packageeeee
-import { type MealPrepCreateInput } from '@personal-portfolio-website/shared';
+import {
+  type InjectMealPrepsQueryParams,
+  type MealPrepCreateInput,
+} from '@personal-portfolio-website/shared';
 
 @Controller('meal-preps')
 export class MealPrepController {
@@ -22,5 +25,10 @@ export class MealPrepController {
   @Post('create')
   createMealPrep(@Body() dto: MealPrepCreateInput) {
     return this.mealPrepServices.createMealPrep(dto);
+  }
+
+  @Post('inject')
+  injectMealPreps(@Query() params: InjectMealPrepsQueryParams) {
+    return this.mealPrepServices.injectMealPreps(params);
   }
 }

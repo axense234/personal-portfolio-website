@@ -6,4 +6,5 @@ export type LinkHrefType =
   | "/contact"
   | "/dashboard"
   | "/meal-prep"
-  | "/projects";
+  | "/projects"
+  | "/misc/resume.pdf";

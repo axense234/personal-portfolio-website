@@ -23,7 +23,9 @@ const EntityViewImages: FC<EntityViewImagesProps> = ({
 
   const reservedImageAmount = proportionsMap[entityType];
 
-  if (!currentEntityImage) {
+  const imageUsed = currentEntityImage || images[0];
+
+  if (!imageUsed) {
     return <div>loading image</div>;
   }
 
@@ -32,11 +34,11 @@ const EntityViewImages: FC<EntityViewImagesProps> = ({
       <Image
         width={reservedImageAmount.width}
         height={reservedImageAmount.height}
-        src={currentEntityImage}
+        src={imageUsed}
         alt={"TODO"}
       />
       <EntityNavigationDots
-        currentEntityId={currentEntityImage}
+        currentEntityId={imageUsed}
         setCurrentEntityId={setCurrentEntityImage}
         entityIds={images}
         useCase="images"

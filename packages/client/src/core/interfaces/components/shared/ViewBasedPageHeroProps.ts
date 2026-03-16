@@ -1,5 +1,8 @@
 import { SectionDataType } from "@/core/types";
-import { ProjectWithEverything } from "@personal-portfolio-website/shared";
+import {
+  MealPrepWithIngredients,
+  ProjectWithEverything,
+} from "@personal-portfolio-website/shared";
 
 export interface ViewBasedPageHeroProps {
   heroData: SectionDataType;
@@ -12,7 +15,7 @@ export interface ViewBasedPageHeroProps {
   currentEntityImage: string;
   setCurrentEntityImage: (image: string) => void;
 
-  entities: ProjectWithEverything[];
+  entities: ProjectWithEverything[] | MealPrepWithIngredients[];
 
   isError: boolean;
   isLoading: boolean;

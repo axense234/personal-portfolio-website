@@ -1,5 +1,11 @@
 // Types
-import { GeneralState, GeneralStore, GetProjectsDataType } from "@/core/types";
+import {
+  GeneralState,
+  GeneralStore,
+  GetMealPrepsDataType,
+  GetProjectsDataType,
+  GetWeeklyMealPrepDataType,
+} from "@/core/types";
 import {
   SendEmailOptions,
   TechCategory,
@@ -25,6 +31,10 @@ import {
   setProjectsQueryDataSearch,
   setCurrentOngoingProjectId,
   setCurrentOngoingProjectImage,
+  setCurrentMealPrepId,
+  setCurrentMealPrepImage,
+  setGetMealPrepsData,
+  setGetWeeklyMealPrepData,
 } from "./actions";
 // Thunks
 import { sendEmailWithContactForm } from "./thunks";
@@ -34,6 +44,9 @@ export const createGeneralStore = (
 ) => {
   return createStore<GeneralStore>()((set, get) => ({
     ...initState,
+
+    setCurrentMealPrepId: (id: string) => setCurrentMealPrepId(set, id),
+    setCurrentMealPrepImage: (img: string) => setCurrentMealPrepImage(set, img),
 
     setProjectsQueryDataSearch: (value: string) =>
       setProjectsQueryDataSearch(set, value),
@@ -54,6 +67,12 @@ export const createGeneralStore = (
 
     setGetProjectsData: (data: GetProjectsDataType) =>
       setGetProjectsData(set, data),
+
+    setGetMealPrepsData: (data: GetMealPrepsDataType) =>
+      setGetMealPrepsData(set, data),
+
+    setGetWeeklyMealPrepData: (data: GetWeeklyMealPrepDataType) =>
+      setGetWeeklyMealPrepData(set, data),
 
     toggleColorTheme: () => toggleColorTheme(set),
 

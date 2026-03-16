@@ -7,9 +7,9 @@ export const useGetProjectViewDetails = (
   displayMode: "dynamic" | "static",
   viewType: "awards" | "normal",
   projects: ProjectWithEverything[],
-  currentProjectId: string,
-  currentProjectImage: string,
-  setCurrentProjectImage: (image: string) => void,
+  currentProjectId?: string,
+  currentProjectImage?: string,
+  setCurrentProjectImage?: (image: string) => void,
 ) => {
   let currentProject: ProjectWithEverything = projects[0];
 
@@ -34,7 +34,9 @@ export const useGetProjectViewDetails = (
     useState<string>(viewImages[0]);
 
   const currentProjectImageWithDefault =
-    currentProjectImage?.length === 0 ? viewImages[0] : currentProjectImage;
+    !currentProjectImage || currentProjectImage?.length === 0
+      ? viewImages[0]
+      : currentProjectImage;
 
   const currentProjectImageLocalWithDefault =
     currentEntityImageLocal?.length === 0
@@ -47,7 +49,7 @@ export const useGetProjectViewDetails = (
       : currentProjectImageLocalWithDefault;
 
   const currentProjectImageUsedSetter =
-    displayMode === "dynamic"
+    displayMode === "dynamic" && setCurrentProjectImage
       ? setCurrentProjectImage
       : setCurrentEntityImageLocal;
 

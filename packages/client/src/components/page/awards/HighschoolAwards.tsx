@@ -11,14 +11,6 @@ import ProjectView from "@/components/shared/ProjectView";
 const Awards = () => {
   const { getProjectsData } = useGeneralStore((state) => state);
 
-  if (getProjectsData.isError) {
-    return <div>is error</div>;
-  }
-
-  if (getProjectsData.isLoading) {
-    return <div>is loading</div>;
-  }
-
   return (
     <div className={highschoolAwardsStyles.awards}>
       {getProjectsData?.projects?.map((project, index) => {
@@ -29,6 +21,8 @@ const Awards = () => {
             displayMode="static"
             project={project}
             index={index}
+            isError={getProjectsData?.isError}
+            isLoading={getProjectsData?.isLoading}
           />
         );
       })}

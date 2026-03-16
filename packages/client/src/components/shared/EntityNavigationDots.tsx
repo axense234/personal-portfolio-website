@@ -16,7 +16,12 @@ const EntityNavigationDots: FC<EntityNavigationDotsProps> = ({
   }
 
   return (
-    <ul className={entityNavigationDotsStyles[useCase]}>
+    <ul
+      className={entityNavigationDotsStyles[useCase]}
+      style={{
+        justifyContent: entityIds.length > 15 ? "space-between" : "center",
+      }}
+    >
       {entityIds?.map((id) => {
         return (
           <li

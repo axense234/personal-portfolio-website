@@ -1,30 +1,73 @@
 "use client";
 // Components
-import { useGetWeeklyMealPrep } from "@/hooks";
 import MealPrepDetails from "./MealPrepDetails";
-import MealPrepImages from "./MealPrepImages";
+import EntityViewImages from "./EntityViewImages";
 // SCSS
 import mealPrepViewStyles from "@/scss/components/shared/MealPrepView.module.scss";
+// React
+import { FC, useEffect } from "react";
+// Props
+import { MealPrepViewProps } from "@/core/interfaces";
+// Hooks
+import { useGetMealPrepViewDetails } from "@/hooks";
 // Shared
 import { MealPrepWithIngredients } from "@personal-portfolio-website/shared";
 
-const MealPrepView = () => {
-  const { isError, isLoading, weeklyMealPrep } = useGetWeeklyMealPrep();
+const MealPrepView: FC<MealPrepViewProps> = ({
+  currentMealPrepId,
+  currentMealPrepImage,
+  setCurrentMealPrepImage,
+  mealPreps,
+  displayMode,
+  mealPrep,
+  isError,
+  isLoading,
+}) => {
+  const usedMealPreps =
+    displayMode === "dynamic" && mealPreps
+      ? mealPreps
+      : ([mealPrep] as MealPrepWithIngredients[]);
+
+  const {
+    currentMealPrep,
+    viewImages,
+    currentMealPrepImageUsed,
+    currentMealPrepImageUsedSetter,
+  } = useGetMealPrepViewDetails(
+    displayMode,
+    usedMealPreps,
+    currentMealPrepId,
+    currentMealPrepImage,
+    setCurrentMealPrepImage,
+  );
+
+  useEffect(() => {
+    if (displayMode === "dynamic" && setCurrentMealPrepImage) {
+      setCurrentMealPrepImage(viewImages[0]);
+    }
+  }, [currentMealPrepId]);
 
   if (isError) {
-    return <div>iserror</div>;
+    return <div>is error</div>;
   }
 
   if (isLoading) {
-    return <div>isloading</div>;
+    return <div>is loading</div>;
   }
 
-  const mealPrep = weeklyMealPrep as MealPrepWithIngredients;
+  if (!usedMealPreps || usedMealPreps.length < 1) {
+    return <div>not found</div>;
+  }
 
   return (
     <div className={mealPrepViewStyles.container}>
-      <MealPrepDetails {...mealPrep} />
-      <MealPrepImages images={mealPrep?.images} mealPrepName={mealPrep?.name} />
+      <MealPrepDetails currentMealPrep={currentMealPrep} />
+      <EntityViewImages
+        images={viewImages}
+        entityType="meal-prep"
+        currentEntityImage={currentMealPrepImageUsed}
+        setCurrentEntityImage={currentMealPrepImageUsedSetter}
+      />
     </div>
   );
 };

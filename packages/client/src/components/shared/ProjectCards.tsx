@@ -8,6 +8,7 @@ import Card from "./Card";
 import projectCardsStyles from "@/scss/components/shared/ProjectCards.module.scss";
 // Interfaces
 import { ProjectCardsProps } from "@/core/interfaces";
+// React
 import { FC } from "react";
 
 const ProjectCards: FC<ProjectCardsProps> = ({ projects }) => {

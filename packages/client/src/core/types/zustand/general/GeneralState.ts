@@ -1,9 +1,16 @@
+// Shared
 import {
   SendEmailOptions,
   TechCategory,
   TechSkillWithTechWithContent,
 } from "@personal-portfolio-website/shared";
-import { GetProjectsDataType, ProjectsQueryDataType } from "../entity";
+// Entity
+import {
+  GetMealPrepsDataType,
+  GetProjectsDataType,
+  GetWeeklyMealPrepDataType,
+  ProjectsQueryDataType,
+} from "../entity";
 
 export type GeneralState = {
   colorTheme: "dark" | "light";
@@ -15,11 +22,17 @@ export type GeneralState = {
   techSkills: TechSkillWithTechWithContent[];
 
   getProjectsData: GetProjectsDataType;
+  getMealPrepsData: GetMealPrepsDataType;
+  getWeeklyMealPrepData: GetWeeklyMealPrepDataType;
 
   currentProjectId: string;
   currentOngoingProjectId: string;
+
   currentProjectImage: string;
   currentOngoingProjectImage: string;
+
+  currentMealPrepId: string;
+  currentMealPrepImage: string;
 
   contactFormData: SendEmailOptions;
 

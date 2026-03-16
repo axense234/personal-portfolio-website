@@ -72,5 +72,11 @@
     font-size: getFontSize("p-large");
     letter-spacing: 1px;
     font-style: italic;
+
+    transition: transform 0.2s ease-in;
+
+    &:hover {
+      transform: translateX(0.2rem);
+    }
   }
 }

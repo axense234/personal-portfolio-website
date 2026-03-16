@@ -1,4 +1,7 @@
-import { ProjectWithEverything } from "@personal-portfolio-website/shared";
+import {
+  MealPrepWithIngredients,
+  ProjectWithEverything,
+} from "@personal-portfolio-website/shared";
 
 export interface ViewContentProps {
   page: "projects" | "meal-prep" | "awards";
@@ -11,5 +14,5 @@ export interface ViewContentProps {
   isError: boolean;
   isLoading: boolean;
 
-  entities: ProjectWithEverything[];
+  entities: ProjectWithEverything[] | MealPrepWithIngredients[];
 }

@@ -9,8 +9,11 @@ export interface ProjectViewProps {
 
   index: number;
 
-  currentProjectId: string;
-  currentProjectImage: string;
-  setCurrentProjectImage: (value: string) => void;
-  projects: ProjectWithEverything[];
+  currentProjectId?: string;
+  currentProjectImage?: string;
+  setCurrentProjectImage?: (value: string) => void;
+  projects?: ProjectWithEverything[];
+
+  isError: boolean;
+  isLoading: boolean;
 }

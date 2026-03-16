@@ -11,7 +11,7 @@ import {
 // Shared
 import { SendEmailOptions } from "@personal-portfolio-website/shared";
 
-export const proEmail = "andreicomanescuonline@gmail.com";
+export const proEmail = "contact@comanescuandrei.com";
 
 export const projectCardsNoProjectsFoundMessage = "No Projects Found. >:(";
 
@@ -106,6 +106,12 @@ export const socialMediaIcons: ExternalMediaIconType[] = [
     dest: "https://www.linkedin.com/in/comanescu-andrei-22b13a3b0/",
     rel: "https://res.cloudinary.com/birthdayreminder/image/upload/v1773141484/Personal%20Website/tech-icons/other/InBug-White_gmf1ll.png",
     label: "My LinkedIn",
+  },
+  {
+    id: 3,
+    dest: "https://www.figma.com/design/4TLlvNOEJWRHBXNOBwTSVG/Personal-Portfolio-Website?node-id=178-236&p=f",
+    rel: "https://res.cloudinary.com/birthdayreminder/image/upload/v1773073257/Personal%20Website/tech-icons/other/Figma-Logo-PNG-Cutout_vmzpdw.png",
+    label: "Project Design",
   },
 ];
 
@@ -261,9 +267,12 @@ export const homePageContactTeaserSectionData: SectionDataType = {
     {
       id: 2,
       colorSpecifier: "success",
-      dest: "/home",
+      dest: "/misc/resume.pdf",
       label: "My Resume",
       size: "large",
+      download: true,
+      downloadFilename: "ca-resume.pdf",
+      buttonType: "download",
     },
   ],
 };
@@ -611,4 +620,25 @@ export const projectsPageProjectsSectionData: SectionDataType = {
 export const projectsPageOngoingProjectsContentData: SectionDataType = {
   title: "Ongoing Projects",
   subtitle: "the ones and only",
+};
+
+export const mealPrepsPageHeroContentData: SectionDataType = {
+  title: "Meal Preps",
+  subtitle: "unfathomable meals",
+  buttons: [
+    {
+      id: 1,
+      colorSpecifier: "warning",
+      dest: "/meal-prep",
+      label: "Weekly Meal Prep",
+      size: "large",
+    },
+    {
+      id: 2,
+      colorSpecifier: "success",
+      dest: "/meal-prep",
+      label: "Meals Gallery",
+      size: "large",
+    },
+  ],
 };

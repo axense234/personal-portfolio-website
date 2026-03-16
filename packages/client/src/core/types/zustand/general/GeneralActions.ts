@@ -2,7 +2,11 @@ import {
   TechCategory,
   TechSkillWithTechWithContent,
 } from "@personal-portfolio-website/shared";
-import { GetProjectsDataType } from "../entity";
+import {
+  GetMealPrepsDataType,
+  GetProjectsDataType,
+  GetWeeklyMealPrepDataType,
+} from "../entity";
 
 export type GeneralActions = {
   toggleColorTheme: () => void;
@@ -16,12 +20,17 @@ export type GeneralActions = {
   handleOnTechSkillCategoryTabClick: (category: TechCategory) => void;
 
   setGetProjectsData: (data: GetProjectsDataType) => void;
+  setGetMealPrepsData: (data: GetMealPrepsDataType) => void;
+  setGetWeeklyMealPrepData: (data: GetWeeklyMealPrepDataType) => void;
 
   setCurrentProjectId: (id: string) => void;
   setCurrentOngoingProjectId: (id: string) => void;
 
   setCurrentProjectImage: (img: string) => void;
   setCurrentOngoingProjectImage: (img: string) => void;
+
+  setCurrentMealPrepId: (id: string) => void;
+  setCurrentMealPrepImage: (img: string) => void;
 
   setContactFormDataKeyValue: (key: string, value: string) => void;
 

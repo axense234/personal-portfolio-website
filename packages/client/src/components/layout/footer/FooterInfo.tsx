@@ -8,7 +8,7 @@ const FooterInfo = () => {
   return (
     <div className={footerInfoStyles.container}>
       <FooterCopy />
-      <SocialIcons iconHeight={32} />
+      <SocialIcons iconHeight={32} focus="info" />
     </div>
   );
 };

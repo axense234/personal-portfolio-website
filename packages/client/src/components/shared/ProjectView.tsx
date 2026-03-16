@@ -21,11 +21,13 @@ const ProjectView: FC<ProjectViewProps> = ({
   currentProjectImage,
   projects,
   setCurrentProjectImage,
+  isError,
+  isLoading,
 }) => {
   const usedProjects =
-    displayMode === "static"
-      ? ([project] as ProjectWithEverything[])
-      : projects;
+    displayMode === "dynamic" && projects
+      ? projects
+      : ([project] as ProjectWithEverything[]);
 
   const specificEntityImagesType =
     viewType === "awards" ? "project-awards" : "project-images";
@@ -45,10 +47,22 @@ const ProjectView: FC<ProjectViewProps> = ({
   );
 
   useEffect(() => {
-    if (displayMode === "dynamic") {
+    if (displayMode === "dynamic" && setCurrentProjectImage) {
       setCurrentProjectImage(viewImages[0]);
     }
   }, [currentProjectId]);
+
+  if (isError) {
+    return <div>is error</div>;
+  }
+
+  if (isLoading) {
+    return <div>is loading</div>;
+  }
+
+  if (!usedProjects || usedProjects.length < 1) {
+    return <div>not found</div>;
+  }
 
   return (
     <div className={projectViewStyles.container}>

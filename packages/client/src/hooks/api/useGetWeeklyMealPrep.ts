@@ -1,42 +1,36 @@
 "use client";
+// Zustand
+import { useGeneralStore } from "@/zustand/general";
 // Shared Types
-import {
-  GetWeeklyMealPrepResponse,
-  MealPrepWithIngredients,
-} from "@personal-portfolio-website/shared";
+import { GetWeeklyMealPrepResponse } from "@personal-portfolio-website/shared";
 // Ky
 import ky from "ky";
 // React
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export const useGetWeeklyMealPrep = () => {
-  const [weeklyMealPrep, setWeeklyMealPrep] =
-    useState<MealPrepWithIngredients>();
-  const [isError, setIsError] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const { setGetWeeklyMealPrepData } = useGeneralStore((state) => state);
 
   useEffect(() => {
     const getWeeklyMealPrep = async () => {
       try {
-        const res = (await ky("/api/meal-preps/weekly", {
+        const res = (await ky("/api/meal-prep/weekly", {
           method: "get",
         }).json()) as GetWeeklyMealPrepResponse;
 
-        setWeeklyMealPrep(res.mealPrep);
-
-        setIsError(false);
-        setIsLoading(false);
+        setGetWeeklyMealPrepData({
+          isError: false,
+          isLoading: false,
+          mealPrep: res?.mealPrep,
+        });
       } catch (error) {
-        setIsError(true);
-        setIsLoading(false);
+        setGetWeeklyMealPrepData({
+          isError: true,
+          isLoading: false,
+          mealPrep: undefined,
+        });
       }
     };
     getWeeklyMealPrep();
   }, []);
-
-  return {
-    weeklyMealPrep,
-    isError,
-    isLoading,
-  };
 };

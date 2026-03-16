@@ -7,12 +7,8 @@ import { MealPrepDetailsProps } from "@/core/interfaces";
 // Helpers
 import { dateToCustomFormat, ingredientToText } from "@/helpers";
 
-const MealPrepDetails: FC<MealPrepDetailsProps> = ({
-  cookedAt,
-  coverage,
-  ingredients,
-  name,
-}) => {
+const MealPrepDetails: FC<MealPrepDetailsProps> = ({ currentMealPrep }) => {
+  const { name, cookedAt, coverage, ingredients } = currentMealPrep;
   return (
     <div className={mealPrepDetailsStyles.container}>
       <div className={mealPrepDetailsStyles.intro}>

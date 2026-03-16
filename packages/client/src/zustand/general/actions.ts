@@ -1,6 +1,11 @@
 // Types
 import { SetGeneralStoreFunctionType } from "@/core/interfaces";
-import { GeneralState, GetProjectsDataType } from "@/core/types";
+import {
+  GeneralState,
+  GetMealPrepsDataType,
+  GetProjectsDataType,
+  GetWeeklyMealPrepDataType,
+} from "@/core/types";
 import {
   TechCategory,
   TechSkillWithTechWithContent,
@@ -62,12 +67,36 @@ export const setGetProjectsData = (
     getProjectsData: data,
   }));
 
+export const setGetMealPrepsData = (
+  set: SetGeneralStoreFunctionType,
+  data: GetMealPrepsDataType,
+) =>
+  set((state: GeneralState) => ({
+    getMealPrepsData: data,
+  }));
+
+export const setGetWeeklyMealPrepData = (
+  set: SetGeneralStoreFunctionType,
+  data: GetWeeklyMealPrepDataType,
+) =>
+  set((state: GeneralState) => ({
+    getWeeklyMealPrepData: data,
+  }));
+
 export const setCurrentProjectId = (
   set: SetGeneralStoreFunctionType,
   id: string,
 ) =>
   set((state: GeneralState) => ({
     currentProjectId: id,
+  }));
+
+export const setCurrentMealPrepId = (
+  set: SetGeneralStoreFunctionType,
+  id: string,
+) =>
+  set((state: GeneralState) => ({
+    currentMealPrepId: id,
   }));
 
 export const setCurrentOngoingProjectId = (
@@ -84,6 +113,14 @@ export const setCurrentProjectImage = (
 ) =>
   set((state: GeneralState) => ({
     currentProjectImage: image,
+  }));
+
+export const setCurrentMealPrepImage = (
+  set: SetGeneralStoreFunctionType,
+  image: string,
+) =>
+  set((state: GeneralState) => ({
+    currentMealPrepImage: image,
   }));
 
 export const setCurrentOngoingProjectImage = (

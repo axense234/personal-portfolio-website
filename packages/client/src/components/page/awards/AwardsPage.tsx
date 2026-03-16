@@ -16,7 +16,7 @@ const AwardsPage = () => {
     useGeneralStore((state) => state);
 
   useSetCurrentEntityIdBasedOnData(
-    getProjectsData,
+    { ...getProjectsData, entities: getProjectsData?.projects },
     currentProjectId,
     setCurrentProjectId,
   );

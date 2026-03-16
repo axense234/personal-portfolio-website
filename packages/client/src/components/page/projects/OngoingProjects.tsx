@@ -18,8 +18,6 @@ const OngoingProjects = () => {
     (project) => project.project_phase,
   );
 
-  console.log(ongoingProjects);
-
   return (
     <ViewBasedPageHero
       heroData={projectsPageOngoingProjectsContentData}

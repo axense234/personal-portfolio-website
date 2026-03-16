@@ -7,6 +7,7 @@ import {
   CreateMealPrepService,
   GetMealPrepsService,
   GetWeeklyMealPrepService,
+  InjectMealPrepsService,
   MealPrepServices,
 } from './services';
 
@@ -16,6 +17,7 @@ import {
     CreateMealPrepService,
     GetWeeklyMealPrepService,
     GetMealPrepsService,
+    InjectMealPrepsService,
   ],
   controllers: [MealPrepController],
 })

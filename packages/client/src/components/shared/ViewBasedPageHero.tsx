@@ -8,6 +8,12 @@ import viewBasedPageHeroStyles from "@/scss/components/shared/ViewBasedPageHero.
 import LinkButton from "./LinkButton";
 import ProjectView from "./ProjectView";
 import EntityNavigationDots from "./EntityNavigationDots";
+import MealPrepView from "./MealPrepView";
+// Shared
+import {
+  MealPrepWithIngredients,
+  ProjectWithEverything,
+} from "@personal-portfolio-website/shared";
 
 const ViewContent: FC<ViewContentProps> = ({
   page,
@@ -18,16 +24,18 @@ const ViewContent: FC<ViewContentProps> = ({
   setCurrentEntityImage,
   entities,
 }) => {
-  if (isError) {
-    return <div>is error</div>;
-  }
-
-  if (isLoading) {
-    return <div>is loading</div>;
-  }
-
-  if (!entities || entities.length < 1) {
-    return <div>not found</div>;
+  if (page === "meal-prep") {
+    return (
+      <MealPrepView
+        currentMealPrepId={currentEntityId}
+        currentMealPrepImage={currentEntityImage}
+        mealPreps={entities as MealPrepWithIngredients[]}
+        setCurrentMealPrepImage={setCurrentEntityImage}
+        displayMode="dynamic"
+        isError={isError}
+        isLoading={isLoading}
+      />
+    );
   }
 
   return (
@@ -38,7 +46,9 @@ const ViewContent: FC<ViewContentProps> = ({
       currentProjectId={currentEntityId}
       currentProjectImage={currentEntityImage}
       setCurrentProjectImage={setCurrentEntityImage}
-      projects={entities}
+      projects={entities as ProjectWithEverything[]}
+      isError={isError}
+      isLoading={isLoading}
     />
   );
 };
@@ -80,7 +90,7 @@ const ViewBasedPageHero: FC<ViewBasedPageHeroProps> = ({
       <EntityNavigationDots
         currentEntityId={currentEntityId}
         setCurrentEntityId={setCurrentEntityId}
-        entityIds={entities.map((entity) => entity.id)}
+        entityIds={entities.map((entity: { id: string }) => entity.id)}
         useCase="entities"
       />
       <div className={viewBasedPageHeroStyles.buttons}>

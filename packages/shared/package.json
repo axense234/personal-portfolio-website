@@ -1,15 +1,6 @@
 {
   "name": "@personal-portfolio-website/shared",
-  "version": "1.0.0",
-  "private": true,
   "types": "index.ts",
-  "main": "",
-  "scripts": {
-    "build": "tsc"
-  },
-  "exports":{
-    ".": {
-      "types": "./index.ts"
-    }
-  }
+  "main": "index.ts",  
+  "files": ["src"]
 }

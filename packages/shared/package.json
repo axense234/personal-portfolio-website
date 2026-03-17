@@ -1,6 +1,11 @@
 {
   "name": "@personal-portfolio-website/shared",
   "types": "index.ts",
-  "main": "index.ts",  
-  "files": ["src"]
+  "main": "index.ts",
+  "files": ["src"],
+  "exports":{
+    ".":{
+      "types":"./index.ts"
+    }
+  }
 }

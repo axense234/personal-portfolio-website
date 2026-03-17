@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^5.15.9",
     "@personal-portfolio-website/shared": "^1.0.0",
     "ky": "^1.14.3",
     "next": "16.1.6",

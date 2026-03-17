@@ -3,11 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "types": "index.ts",
-  "main": "index.ts",
-  "files": ["types"],
-  "exports":{
-    ".":{
-      "types":"./index.ts"
-    }
+  "files": ["types", "index.ts"],
+  "peerDependencies": {
+    "typescript": "^5"
   }
 }

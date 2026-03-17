@@ -21,6 +21,7 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
+    "allowImportingTsExtensions": true,
 
     "paths": {
       "@personal-portfolio-website": ["../shared"]

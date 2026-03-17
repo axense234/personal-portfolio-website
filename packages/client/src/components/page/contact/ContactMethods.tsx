@@ -26,6 +26,7 @@ const ContactMethodsContent = () => {
           size="large"
           download
           downloadFilename="ca-resume.pdf"
+          buttonType="download"
         />
       </div>
     </div>

@@ -1,7 +1,4 @@
 import type { NextConfig } from "next";
-import createNextIntlPlugin from "next-intl/plugin";
-
-const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
   reactStrictMode: false,
@@ -19,4 +16,10 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withNextIntl(nextConfig);
+// eslint-disable-next-line import/no-anonymous-default-export
+export default async () => {
+  const createNextIntlPlugin = (await import("next-intl/plugin")).default;
+  const withNextIntl = createNextIntlPlugin();
+
+  return withNextIntl(nextConfig);
+};

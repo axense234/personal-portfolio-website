@@ -6,6 +6,8 @@ import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
 // Helmet
 import helmet from 'helmet';
+// Guards
+import { ApiKeyGuard } from './guards';
 
 const PORT = process.env.PORT || 4000;
 
@@ -18,6 +20,9 @@ async function bootstrap() {
       allowedHeaders: ['Content-Type', 'Authorization'],
     },
   });
+
+  // Global guards man
+  app.useGlobalGuards(new ApiKeyGuard());
 
   // Security
   app.use(helmet());

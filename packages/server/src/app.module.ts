@@ -1,5 +1,5 @@
 // Nest
-import { Module } from '@nestjs/common';
+import { Module, UseGuards } from '@nestjs/common';
 // Config Module
 import { ConfigModule } from '@nestjs/config';
 // Rate Limiter

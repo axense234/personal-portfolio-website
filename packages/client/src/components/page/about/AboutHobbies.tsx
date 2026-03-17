@@ -15,7 +15,7 @@ const AboutHobbies = () => {
           <h2 title={title} aria-label={title}>
             {title}
           </h2>
-          {paragraphs.map((paragraph, index) => {
+          {paragraphs?.map((paragraph, index) => {
             return <p key={index}>{paragraph}</p>;
           })}
         </div>

@@ -24,7 +24,7 @@ const AboutMe = () => {
         <div className={aboutMeStyles.intro}>
           <h2>{title}</h2>
           <div className={aboutMeStyles.paragraphs}>
-            {paragraphs.map((paragraph, index) => {
+            {paragraphs?.map((paragraph, index) => {
               return <p key={index}>{paragraph}</p>;
             })}
           </div>

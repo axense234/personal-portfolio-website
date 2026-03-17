@@ -40,6 +40,7 @@ const Card: FC<CardProps> = ({ desc, image, label, button, externals }) => {
                     icon_src={external.rel}
                     label={external.label}
                     key={external.id}
+                    id=""
                   />
                 );
               })}

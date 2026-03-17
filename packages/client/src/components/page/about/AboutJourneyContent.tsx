@@ -43,7 +43,7 @@ const AboutJourneyContent = () => {
         ) : (
           <div className={aboutJourneyContentStyles.icons}>
             {articleData?.icons?.map((icon, index) => {
-              return <IconComponent {...icon} key={index} />;
+              return <IconComponent {...icon} id="" key={index} />;
             })}
           </div>
         );

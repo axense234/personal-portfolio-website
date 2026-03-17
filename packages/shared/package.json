@@ -2,7 +2,7 @@
   "name": "@personal-portfolio-website/shared",
   "types": "index.ts",
   "main": "index.ts",
-  "files": ["src"],
+  "files": ["types"],
   "exports":{
     ".":{
       "types":"./index.ts"

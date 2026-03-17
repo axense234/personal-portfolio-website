@@ -1,0 +1,43 @@
+@use "../../abstracts" as *;
+
+.container {
+  @include flexCenter(column);
+  position: absolute;
+  width: 30%;
+
+  background-color: var(--primary-opposite);
+
+  gap: 1rem;
+
+  padding: 2rem;
+
+  > h3 {
+    font-size: getFontSize("h6-phone");
+    letter-spacing: 3px;
+    color: var(--primary);
+    text-align: center;
+  }
+
+  > p {
+    color: var(--primary);
+    font-size: getFontSize("p-medium");
+    letter-spacing: 0.35px;
+    text-align: center;
+  }
+
+  > svg {
+    font-size: 2rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: var(--delete-red);
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease-in;
+
+    &:hover {
+      transform: rotate(180 * 10deg);
+    }
+  }
+}

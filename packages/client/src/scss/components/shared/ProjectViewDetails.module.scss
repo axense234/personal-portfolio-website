@@ -15,6 +15,7 @@
   align-items: flex-start;
 
   > h4 {
+    width: 100%;
     font-size: getFontSize("h4-tablet");
     letter-spacing: 3px;
     color: var(--primary-opposite);

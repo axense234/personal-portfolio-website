@@ -28,3 +28,49 @@
     @include setVariablesBasedOnGivenTheme("light");
   }
 }
+
+.temporary {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  gap: 3rem;
+
+  padding: 8rem 4rem;
+
+  // initial setting of theme
+  @include setVariablesBasedOnGivenTheme("dark");
+
+  @media (prefers-color-scheme: light) {
+    @include setVariablesBasedOnGivenTheme("light");
+  }
+
+  // setting of theme through a component
+  &[data-theme="dark"] {
+    @include setVariablesBasedOnGivenTheme("dark");
+  }
+
+  &[data-theme="light"] {
+    @include setVariablesBasedOnGivenTheme("light");
+  }
+
+  > h1 {
+    font-size: getFontSize("h5-phone");
+    letter-spacing: 0.5px;
+    color: var(--primary);
+    text-align: center;
+  }
+
+  > h2 {
+    font-size: getFontSize("h6-phone");
+    letter-spacing: 1px;
+    color: var(--primary);
+    text-align: center;
+  }
+}

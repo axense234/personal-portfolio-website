@@ -1,0 +1,43 @@
+@use "../../../abstracts" as *;
+
+.entities {
+  @include flexCenter(row);
+  justify-content: space-between;
+  width: 100%;
+  list-style: none;
+
+  padding: 1rem 8rem;
+
+  > li {
+    border-radius: round(50);
+    width: 1.25rem;
+    height: 1.25rem;
+
+    cursor: pointer;
+  }
+}
+
+.images {
+  @include flexCenter(row);
+  justify-content: space-between;
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  opacity: 0.9;
+  background-color: var(--primary);
+
+  gap: 2rem;
+
+  padding: 0.5rem 8rem;
+
+  list-style: none;
+
+  > li {
+    border-radius: round(50);
+    width: 1.25rem;
+    height: 1.25rem;
+
+    cursor: pointer;
+  }
+}

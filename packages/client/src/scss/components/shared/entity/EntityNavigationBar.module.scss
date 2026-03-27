@@ -1,0 +1,15 @@
+@use "../../../abstracts" as *;
+
+.container {
+  @include flexCenter(row);
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+
+  border-radius: round(5);
+  background-color: var(--secondary);
+
+  padding: 1.5rem 2rem;
+
+  gap: 1rem;
+}

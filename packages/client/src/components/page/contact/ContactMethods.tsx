@@ -5,6 +5,7 @@ import { contactPageContactMethodsSectionData, proEmail } from "@/data";
 // Components
 import LinkButton from "@/components/shared/LinkButton";
 import SocialIcons from "@/components/shared/SocialIcons";
+import PageSectionWrapper from "@/components/shared/sections/PageSectionWrapper";
 
 const ContactMethodsContent = () => {
   return (
@@ -34,19 +35,10 @@ const ContactMethodsContent = () => {
 };
 
 const ContactMethods = () => {
-  const { title, paragraphs } = contactPageContactMethodsSectionData;
   return (
-    <section className={contactMethodsStyles.container}>
-      <div className={contactMethodsStyles.intro}>
-        <h2 title={title} aria-label={title}>
-          {title}
-        </h2>
-        {paragraphs?.map((paragraph, index) => {
-          return <p key={index}>{paragraph}</p>;
-        })}
-      </div>
+    <PageSectionWrapper pageSectionData={contactPageContactMethodsSectionData}>
       <ContactMethodsContent />
-    </section>
+    </PageSectionWrapper>
   );
 };
 

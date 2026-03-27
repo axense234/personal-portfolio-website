@@ -1,9 +1,9 @@
 // SCSS
 import projectsDashboardStyles from "@/scss/components/page/projects/ProjectsDashboard.module.scss";
 // Components
-import TechIcons from "@/components/shared/TechIcons";
-import EntityNavigationBar from "@/components/shared/EntityNavigationBar";
-import ProjectCards from "@/components/shared/ProjectCards";
+import TechIcons from "@/components/shared/entity/tech/TechIcons";
+import EntityNavigationBar from "@/components/shared/entity/EntityNavigationBar";
+import ProjectCards from "@/components/shared/entity/project/ProjectCards";
 // Zustand
 import { useGeneralStore } from "@/zustand/general";
 // Helpers

@@ -1,0 +1,82 @@
+@use "../../../../abstracts" as *;
+
+.container {
+  @include flexCenter(column);
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.intro {
+  @include flexCenter(column);
+  align-items: flex-start;
+
+  > h4 {
+    font-size: getFontSize("h4-laptop");
+    letter-spacing: 3px;
+    color: var(--primary-opposite);
+  }
+
+  > p {
+    color: var(--primary-opposite);
+    font-size: getFontSize("p-large");
+    letter-spacing: 2px;
+    font-style: italic;
+  }
+}
+
+.coverage {
+  @include flexCenter(column);
+  align-items: flex-start;
+
+  gap: 1rem;
+
+  > h5 {
+    font-size: getFontSize("h5-tablet");
+    letter-spacing: 2px;
+    color: var(--primary-opposite);
+  }
+
+  > p {
+    display: list-item;
+    list-style-position: inside;
+    color: var(--primary-opposite);
+    font-size: getFontSize("p-large");
+    letter-spacing: 1px;
+    font-style: italic;
+  }
+}
+
+.ingredientsWrapper {
+  @include flexCenter(column);
+  align-items: flex-start;
+
+  gap: 1rem;
+
+  > h5 {
+    font-size: getFontSize("h5-tablet");
+    letter-spacing: 2px;
+    color: var(--primary-opposite);
+  }
+}
+
+.ingredients {
+  @include flexCenter(column);
+  align-items: flex-start;
+  list-style-position: inside;
+  gap: 1rem;
+
+  > li {
+    display: list-item;
+    list-style-position: inside;
+    color: var(--primary-opposite);
+    font-size: getFontSize("p-large");
+    letter-spacing: 1px;
+    font-style: italic;
+
+    transition: transform 0.2s ease-in;
+
+    &:hover {
+      transform: translateX(0.2rem);
+    }
+  }
+}

@@ -13,7 +13,7 @@ import { useGeneralStore } from "@/zustand/general/context";
 const PagesLayout = ({ children }: { children: React.ReactNode }) => {
   const { colorTheme } = useGeneralStore((state) => state);
 
-  const windowWidth = window?.innerWidth;
+  const windowWidth = window && window?.innerWidth;
 
   if (windowWidth && windowWidth < 1600) {
     return (

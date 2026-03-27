@@ -1,10 +1,9 @@
 "use client";
-// SCSS
-import awardsPageStyles from "@/scss/components/page/awards/AwardsPage.module.scss";
 // Components
 import AwardsPageHero from "./AwardsPageHero";
 import AwardsBronzeMedal from "./AwardsBronzeMedal";
 import HighschoolAwards from "./HighschoolAwards";
+import StandardPageWrapper from "../StandardPageWrapper";
 // Hooks
 import { useGetProjects, useSetCurrentEntityIdBasedOnData } from "@/hooks";
 import { useGeneralStore } from "@/zustand/general/context";
@@ -22,11 +21,11 @@ const AwardsPage = () => {
   );
 
   return (
-    <section className={awardsPageStyles.container}>
+    <StandardPageWrapper>
       <AwardsPageHero />
       <AwardsBronzeMedal />
       <HighschoolAwards />
-    </section>
+    </StandardPageWrapper>
   );
 };
 

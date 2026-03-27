@@ -1,6 +1,6 @@
 "use client";
 // Components
-import ViewBasedPageHero from "@/components/shared/ViewBasedPageHero";
+import ViewBasedPageHero from "@/components/shared/heros/ViewBasedPageHero";
 // Data
 import { awardsPageHeroContentData } from "@/data";
 // Zustand

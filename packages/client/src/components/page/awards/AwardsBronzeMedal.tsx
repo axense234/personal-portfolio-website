@@ -8,7 +8,8 @@ import { useGeneralStore } from "@/zustand/general/context";
 // Data
 import { awardsPageBronzeMedalSectionData, bronzeMedalImageSrc } from "@/data";
 // Components
-import ProjectViewDetails from "@/components/shared/ProjectViewDetails";
+import ProjectViewDetails from "@/components/shared/entity/view/ProjectViewDetails";
+import PageSectionWrapper from "@/components/shared/sections/PageSectionWrapper";
 
 const AwardsBronzeMedal = () => {
   const { getProjectsData } = useGeneralStore((state) => state);
@@ -17,18 +18,12 @@ const AwardsBronzeMedal = () => {
     project.topics.includes("BRONZE_MEDAL"),
   );
 
-  const { title, subtitle } = awardsPageBronzeMedalSectionData;
-
   if (!bronzeMedalProject) {
     return <div>hey man that stuff doesnt exit i think</div>;
   }
 
   return (
-    <section className={awardsBronzeMedalStyles.container}>
-      <div className={awardsBronzeMedalStyles.header}>
-        <h2>{title}</h2>
-        <h4>{subtitle}</h4>
-      </div>
+    <PageSectionWrapper pageSectionData={awardsPageBronzeMedalSectionData}>
       <div className={awardsBronzeMedalStyles.content}>
         <Image
           width={480}
@@ -42,7 +37,7 @@ const AwardsBronzeMedal = () => {
           index={1}
         />
       </div>
-    </section>
+    </PageSectionWrapper>
   );
 };
 

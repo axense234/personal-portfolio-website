@@ -1,7 +1,7 @@
 // Data
 import { homePageHeroSectionData } from "@/data";
 // Components
-import CommonPageHero from "@/components/shared/CommonPageHero";
+import CommonPageHero from "@/components/shared/heros/CommonPageHero";
 
 const HomeHero = () => {
   return <CommonPageHero {...homePageHeroSectionData} />;

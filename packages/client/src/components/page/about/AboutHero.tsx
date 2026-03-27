@@ -1,5 +1,5 @@
 // Components
-import CommonPageHero from "@/components/shared/CommonPageHero";
+import CommonPageHero from "@/components/shared/heros/CommonPageHero";
 // Data
 import { aboutPageHeroSectionData } from "@/data";
 

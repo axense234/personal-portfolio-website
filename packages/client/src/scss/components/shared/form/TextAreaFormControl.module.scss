@@ -1,0 +1,49 @@
+@use "../../../abstracts" as *;
+
+.container {
+  @include flexCenter(column);
+  width: 100%;
+  gap: 1rem;
+  align-items: flex-start;
+
+  > label {
+    font-size: getFontSize("h6-tablet");
+    color: var(--primary-opposite);
+    letter-spacing: 1px;
+
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.035);
+      font-style: italic;
+    }
+  }
+
+  > textarea {
+    @include flexCenter(row);
+    align-items: flex-start;
+
+    width: 80%;
+    min-width: 30%;
+    max-width: 100%;
+
+    max-height: 40rem;
+    min-height: 15rem;
+
+    border-style: none;
+
+    font-size: getFontSize("h6-phone");
+    color: var(--tertiary-opposite);
+    background-color: var(--tertiary);
+    letter-spacing: 1px;
+
+    border-radius: round(5);
+
+    padding: 0.75rem 1.5rem;
+    padding-left: 1rem;
+
+    &::placeholder {
+      color: var(--placeholder-text);
+    }
+  }
+}

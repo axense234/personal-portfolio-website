@@ -1,13 +1,12 @@
 "use client";
-// SCSS
-import homePageStyles from "@/scss/components/page/home/HomePage.module.scss";
 // Components
-import WeeklyMealPrep from "@/components/shared/WeeklyMealPrep";
+import WeeklyMealPrep from "@/components/shared/sections/WeeklyMealPrep";
 import HomeAboutTeaser from "./HomeAboutTeaser";
 import HomeContactTeaser from "./HomeContactTeaser";
 import HomeFeaturedProjects from "./HomeFeaturedProjects";
 import HomeHero from "./HomeHero";
 import HomeTechnicalSkills from "./HomeTechnicalSkills";
+import StandardPageWrapper from "../StandardPageWrapper";
 // Zustandy and Hooks
 import { useGetWeeklyMealPrep } from "@/hooks";
 import { useGeneralStore } from "@/zustand/general";
@@ -20,7 +19,7 @@ const HomePage = () => {
   const { isError, isLoading, mealPrep } = getWeeklyMealPrepData;
 
   return (
-    <section className={homePageStyles.container}>
+    <StandardPageWrapper>
       <HomeHero />
       <HomeAboutTeaser />
       <HomeFeaturedProjects />
@@ -31,7 +30,7 @@ const HomePage = () => {
         weeklyMealPrep={mealPrep}
       />
       <HomeContactTeaser />
-    </section>
+    </StandardPageWrapper>
   );
 };
 

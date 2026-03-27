@@ -1,10 +1,9 @@
 "use client";
-// SCSS
-import aboutTechnicalSkillsStyles from "@/scss/components/page/about/AboutTechnicalSkills.module.scss";
 // Data
 import { aboutPageTechnicalSkillsSectionData } from "@/data";
 // Components
-import TechSkills from "@/components/shared/TechSkills";
+import PageSectionWrapper from "@/components/shared/sections/PageSectionWrapper";
+import TechSkills from "@/components/shared/entity/tech-skill/TechSkills";
 // Hooks
 import { useGetTechSkills } from "@/hooks";
 
@@ -19,22 +18,10 @@ const AboutTechnicalSkills = () => {
     return <div>isloading</div>;
   }
 
-  const { title, paragraphs } = aboutPageTechnicalSkillsSectionData;
-
   return (
-    <section className={aboutTechnicalSkillsStyles.container}>
-      <div className={aboutTechnicalSkillsStyles.content}>
-        <div className={aboutTechnicalSkillsStyles.intro}>
-          <h2 title={title} aria-label={title}>
-            {title}
-          </h2>
-          {paragraphs?.map((paragraph, index) => {
-            return <p key={index}>{paragraph}</p>;
-          })}
-        </div>
-        <TechSkills techSkills={techSkills} />
-      </div>
-    </section>
+    <PageSectionWrapper pageSectionData={aboutPageTechnicalSkillsSectionData}>
+      <TechSkills techSkills={techSkills} />
+    </PageSectionWrapper>
   );
 };
 

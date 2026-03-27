@@ -1,0 +1,26 @@
+@use "../../../../abstracts" as *;
+
+.container {
+  @include flexCenter(row);
+  flex-wrap: wrap;
+  align-items: flex-start;
+  list-style: none;
+  width: 100%;
+  gap: 8rem;
+
+  > li {
+    width: 27.5%;
+  }
+}
+
+.fancy {
+  @include flexCenter(column);
+  list-style: none;
+  gap: 4rem;
+
+  padding: 2rem;
+  border-radius: round(5);
+  background-color: var(--secondary);
+
+  max-width: 25%;
+}

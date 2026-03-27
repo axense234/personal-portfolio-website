@@ -1,0 +1,170 @@
+@use "../../../../abstracts" as *;
+
+.container {
+  @include flexCenter(column);
+  align-items: flex-start;
+  gap: 2rem;
+
+  min-width: 30%;
+  max-width: 40%;
+}
+
+.header {
+  @include flexCenter(column);
+  gap: 1rem;
+  align-items: flex-start;
+
+  > h4 {
+    width: 100%;
+    font-size: getFontSize("h4-tablet");
+    letter-spacing: 3px;
+    color: var(--primary-opposite);
+    transition: transform 0.2s ease;
+
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.015);
+      font-style: italic;
+    }
+  }
+
+  > h6 {
+    color: var(--primary-opposite);
+    font-size: getFontSize("h6-laptop");
+    letter-spacing: 1.5px;
+
+    transition: transform 0.2s ease;
+
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.035);
+      font-style: italic;
+    }
+  }
+}
+
+.content {
+  @include flexCenter(column);
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.awards {
+  @include flexCenter(column);
+  align-items: flex-start;
+  gap: 1rem;
+
+  > h6 {
+    color: var(--primary-opposite);
+    font-size: getFontSize("h6-tablet");
+    letter-spacing: 1.5px;
+
+    transition: transform 0.2s ease;
+
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.035);
+      font-style: italic;
+    }
+  }
+}
+
+.awardsWrapper {
+  @include flexCenter(column);
+  align-items: flex-start;
+  gap: 1rem;
+
+  > li {
+    @include flexCenter(column);
+    align-items: flex-start;
+
+    > p {
+      display: list-item;
+      list-style-position: inside;
+      color: var(--body-text);
+      font-size: getFontSize("p-large");
+      letter-spacing: 0.35px;
+      max-width: 66ch;
+      width: fit-content;
+
+      transition: transform 0.2s ease-in;
+
+      &:hover {
+        transform: translateX(0.2rem);
+      }
+    }
+  }
+}
+
+.desc {
+  @include flexCenter(column);
+  align-items: flex-start;
+  gap: 1rem;
+
+  > h6 {
+    color: var(--primary-opposite);
+    font-size: getFontSize("h6-tablet");
+    letter-spacing: 1.5px;
+
+    transition: transform 0.2s ease;
+
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.035);
+      font-style: italic;
+    }
+  }
+
+  > p {
+    color: var(--body-text);
+    font-size: getFontSize("p-large");
+    letter-spacing: 0.35px;
+    max-width: 66ch;
+    width: fit-content;
+  }
+}
+
+.tech {
+  @include flexCenter(column);
+  align-items: flex-start;
+  gap: 1rem;
+
+  > h6 {
+    color: var(--primary-opposite);
+    font-size: getFontSize("h6-tablet");
+    letter-spacing: 1.5px;
+
+    transition: transform 0.2s ease;
+
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.035);
+      font-style: italic;
+    }
+  }
+}
+
+.techWrapper {
+  @include flexCenter(row);
+  width: 100%;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+
+  > li {
+    @include flexCenter(column);
+  }
+}
+
+.buttons {
+  @include flexCenter(row);
+  width: 100%;
+  justify-content: space-between;
+
+  margin-top: 2rem;
+}

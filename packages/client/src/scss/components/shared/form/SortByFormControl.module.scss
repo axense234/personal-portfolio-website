@@ -1,0 +1,52 @@
+@use "../../../abstracts" as *;
+
+.container {
+  @include flexCenter(row);
+  gap: 1rem;
+}
+
+.message {
+  width: 100%;
+  font-size: getFontSize("h6-tablet");
+  color: var(--warning-yellow);
+  letter-spacing: 1px;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.005);
+    font-style: italic;
+  }
+}
+
+.intro {
+  @include flexCenter(row);
+  gap: 0.5rem;
+
+  > label {
+    font-size: getFontSize("h6-tablet");
+    color: var(--primary-opposite);
+    letter-spacing: 1px;
+
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.035);
+      font-style: italic;
+    }
+  }
+
+  > svg {
+    color: var(--primary-opposite);
+    transition: transform 0.1s ease-in;
+    font-size: 1.35rem;
+
+    &:hover {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.controls {
+  @include flexCenter(row);
+  gap: 2rem;
+}

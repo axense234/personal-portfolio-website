@@ -1,17 +1,16 @@
-// SCSS
-import contactPageStyles from "@/scss/components/page/contact/ContactPage.module.scss";
 // Components
 import ContactHero from "./ContactHero";
 import ContactMessageMe from "./ContactMessageMe";
 import ContactMethods from "./ContactMethods";
+import StandardPageWrapper from "../StandardPageWrapper";
 
 const ContactPage = () => {
   return (
-    <section className={contactPageStyles.container}>
+    <StandardPageWrapper>
       <ContactHero />
       <ContactMethods />
       <ContactMessageMe />
-    </section>
+    </StandardPageWrapper>
   );
 };
 

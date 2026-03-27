@@ -2,8 +2,8 @@
 // SCSS
 import contactFormStyles from "@/scss/components/page/contact/ContactForm.module.scss";
 // Components
-import TextFormControl from "@/components/shared/TextFormControl";
-import TextAreaFormControl from "@/components/shared/TextAreaFormControl";
+import TextFormControl from "@/components/shared/form/TextFormControl";
+import TextAreaFormControl from "@/components/shared/form/TextAreaFormControl";
 // Components
 import LinkButton from "@/components/shared/LinkButton";
 // Zustand

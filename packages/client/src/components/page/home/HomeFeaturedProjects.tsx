@@ -1,13 +1,11 @@
 "use client";
 // Components
-import LinkButton from "@/components/shared/LinkButton";
-import ProjectCards from "@/components/shared/ProjectCards";
+import ProjectCards from "@/components/shared/entity/project/ProjectCards";
+import PageSectionWrapper from "@/components/shared/sections/PageSectionWrapper";
 // Data
 import { homePageFeaturedProjectsSectionData } from "@/data";
 // Hooks
 import { useGetProjects } from "@/hooks";
-// SCSS
-import homeFeaturedProjectsStyles from "@/scss/components/page/home/HomeFeaturedProjects.module.scss";
 // zus
 import { useGeneralStore } from "@/zustand/general/context";
 
@@ -30,24 +28,10 @@ const FeaturedProjects = () => {
 };
 
 const HomeFeaturedProjects = () => {
-  const { buttons, paragraphs, title } = homePageFeaturedProjectsSectionData;
   return (
-    <section className={homeFeaturedProjectsStyles.container}>
-      <div className={homeFeaturedProjectsStyles.content}>
-        <div className={homeFeaturedProjectsStyles.intro}>
-          <h2 title={title} aria-label={title}>
-            {title}
-          </h2>
-          {paragraphs?.map((paragraph, index) => {
-            return <p key={index}>{paragraph}</p>;
-          })}
-        </div>
-        <FeaturedProjects />
-      </div>
-      {buttons?.map((button) => {
-        return <LinkButton {...button} key={button.id} />;
-      })}
-    </section>
+    <PageSectionWrapper pageSectionData={homePageFeaturedProjectsSectionData}>
+      <FeaturedProjects />
+    </PageSectionWrapper>
   );
 };
 

@@ -1,10 +1,9 @@
 "use client";
-// SCSS
-import mealPrepsPageStyles from "@/scss/components/page/meal-prep/MealPrepsPage.module.scss";
 // Components
-import WeeklyMealPrep from "@/components/shared/WeeklyMealPrep";
+import WeeklyMealPrep from "@/components/shared/sections/WeeklyMealPrep";
 import MealPrepsPageHero from "./MealPrepsPageHero";
 import MealPrepsGallery from "./MealPrepsGallery";
+import StandardPageWrapper from "../StandardPageWrapper";
 // Zustand
 import { useGeneralStore } from "@/zustand/general";
 // Hooks
@@ -28,7 +27,7 @@ const MealPrepsPage = () => {
   )[0];
 
   return (
-    <section className={mealPrepsPageStyles.container}>
+    <StandardPageWrapper>
       <MealPrepsPageHero />
       <WeeklyMealPrep
         weeklyMealPrep={weeklyMealPrep}
@@ -36,7 +35,7 @@ const MealPrepsPage = () => {
         isLoading={getMealPrepsData?.isLoading}
       />
       <MealPrepsGallery />
-    </section>
+    </StandardPageWrapper>
   );
 };
 

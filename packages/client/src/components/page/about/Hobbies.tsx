@@ -3,7 +3,7 @@ import hobbiesStyles from "@/scss/components/page/about/Hobbies.module.scss";
 // Data
 import { aboutPageHobbiesContentData } from "@/data";
 // Components
-import Card from "@/components/shared/Card";
+import Card from "@/components/shared/entity/Card";
 
 const Hobbies = () => {
   return (

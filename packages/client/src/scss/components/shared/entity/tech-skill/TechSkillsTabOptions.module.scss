@@ -1,0 +1,52 @@
+@use "../../../../abstracts" as *;
+
+.container {
+  @include flexCenter(column);
+  width: auto;
+}
+
+.wrapper {
+  @include flexCenter(column);
+  width: 100%;
+  list-style: none;
+  gap: 0.5rem;
+
+  > li {
+    @include flexCenter(row);
+    width: 100%;
+    gap: 1rem;
+    justify-content: flex-start;
+
+    background-color: var(--tertiary);
+    padding: 0.5rem 0.75rem;
+    border-radius: round(2.5);
+
+    opacity: 0.5;
+
+    transition: opacity 0.2s ease-in;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    > img {
+      height: 3rem;
+      width: auto;
+    }
+
+    > span {
+      color: var(--primary-opposite);
+      font-size: getFontSize("h6-laptop");
+      letter-spacing: 1.5px;
+
+      transition: transform 0.2s ease;
+
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.035);
+        font-style: italic;
+      }
+    }
+  }
+}

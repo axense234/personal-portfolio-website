@@ -6,7 +6,8 @@ import { awardsPageHighschoolAwardsSectionData } from "@/data";
 // Zustadaolwdnawoidjawpidwad
 import { useGeneralStore } from "@/zustand/general/context";
 // Components
-import ProjectView from "@/components/shared/ProjectView";
+import ProjectView from "@/components/shared/entity/view/ProjectView";
+import PageSectionWrapper from "@/components/shared/sections/PageSectionWrapper";
 
 const Awards = () => {
   const { getProjectsData } = useGeneralStore((state) => state);
@@ -31,20 +32,10 @@ const Awards = () => {
 };
 
 const HighschoolAwards = () => {
-  const { title, paragraphs } = awardsPageHighschoolAwardsSectionData;
-
   return (
-    <section className={highschoolAwardsStyles.container}>
-      <div className={highschoolAwardsStyles.intro}>
-        <h2 title={title} aria-label={title}>
-          {title}
-        </h2>
-        {paragraphs?.map((paragraph, index) => {
-          return <p key={index}>{paragraph}</p>;
-        })}
-      </div>
+    <PageSectionWrapper pageSectionData={awardsPageHighschoolAwardsSectionData}>
       <Awards />
-    </section>
+    </PageSectionWrapper>
   );
 };
 

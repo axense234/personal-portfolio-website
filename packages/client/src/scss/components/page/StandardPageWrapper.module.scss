@@ -8,4 +8,29 @@
   gap: 16rem;
 
   background-color: var(--primary);
+
+  @media (max-width: getScreenSize(base)) {
+    padding: 13.5rem 0rem;
+    gap: 13.5rem;
+  }
+
+  @media (max-width: getScreenSize(laptop-2)) {
+    padding: 12.5rem 0rem;
+    gap: 12.5rem;
+  }
+
+  @media (max-width: getScreenSize(tablet-1)) {
+    padding: 10.5rem 0rem;
+    gap: 10.5rem;
+  }
+
+  @media (max-width: getScreenSize(tablet-2)) {
+    padding: 9.25rem 0rem;
+    gap: 9.25rem;
+  }
+
+  @media (max-width: getScreenSize(phone-1)) {
+    padding: 8rem 0rem;
+    gap: 8rem;
+  }
 }

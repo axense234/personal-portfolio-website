@@ -11,15 +11,13 @@
   align-items: flex-start;
 
   > h4 {
-    font-size: getFontSize("h4-laptop");
-    letter-spacing: 3px;
+    @include headingWithSpacing("h4-laptop");
     color: var(--primary-opposite);
   }
 
   > p {
+    @include paragraphWithSpacing("p-large");
     color: var(--primary-opposite);
-    font-size: getFontSize("p-large");
-    letter-spacing: 2px;
     font-style: italic;
   }
 }

@@ -2,11 +2,12 @@
 
 .entities {
   @include flexCenter(row);
-  justify-content: space-between;
   width: 100%;
   list-style: none;
 
   padding: 1rem 8rem;
+
+  gap: 1rem;
 
   > li {
     border-radius: round(50);

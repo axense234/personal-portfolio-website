@@ -9,6 +9,14 @@
   gap: 2rem;
   list-style: none;
 
+  @media (max-width: getScreenSize("laptop-1")) {
+    gap: 1rem;
+  }
+
+  @media (max-width: 1250px) {
+    gap: 0.75rem;
+  }
+
   > li {
     transition: transform 0.2s ease;
 
@@ -17,9 +25,8 @@
       font-style: italic;
     }
     > a {
+      @include paragraphWithSpacing("p-medium");
       width: 100%;
-      font-size: getFontSize("p-medium");
-      letter-spacing: 2px;
       text-decoration: none;
       color: var(--labels);
     }

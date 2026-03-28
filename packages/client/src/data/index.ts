@@ -10,6 +10,12 @@ import {
 } from "@/core/types";
 // Shared
 import { SendEmailOptions } from "@personal-portfolio-website/shared";
+import { FaAward, FaHome, FaInfoCircle } from "react-icons/fa";
+import { GrProjects } from "react-icons/gr";
+import { IoMdContact } from "react-icons/io";
+import { MdDashboard } from "react-icons/md";
+import { SiMealie } from "react-icons/si";
+// React Icons
 
 export const proEmail = "contact@comanescuandrei.com";
 
@@ -32,36 +38,43 @@ export const navLinks: NavLinkType[] = [
     id: 1,
     label: "Home",
     dest: "/",
+    icon: FaHome({}),
   },
   {
     id: 2,
     label: "Projects",
     dest: "/projects",
+    icon: GrProjects({}),
   },
   {
     id: 3,
     label: "Meal Preps",
     dest: "/meal-prep",
+    icon: SiMealie({}),
   },
   {
     id: 4,
     label: "Awards",
     dest: "/awards",
+    icon: FaAward({}),
   },
   {
     id: 5,
     label: "About",
     dest: "/about",
+    icon: FaInfoCircle({}),
   },
   {
     id: 6,
     label: "Contact",
     dest: "/contact",
+    icon: IoMdContact({}),
   },
   {
     id: 7,
     label: "Dashboard",
     dest: "/dashboard",
+    icon: MdDashboard({}),
   },
 ];
 
@@ -92,7 +105,7 @@ export const languageFlagsImages: LangFlagImageType[] = [
   },
 ];
 
-export const footerCopyright = "© 2026 Comanescu Andrei. All rights reserved.";
+export const footerCopyright = "© 2026 Comănescu Andrei. All rights reserved.";
 
 export const socialMediaIcons: ExternalMediaIconType[] = [
   {
@@ -188,7 +201,7 @@ export const homePageAboutTeaserSectionData: SectionDataType = {
 export const aboutPageAboutMeSectionData: SectionDataType = {
   title: "Who am I?",
   paragraphs: [
-    "My name is Comanescu Andrei, I am a romanian student currently attending the Faculty of Mathematics and Computer Science at Babes-Bolyai University, studying Computer Science in English as an undergraduate.",
+    "My name is Comănescu Andrei, I am a romanian student currently attending the Faculty of Mathematics and Computer Science at Babes-Bolyai University, studying Computer Science in English as an undergraduate.",
     "In my free time, I usually like doing web development, learning any technologies.  I also like cooking, long walks and playing some games when im free.",
   ],
   buttons: [

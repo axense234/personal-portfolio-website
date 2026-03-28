@@ -1,3 +1,4 @@
+"use client";
 // Components
 import ProjectViewDetails from "./ProjectViewDetails";
 import EntityViewImages from "../EntityViewImages";
@@ -9,6 +10,7 @@ import { FC, useEffect } from "react";
 import { ProjectViewProps } from "@/core/interfaces";
 // Hooks
 import { useGetProjectViewDetails } from "@/hooks";
+import useGetWindowWidth from "@/hooks/general/useGetWindowWidth";
 // Shared
 import { ProjectWithEverything } from "@personal-portfolio-website/shared";
 
@@ -31,6 +33,9 @@ const ProjectView: FC<ProjectViewProps> = ({
 
   const specificEntityImagesType =
     viewType === "awards" ? "project-awards" : "project-images";
+
+  const windowWidth = useGetWindowWidth();
+  const projectImagesPosition = windowWidth <= 1500 ? "top" : "bottom";
 
   const {
     viewImages,
@@ -66,17 +71,27 @@ const ProjectView: FC<ProjectViewProps> = ({
 
   return (
     <div className={projectViewStyles.container}>
+      {projectImagesPosition === "top" && (
+        <EntityViewImages
+          images={viewImages}
+          entityType={specificEntityImagesType}
+          currentEntityImage={currentProjectImageUsed}
+          setCurrentEntityImage={currentProjectImageUsedSetter}
+        />
+      )}
       <ProjectViewDetails
         project={currentProject}
         viewType={viewType}
         index={index}
       />
-      <EntityViewImages
-        images={viewImages}
-        entityType={specificEntityImagesType}
-        currentEntityImage={currentProjectImageUsed}
-        setCurrentEntityImage={currentProjectImageUsedSetter}
-      />
+      {projectImagesPosition === "bottom" && (
+        <EntityViewImages
+          images={viewImages}
+          entityType={specificEntityImagesType}
+          currentEntityImage={currentProjectImageUsed}
+          setCurrentEntityImage={currentProjectImageUsedSetter}
+        />
+      )}
     </div>
   );
 };

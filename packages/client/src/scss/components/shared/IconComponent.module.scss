@@ -16,4 +16,8 @@
   &:hover {
     transform: rotate(10deg) scale(1.05);
   }
+
+  @media (max-width: getScreenSize("laptop-1")) {
+    height: 2.5rem;
+  }
 }

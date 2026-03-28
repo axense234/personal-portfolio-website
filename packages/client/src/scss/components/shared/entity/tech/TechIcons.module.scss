@@ -11,6 +11,14 @@
   > li {
     width: 27.5%;
   }
+
+  @media (max-width: getScreenSize("base")) {
+    gap: 5rem;
+  }
+
+  @media (max-width: getScreenSize("laptop-1")) {
+    gap: 3rem;
+  }
 }
 
 .fancy {
@@ -23,4 +31,20 @@
   background-color: var(--secondary);
 
   max-width: 25%;
+
+  @media (max-width: getScreenSize("base")) {
+    gap: 3rem;
+  }
+
+  @media (max-width: getScreenSize("laptop-1")) {
+    gap: 2rem;
+    max-width: initial;
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+
+    > li {
+      flex: 1;
+    }
+  }
 }

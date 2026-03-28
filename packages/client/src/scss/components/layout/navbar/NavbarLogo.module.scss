@@ -3,20 +3,23 @@
 .container {
   @include flexCenter(row);
 
+  @media (max-width: getScreenSize("laptop-2")) {
+    margin-right: auto;
+  }
+
   > a {
     @include flexCenter(row);
     text-decoration: none;
 
     > h6 {
+      @include headingWithSpacing("h6-tablet");
       transition: transform 0.2s ease;
+      color: var(--labels);
 
       &:hover {
         transform: scale(1.035);
         font-style: italic;
       }
-      font-size: getFontSize("h6-tablet");
-      color: var(--labels);
-      letter-spacing: 1px;
     }
   }
 }

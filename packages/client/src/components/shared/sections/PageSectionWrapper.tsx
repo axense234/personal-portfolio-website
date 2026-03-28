@@ -11,6 +11,9 @@ const PageSectionWrapper: FC<PageSectionWrapperProps> = ({
   children,
   pageSectionData,
   titleHeadingUsed = "h2",
+  flexDirection = "column",
+  justifyContent = "center",
+  contentAlignment = "right",
 }) => {
   const { title, paragraphs, buttons, subtitle } = pageSectionData;
 
@@ -26,8 +29,15 @@ const PageSectionWrapper: FC<PageSectionWrapperProps> = ({
     );
 
   return (
-    <section className={pageSectionWrapperStyles.container}>
-      <div className={pageSectionWrapperStyles.content}>
+    <section
+      className={pageSectionWrapperStyles.container}
+      style={{ justifyContent }}
+    >
+      <div
+        className={pageSectionWrapperStyles.content}
+        style={{ justifyContent, flexDirection }}
+      >
+        {contentAlignment === "left" && children}
         <div className={pageSectionWrapperStyles.intro}>
           {titleShown}
           {subtitle && (
@@ -41,7 +51,7 @@ const PageSectionWrapper: FC<PageSectionWrapperProps> = ({
             })}
           </div>
         </div>
-        {children}
+        {contentAlignment === "right" && children}
       </div>
       <div className={pageSectionWrapperStyles.buttons}>
         {buttons?.map((button) => {

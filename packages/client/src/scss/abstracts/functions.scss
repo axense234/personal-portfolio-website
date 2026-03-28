@@ -63,7 +63,7 @@
 }
 
 @function getScreenSize($size) {
-  @return map-get($map: $screenSizes, $key: $size);
+  @return map.get($screenSizes, $size);
 }
 
 @function opposite($color, $theme) {

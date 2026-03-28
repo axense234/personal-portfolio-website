@@ -7,6 +7,13 @@
 
   min-width: 30%;
   max-width: 40%;
+
+  @media (max-width: getScreenSize("laptop-1")) {
+    align-items: center;
+    min-width: initial;
+    max-width: initial;
+    width: 100%;
+  }
 }
 
 .header {
@@ -15,9 +22,8 @@
   align-items: flex-start;
 
   > h4 {
+    @include headingWithSpacing("h4-tablet");
     width: 100%;
-    font-size: getFontSize("h4-tablet");
-    letter-spacing: 3px;
     color: var(--primary-opposite);
     transition: transform 0.2s ease;
 
@@ -26,6 +32,10 @@
     &:hover {
       transform: scale(1.015);
       font-style: italic;
+    }
+
+    @media (max-width: getScreenSize("laptop-1")) {
+      @include headingWithSpacing("h4-phone");
     }
   }
 

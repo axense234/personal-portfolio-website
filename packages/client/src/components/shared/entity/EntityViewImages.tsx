@@ -36,6 +36,10 @@ const EntityViewImages: FC<EntityViewImagesProps> = ({
         height={reservedImageAmount.height}
         src={imageUsed}
         alt={"TODO"}
+        style={{
+          width: reservedImageAmount.width,
+          height: reservedImageAmount.height,
+        }}
       />
       <EntityNavigationDots
         currentEntityId={imageUsed}

@@ -3,14 +3,34 @@
 .container {
   @include flexCenter(row);
   width: 100%;
-  justify-content: space-between;
+  padding: 0 16rem;
+  gap: 26rem;
 
-  padding: 0 20rem;
+  @media (max-width: 2200px) {
+    padding: 0rem 12rem;
+    gap: 16rem;
+  }
+
+  @media (max-width: getScreenSize("base")) {
+    padding: 0rem 8rem;
+    gap: 6rem;
+    justify-content: space-between;
+  }
+
+  @media (max-width: getScreenSize("laptop-1")) {
+    flex-direction: column;
+    gap: 4rem;
+  }
 
   > img {
     width: 25rem;
     height: 25rem;
     border-radius: 5%;
+
+    @media (max-width: getScreenSize("laptop-1")) {
+      width: 17.5rem;
+      height: 17.5rem;
+    }
   }
 }
 
@@ -19,11 +39,18 @@
   align-items: flex-start;
   gap: 2rem;
 
+  @media (max-width: getScreenSize("laptop-1")) {
+    align-items: center;
+  }
+
   > p {
+    @include paragraphWithSpacing("p-large");
     color: var(--body-text);
-    font-size: getFontSize("p-large");
-    letter-spacing: 0.35px;
     max-width: 72ch;
+
+    @media (max-width: getScreenSize("laptop-1")) {
+      text-align: center;
+    }
   }
 }
 
@@ -32,15 +59,22 @@
   align-items: flex-start;
   gap: 1rem;
 
+  @media (max-width: getScreenSize("laptop-1")) {
+    align-items: center;
+  }
+
   > h1 {
-    font-size: getFontSize("h2-tablet");
-    letter-spacing: 3.5px;
+    @include headingWithSpacing("h1-laptop");
     color: var(--primary-opposite);
   }
 
   > h2 {
-    font-size: getFontSize("h3-tablet");
-    letter-spacing: 3px;
+    @include headingWithSpacing("h2-tablet");
+    color: var(--primary-opposite);
+  }
+
+  > h3 {
+    @include headingWithSpacing("h4-tablet");
     color: var(--primary-opposite);
   }
 }

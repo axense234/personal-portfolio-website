@@ -7,7 +7,19 @@
 
   width: 100%;
 
-  padding: 1rem 8rem;
+  padding: 1rem 6rem;
 
   background-color: var(--tertiary);
+
+  @media (max-width: getScreenSize("laptop-1")) {
+    padding: 1rem 4rem;
+  }
+
+  @media (max-width: 1250px) {
+    padding: 1rem 3rem;
+  }
+
+  @media (max-width: getScreenSize("laptop-2")) {
+    justify-content: flex-start;
+  }
 }

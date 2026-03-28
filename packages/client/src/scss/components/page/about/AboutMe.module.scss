@@ -2,9 +2,24 @@
 
 .container {
   @include flexCenter(row);
-  justify-content: space-between;
   width: 100%;
-  padding: 0 20rem;
+  padding: 0 16rem;
+  gap: 26rem;
+
+  @media (max-width: 2200px) {
+    padding: 0rem 12rem;
+    gap: 16rem;
+  }
+
+  @media (max-width: getScreenSize("base")) {
+    padding: 0rem 8rem;
+    gap: 8rem;
+    justify-content: space-between;
+  }
+
+  @media (max-width: getScreenSize("laptop-1")) {
+    flex-direction: column;
+  }
 
   > img {
     width: 25rem;
@@ -16,32 +31,29 @@
 .content {
   @include flexCenter(column);
   gap: 4rem;
-  width: fit-content;
 }
 
 .intro {
   @include flexCenter(column);
+  width: 100%;
   gap: 3rem;
 
   > h2 {
-    font-size: getFontSize("h2-laptop");
-    letter-spacing: 3px;
+    @include headingWithSpacing("h2-laptop");
     color: var(--primary-opposite);
   }
 }
 
 .paragraphs {
   @include flexCenter(column);
+  width: 100%;
   gap: 2rem;
-  width: fit-content;
 
   > p {
+    @include paragraphWithSpacing("p-large");
     color: var(--body-text);
-    font-size: getFontSize("p-large");
-    letter-spacing: 0.35px;
     text-align: center;
     max-width: 86ch;
-    width: fit-content;
   }
 }
 

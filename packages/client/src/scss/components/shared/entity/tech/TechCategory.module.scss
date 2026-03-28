@@ -6,14 +6,17 @@
   justify-content: flex-start;
 
   > h6 {
+    @include headingWithSpacing("h6-laptop");
     width: 100%;
     text-align: center;
-    font-size: getFontSize("h6-laptop");
-    letter-spacing: 3.5px;
     color: var(--primary-opposite);
     padding: 0.5rem 3rem;
     border-radius: round(5);
     background-color: var(--tertiary);
+
+    @media (max-width: getScreenSize("laptop-1")) {
+      @include headingWithSpacing("h6-tablet");
+    }
   }
 }
 
@@ -23,4 +26,8 @@
   flex-wrap: wrap;
   width: 100%;
   gap: 2rem;
+
+  @media (max-width: getScreenSize("laptop-1")) {
+    gap: 1.5rem;
+  }
 }

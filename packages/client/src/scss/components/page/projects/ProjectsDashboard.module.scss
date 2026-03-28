@@ -5,6 +5,11 @@
   width: 100%;
   align-items: flex-start;
   gap: 4rem;
+
+  @media (max-width: getScreenSize("laptop-1")) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .content {

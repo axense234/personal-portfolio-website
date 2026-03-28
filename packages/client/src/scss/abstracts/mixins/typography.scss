@@ -1,5 +1,6 @@
 @use "../functions" as *;
 @use "../variables" as *;
+@use "sass:math";
 
 @mixin handlePossibleLongWord($maxNumberOfLines) {
   display: -webkit-box;
@@ -9,4 +10,14 @@
   text-overflow: ellipsis;
   word-break: break-word;
   overflow-wrap: break-word;
+}
+
+@mixin headingWithSpacing($fontSize) {
+  font-size: getFontSize($fontSize);
+  letter-spacing: calc(getFontSize($fontSize) / 20); // -> 5% letter spacing
+}
+
+@mixin paragraphWithSpacing($fontSize) {
+  font-size: getFontSize($fontSize);
+  letter-spacing: calc(getFontSize($fontSize) / 69); // -> ~1.4% letter spacing
 }

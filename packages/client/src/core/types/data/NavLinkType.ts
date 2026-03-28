@@ -4,4 +4,5 @@ export type NavLinkType = {
   id: number;
   label: string;
   dest: LinkHrefType;
+  icon: React.ReactNode;
 };

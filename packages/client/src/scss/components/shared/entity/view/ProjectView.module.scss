@@ -6,5 +6,10 @@
   width: 100%;
   gap: 12rem;
 
-  margin-top: 2rem;
+  @media (max-width: getScreenSize("laptop-1")) {
+    gap: 4rem;
+    align-items: center;
+    flex-direction: column;
+    width: fit-content;
+  }
 }

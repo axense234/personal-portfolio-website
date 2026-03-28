@@ -4,7 +4,7 @@ import { homePageHeroSectionData } from "@/data";
 import CommonPageHero from "@/components/shared/heros/CommonPageHero";
 
 const HomeHero = () => {
-  return <CommonPageHero {...homePageHeroSectionData} />;
+  return <CommonPageHero {...homePageHeroSectionData} titleHeadingUsed="h2" />;
 };
 
 export default HomeHero;

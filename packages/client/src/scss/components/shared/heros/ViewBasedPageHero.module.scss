@@ -5,7 +5,15 @@
   width: 100%;
   gap: 4rem;
 
-  padding: 0 20rem;
+  padding: 0 16rem;
+
+  @media (max-width: 2200px) {
+    padding: 0rem 12rem;
+  }
+
+  @media (max-width: getScreenSize("base")) {
+    padding: 0rem 8rem;
+  }
 }
 
 .header {
@@ -13,20 +21,17 @@
   gap: 1.5rem;
 
   > h1 {
-    font-size: getFontSize("h1-laptop");
-    letter-spacing: 4px;
+    @include headingWithSpacing("h1-laptop");
     color: var(--primary-opposite);
   }
 
   > h2 {
-    font-size: getFontSize("h2-laptop");
-    letter-spacing: 3px;
+    @include headingWithSpacing("h2-laptop");
     color: var(--primary-opposite);
   }
 
   > h4 {
-    font-size: getFontSize("h4-tablet");
-    letter-spacing: 5px;
+    @include headingWithSpacing("h4-laptop");
     color: var(--primary-opposite);
   }
 }

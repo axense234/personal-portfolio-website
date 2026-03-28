@@ -9,8 +9,8 @@ const NavbarLogo: FC = () => {
   return (
     <div className={navbarLogoStyles.container}>
       <Link href={"/"}>
-        <h6 title="Comanescu Andrei" aria-label="Comanescu Andrei">
-          Comanescu Andrei
+        <h6 title="Comănescu Andrei" aria-label="Comănescu Andrei">
+          Comănescu Andrei
         </h6>
       </Link>
     </div>

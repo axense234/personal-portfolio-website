@@ -17,6 +17,10 @@
   &:hover {
     transform: scale(1.01);
   }
+
+  @media (max-width: getScreenSize("laptop-1")) {
+    width: 25rem;
+  }
 }
 
 .content {
@@ -26,9 +30,8 @@
   padding: 0 1rem;
 
   > h6 {
+    @include headingWithSpacing("h6-laptop");
     color: var(--primary-opposite);
-    font-size: getFontSize("h6-laptop");
-    letter-spacing: 1.5px;
 
     transition: transform 0.2s ease;
 
@@ -38,12 +41,15 @@
       transform: scale(1.035);
       font-style: italic;
     }
+
+    @media (max-width: getScreenSize("laptop-1")) {
+      @include headingWithSpacing("h6-tablet");
+    }
   }
 
   > p {
+    @include paragraphWithSpacing("p-medium");
     color: var(--primary-opposite);
-    font-size: getFontSize("p-medium");
-    letter-spacing: 0.25px;
   }
 }
 

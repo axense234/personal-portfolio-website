@@ -1,3 +1,4 @@
+"use client";
 // React
 import { FC } from "react";
 // SCSS
@@ -10,6 +11,7 @@ import Image from "next/image";
 import { karla } from "@/app/fonts";
 // Components
 import LinkButton from "../LinkButton";
+import useGetWindowWidth from "@/hooks/general/useGetWindowWidth";
 
 const CommonPageHero: FC<CommonPageHeroProps> = ({
   title,
@@ -17,13 +19,39 @@ const CommonPageHero: FC<CommonPageHeroProps> = ({
   image,
   desc,
   buttons,
+  titleHeadingUsed = "h1",
 }) => {
+  const titleShown =
+    titleHeadingUsed === "h1" ? (
+      <h1 title={title} aria-label={title}>
+        {title}
+      </h1>
+    ) : (
+      <h2 title={title} aria-label={title}>
+        {title}
+      </h2>
+    );
+
+  const windowWidth = useGetWindowWidth();
+  const imagePosition = windowWidth <= 1500 ? "top" : "bottom";
+  const reservedImageSpace = windowWidth <= 1500 ? 280 : 400;
+
   return (
     <section className={commonPageHeroStyles.container}>
+      {imagePosition === "top" && (
+        <Image
+          alt="A Cool Looking Image I Guess Man"
+          src={image}
+          width={reservedImageSpace}
+          height={reservedImageSpace}
+          title="Placeholder: This is where an eventual cool picture of myself is going to be"
+          aria-label="Placeholder: This is where an eventual cool picture of myself is going to be"
+        />
+      )}
       <div className={commonPageHeroStyles.content}>
         <div className={commonPageHeroStyles.header}>
-          <h1>{title}</h1>
-          <h2>{subtitle}</h2>
+          {titleShown}
+          <h3>{subtitle}</h3>
         </div>
         <p className={karla.className}>{desc}</p>
         <div className={commonPageHeroStyles.buttons}>
@@ -32,14 +60,16 @@ const CommonPageHero: FC<CommonPageHeroProps> = ({
           })}
         </div>
       </div>
-      <Image
-        alt="A Cool Looking Image I Guess Man"
-        src={image}
-        width={400}
-        height={400}
-        title="Placeholder: This is where an eventual cool picture of myself is going to be"
-        aria-label="Placeholder: This is where an eventual cool picture of myself is going to be"
-      />
+      {imagePosition === "bottom" && (
+        <Image
+          alt="A Cool Looking Image I Guess Man"
+          src={image}
+          width={reservedImageSpace}
+          height={reservedImageSpace}
+          title="Placeholder: This is where an eventual cool picture of myself is going to be"
+          aria-label="Placeholder: This is where an eventual cool picture of myself is going to be"
+        />
+      )}
     </section>
   );
 };

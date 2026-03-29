@@ -4,14 +4,14 @@
   @include flexCenter(column);
   width: 100%;
   gap: 6rem;
-  padding: 0rem 16rem;
+  padding: 0rem 14rem;
 
   @media (max-width: 2200px) {
-    padding: 0rem 12rem;
+    padding: 0rem 9rem;
   }
 
   @media (max-width: getScreenSize("base")) {
-    padding: 0rem 8rem;
+    padding: 0rem 6rem;
   }
 
   @media (max-width: getScreenSize("laptop-1")) {
@@ -31,12 +31,20 @@
   width: 100%;
   gap: 3rem;
 
+  @media (max-width: getScreenSize("laptop-2")) {
+    gap: 1.5rem;
+  }
+
   > h1 {
     @include headingWithSpacing("h1-laptop");
     color: var(--primary-opposite);
 
     @media (max-width: getScreenSize("laptop-1")) {
       @include headingWithSpacing("h1-tablet");
+    }
+
+    @media (max-width: getScreenSize("laptop-2")) {
+      @include headingWithSpacing("h1-phone");
     }
   }
 
@@ -46,6 +54,10 @@
 
     @media (max-width: getScreenSize("laptop-1")) {
       @include headingWithSpacing("h2-tablet");
+    }
+
+    @media (max-width: getScreenSize("laptop-2")) {
+      @include headingWithSpacing("h2-phone");
     }
   }
 

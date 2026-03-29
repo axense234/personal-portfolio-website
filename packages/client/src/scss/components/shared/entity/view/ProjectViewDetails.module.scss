@@ -21,6 +21,10 @@
   gap: 1rem;
   align-items: flex-start;
 
+  @media (max-width: getScreenSize("laptop-1")) {
+    align-items: center;
+  }
+
   > h4 {
     @include headingWithSpacing("h4-tablet");
     width: 100%;

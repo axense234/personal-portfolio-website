@@ -10,6 +10,7 @@
 
   > li {
     width: 27.5%;
+    max-width: 32.5rem;
   }
 
   @media (max-width: getScreenSize("base")) {
@@ -18,6 +19,10 @@
 
   @media (max-width: getScreenSize("laptop-1")) {
     gap: 3rem;
+  }
+
+  @media (max-width: getScreenSize("laptop-2")) {
+    gap: 2rem;
   }
 }
 
@@ -36,7 +41,7 @@
     gap: 3rem;
   }
 
-  @media (max-width: getScreenSize("laptop-1")) {
+  @media (max-width: 1550px) {
     gap: 2rem;
     max-width: initial;
     width: 100%;

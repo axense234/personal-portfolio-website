@@ -13,12 +13,20 @@
   > h4 {
     @include headingWithSpacing("h4-laptop");
     color: var(--primary-opposite);
+
+    @media (max-width: getScreenSize("laptop-2")) {
+      @include headingWithSpacing("h4-tablet");
+    }
   }
 
   > p {
     @include paragraphWithSpacing("p-large");
     color: var(--primary-opposite);
     font-style: italic;
+
+    @media (max-width: getScreenSize("laptop-2")) {
+      @include headingWithSpacing("p-medium");
+    }
   }
 }
 
@@ -29,18 +37,24 @@
   gap: 1rem;
 
   > h5 {
-    font-size: getFontSize("h5-tablet");
-    letter-spacing: 2px;
+    @include headingWithSpacing("h5-tablet");
     color: var(--primary-opposite);
+
+    @media (max-width: getScreenSize("laptop-2")) {
+      @include headingWithSpacing("h5-phone");
+    }
   }
 
   > p {
+    @include paragraphWithSpacing("p-large");
     display: list-item;
     list-style-position: inside;
     color: var(--primary-opposite);
-    font-size: getFontSize("p-large");
-    letter-spacing: 1px;
     font-style: italic;
+
+    @media (max-width: getScreenSize("laptop-2")) {
+      @include paragraphWithSpacing("p-medium");
+    }
   }
 }
 
@@ -51,9 +65,12 @@
   gap: 1rem;
 
   > h5 {
-    font-size: getFontSize("h5-tablet");
-    letter-spacing: 2px;
+    @include headingWithSpacing("h5-tablet");
     color: var(--primary-opposite);
+
+    @media (max-width: getScreenSize("laptop-2")) {
+      @include headingWithSpacing("h5-phone");
+    }
   }
 }
 
@@ -64,17 +81,20 @@
   gap: 1rem;
 
   > li {
+    @include paragraphWithSpacing("p-large");
     display: list-item;
     list-style-position: inside;
     color: var(--primary-opposite);
-    font-size: getFontSize("p-large");
-    letter-spacing: 1px;
     font-style: italic;
 
     transition: transform 0.2s ease-in;
 
     &:hover {
       transform: translateX(0.2rem);
+    }
+
+    @media (max-width: getScreenSize("laptop-2")) {
+      @include paragraphWithSpacing("p-medium");
     }
   }
 }

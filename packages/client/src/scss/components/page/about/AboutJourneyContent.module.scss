@@ -16,9 +16,12 @@
   gap: 2rem;
 
   > h5 {
-    font-size: getFontSize("h5-laptop");
-    letter-spacing: 2px;
+    @include headingWithSpacing("h5-laptop");
     color: var(--primary-opposite);
+
+    @media (max-width: getScreenSize("laptop-2")) {
+      @include headingWithSpacing("h5-tablet");
+    }
   }
 }
 
@@ -39,9 +42,8 @@
   gap: 2rem;
 
   > p {
+    @include paragraphWithSpacing("p-large");
     color: var(--body-text);
-    font-size: getFontSize("p-large");
-    letter-spacing: 0.35px;
     max-width: 100ch;
     text-align: center;
   }

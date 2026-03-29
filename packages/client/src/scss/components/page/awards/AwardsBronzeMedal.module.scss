@@ -8,6 +8,10 @@
 
   margin-top: 2rem;
 
+  > img {
+    height: auto;
+  }
+
   @media (max-width: getScreenSize("laptop-1")) {
     flex-direction: column;
     align-items: center;

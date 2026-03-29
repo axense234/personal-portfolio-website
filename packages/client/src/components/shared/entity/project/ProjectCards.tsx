@@ -11,7 +11,7 @@ import { ProjectCardsProps } from "@/core/interfaces";
 // React
 import { FC } from "react";
 
-const ProjectCards: FC<ProjectCardsProps> = ({ projects }) => {
+const ProjectCards: FC<ProjectCardsProps> = ({ projects, useGrid }) => {
   if (projects.length < 1) {
     return (
       <div className={projectCardsStyles.zeroProjects}>
@@ -23,7 +23,11 @@ const ProjectCards: FC<ProjectCardsProps> = ({ projects }) => {
   }
 
   return (
-    <ul className={projectCardsStyles.projects}>
+    <ul
+      className={
+        useGrid ? projectCardsStyles.grid : projectCardsStyles.projects
+      }
+    >
       {projects?.map((project, index) => {
         const buttonColorsCurrentColorIndex = index % buttonColors.length;
         const buttonColor = buttonColors[buttonColorsCurrentColorIndex];

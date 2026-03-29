@@ -10,12 +10,21 @@ import { awardsPageBronzeMedalSectionData, bronzeMedalImageSrc } from "@/data";
 // Components
 import ProjectViewDetails from "@/components/shared/entity/view/ProjectViewDetails";
 import PageSectionWrapper from "@/components/shared/sections/PageSectionWrapper";
+// Hooks
+import { useCalculateEntityViewImagesProportions } from "@/hooks";
+import useGetWindowWidth from "@/hooks/general/useGetWindowWidth";
 
 const AwardsBronzeMedal = () => {
   const { getProjectsData } = useGeneralStore((state) => state);
 
   const bronzeMedalProject = getProjectsData?.projects?.find((project) =>
     project.topics.includes("BRONZE_MEDAL"),
+  );
+
+  const windowWidth = useGetWindowWidth();
+  const reservedImageAmount = useCalculateEntityViewImagesProportions(
+    "project-awards", // -> probably not the best way of doing things but ehh
+    windowWidth,
   );
 
   if (!bronzeMedalProject) {
@@ -26,8 +35,8 @@ const AwardsBronzeMedal = () => {
     <PageSectionWrapper pageSectionData={awardsPageBronzeMedalSectionData}>
       <div className={awardsBronzeMedalStyles.content}>
         <Image
-          width={480}
-          height={640}
+          width={reservedImageAmount.height}
+          height={reservedImageAmount.width}
           src={bronzeMedalImageSrc}
           alt="Bronze Medal Image"
         />

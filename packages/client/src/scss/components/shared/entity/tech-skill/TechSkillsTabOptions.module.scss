@@ -11,6 +11,11 @@
   list-style: none;
   gap: 0.5rem;
 
+  @media (max-width: getScreenSize("laptop-1")) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
   > li {
     @include flexCenter(row);
     width: 100%;
@@ -47,6 +52,11 @@
         transform: scale(1.035);
         font-style: italic;
       }
+    }
+
+    @media (max-width: getScreenSize("laptop-1")) {
+      flex: 1;
+      justify-content: center;
     }
   }
 }

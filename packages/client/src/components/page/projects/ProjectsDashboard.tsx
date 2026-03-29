@@ -72,7 +72,7 @@ const ProjectsDashboard = () => {
           sort={sortFormControlData}
           filter={filterFormControlData}
         />
-        <ProjectCards projects={shownProjects} />
+        <ProjectCards projects={shownProjects} useGrid={false} />
       </div>
     </div>
   );

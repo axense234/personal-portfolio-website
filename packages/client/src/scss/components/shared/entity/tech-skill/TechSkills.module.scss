@@ -4,6 +4,8 @@
   @include flexCenter(column);
   width: 100%;
   gap: 2rem;
+
+  max-width: 125rem;
 }
 
 .wrapper {
@@ -12,4 +14,8 @@
   width: 100%;
   gap: 4rem;
   justify-content: space-between;
+
+  @media (max-width: getScreenSize("laptop-1")) {
+    flex-direction: column;
+  }
 }

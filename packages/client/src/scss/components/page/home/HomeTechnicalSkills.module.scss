@@ -19,15 +19,13 @@
   gap: 3rem;
 
   > h2 {
-    font-size: getFontSize("h2-laptop");
-    letter-spacing: 3px;
+    @include headingWithSpacing("h2-laptop");
     color: var(--primary-opposite);
   }
 
   > p {
+    @include headingWithSpacing("p-large");
     color: var(--body-text);
-    font-size: getFontSize("p-large");
-    letter-spacing: 0.35px;
     width: 60%;
     text-align: center;
   }

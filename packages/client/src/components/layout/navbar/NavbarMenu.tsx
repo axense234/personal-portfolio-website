@@ -24,7 +24,7 @@ const NavbarMenu: FC = () => {
         <ul className={navbarMenuStyles.pages}>
           {navLinks.map((navLink, index) => {
             return (
-              <li key={index}>
+              <li key={index} onClick={() => setIsOpen(false)}>
                 {navLink.icon}
                 <Link
                   href={navLink.dest}

@@ -15,7 +15,7 @@ const PagesLayout = ({ children }: { children: React.ReactNode }) => {
 
   const windowWidth = window && window?.innerWidth;
 
-  if (windowWidth && windowWidth < 1250) {
+  if (windowWidth && windowWidth < 900) {
     return (
       <div data-theme={colorTheme} className={pagesLayoutStyles.temporary}>
         <h1>Responsive Design has not been implemented yet.</h1>

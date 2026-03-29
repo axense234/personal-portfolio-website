@@ -8,4 +8,8 @@
   gap: 2rem;
   background-color: var(--tertiary);
   margin-top: auto;
+
+  @media (max-width: getScreenSize("laptop-1")) {
+    padding: 3rem 4rem;
+  }
 }

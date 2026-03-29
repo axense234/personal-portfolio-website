@@ -18,8 +18,16 @@
     transform: scale(1.01);
   }
 
+  @media (max-width: getScreenSize("base")) {
+    width: 28rem;
+  }
+
   @media (max-width: getScreenSize("laptop-1")) {
     width: 25rem;
+  }
+
+  @media (max-width: getScreenSize("laptop-2")) {
+    width: 20rem;
   }
 }
 
@@ -45,11 +53,19 @@
     @media (max-width: getScreenSize("laptop-1")) {
       @include headingWithSpacing("h6-tablet");
     }
+
+    @media (max-width: getScreenSize("laptop-2")) {
+      @include headingWithSpacing("small-h");
+    }
   }
 
   > p {
     @include paragraphWithSpacing("p-medium");
     color: var(--primary-opposite);
+
+    @media (max-width: getScreenSize("laptop-2")) {
+      @include paragraphWithSpacing("p-small");
+    }
   }
 }
 
@@ -63,18 +79,6 @@
 .externals {
   @include flexCenter(row);
   gap: 1rem;
-
-  > a > img {
-    width: 2.5rem;
-    height: 2.5rem;
-    cursor: pointer;
-
-    transition: transform 0.2s ease-in;
-
-    &:hover {
-      transform: rotate(-15deg) scale(1.1);
-    }
-  }
 }
 
 .contentWrapper {

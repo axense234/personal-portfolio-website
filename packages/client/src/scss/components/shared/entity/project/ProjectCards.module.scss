@@ -1,12 +1,30 @@
 @use "../../../../abstracts" as *;
 
 .projects {
+  @include flexCenter(row);
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 4rem;
+
+  > li {
+    @include flexCenter(row);
+  }
+
+  @media (max-width: 1550px) {
+    justify-content: center;
+  }
+}
+
+.grid {
   display: grid;
   list-style: none;
   justify-content: center;
   align-items: flex-start;
   grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(2, auto);
+
   width: 100%;
   gap: 4rem;
 
@@ -21,9 +39,8 @@
   height: 100%;
 
   > p {
-    font-size: getFontSize("h4-tablet");
+    @include paragraphWithSpacing("h4-tablet");
     color: var(--warning-yellow);
-    letter-spacing: 5px;
     transition: transform 0.5s ease-in;
 
     cursor: pointer;

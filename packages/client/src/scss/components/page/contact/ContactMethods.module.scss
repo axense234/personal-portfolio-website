@@ -5,6 +5,11 @@
   width: fit-content;
   gap: 2rem;
   align-items: flex-start;
+
+  @media (max-width: getScreenSize("laptop-1")) {
+    align-items: center;
+    gap: 6rem;
+  }
 }
 
 .method {
@@ -12,15 +17,19 @@
   gap: 3rem;
   justify-content: flex-start;
 
+  @media (max-width: getScreenSize("laptop-1")) {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
   > h4 {
-    font-size: getFontSize("h4-tablet");
-    letter-spacing: 5px;
+    @include headingWithSpacing("h4-tablet");
     color: var(--primary-opposite);
   }
 
   > h5 {
-    font-size: getFontSize("h5-tablet");
-    letter-spacing: 2px;
+    @include headingWithSpacing("h5-tablet");
     color: var(--primary-opposite);
   }
 }

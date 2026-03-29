@@ -1,3 +1,4 @@
+"use client";
 // React
 import { FC } from "react";
 // Interfaces
@@ -8,6 +9,9 @@ import Image from "next/image";
 import entityViewImagesStyles from "@/scss/components/shared/entity/EntityViewImages.module.scss";
 // Components
 import EntityNavigationDots from "./EntityNavigationDots";
+// Hooks
+import { useCalculateEntityViewImagesProportions } from "@/hooks";
+import useGetWindowWidth from "@/hooks/general/useGetWindowWidth";
 
 const EntityViewImages: FC<EntityViewImagesProps> = ({
   images,
@@ -15,13 +19,11 @@ const EntityViewImages: FC<EntityViewImagesProps> = ({
   currentEntityImage,
   setCurrentEntityImage,
 }) => {
-  const proportionsMap = {
-    "meal-prep": { width: 480, height: 640 },
-    "project-awards": { width: 640, height: 480 },
-    "project-images": { width: 800, height: 450 },
-  };
-
-  const reservedImageAmount = proportionsMap[entityType];
+  const windowWidth = useGetWindowWidth();
+  const reservedImageAmount = useCalculateEntityViewImagesProportions(
+    entityType,
+    windowWidth,
+  );
 
   const imageUsed = currentEntityImage || images[0];
 
@@ -36,10 +38,6 @@ const EntityViewImages: FC<EntityViewImagesProps> = ({
         height={reservedImageAmount.height}
         src={imageUsed}
         alt={"TODO"}
-        style={{
-          width: reservedImageAmount.width,
-          height: reservedImageAmount.height,
-        }}
       />
       <EntityNavigationDots
         currentEntityId={imageUsed}

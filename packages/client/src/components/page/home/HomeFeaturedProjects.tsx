@@ -24,7 +24,7 @@ const FeaturedProjects = () => {
     return <div>isloading</div>;
   }
 
-  return <ProjectCards projects={projects} />;
+  return <ProjectCards projects={projects} useGrid />;
 };
 
 const HomeFeaturedProjects = () => {

@@ -22,6 +22,8 @@
   }
 
   border-radius: round(5);
+
+  background-color: var(--tertiary);
 }
 
 .logo {
@@ -42,8 +44,6 @@
   gap: 3rem;
 
   padding: 3rem 2rem;
-
-  background-color: var(--tertiary);
 }
 
 .header {
@@ -68,7 +68,9 @@
 .techContent {
   @include flexCenter(column);
   width: 100%;
-  gap: 2rem;
+  gap: 1rem;
+
+  padding: 2rem 0;
 }
 
 .article {

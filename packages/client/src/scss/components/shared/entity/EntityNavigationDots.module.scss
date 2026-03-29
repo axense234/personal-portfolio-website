@@ -9,12 +9,22 @@
 
   gap: 1rem;
 
+  @media (max-width: getScreenSize("laptop-2")) {
+    gap: auto;
+    padding: 0.5rem 3rem;
+  }
+
   > li {
     border-radius: round(50);
     width: 1.25rem;
     height: 1.25rem;
 
     cursor: pointer;
+
+    @media (max-width: getScreenSize("laptop-2")) {
+      width: 1rem;
+      height: 1rem;
+    }
   }
 }
 
@@ -34,11 +44,21 @@
 
   list-style: none;
 
+  @media (max-width: getScreenSize("laptop-2")) {
+    gap: auto;
+    padding: 0.5rem 4rem;
+  }
+
   > li {
     border-radius: round(50);
     width: 1.25rem;
     height: 1.25rem;
 
     cursor: pointer;
+
+    @media (max-width: getScreenSize("laptop-2")) {
+      width: 1rem;
+      height: 1rem;
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { LinkButtonProps } from "../LinkButtonProps";
+import { LinkButtonProps } from "@/core/interfaces";
 
 export interface CommonPageHeroProps {
   title: string;

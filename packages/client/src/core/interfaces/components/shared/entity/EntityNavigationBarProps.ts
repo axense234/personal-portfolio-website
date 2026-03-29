@@ -1,6 +1,8 @@
 // Interfaces
-import { SortByFormControlProps } from "./SortByFormControlProps";
-import { TextFormControlProps } from "./TextFormControlProps";
+import {
+  SortByFormControlProps,
+  TextFormControlProps,
+} from "@/core/interfaces";
 
 export interface EntityNavigationBarProps {
   search?: TextFormControlProps;

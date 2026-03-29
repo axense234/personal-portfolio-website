@@ -1,5 +1,5 @@
+import { LinkButtonProps } from "@/core/interfaces";
 import { ExternalMediaIconType } from "@/core/types";
-import { LinkButtonProps } from "../LinkButtonProps";
 
 export interface CardProps {
   image: string;

@@ -1,5 +1,5 @@
 // Interfaces
-import { SelectFormControlProps } from "./SelectFormControlProps";
+import { SelectFormControlProps } from "@/core/interfaces";
 
 export interface SortByFormControlProps {
   sortingOptions: SelectFormControlProps[] | string;

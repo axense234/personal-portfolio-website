@@ -13,6 +13,7 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json(kyRes, { status: kyRes.status });
   } catch (error: any) {
+    console.log(error);
     return NextResponse.json(error?.response, {
       status: error?.response?.status,
     });

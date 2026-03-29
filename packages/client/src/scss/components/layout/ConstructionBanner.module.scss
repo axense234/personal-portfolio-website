@@ -11,17 +11,23 @@
 
   padding: 2rem;
 
+  @media (max-width: getScreenSize("laptop-1")) {
+    width: 50%;
+  }
+
+  @media (max-width: getScreenSize("laptop-2")) {
+    width: 80%;
+  }
+
   > h3 {
-    font-size: getFontSize("h6-phone");
-    letter-spacing: 3px;
+    @include headingWithSpacing("h6-phone");
     color: var(--primary);
     text-align: center;
   }
 
   > p {
     color: var(--primary);
-    font-size: getFontSize("p-medium");
-    letter-spacing: 0.35px;
+    @include paragraphWithSpacing("p-medium");
     text-align: center;
   }
 

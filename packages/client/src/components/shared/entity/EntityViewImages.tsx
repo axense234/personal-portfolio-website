@@ -10,8 +10,10 @@ import entityViewImagesStyles from "@/scss/components/shared/entity/EntityViewIm
 // Components
 import EntityNavigationDots from "./EntityNavigationDots";
 // Hooks
-import { useCalculateEntityViewImagesProportions } from "@/hooks";
-import useGetWindowWidth from "@/hooks/general/useGetWindowWidth";
+import {
+  useCalculateEntityViewImagesProportions,
+  useGetWindowWidth,
+} from "@/hooks";
 
 const EntityViewImages: FC<EntityViewImagesProps> = ({
   images,
@@ -22,7 +24,7 @@ const EntityViewImages: FC<EntityViewImagesProps> = ({
   const windowWidth = useGetWindowWidth();
   const reservedImageAmount = useCalculateEntityViewImagesProportions(
     entityType,
-    windowWidth,
+    windowWidth || 1800, // -> not the best way of doing things ya know
   );
 
   const imageUsed = currentEntityImage || images[0];

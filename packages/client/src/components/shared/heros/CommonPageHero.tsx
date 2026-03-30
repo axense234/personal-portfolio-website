@@ -11,7 +11,8 @@ import Image from "next/image";
 import { karla } from "@/app/fonts";
 // Components
 import LinkButton from "../LinkButton";
-import useGetWindowWidth from "@/hooks/general/useGetWindowWidth";
+// Hooks
+import { useGetWindowWidth } from "@/hooks";
 
 const CommonPageHero: FC<CommonPageHeroProps> = ({
   title,
@@ -33,8 +34,8 @@ const CommonPageHero: FC<CommonPageHeroProps> = ({
     );
 
   const windowWidth = useGetWindowWidth();
-  const imagePosition = windowWidth <= 1500 ? "top" : "bottom";
-  const reservedImageSpace = windowWidth <= 1500 ? 280 : 400;
+  const imagePosition = windowWidth && windowWidth <= 1500 ? "top" : "bottom";
+  const reservedImageSpace = windowWidth && windowWidth <= 1500 ? 280 : 400;
 
   return (
     <section className={commonPageHeroStyles.container}>

@@ -8,7 +8,7 @@ import NavbarLinks from "./NavbarLinks";
 import NavbarUtils from "./utils/NavbarUtils";
 import NavbarMenu from "./NavbarMenu";
 // Hooks
-import useGetWindowWidth from "@/hooks/general/useGetWindowWidth";
+import { useGetWindowWidth } from "@/hooks/general/useGetWindowWidth";
 
 const Navbar: FC = () => {
   const windowWidth = useGetWindowWidth();
@@ -16,9 +16,9 @@ const Navbar: FC = () => {
   return (
     <header className={navbarStyles.container}>
       <NavbarLogo />
-      {windowWidth > 1200 && <NavbarLinks />}
+      {windowWidth && windowWidth > 1200 && <NavbarLinks />}
       <NavbarUtils />
-      {windowWidth <= 1200 && <NavbarMenu />}
+      {windowWidth && windowWidth <= 1200 && <NavbarMenu />}
     </header>
   );
 };

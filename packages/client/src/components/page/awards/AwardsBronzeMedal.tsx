@@ -12,7 +12,7 @@ import ProjectViewDetails from "@/components/shared/entity/view/ProjectViewDetai
 import PageSectionWrapper from "@/components/shared/sections/PageSectionWrapper";
 // Hooks
 import { useCalculateEntityViewImagesProportions } from "@/hooks";
-import useGetWindowWidth from "@/hooks/general/useGetWindowWidth";
+import { useGetWindowWidth } from "@/hooks/general/useGetWindowWidth";
 
 const AwardsBronzeMedal = () => {
   const { getProjectsData } = useGeneralStore((state) => state);
@@ -24,7 +24,7 @@ const AwardsBronzeMedal = () => {
   const windowWidth = useGetWindowWidth();
   const reservedImageAmount = useCalculateEntityViewImagesProportions(
     "project-awards", // -> probably not the best way of doing things but ehh
-    windowWidth,
+    windowWidth || 1800, // -> again, probably not the best way of doing things
   );
 
   if (!bronzeMedalProject) {

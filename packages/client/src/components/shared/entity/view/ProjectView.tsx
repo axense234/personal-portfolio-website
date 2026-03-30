@@ -9,8 +9,7 @@ import { FC, useEffect } from "react";
 // Interfaces
 import { ProjectViewProps } from "@/core/interfaces";
 // Hooks
-import { useGetProjectViewDetails } from "@/hooks";
-import useGetWindowWidth from "@/hooks/general/useGetWindowWidth";
+import { useGetProjectViewDetails, useGetWindowWidth } from "@/hooks";
 // Shared
 import { ProjectWithEverything } from "@personal-portfolio-website/shared";
 
@@ -35,7 +34,8 @@ const ProjectView: FC<ProjectViewProps> = ({
     viewType === "awards" ? "project-awards" : "project-images";
 
   const windowWidth = useGetWindowWidth();
-  const projectImagesPosition = windowWidth <= 1500 ? "top" : "bottom";
+  const projectImagesPosition =
+    windowWidth && windowWidth <= 1500 ? "top" : "bottom";
 
   const {
     viewImages,

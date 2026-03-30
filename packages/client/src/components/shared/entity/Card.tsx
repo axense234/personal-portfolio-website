@@ -1,4 +1,3 @@
-"use client";
 // Interfaces
 import { CardProps } from "@/core/interfaces";
 // SCSS
@@ -11,11 +10,11 @@ import { FC } from "react";
 import LinkButton from "../LinkButton";
 import IconComponent from "../IconComponent";
 // Hooks
-import useGetWindowWidth from "@/hooks/general/useGetWindowWidth";
+import { useGetWindowWidth } from "@/hooks";
 
 const Card: FC<CardProps> = ({ desc, image, label, button, externals }) => {
   const windowWidth = useGetWindowWidth();
-  const iconHeight = windowWidth <= 1200 ? 24 : 32;
+  const iconHeight = windowWidth && windowWidth <= 1200 ? 24 : 32;
 
   return (
     <div className={cardStyles.container}>

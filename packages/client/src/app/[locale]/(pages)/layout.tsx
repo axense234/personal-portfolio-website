@@ -10,7 +10,7 @@ import { manrope } from "@/app/fonts";
 // Zustand
 import { useGeneralStore } from "@/zustand/general/context";
 // Hooks
-import useGetWindowWidth from "@/hooks/general/useGetWindowWidth";
+import { useGetWindowWidth } from "@/hooks/general/useGetWindowWidth";
 
 const PagesLayout = ({ children }: { children: React.ReactNode }) => {
   const { colorTheme } = useGeneralStore((state) => state);

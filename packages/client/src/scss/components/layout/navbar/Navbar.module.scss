@@ -22,4 +22,8 @@
   @media (max-width: getScreenSize("laptop-2")) {
     justify-content: flex-start;
   }
+
+  @media (max-width: getScreenSize("tablet-1")) {
+    padding: 1rem 2rem;
+  }
 }

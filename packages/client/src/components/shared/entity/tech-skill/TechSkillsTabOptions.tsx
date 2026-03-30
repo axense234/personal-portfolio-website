@@ -6,12 +6,17 @@ import techSkillsTabOptionsStyles from "@/scss/components/shared/entity/tech-ski
 import { FC } from "react";
 // Next
 import Image from "next/image";
+// Hooks
+import { useGetWindowWidth } from "@/hooks";
 
 const TechSkillsTabOptions: FC<TechSkillsTabOptionsProps> = ({
   skills,
   currentSkill,
   onTabOptionClickFunc,
 }) => {
+  const windowWidth = useGetWindowWidth();
+  const iconSize = windowWidth && windowWidth <= 900 ? 32 : 40;
+
   return (
     <div className={techSkillsTabOptionsStyles.container}>
       <ul className={techSkillsTabOptionsStyles.wrapper}>
@@ -26,8 +31,8 @@ const TechSkillsTabOptions: FC<TechSkillsTabOptionsProps> = ({
               <Image
                 alt={`${skill.tech.label} Icon`}
                 src={skill.tech.icon_src}
-                height={48}
-                width={128}
+                height={iconSize}
+                width={iconSize * 3}
               />
               <span>{skill.tech.label}</span>
             </li>

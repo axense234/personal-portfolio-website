@@ -4,8 +4,7 @@
   @include flexCenter(row);
 
   > p {
+    @include paragraphWithSpacing("p-medium");
     color: var(--labels);
-    font-size: getFontSize("p-medium");
-    letter-spacing: 2px;
   }
 }

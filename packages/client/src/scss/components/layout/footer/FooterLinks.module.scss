@@ -9,6 +9,10 @@
   gap: 2rem;
   list-style: none;
 
+  @media (max-width: getScreenSize("tablet-1")) {
+    flex-wrap: wrap;
+  }
+
   > li {
     transition: transform 0.2s ease;
 
@@ -17,9 +21,8 @@
       font-style: italic;
     }
     > a {
+      @include paragraphWithSpacing("p-medium");
       width: 100%;
-      font-size: getFontSize("p-medium");
-      letter-spacing: 2px;
       text-decoration: none;
       color: var(--labels);
     }

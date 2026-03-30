@@ -13,6 +13,7 @@ const TechCategory: FC<TechCategoryProps> = ({
   isFunctional,
   onTechIconClick,
   selectedTech,
+  iconHeight = 40,
 }) => {
   return (
     <div className={techCategoryStyles.container}>
@@ -28,6 +29,7 @@ const TechCategory: FC<TechCategoryProps> = ({
                 isFunctional={isFunctional}
                 onTechIconClick={onTechIconClick}
                 isSelected={isTechSelected}
+                height={iconHeight}
               />
             </li>
           );

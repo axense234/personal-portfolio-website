@@ -12,4 +12,8 @@
   @media (max-width: getScreenSize("laptop-1")) {
     padding: 3rem 4rem;
   }
+
+  @media (max-width: getScreenSize("laptop-2")) {
+    padding: 2.5rem 3rem;
+  }
 }

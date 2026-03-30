@@ -7,4 +7,9 @@
 
   border-radius: round(50);
   background-color: var(--tertiary);
+
+  @media (max-width: getScreenSize("tablet-1")) {
+    padding: 0.5rem 1rem;
+    gap: 0.67rem;
+  }
 }

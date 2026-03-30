@@ -1,3 +1,4 @@
+"use client";
 // Interfaces
 import { FC } from "react";
 import { TechSkillsTabViewProps } from "@/core/interfaces";
@@ -5,10 +6,15 @@ import { TechSkillsTabViewProps } from "@/core/interfaces";
 import techSkillsTabViewStyles from "@/scss/components/shared/entity/tech-skill/TechSkillsTabView.module.scss";
 // Components
 import IconComponent from "../../IconComponent";
+// Hooks
+import { useGetWindowWidth } from "@/hooks";
 
 const TechSkillsTabView: FC<TechSkillsTabViewProps> = ({
   currentTechSkill,
 }) => {
+  const windowWidth = useGetWindowWidth();
+  const iconHeight = windowWidth && windowWidth <= 1200 ? 48 : 64;
+
   if (!currentTechSkill) {
     return <div>loading</div>;
   }
@@ -16,7 +22,7 @@ const TechSkillsTabView: FC<TechSkillsTabViewProps> = ({
   return (
     <div className={techSkillsTabViewStyles.container}>
       <div className={techSkillsTabViewStyles.logo}>
-        <IconComponent {...currentTechSkill.tech} height={64} />
+        <IconComponent {...currentTechSkill.tech} height={iconHeight} />
       </div>
       <div className={techSkillsTabViewStyles.content}>
         <div className={techSkillsTabViewStyles.header}>

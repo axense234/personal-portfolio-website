@@ -20,6 +20,10 @@
         transform: scale(1.035);
         font-style: italic;
       }
+
+      @media (max-width: getScreenSize("laptop-1")) {
+        @include headingWithSpacing("h6-phone");
+      }
     }
   }
 }

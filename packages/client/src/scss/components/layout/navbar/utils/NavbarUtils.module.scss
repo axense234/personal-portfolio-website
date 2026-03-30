@@ -3,4 +3,8 @@
 .container {
   @include flexCenter(row);
   gap: 2rem;
+
+  @media (max-width: getScreenSize("laptop-1")) {
+    gap: 1rem;
+  }
 }

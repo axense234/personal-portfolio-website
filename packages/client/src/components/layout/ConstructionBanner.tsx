@@ -24,8 +24,8 @@ const ConstructionBanner = () => {
       <p>
         Yep, the website is obviously still under construction. Main things
         currently being worked on: media querying (responsive design for devices
-        under 900px width), translatations, layout shifts, the dashboard page,
-        the Meals Gallery section, and like 10 other things.
+        under 600px width), translatations, layout shifts, the dashboard page,
+        the Meals Gallery section, and like 12? other things.
       </p>
     </div>
   );

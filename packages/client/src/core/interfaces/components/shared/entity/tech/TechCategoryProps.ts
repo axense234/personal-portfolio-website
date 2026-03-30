@@ -9,4 +9,6 @@ export interface TechCategoryProps {
   onTechIconClick?: (techId: string) => void;
 
   selectedTech?: string[];
+
+  iconHeight?: number;
 }

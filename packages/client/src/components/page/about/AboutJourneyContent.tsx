@@ -4,7 +4,7 @@ import aboutJourneyContentStyles from "@/scss/components/page/about/AboutJourney
 // Data
 import { aboutPageJourneyContentData } from "@/data";
 // Zustand
-import { useGetTech } from "@/hooks";
+import { useGetTech, useGetWindowWidth } from "@/hooks";
 // Next
 import Link from "next/link";
 // Helpers
@@ -14,6 +14,9 @@ import IconComponent from "@/components/shared/IconComponent";
 
 const AboutJourneyContent = () => {
   const { isError, isLoading, tech } = useGetTech();
+
+  const windowWidth = useGetWindowWidth();
+  const iconsPosition = windowWidth && windowWidth <= 1200 ? "top" : "bottom";
 
   if (isError) {
     return <div>iserror</div>;
@@ -54,8 +57,9 @@ const AboutJourneyContent = () => {
             key={articleData.id}
           >
             <div className={aboutJourneyContentStyles.header}>
+              {iconsPosition === "top" && shownIcons}
               <h5>{articleData.title}</h5>
-              {shownIcons}
+              {iconsPosition === "bottom" && shownIcons}
             </div>
             <div className={aboutJourneyContentStyles.content}>
               <div className={aboutJourneyContentStyles.paragraphs}>

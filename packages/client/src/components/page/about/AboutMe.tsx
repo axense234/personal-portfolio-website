@@ -1,3 +1,4 @@
+"use client";
 // Next
 import Image from "next/image";
 // SCSS
@@ -6,9 +7,22 @@ import aboutMeStyles from "@/scss/components/page/about/AboutMe.module.scss";
 import LinkButton from "@/components/shared/LinkButton";
 // Data
 import { aboutPageAboutMeSectionData } from "@/data";
+// Hooks
+import { useGetWindowWidth } from "@/hooks";
 
 const AboutMe = () => {
   const { paragraphs, title, buttons } = aboutPageAboutMeSectionData;
+
+  const windowWidth = useGetWindowWidth();
+
+  let linkButtonSize: "large" | "small" | "medium" = "large";
+  if (windowWidth && windowWidth <= 1200) {
+    linkButtonSize = "medium";
+  } else if (windowWidth && windowWidth <= 1500) {
+    linkButtonSize = "large";
+  } else {
+    linkButtonSize = "large";
+  }
 
   return (
     <section className={aboutMeStyles.container}>
@@ -31,7 +45,9 @@ const AboutMe = () => {
         </div>
         <div className={aboutMeStyles.buttons}>
           {buttons?.map((button) => {
-            return <LinkButton {...button} key={button.id} />;
+            return (
+              <LinkButton {...button} key={button.id} size={linkButtonSize} />
+            );
           })}
         </div>
       </div>

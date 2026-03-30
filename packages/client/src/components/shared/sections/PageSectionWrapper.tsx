@@ -1,3 +1,4 @@
+"use client";
 // SCSS
 import pageSectionWrapperStyles from "@/scss/components/shared/sections/PageSectionWrapper.module.scss";
 // React
@@ -6,6 +7,7 @@ import { FC } from "react";
 import { PageSectionWrapperProps } from "@/core/interfaces";
 // Components
 import LinkButton from "../LinkButton";
+import { useGetWindowWidth } from "@/hooks";
 
 const PageSectionWrapper: FC<PageSectionWrapperProps> = ({
   children,
@@ -16,6 +18,17 @@ const PageSectionWrapper: FC<PageSectionWrapperProps> = ({
   contentAlignment = "right",
 }) => {
   const { title, paragraphs, buttons, subtitle } = pageSectionData;
+
+  const windowWidth = useGetWindowWidth();
+
+  let linkButtonSize: "large" | "small" | "medium" = "large";
+  if (windowWidth && windowWidth <= 1200) {
+    linkButtonSize = "medium";
+  } else if (windowWidth && windowWidth <= 1500) {
+    linkButtonSize = "large";
+  } else {
+    linkButtonSize = "large";
+  }
 
   const titleShown =
     titleHeadingUsed === "h1" ? (
@@ -55,7 +68,9 @@ const PageSectionWrapper: FC<PageSectionWrapperProps> = ({
       </div>
       <div className={pageSectionWrapperStyles.buttons}>
         {buttons?.map((button) => {
-          return <LinkButton {...button} key={button.id} />;
+          return (
+            <LinkButton {...button} key={button.id} size={linkButtonSize} />
+          );
         })}
       </div>
     </section>

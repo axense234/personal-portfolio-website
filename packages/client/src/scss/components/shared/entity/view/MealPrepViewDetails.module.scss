@@ -10,12 +10,21 @@
   @include flexCenter(column);
   align-items: flex-start;
 
+  @media (max-width: getScreenSize("tablet-1")) {
+    align-items: center;
+    gap: 1rem;
+  }
+
   > h4 {
     @include headingWithSpacing("h4-laptop");
     color: var(--primary-opposite);
 
     @media (max-width: getScreenSize("laptop-2")) {
       @include headingWithSpacing("h4-tablet");
+    }
+
+    @media (max-width: getScreenSize("tablet-1")) {
+      text-align: center;
     }
   }
 
@@ -32,6 +41,7 @@
 
 .coverage {
   @include flexCenter(column);
+  width: 100%;
   align-items: flex-start;
 
   gap: 1rem;
@@ -60,6 +70,7 @@
 
 .ingredientsWrapper {
   @include flexCenter(column);
+  width: 100%;
   align-items: flex-start;
 
   gap: 1rem;

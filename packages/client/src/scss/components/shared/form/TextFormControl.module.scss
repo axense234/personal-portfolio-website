@@ -5,10 +5,13 @@
   gap: 1rem;
   align-items: flex-start;
 
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
+
   > label {
-    font-size: getFontSize("h6-tablet");
+    @include headingWithSpacing("h6-tablet");
     color: var(--primary-opposite);
-    letter-spacing: 1px;
 
     transition: transform 0.2s ease;
 
@@ -16,16 +19,19 @@
       transform: scale(1.035);
       font-style: italic;
     }
+
+    @media (max-width: getScreenSize("tablet-1")) {
+      @include headingWithSpacing("h6-phone");
+    }
   }
 
   > input {
     @include flexCenter(row);
     align-items: flex-start;
 
-    font-size: getFontSize("h6-phone");
+    @include headingWithSpacing("h6-phone");
     color: var(--tertiary-opposite);
     background-color: var(--tertiary);
-    letter-spacing: 1px;
 
     border-radius: round(5);
     border-style: none;
@@ -35,6 +41,14 @@
 
     &::placeholder {
       color: var(--placeholder-text);
+    }
+
+    @media (max-width: 1000px) {
+      width: 100%;
+    }
+
+    @media (max-width: getScreenSize("tablet-1")) {
+      @include headingWithSpacing("small-h");
     }
   }
 }

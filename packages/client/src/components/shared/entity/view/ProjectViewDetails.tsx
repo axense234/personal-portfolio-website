@@ -9,6 +9,8 @@ import ProjectExternals from "../project/ProjectExternals";
 import { FC } from "react";
 // Interfaces
 import { ProjectViewDetailsProps } from "@/core/interfaces";
+// Hooks
+import { useGetWindowWidth } from "@/hooks";
 
 const ProjectViewDetails: FC<ProjectViewDetailsProps> = ({
   project,
@@ -18,6 +20,18 @@ const ProjectViewDetails: FC<ProjectViewDetailsProps> = ({
   const projectSkillsShown = project?.skills?.filter(
     (skill) => skill.tech_id !== "ts-backend",
   );
+  const windowWidth = useGetWindowWidth();
+  const iconSize = windowWidth && windowWidth <= 900 ? 32 : 40;
+
+  let linkButtonSize: "large" | "small" | "medium" = "large";
+
+  if (windowWidth && windowWidth <= 1200) {
+    linkButtonSize = "medium";
+  } else if (windowWidth && windowWidth <= 1500) {
+    linkButtonSize = "large";
+  } else {
+    linkButtonSize = "large";
+  }
 
   return (
     <div className={projectViewDetailsStyles.container}>
@@ -50,7 +64,7 @@ const ProjectViewDetails: FC<ProjectViewDetailsProps> = ({
             {projectSkillsShown.map((skill) => {
               return (
                 <li key={skill.id}>
-                  <IconComponent {...skill.tech} />
+                  <IconComponent {...skill.tech} height={iconSize} />
                 </li>
               );
             })}
@@ -62,7 +76,7 @@ const ProjectViewDetails: FC<ProjectViewDetailsProps> = ({
           colorSpecifier={index}
           dest="/projects"
           label="See More"
-          size="large"
+          size={linkButtonSize}
         />
         <ProjectExternals {...project} />
       </div>

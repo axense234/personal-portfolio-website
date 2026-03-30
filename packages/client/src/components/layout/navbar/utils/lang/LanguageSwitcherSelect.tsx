@@ -1,3 +1,4 @@
+"use client";
 // React
 import { FC } from "react";
 // Interfaces
@@ -5,7 +6,7 @@ import { LanguageSwitcherSelectProps } from "@/core/interfaces";
 // NextJS
 import Image from "next/image";
 // Hooks
-import { useNavigateToPathname } from "@/hooks";
+import { useGetWindowWidth, useNavigateToPathname } from "@/hooks";
 // SCSS
 import languageSwitcherSelectStyles from "@/scss/components/layout/navbar/utils/lang/LanguageSwitcherSelect.module.scss";
 // Data
@@ -22,6 +23,12 @@ const LanguageSwitcherSelect: FC<LanguageSwitcherSelectProps> = ({
 
   const navigateToPathname = useNavigateToPathname();
 
+  const windowWidth = useGetWindowWidth();
+  const imageSizes =
+    windowWidth && windowWidth <= 900
+      ? { width: 48, height: 36 }
+      : { width: 64, height: 48 };
+
   return (
     <div
       className={languageSwitcherSelectStyles.container}
@@ -33,8 +40,8 @@ const LanguageSwitcherSelect: FC<LanguageSwitcherSelectProps> = ({
         title={label}
         aria-label={label}
         alt={label}
-        width={64}
-        height={48}
+        width={imageSizes.width}
+        height={imageSizes.height}
       />
       <div className={languageSwitcherSelectStyles.selectFormControl}>
         <select

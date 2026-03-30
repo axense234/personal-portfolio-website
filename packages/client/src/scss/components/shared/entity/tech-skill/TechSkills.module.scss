@@ -6,6 +6,10 @@
   gap: 2rem;
 
   max-width: 125rem;
+
+  @media (max-width: getScreenSize("laptop-2")) {
+    gap: 1rem;
+  }
 }
 
 .wrapper {
@@ -17,5 +21,9 @@
 
   @media (max-width: getScreenSize("laptop-1")) {
     flex-direction: column;
+  }
+
+  @media (max-width: getScreenSize("laptop-2")) {
+    gap: 3rem;
   }
 }

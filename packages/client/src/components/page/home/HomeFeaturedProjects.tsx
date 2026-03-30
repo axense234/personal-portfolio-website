@@ -5,12 +5,16 @@ import PageSectionWrapper from "@/components/shared/sections/PageSectionWrapper"
 // Data
 import { homePageFeaturedProjectsSectionData } from "@/data";
 // Hooks
-import { useGetProjects } from "@/hooks";
+import { useGetProjects, useGetWindowWidth } from "@/hooks";
 // zus
 import { useGeneralStore } from "@/zustand/general/context";
 
 const FeaturedProjects = () => {
   useGetProjects(["FEATURED"]);
+
+  const windowWidth = useGetWindowWidth();
+  const shouldProjectCardsUseGrid =
+    windowWidth && windowWidth <= 900 ? false : true;
 
   const { isError, isLoading, projects } = useGeneralStore(
     (state) => state.getProjectsData,
@@ -24,7 +28,9 @@ const FeaturedProjects = () => {
     return <div>isloading</div>;
   }
 
-  return <ProjectCards projects={projects} useGrid />;
+  return (
+    <ProjectCards projects={projects} useGrid={shouldProjectCardsUseGrid} />
+  );
 };
 
 const HomeFeaturedProjects = () => {

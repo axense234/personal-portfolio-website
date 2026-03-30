@@ -9,7 +9,7 @@ import { FC, useEffect } from "react";
 // Props
 import { MealPrepViewProps } from "@/core/interfaces";
 // Hooks
-import { useGetMealPrepViewDetails } from "@/hooks";
+import { useGetMealPrepViewDetails, useGetWindowWidth } from "@/hooks";
 // Shared
 import { MealPrepWithIngredients } from "@personal-portfolio-website/shared";
 
@@ -27,6 +27,10 @@ const MealPrepView: FC<MealPrepViewProps> = ({
     displayMode === "dynamic" && mealPreps
       ? mealPreps
       : ([mealPrep] as MealPrepWithIngredients[]);
+
+  const windowWidth = useGetWindowWidth();
+  const mealPrepImagesPosition =
+    windowWidth && windowWidth <= 900 ? "top" : "bottom";
 
   const {
     currentMealPrep,
@@ -61,13 +65,23 @@ const MealPrepView: FC<MealPrepViewProps> = ({
 
   return (
     <div className={mealPrepViewStyles.container}>
+      {mealPrepImagesPosition === "top" && (
+        <EntityViewImages
+          images={viewImages}
+          entityType="meal-prep"
+          currentEntityImage={currentMealPrepImageUsed}
+          setCurrentEntityImage={currentMealPrepImageUsedSetter}
+        />
+      )}
       <MealPrepViewDetails currentMealPrep={currentMealPrep} />
-      <EntityViewImages
-        images={viewImages}
-        entityType="meal-prep"
-        currentEntityImage={currentMealPrepImageUsed}
-        setCurrentEntityImage={currentMealPrepImageUsedSetter}
-      />
+      {mealPrepImagesPosition === "bottom" && (
+        <EntityViewImages
+          images={viewImages}
+          entityType="meal-prep"
+          currentEntityImage={currentMealPrepImageUsed}
+          setCurrentEntityImage={currentMealPrepImageUsedSetter}
+        />
+      )}
     </div>
   );
 };

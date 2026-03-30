@@ -2,11 +2,13 @@
 
 .container {
   @include flexCenter(column);
+  width: 100%;
   gap: 8rem;
 }
 
 .article {
   @include flexCenter(column);
+  width: 100%;
   gap: 3rem;
 }
 
@@ -14,6 +16,11 @@
   @include flexCenter(row);
   width: 100%;
   gap: 2rem;
+
+  @media (max-width: getScreenSize("laptop-2")) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 
   > h5 {
     @include headingWithSpacing("h5-laptop");
@@ -33,7 +40,7 @@
 .content {
   @include flexCenter(column);
   gap: 2rem;
-  width: fit-content;
+  width: 100%;
 }
 
 .paragraphs {
@@ -46,6 +53,12 @@
     color: var(--body-text);
     max-width: 100ch;
     text-align: center;
+
+    @media (max-width: getScreenSize("tablet-1")) {
+      @include paragraphWithSpacing("p-medium");
+      max-width: none;
+      width: 100%;
+    }
   }
 }
 
@@ -61,13 +74,12 @@
   gap: 1ch;
 
   > span {
+    @include paragraphWithSpacing("p-large");
     color: var(--body-text);
-    font-size: getFontSize("p-large");
-    letter-spacing: 0.35px;
   }
 
   > a {
-    font-size: getFontSize("p-large");
+    @include paragraphWithSpacing("p-large");
     text-decoration: none;
     color: var(--labels);
   }

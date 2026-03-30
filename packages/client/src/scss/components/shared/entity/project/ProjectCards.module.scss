@@ -39,7 +39,7 @@
   height: 100%;
 
   > p {
-    @include paragraphWithSpacing("h4-tablet");
+    @include headingWithSpacing("h4-tablet");
     color: var(--warning-yellow);
     transition: transform 0.5s ease-in;
 
@@ -48,6 +48,10 @@
     &:hover {
       transform: scale(1.75) rotate3d(0, 0, 1, 720deg);
       font-style: italic;
+    }
+
+    @media (max-width: getScreenSize("laptop-2")) {
+      @include headingWithSpacing("h6-tablet");
     }
   }
 }

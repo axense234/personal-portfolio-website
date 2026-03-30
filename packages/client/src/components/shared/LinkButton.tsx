@@ -38,7 +38,7 @@ const LinkButton: FC<LinkButtonProps> = ({
       break;
     case "small":
       linkButtonFontSize = "14px";
-      linkButtonPadding = "0.25rem 0.75rem";
+      linkButtonPadding = "0.5rem 0.75rem";
       break;
     default:
       linkButtonFontSize = "20px";

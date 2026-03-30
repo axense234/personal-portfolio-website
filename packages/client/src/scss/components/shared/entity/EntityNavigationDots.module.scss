@@ -2,24 +2,31 @@
 
 .entities {
   @include flexCenter(row);
-  width: 100%;
+  flex-wrap: nowrap;
   list-style: none;
 
   padding: 1rem 8rem;
 
   gap: 1rem;
 
+  max-width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
   @media (max-width: getScreenSize("laptop-2")) {
-    gap: auto;
     padding: 0.5rem 3rem;
+    gap: 0.75rem;
   }
 
   > li {
-    border-radius: round(50);
     width: 1.25rem;
     height: 1.25rem;
 
+    border-radius: round(50);
+
     cursor: pointer;
+
+    flex-shrink: 0;
 
     @media (max-width: getScreenSize("laptop-2")) {
       width: 1rem;

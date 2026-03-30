@@ -6,6 +6,17 @@
   padding: 0 16rem;
   gap: 26rem;
 
+  > img {
+    width: 25rem;
+    height: 25rem;
+    border-radius: 5%;
+
+    @media (max-width: getScreenSize("laptop-1")) {
+      width: 17.5rem;
+      height: 17.5rem;
+    }
+  }
+
   @media (max-width: 2200px) {
     padding: 0rem 12rem;
     gap: 16rem;
@@ -18,19 +29,17 @@
   }
 
   @media (max-width: getScreenSize("laptop-1")) {
-    flex-direction: column;
+    padding: 0rem 4rem;
     gap: 4rem;
+    flex-direction: column;
   }
 
-  > img {
-    width: 25rem;
-    height: 25rem;
-    border-radius: 5%;
+  @media (max-width: getScreenSize("laptop-2")) {
+    padding: 0rem 4rem;
+  }
 
-    @media (max-width: getScreenSize("laptop-1")) {
-      width: 17.5rem;
-      height: 17.5rem;
-    }
+  @media (max-width: getScreenSize("tablet-1")) {
+    padding: 0rem 3rem;
   }
 }
 
@@ -46,10 +55,14 @@
   > p {
     @include paragraphWithSpacing("p-large");
     color: var(--body-text);
-    max-width: 72ch;
 
     @media (max-width: getScreenSize("laptop-1")) {
       text-align: center;
+    }
+
+    @media (max-width: getScreenSize("tablet-1")) {
+      @include paragraphWithSpacing("p-medium");
+      width: 80%;
     }
   }
 }
@@ -74,6 +87,10 @@
     @media (max-width: getScreenSize("laptop-2")) {
       @include headingWithSpacing("h1-phone");
     }
+
+    @media (max-width: getScreenSize("tablet-1")) {
+      @include headingWithSpacing("h2-phone");
+    }
   }
 
   > h2 {
@@ -87,6 +104,10 @@
     @media (max-width: getScreenSize("laptop-2")) {
       @include headingWithSpacing("h2-phone");
     }
+
+    @media (max-width: getScreenSize("tablet-1")) {
+      @include headingWithSpacing("h3-phone");
+    }
   }
 
   > h3 {
@@ -99,6 +120,10 @@
 
     @media (max-width: getScreenSize("laptop-2")) {
       @include headingWithSpacing("h4-phone");
+    }
+
+    @media (max-width: getScreenSize("tablet-1")) {
+      @include headingWithSpacing("h5-phone");
     }
   }
 }

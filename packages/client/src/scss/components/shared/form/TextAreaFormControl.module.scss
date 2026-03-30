@@ -7,9 +7,8 @@
   align-items: flex-start;
 
   > label {
-    font-size: getFontSize("h6-tablet");
+    @include headingWithSpacing("h6-tablet");
     color: var(--primary-opposite);
-    letter-spacing: 1px;
 
     transition: transform 0.2s ease;
 
@@ -17,13 +16,18 @@
       transform: scale(1.035);
       font-style: italic;
     }
+
+    @media (max-width: getScreenSize("tablet-1")) {
+      @include headingWithSpacing("h6-phone");
+    }
   }
 
   > textarea {
     @include flexCenter(row);
+    @include headingWithSpacing("h6-phone");
     align-items: flex-start;
 
-    width: 80%;
+    width: 100%;
     min-width: 30%;
     max-width: 100%;
 
@@ -32,10 +36,8 @@
 
     border-style: none;
 
-    font-size: getFontSize("h6-phone");
     color: var(--tertiary-opposite);
     background-color: var(--tertiary);
-    letter-spacing: 1px;
 
     border-radius: round(5);
 
@@ -44,6 +46,10 @@
 
     &::placeholder {
       color: var(--placeholder-text);
+    }
+
+    @media (max-width: getScreenSize("tablet-1")) {
+      @include headingWithSpacing("small-h");
     }
   }
 }

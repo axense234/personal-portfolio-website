@@ -13,8 +13,7 @@
 
   > li {
     @include flexCenter(row);
-    font-size: getFontSize("h5-tablet");
-    letter-spacing: 4px;
+    @include headingWithSpacing("h5-tablet");
     color: var(--primary-opposite);
 
     background-color: var(--tertiary);
@@ -29,6 +28,19 @@
 
     &:hover {
       opacity: 1;
+    }
+
+    @media (max-width: getScreenSize("laptop-2")) {
+      @include headingWithSpacing("h5-phone");
+    }
+
+    @media (max-width: getScreenSize("tablet-1")) {
+      @include headingWithSpacing("h6-phone");
+      padding: 0.5rem 1.5rem;
+    }
+
+    @media (max-width: 700px) {
+      @include headingWithSpacing("small-h");
     }
   }
 }

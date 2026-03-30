@@ -1,5 +1,5 @@
 // Hooks
-import { useGetTech } from "@/hooks";
+import { useGetTech, useGetWindowWidth } from "@/hooks";
 // SCSS
 import techIconsStyles from "@/scss/components/shared/entity/tech/TechIcons.module.scss";
 // Components
@@ -15,6 +15,8 @@ const TechIcons: FC<TechIconsProps> = ({
   isFancy,
   selectedTech,
 }) => {
+  const windowWidth = useGetWindowWidth();
+  const iconSize = windowWidth && windowWidth <= 900 ? 32 : 40;
   const { isError, isLoading, tech } = useGetTech();
 
   if (isError) {
@@ -40,6 +42,7 @@ const TechIcons: FC<TechIconsProps> = ({
               isFunctional={isFunctional}
               onTechIconClick={onTechIconClick}
               selectedTech={selectedTech}
+              iconHeight={iconSize}
             />
           </li>
         );

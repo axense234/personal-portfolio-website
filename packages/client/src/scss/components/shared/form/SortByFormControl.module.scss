@@ -6,15 +6,18 @@
 }
 
 .message {
+  @include headingWithSpacing("h6-tablet");
   width: 100%;
-  font-size: getFontSize("h6-tablet");
   color: var(--warning-yellow);
-  letter-spacing: 1px;
   transition: transform 0.2s ease;
 
   &:hover {
     transform: scale(1.005);
     font-style: italic;
+  }
+
+  @media (max-width: getScreenSize("tablet-1")) {
+    @include paragraphWithSpacing("p-large");
   }
 }
 
@@ -23,15 +26,18 @@
   gap: 0.5rem;
 
   > label {
-    font-size: getFontSize("h6-tablet");
+    @include headingWithSpacing("h6-tablet");
     color: var(--primary-opposite);
-    letter-spacing: 1px;
 
     transition: transform 0.2s ease;
 
     &:hover {
       transform: scale(1.035);
       font-style: italic;
+    }
+
+    @media (max-width: getScreenSize("tablet-1")) {
+      @include headingWithSpacing("h6-phone");
     }
   }
 
@@ -42,6 +48,10 @@
 
     &:hover {
       transform: rotate(360deg);
+    }
+
+    @media (max-width: getScreenSize("tablet-1")) {
+      font-size: 1rem;
     }
   }
 }

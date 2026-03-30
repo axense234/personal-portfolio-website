@@ -1,3 +1,4 @@
+"use client";
 // SCSS
 import projectViewDetailsStyles from "@/scss/components/shared/entity/view/ProjectViewDetails.module.scss";
 // Components

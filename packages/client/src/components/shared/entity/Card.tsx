@@ -1,3 +1,4 @@
+"use client";
 // Interfaces
 import { CardProps } from "@/core/interfaces";
 // SCSS

@@ -73,14 +73,24 @@
   width: 100%;
   gap: 1ch;
 
+  flex-wrap: wrap;
+
   > span {
     @include paragraphWithSpacing("p-large");
     color: var(--body-text);
+
+    @media (max-width: getScreenSize("tablet-1")) {
+      @include paragraphWithSpacing("p-medium");
+    }
   }
 
   > a {
     @include paragraphWithSpacing("p-large");
     text-decoration: none;
     color: var(--labels);
+
+    @media (max-width: getScreenSize("tablet-1")) {
+      @include paragraphWithSpacing("p-medium");
+    }
   }
 }

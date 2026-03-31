@@ -1,3 +1,4 @@
+"use client";
 // SCSS
 import contactMethodsStyles from "@/scss/components/page/contact/ContactMethods.module.scss";
 // Data
@@ -6,8 +7,20 @@ import { contactPageContactMethodsSectionData, proEmail } from "@/data";
 import LinkButton from "@/components/shared/LinkButton";
 import SocialIcons from "@/components/shared/SocialIcons";
 import PageSectionWrapper from "@/components/shared/sections/PageSectionWrapper";
+// Hooks
+import { useGetWindowWidth } from "@/hooks";
 
 const ContactMethodsContent = () => {
+  const windowWidth = useGetWindowWidth();
+  const iconSize = windowWidth && windowWidth <= 900 ? 32 : 48;
+
+  let linkButtonSize: "large" | "small" | "medium" = "large";
+  if (windowWidth && windowWidth <= 900) {
+    linkButtonSize = "medium";
+  } else {
+    linkButtonSize = "large";
+  }
+
   return (
     <div className={contactMethodsStyles.content}>
       <div className={contactMethodsStyles.method}>
@@ -16,7 +29,7 @@ const ContactMethodsContent = () => {
       </div>
       <div className={contactMethodsStyles.method}>
         <h4>Externals:</h4>
-        <SocialIcons iconHeight={48} focus="contact" />
+        <SocialIcons iconHeight={iconSize} focus="contact" />
       </div>
       <div className={contactMethodsStyles.method}>
         <h4>Resume (PDF): </h4>
@@ -24,7 +37,7 @@ const ContactMethodsContent = () => {
           colorSpecifier={"warning"}
           dest="/misc/resume.pdf"
           label="My Resume"
-          size="large"
+          size={linkButtonSize}
           download
           downloadFilename="ca-resume.pdf"
           buttonType="download"

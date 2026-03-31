@@ -15,6 +15,11 @@
       width: 17.5rem;
       height: 17.5rem;
     }
+
+    @media (max-width: getScreenSize("tablet-2")) {
+      width: 11.5rem;
+      height: 11.5rem;
+    }
   }
 
   @media (max-width: 2200px) {
@@ -41,15 +46,24 @@
   @media (max-width: getScreenSize("tablet-1")) {
     padding: 0rem 3rem;
   }
+
+  @media (max-width: getScreenSize("tablet-2")) {
+    padding: 0rem 1rem;
+    gap: 2rem;
+  }
 }
 
 .content {
   @include flexCenter(column);
   align-items: flex-start;
-  gap: 2rem;
+  gap: 3rem;
 
   @media (max-width: getScreenSize("laptop-1")) {
     align-items: center;
+  }
+
+  @media (max-width: getScreenSize("tablet-2")) {
+    gap: 2rem;
   }
 
   > p {
@@ -62,6 +76,11 @@
 
     @media (max-width: getScreenSize("tablet-1")) {
       @include paragraphWithSpacing("p-medium");
+      width: 80%;
+    }
+
+    @media (max-width: getScreenSize("tablet-2")) {
+      @include paragraphWithSpacing("p-small");
       width: 80%;
     }
   }
@@ -91,6 +110,11 @@
     @media (max-width: getScreenSize("tablet-1")) {
       @include headingWithSpacing("h2-phone");
     }
+
+    @media (max-width: getScreenSize("tablet-2")) {
+      @include headingWithSpacing("h3-phone");
+      text-align: center;
+    }
   }
 
   > h2 {
@@ -107,6 +131,11 @@
 
     @media (max-width: getScreenSize("tablet-1")) {
       @include headingWithSpacing("h3-phone");
+    }
+
+    @media (max-width: getScreenSize("tablet-2")) {
+      @include headingWithSpacing("h4-phone");
+      text-align: center;
     }
   }
 
@@ -125,6 +154,10 @@
     @media (max-width: getScreenSize("tablet-1")) {
       @include headingWithSpacing("h5-phone");
     }
+
+    @media (max-width: getScreenSize("tablet-2")) {
+      @include headingWithSpacing("small-h");
+    }
   }
 }
 
@@ -132,4 +165,15 @@
   @include flexCenter(row);
   gap: 4rem;
   margin-top: 2rem;
+
+  @media (max-width: getScreenSize("tablet-2")) {
+    gap: 1rem;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 400px) {
+    flex-wrap: wrap;
+  }
 }

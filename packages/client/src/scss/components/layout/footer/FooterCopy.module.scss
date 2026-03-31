@@ -6,5 +6,9 @@
   > p {
     @include paragraphWithSpacing("p-medium");
     color: var(--labels);
+
+    @media (max-width: getScreenSize("tablet-2")) {
+      @include paragraphWithSpacing("p-small");
+    }
   }
 }

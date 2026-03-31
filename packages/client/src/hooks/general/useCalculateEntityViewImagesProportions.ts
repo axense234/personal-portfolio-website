@@ -23,10 +23,17 @@ export const useCalculateEntityViewImagesProportions = (
       "project-awards": { width: 400, height: 280 },
       "project-images": { width: 400, height: 225 },
     },
+    tablet2: {
+      "meal-prep": { width: 280, height: 380 },
+      "project-awards": { width: 280, height: 200 },
+      "project-images": { width: 280, height: 160 },
+    },
   };
 
   let chosenProportions = "normal";
-  if (windowWidth <= 900) {
+  if (windowWidth <= 600) {
+    chosenProportions = "tablet2";
+  } else if (windowWidth <= 900) {
     chosenProportions = "tablet1";
   } else if (windowWidth <= 1200) {
     chosenProportions = "laptop2";

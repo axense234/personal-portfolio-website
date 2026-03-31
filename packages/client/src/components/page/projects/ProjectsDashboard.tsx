@@ -1,3 +1,4 @@
+"use client";
 // SCSS
 import projectsDashboardStyles from "@/scss/components/page/projects/ProjectsDashboard.module.scss";
 // Components
@@ -9,7 +10,10 @@ import { useGeneralStore } from "@/zustand/general";
 // Helpers
 import { queryProjects } from "@/helpers";
 // Dum dum
-import { useHandleDumbStuffThatNeedsToBeChangedLaterAndThoughtOutCarefully } from "@/hooks";
+import {
+  useGetWindowWidth,
+  useHandleDumbStuffThatNeedsToBeChangedLaterAndThoughtOutCarefully,
+} from "@/hooks";
 
 const ProjectsDashboard = () => {
   const {
@@ -21,6 +25,10 @@ const ProjectsDashboard = () => {
 
   const { isError, isLoading, projects } = getProjectsData;
   const { search, sortByTest, filterValues } = projectsQueryData;
+
+  const windowWidth = useGetWindowWidth();
+  const searchFormControlFlow =
+    windowWidth && windowWidth <= 600 ? "column" : "row";
 
   const { filterFormControlData, sortFormControlData } =
     useHandleDumbStuffThatNeedsToBeChangedLaterAndThoughtOutCarefully(
@@ -68,7 +76,7 @@ const ProjectsDashboard = () => {
       />
       <div className={projectsDashboardStyles.content}>
         <EntityNavigationBar
-          search={searchFormControlData}
+          search={{ ...searchFormControlData, flow: searchFormControlFlow }}
           sort={sortFormControlData}
           filter={filterFormControlData}
         />

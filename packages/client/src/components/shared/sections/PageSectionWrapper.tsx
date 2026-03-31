@@ -22,7 +22,9 @@ const PageSectionWrapper: FC<PageSectionWrapperProps> = ({
   const windowWidth = useGetWindowWidth();
 
   let linkButtonSize: "large" | "small" | "medium" = "large";
-  if (windowWidth && windowWidth <= 1200) {
+  if (windowWidth && windowWidth <= 600) {
+    linkButtonSize = "small";
+  } else if (windowWidth && windowWidth <= 1200) {
     linkButtonSize = "medium";
   } else if (windowWidth && windowWidth <= 1500) {
     linkButtonSize = "large";

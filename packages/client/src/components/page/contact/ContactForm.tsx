@@ -4,7 +4,6 @@ import contactFormStyles from "@/scss/components/page/contact/ContactForm.module
 // Components
 import TextFormControl from "@/components/shared/form/TextFormControl";
 import TextAreaFormControl from "@/components/shared/form/TextAreaFormControl";
-// Components
 import LinkButton from "@/components/shared/LinkButton";
 // Zustand
 import { useGeneralStore } from "@/zustand/general/context";
@@ -15,6 +14,8 @@ import {
   defaultContactFormName,
   defaultContactFormSubject,
 } from "@/data";
+// Hooks
+import { useGetWindowWidth } from "@/hooks";
 
 const ContactForm = () => {
   const {
@@ -22,6 +23,17 @@ const ContactForm = () => {
     setContactFormDataKeyValue,
     sendEmailWithContactForm,
   } = useGeneralStore((state) => state);
+
+  const windowWidth = useGetWindowWidth();
+
+  let linkButtonSize: "large" | "small" | "medium" = "large";
+  if (windowWidth && windowWidth <= 1200) {
+    linkButtonSize = "medium";
+  } else if (windowWidth && windowWidth <= 1500) {
+    linkButtonSize = "large";
+  } else {
+    linkButtonSize = "large";
+  }
 
   return (
     <article className={contactFormStyles.container}>
@@ -70,7 +82,7 @@ const ContactForm = () => {
       <LinkButton
         colorSpecifier={"warning"}
         label="Send the Message"
-        size="large"
+        size={linkButtonSize}
         buttonType="submit"
         onClick={() => sendEmailWithContactForm(contactFormData)}
       />

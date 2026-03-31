@@ -24,6 +24,10 @@
       @media (max-width: getScreenSize("laptop-1")) {
         @include headingWithSpacing("h6-phone");
       }
+
+      @media (max-width: getScreenSize("tablet-2")) {
+        @include headingWithSpacing("button-label-medium");
+      }
     }
   }
 }

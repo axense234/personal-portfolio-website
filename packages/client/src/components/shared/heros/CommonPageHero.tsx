@@ -35,13 +35,19 @@ const CommonPageHero: FC<CommonPageHeroProps> = ({
 
   const windowWidth = useGetWindowWidth();
   const imagePosition = windowWidth && windowWidth <= 1500 ? "top" : "bottom";
-  const reservedImageSpace = windowWidth && windowWidth <= 1500 ? 280 : 400;
+
+  let reservedImageSpace = 400;
 
   let linkButtonSize: "large" | "small" | "medium" = "large";
-  if (windowWidth && windowWidth <= 1200) {
+  if (windowWidth && windowWidth <= 600) {
+    linkButtonSize = "small";
+    reservedImageSpace = 184;
+  } else if (windowWidth && windowWidth <= 1200) {
     linkButtonSize = "medium";
+    reservedImageSpace = 280;
   } else if (windowWidth && windowWidth <= 1500) {
     linkButtonSize = "large";
+    reservedImageSpace = 280;
   } else {
     linkButtonSize = "large";
   }

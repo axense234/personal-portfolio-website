@@ -26,10 +26,26 @@
   > h4 {
     @include headingWithSpacing("h4-tablet");
     color: var(--primary-opposite);
+
+    @media (max-width: getScreenSize("laptop-2")) {
+      @include headingWithSpacing("h5-tablet");
+    }
+
+    @media (max-width: getScreenSize("tablet-1")) {
+      @include headingWithSpacing("h5-phone");
+    }
   }
 
   > h5 {
     @include headingWithSpacing("h5-tablet");
     color: var(--primary-opposite);
+
+    @media (max-width: getScreenSize("laptop-2")) {
+      @include headingWithSpacing("h5-phone");
+    }
+
+    @media (max-width: getScreenSize("tablet-1")) {
+      @include headingWithSpacing("h6-phone");
+    }
   }
 }

@@ -29,6 +29,10 @@
   @media (max-width: getScreenSize("laptop-2")) {
     width: 20rem;
   }
+
+  @media (max-width: getScreenSize("tablet-2")) {
+    width: 17.5rem;
+  }
 }
 
 .content {
@@ -42,6 +46,7 @@
     color: var(--primary-opposite);
 
     transition: transform 0.2s ease;
+    text-align: center;
 
     cursor: pointer;
 

@@ -13,6 +13,10 @@
     flex-wrap: wrap;
   }
 
+  @media (max-width: getScreenSize("tablet-2")) {
+    gap: 1rem;
+  }
+
   > li {
     transition: transform 0.2s ease;
 
@@ -20,11 +24,16 @@
       transform: scale(1.035);
       font-style: italic;
     }
+
     > a {
       @include paragraphWithSpacing("p-medium");
       width: 100%;
       text-decoration: none;
       color: var(--labels);
+
+      @media (max-width: getScreenSize("tablet-2")) {
+        @include paragraphWithSpacing("p-small");
+      }
     }
   }
 }

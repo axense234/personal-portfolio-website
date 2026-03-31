@@ -24,10 +24,15 @@ const LanguageSwitcherSelect: FC<LanguageSwitcherSelectProps> = ({
   const navigateToPathname = useNavigateToPathname();
 
   const windowWidth = useGetWindowWidth();
-  const imageSizes =
-    windowWidth && windowWidth <= 900
-      ? { width: 48, height: 36 }
-      : { width: 64, height: 48 };
+  let imageSizes = { width: 64, height: 48 };
+
+  if (windowWidth && windowWidth <= 900) {
+    imageSizes = { width: 32, height: 24 };
+  } else if (windowWidth && windowWidth <= 900) {
+    imageSizes = { width: 48, height: 36 };
+  } else {
+    imageSizes = { width: 64, height: 48 };
+  }
 
   return (
     <div

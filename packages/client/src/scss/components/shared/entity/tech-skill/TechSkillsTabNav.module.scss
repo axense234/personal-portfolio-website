@@ -11,6 +11,10 @@
   list-style: none;
   gap: 0.5rem;
 
+  @media (max-width: getScreenSize("tablet-2")) {
+    flex-direction: column;
+  }
+
   > li {
     @include flexCenter(row);
     @include headingWithSpacing("h5-tablet");
@@ -41,6 +45,10 @@
 
     @media (max-width: 700px) {
       @include headingWithSpacing("small-h");
+    }
+
+    @media (max-width: getScreenSize("tablet-2")) {
+      width: 100%;
     }
   }
 }

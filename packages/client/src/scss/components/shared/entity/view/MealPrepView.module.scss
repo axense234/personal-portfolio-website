@@ -15,4 +15,8 @@
     flex-direction: column;
     align-items: center;
   }
+
+  @media (max-width: getScreenSize("tablet-2")) {
+    gap: 3rem;
+  }
 }

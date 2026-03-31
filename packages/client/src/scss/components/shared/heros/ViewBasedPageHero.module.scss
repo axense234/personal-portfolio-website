@@ -27,64 +27,8 @@
   @media (max-width: getScreenSize("tablet-1")) {
     padding: 0rem 2rem;
   }
-}
 
-.header {
-  @include flexCenter(column);
-  gap: 1.5rem;
-
-  > h1 {
-    @include headingWithSpacing("h1-laptop");
-    color: var(--primary-opposite);
-
-    @media (max-width: getScreenSize("laptop-1")) {
-      @include headingWithSpacing("h1-tablet");
-    }
-
-    @media (max-width: getScreenSize("laptop-2")) {
-      @include headingWithSpacing("h1-phone");
-    }
-
-    @media (max-width: getScreenSize("tablet-1")) {
-      @include headingWithSpacing("h2-phone");
-    }
+  @media (max-width: getScreenSize("tablet-2")) {
+    padding: 0rem 1rem;
   }
-
-  > h2 {
-    @include headingWithSpacing("h2-laptop");
-    color: var(--primary-opposite);
-
-    @media (max-width: getScreenSize("laptop-1")) {
-      @include headingWithSpacing("h2-tablet");
-    }
-
-    @media (max-width: getScreenSize("laptop-2")) {
-      @include headingWithSpacing("h2-phone");
-    }
-
-    @media (max-width: getScreenSize("tablet-1")) {
-      @include headingWithSpacing("h3-phone");
-    }
-  }
-
-  > h4 {
-    @include headingWithSpacing("h4-laptop");
-    color: var(--primary-opposite);
-
-    @media (max-width: getScreenSize("laptop-1")) {
-      @include headingWithSpacing("h4-tablet");
-    }
-    @media (max-width: getScreenSize("laptop-2")) {
-      @include headingWithSpacing("h4-phone");
-    }
-    @media (max-width: getScreenSize("tablet-1")) {
-      @include headingWithSpacing("h5-phone");
-    }
-  }
-}
-
-.buttons {
-  @include flexCenter(row);
-  gap: 4rem;
-  margin-top: 2rem;
 }

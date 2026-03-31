@@ -9,6 +9,10 @@
     width: 100%;
   }
 
+  @media (max-width: getScreenSize("tablet-2")) {
+    gap: 0.5rem;
+  }
+
   > label {
     @include headingWithSpacing("h6-tablet");
     color: var(--primary-opposite);
@@ -22,6 +26,9 @@
 
     @media (max-width: getScreenSize("tablet-1")) {
       @include headingWithSpacing("h6-phone");
+    }
+    @media (max-width: getScreenSize("tablet-2")) {
+      @include headingWithSpacing("small-h");
     }
   }
 

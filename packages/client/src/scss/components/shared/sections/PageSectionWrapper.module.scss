@@ -29,6 +29,11 @@
 
   @media (max-width: getScreenSize("tablet-2")) {
     padding: 0rem 1.5rem;
+    gap: 3rem;
+  }
+
+  @media (max-width: 400px) {
+    padding: 0rem 1rem;
   }
 }
 
@@ -36,6 +41,14 @@
   @include flexCenter(column);
   width: 100%;
   gap: 4rem;
+
+  @media (max-width: getScreenSize("laptop-2")) {
+    gap: 3rem;
+  }
+
+  @media (max-width: getScreenSize("tablet-2")) {
+    gap: 2rem;
+  }
 }
 
 .intro {
@@ -45,6 +58,10 @@
 
   @media (max-width: getScreenSize("laptop-2")) {
     gap: 1.5rem;
+  }
+
+  @media (max-width: getScreenSize("tablet-2")) {
+    gap: 1rem;
   }
 
   > h1 {
@@ -61,6 +78,10 @@
 
     @media (max-width: getScreenSize("tablet-1")) {
       @include headingWithSpacing("h2-phone");
+    }
+
+    @media (max-width: getScreenSize("tablet-2")) {
+      @include headingWithSpacing("h4-phone");
     }
   }
 
@@ -80,6 +101,10 @@
     @media (max-width: getScreenSize("tablet-1")) {
       @include headingWithSpacing("h3-phone");
     }
+
+    @media (max-width: getScreenSize("tablet-2")) {
+      @include headingWithSpacing("h5-phone");
+    }
   }
 
   > h4 {
@@ -94,6 +119,9 @@
     }
     @media (max-width: getScreenSize("tablet-1")) {
       @include headingWithSpacing("h6-phone");
+    }
+    @media (max-width: getScreenSize("tablet-2")) {
+      @include headingWithSpacing("small-h");
     }
   }
 }
@@ -120,10 +148,20 @@
     @media (max-width: 800px) {
       width: 100%;
     }
+
+    @media (max-width: getScreenSize("tablet-2")) {
+      @include headingWithSpacing("p-small");
+    }
   }
 }
 
 .buttons {
   @include flexCenter(row);
   gap: 4rem;
+
+  @media (max-width: getScreenSize("tablet-2")) {
+    gap: 0rem;
+    justify-content: space-evenly;
+    width: 100%;
+  }
 }

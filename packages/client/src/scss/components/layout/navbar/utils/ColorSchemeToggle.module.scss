@@ -10,6 +10,10 @@
 
   > label {
     @include paragraphWithSpacing("p-large");
+
+    @media (max-width: getScreenSize("tablet-2")) {
+      display: none;
+    }
   }
 
   > div {
@@ -29,6 +33,12 @@
       padding-left: 1rem;
     }
 
+    @media (max-width: getScreenSize("tablet-2")) {
+      padding: 0.75rem 0;
+      padding-right: 1.6rem;
+      padding-left: 0.75rem;
+    }
+
     > input {
       cursor: pointer;
       position: absolute;
@@ -42,6 +52,10 @@
 
         @media (max-width: getScreenSize("tablet-1")) {
           transform: translateX(1.05rem) rotate(180deg);
+        }
+
+        @media (max-width: getScreenSize("tablet-1")) {
+          transform: translateX(0.69rem) rotate(180deg);
         }
       }
     }
@@ -57,6 +71,11 @@
       @media (max-width: getScreenSize("tablet-1")) {
         width: 1.5rem;
         height: 1.5rem;
+      }
+
+      @media (max-width: getScreenSize("tablet-2")) {
+        width: 1.25rem;
+        height: 1.25rem;
       }
     }
   }

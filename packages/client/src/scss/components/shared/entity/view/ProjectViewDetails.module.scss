@@ -45,6 +45,11 @@
     @media (max-width: getScreenSize("tablet-1")) {
       @include headingWithSpacing("h5-phone");
     }
+
+    @media (max-width: getScreenSize("tablet-2")) {
+      @include headingWithSpacing("h6-phone");
+      text-align: center;
+    }
   }
 
   > h6 {
@@ -62,6 +67,10 @@
 
     @media (max-width: getScreenSize("tablet-1")) {
       @include headingWithSpacing("h6-phone");
+    }
+
+    @media (max-width: getScreenSize("tablet-2")) {
+      @include headingWithSpacing("small-h");
     }
   }
 }
@@ -118,6 +127,12 @@
       &:hover {
         transform: translateX(0.2rem);
       }
+
+      @media (max-width: getScreenSize("tablet-2")) {
+        @include paragraphWithSpacing("p-small");
+        max-width: none;
+        width: 100%;
+      }
     }
   }
 }
@@ -150,6 +165,12 @@
     color: var(--body-text);
     max-width: 66ch;
     width: fit-content;
+
+    @media (max-width: getScreenSize("tablet-2")) {
+      @include paragraphWithSpacing("p-small");
+      max-width: none;
+      width: 100%;
+    }
   }
 }
 
@@ -195,4 +216,8 @@
   justify-content: space-between;
 
   margin-top: 2rem;
+
+  @media (max-width: getScreenSize("tablet-2")) {
+    margin-top: 1rem;
+  }
 }

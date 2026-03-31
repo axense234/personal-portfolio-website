@@ -26,4 +26,8 @@
   @media (max-width: getScreenSize("tablet-1")) {
     padding: 1rem 2rem;
   }
+
+  @media (max-width: getScreenSize("tablet-2")) {
+    padding: 1rem 1rem;
+  }
 }

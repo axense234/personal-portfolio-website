@@ -23,9 +23,8 @@ const ConstructionBanner = () => {
       <h3>⚠️ SITE IS UNDER CONSTRUCTION ⚠️</h3>
       <p>
         Yep, the website is obviously still under construction. Main things
-        currently being worked on: media querying (responsive design for devices
-        under 600px width), translatations, layout shifts, the dashboard page,
-        the Meals Gallery section, and like 2134? other things.
+        currently being worked on: translatations, the dashboard page, the Meals
+        Gallery section.
       </p>
     </div>
   );

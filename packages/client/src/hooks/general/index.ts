@@ -5,3 +5,4 @@ export * from "./useHandleDumbStuffThatNeedsToBeChangedLaterAndThoughtOutCareful
 export * from "./useGetMealPrepViewDetails";
 export * from "./useGetWindowWidth";
 export * from "./useCalculateEntityViewImagesProportions";
+export * from "./useHandleWindowScroll";

@@ -10,6 +10,10 @@
   @include flexCenter(column);
   width: 100%;
   gap: 3rem;
+
+  @media (max-width: getScreenSize("tablet-2")) {
+    gap: 1.5rem;
+  }
 }
 
 .header {
@@ -22,12 +26,20 @@
     gap: 1rem;
   }
 
+  @media (max-width: getScreenSize("tablet-2")) {
+    gap: 0.5rem;
+  }
+
   > h5 {
     @include headingWithSpacing("h5-laptop");
     color: var(--primary-opposite);
 
     @media (max-width: getScreenSize("laptop-2")) {
       @include headingWithSpacing("h5-tablet");
+    }
+
+    @media (max-width: getScreenSize("tablet-2")) {
+      @include headingWithSpacing("h6-tablet");
     }
   }
 }
@@ -41,12 +53,20 @@
   @include flexCenter(column);
   gap: 2rem;
   width: 100%;
+
+  @media (max-width: getScreenSize("tablet-2")) {
+    gap: 1.5rem;
+  }
 }
 
 .paragraphs {
   @include flexCenter(column);
   width: 100%;
   gap: 2rem;
+
+  @media (max-width: getScreenSize("tablet-2")) {
+    gap: 1.5rem;
+  }
 
   > p {
     @include paragraphWithSpacing("p-large");
@@ -58,6 +78,10 @@
       @include paragraphWithSpacing("p-medium");
       max-width: none;
       width: 100%;
+    }
+
+    @media (max-width: getScreenSize("tablet-2")) {
+      @include paragraphWithSpacing("p-small");
     }
   }
 }
@@ -71,9 +95,9 @@
   @include flexCenter(row);
   justify-content: flex-start;
   width: 100%;
-  gap: 1ch;
 
   flex-wrap: wrap;
+  gap: 0.5rem;
 
   > span {
     @include paragraphWithSpacing("p-large");
@@ -81,6 +105,10 @@
 
     @media (max-width: getScreenSize("tablet-1")) {
       @include paragraphWithSpacing("p-medium");
+    }
+
+    @media (max-width: getScreenSize("tablet-2")) {
+      @include paragraphWithSpacing("p-small");
     }
   }
 
@@ -91,6 +119,10 @@
 
     @media (max-width: getScreenSize("tablet-1")) {
       @include paragraphWithSpacing("p-medium");
+    }
+
+    @media (max-width: getScreenSize("tablet-2")) {
+      @include paragraphWithSpacing("p-small");
     }
   }
 }

@@ -15,6 +15,11 @@
   @media (max-width: getScreenSize("laptop-1")) {
     padding: 2rem 3rem;
   }
+
+  @media (max-width: getScreenSize("tablet-2")) {
+    gap: 3rem;
+    padding: 2rem;
+  }
 }
 
 .controls {

@@ -28,6 +28,10 @@
       @media (max-width: getScreenSize("tablet-2")) {
         @include headingWithSpacing("button-label-medium");
       }
+
+      @media (max-width: 350px) {
+        @include headingWithSpacing("button-label-small");
+      }
     }
   }
 }

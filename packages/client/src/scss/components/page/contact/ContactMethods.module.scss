@@ -10,12 +10,20 @@
     align-items: center;
     gap: 6rem;
   }
+
+  @media (max-width: getScreenSize("tablet-2")) {
+    gap: 2rem;
+  }
 }
 
 .method {
   @include flexCenter(row);
   gap: 3rem;
   justify-content: flex-start;
+
+  @media (max-width: getScreenSize("tablet-2")) {
+    gap: 1.5rem;
+  }
 
   @media (max-width: getScreenSize("laptop-1")) {
     flex-direction: column;
@@ -34,6 +42,10 @@
     @media (max-width: getScreenSize("tablet-1")) {
       @include headingWithSpacing("h5-phone");
     }
+
+    @media (max-width: getScreenSize("tablet-2")) {
+      @include headingWithSpacing("h6-phone");
+    }
   }
 
   > h5 {
@@ -46,6 +58,10 @@
 
     @media (max-width: getScreenSize("tablet-1")) {
       @include headingWithSpacing("h6-phone");
+    }
+
+    @media (max-width: getScreenSize("tablet-2")) {
+      @include headingWithSpacing("button-label-medium");
     }
   }
 }

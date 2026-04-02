@@ -17,6 +17,14 @@ const AboutJourneyContent = () => {
 
   const windowWidth = useGetWindowWidth();
   const iconsPosition = windowWidth && windowWidth <= 1200 ? "top" : "bottom";
+  let iconHeight = 64;
+  if (windowWidth && windowWidth <= 600) {
+    iconHeight = 32;
+  } else if (windowWidth && windowWidth <= 1200) {
+    iconHeight = 48;
+  } else {
+    iconHeight = 64;
+  }
 
   if (isError) {
     return <div>iserror</div>;
@@ -39,14 +47,27 @@ const AboutJourneyContent = () => {
               const usedTech = getTechById(icon);
 
               if (usedTech) {
-                return <IconComponent {...usedTech} key={index} height={48} />;
+                return (
+                  <IconComponent
+                    {...usedTech}
+                    key={index}
+                    height={iconHeight}
+                  />
+                );
               }
             })}
           </div>
         ) : (
           <div className={aboutJourneyContentStyles.icons}>
             {articleData?.icons?.map((icon, index) => {
-              return <IconComponent {...icon} id="" key={index} />;
+              return (
+                <IconComponent
+                  {...icon}
+                  id=""
+                  key={index}
+                  height={iconHeight}
+                />
+              );
             })}
           </div>
         );

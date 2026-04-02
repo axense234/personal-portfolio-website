@@ -121,6 +121,10 @@
       @include paragraphWithSpacing("p-small");
       width: 80%;
     }
+
+    @media (max-width: 400px) {
+      width: 100%;
+    }
   }
 }
 

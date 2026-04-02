@@ -30,4 +30,8 @@
   @media (max-width: getScreenSize("tablet-2")) {
     padding: 1rem 1rem;
   }
+
+  @media (max-width: 350px) {
+    gap: 0.5rem;
+  }
 }

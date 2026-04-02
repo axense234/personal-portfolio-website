@@ -3,31 +3,16 @@
 import Navbar from "@/components/layout/navbar/Navbar";
 import Footer from "@/components/layout/footer/Footer";
 import ConstructionBanner from "@/components/layout/ConstructionBanner";
+import GoUpButton from "@/components/layout/GoUpButton";
 // SCSS
 import pagesLayoutStyles from "@/scss/components/layout/PagesLayout.module.scss";
 // Fonts
 import { manrope } from "@/app/fonts";
 // Zustand
 import { useGeneralStore } from "@/zustand/general/context";
-// Hooks
-import { useGetWindowWidth } from "@/hooks/general/useGetWindowWidth";
 
 const PagesLayout = ({ children }: { children: React.ReactNode }) => {
   const { colorTheme } = useGeneralStore((state) => state);
-
-  const windowWidth = useGetWindowWidth();
-
-  if (windowWidth && windowWidth < 650) {
-    return (
-      <div data-theme={colorTheme} className={pagesLayoutStyles.temporary}>
-        <h1>Responsive Design has not been implemented yet.</h1>
-        <h2>
-          View the website on Desktop or a device with a bigger screen. Pretty
-          please.
-        </h2>
-      </div>
-    );
-  }
 
   return (
     <div
@@ -37,6 +22,7 @@ const PagesLayout = ({ children }: { children: React.ReactNode }) => {
       <ConstructionBanner />
       <Navbar />
       {children}
+      <GoUpButton />
       <Footer />
     </div>
   );

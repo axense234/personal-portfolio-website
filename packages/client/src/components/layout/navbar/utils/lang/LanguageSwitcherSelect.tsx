@@ -26,7 +26,7 @@ const LanguageSwitcherSelect: FC<LanguageSwitcherSelectProps> = ({
   const windowWidth = useGetWindowWidth();
   let imageSizes = { width: 64, height: 48 };
 
-  if (windowWidth && windowWidth <= 900) {
+  if (windowWidth && windowWidth <= 600) {
     imageSizes = { width: 32, height: 24 };
   } else if (windowWidth && windowWidth <= 900) {
     imageSizes = { width: 48, height: 36 };

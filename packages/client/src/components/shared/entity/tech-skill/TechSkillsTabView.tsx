@@ -13,7 +13,14 @@ const TechSkillsTabView: FC<TechSkillsTabViewProps> = ({
   currentTechSkill,
 }) => {
   const windowWidth = useGetWindowWidth();
-  const iconHeight = windowWidth && windowWidth <= 1200 ? 48 : 64;
+  let iconHeight = 64;
+  if (windowWidth && windowWidth <= 600) {
+    iconHeight = 32;
+  } else if (windowWidth && windowWidth <= 1200) {
+    iconHeight = 48;
+  } else {
+    iconHeight = 64;
+  }
 
   if (!currentTechSkill) {
     return <div>loading</div>;

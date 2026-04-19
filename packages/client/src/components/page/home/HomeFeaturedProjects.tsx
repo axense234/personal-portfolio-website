@@ -2,12 +2,15 @@
 // Components
 import ProjectCards from "@/components/shared/entity/project/ProjectCards";
 import PageSectionWrapper from "@/components/shared/sections/PageSectionWrapper";
+import { SectionDataType } from "@/core/types";
 // Data
 import { homePageFeaturedProjectsSectionData } from "@/data";
 // Hooks
 import { useGetProjects, useGetWindowWidth } from "@/hooks";
 // zus
 import { useGeneralStore } from "@/zustand/general/context";
+// Translations
+import { useTranslations } from "next-intl";
 
 const FeaturedProjects = () => {
   useGetProjects(["FEATURED"]);
@@ -34,8 +37,20 @@ const FeaturedProjects = () => {
 };
 
 const HomeFeaturedProjects = () => {
+  const translations = useTranslations("home.sections.featuredProjects");
+
+  const translatedData: SectionDataType = {
+    ...homePageFeaturedProjectsSectionData,
+    title: translations("title"),
+    paragraphs: translations.raw("paragraphs"),
+    buttons: homePageFeaturedProjectsSectionData?.buttons?.map((button) => ({
+      ...button,
+      label: translations(`buttons.button-${button.id}.label`),
+    })),
+  };
+
   return (
-    <PageSectionWrapper pageSectionData={homePageFeaturedProjectsSectionData}>
+    <PageSectionWrapper pageSectionData={translatedData}>
       <FeaturedProjects />
     </PageSectionWrapper>
   );

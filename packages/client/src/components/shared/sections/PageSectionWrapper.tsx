@@ -7,6 +7,7 @@ import { FC } from "react";
 import { PageSectionWrapperProps } from "@/core/interfaces";
 // Components
 import LinkButton from "../LinkButton";
+// Hooks
 import { useGetWindowWidth } from "@/hooks";
 
 const PageSectionWrapper: FC<PageSectionWrapperProps> = ({

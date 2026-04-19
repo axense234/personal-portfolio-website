@@ -9,6 +9,10 @@ import LinkButton from "@/components/shared/LinkButton";
 import { useGeneralStore } from "@/zustand/general/context";
 // Data
 import {
+  contactFormMessageLabel,
+  contactFormNameLabel,
+  contactFormOnSubmitButtonLabel,
+  contactFormSubjectLabel,
   defaultContactFormEmail,
   defaultContactFormMessage,
   defaultContactFormName,
@@ -40,7 +44,7 @@ const ContactForm = () => {
       <form className={contactFormStyles.controls}>
         <div className={contactFormStyles.personal}>
           <TextFormControl
-            label="Your Name"
+            label={contactFormNameLabel}
             inputPlaceholder={defaultContactFormName}
             inputType="text"
             onChange={(name: string) =>
@@ -50,7 +54,7 @@ const ContactForm = () => {
             flow="column"
           />
           <TextFormControl
-            label="Your Email"
+            label={contactFormNameLabel}
             inputPlaceholder={defaultContactFormEmail}
             inputType="email"
             onChange={(email: string) =>
@@ -61,7 +65,7 @@ const ContactForm = () => {
           />
         </div>
         <TextFormControl
-          label="Subject"
+          label={contactFormSubjectLabel}
           inputPlaceholder={defaultContactFormSubject}
           inputType="text"
           onChange={(subject: string) =>
@@ -71,7 +75,7 @@ const ContactForm = () => {
           flow="column"
         />
         <TextAreaFormControl
-          label="Message"
+          label={contactFormMessageLabel}
           inputPlaceholder={defaultContactFormMessage}
           onChange={(message: string) =>
             setContactFormDataKeyValue("message", message)
@@ -81,7 +85,7 @@ const ContactForm = () => {
       </form>
       <LinkButton
         colorSpecifier={"warning"}
-        label="Send the Message"
+        label={contactFormOnSubmitButtonLabel}
         size={linkButtonSize}
         buttonType="submit"
         onClick={() => sendEmailWithContactForm(contactFormData)}

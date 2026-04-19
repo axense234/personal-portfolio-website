@@ -1,5 +1,256 @@
 {
-  "HomePage": {
-    "title": "Hello world!"
+  "home": {
+    "sections": {
+      "hero": {
+        "title": "Comănescu Andrei",
+        "subtitle": "Web Developer",
+        "desc": "Full-stack web developer passionate about building websites. Currently studying Computer Science at UBB.",
+        "buttons": {
+          "button-1": {
+            "label": "My Projects"
+          },
+          "button-2": {
+            "label": "My Journey"
+          }
+        }
+      },
+      "aboutTeaser": {
+        "title": "A Bit About Me",
+        "paragraphs": [
+          "As a Computer Science student at UBB and full-stack web developer I work on my projects out of a combination of self-satisfaction and pure enjoyment of the craft.",
+          "Also won a few county level web dev competitions and even got a bronze medal at a national one during my high school years."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "Read More"
+          }
+        }
+      },
+      "featuredProjects": {
+        "title": "Featured Projects",
+        "paragraphs": [
+          "Here are displayed some of my best / favorite web dev projects. Had a lot of fun working on them even tho I most likely consumed a bit too much pepsi max."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "More Projects"
+          }
+        }
+      },
+      "contactTeaser": {
+        "title": "Mayhaps Contact Me?",
+        "paragraphs": [
+          "If there is a will there is a way as they say.",
+          "Also open to internships or other types of work. Also also, I wouldn’t mind collaborating on web dev / python projects."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "Contact Me"
+          },
+          "button-2": {
+            "label": "My Resume"
+          }
+        }
+      },
+      "technicalSkills": {
+        "title": "Technical Skills",
+        "paragraphs": [
+          "A list of the most important technologies I know. Frontend technologies, backend technologies and other tools."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "More Details"
+          }
+        }
+      }
+    }
+  },
+  "projects": {
+    "sections": {
+      "hero": {
+        "title": "My Projects",
+        "subtitle": "effloresced passion",
+        "buttons": {
+          "button-1": {
+            "label": "All Projects"
+          },
+          "button-2": {
+            "label": "Ongoing Projects"
+          }
+        }
+      },
+      "projects": {
+        "title": "Projects",
+        "paragraphs": [
+          "All the projects that I have worked on so far. Through those projects I have learned quite a lot about modern web development, yet I feel like I still don’t know anything. Curious how that works huh."
+        ]
+      },
+      "ongoingProjects": {
+        "title": "Ongoing Projects",
+        "subtitle": "the ones and only"
+      }
+    }
+  },
+  "mealPreps": {
+    "sections": {
+      "hero": {
+        "title": "Meal Preps",
+        "subtitle": "unfathomable meals",
+        "buttons": {
+          "button-1": {
+            "label": "Weekly Meal Prep"
+          },
+          "button-2": {
+            "label": "Meals Gallery"
+          }
+        }
+      }
+    }
+  },
+  "awards": {
+    "sections": {
+      "hero": {
+        "title": "Awards",
+        "subtitle": "shiny stuff",
+        "buttons": {
+          "button-1": {
+            "label": "Bronze Medal Award"
+          },
+          "button-2": {
+            "label": "Highschool Awards"
+          }
+        }
+      },
+      "bronzeMedal": {
+        "title": "Bronze Medal Award",
+        "subtitle": "shiny round thing",
+        "imageAlt": "Bronze Medal Image"
+      },
+      "highschoolAwards": {
+        "title": "Highschool Awards",
+        "paragraphs": [
+          "All my programming (mostly web dev) related highschool awards in chronological order."
+        ]
+      }
+    }
+  },
+  "about": {
+    "sections": {
+      "hero": {
+        "title": "About Me",
+        "subtitle": "information",
+        "desc": "I am a romanian student passionate about web development. Check out my projects, my programing journey and my hobbies.",
+        "buttons": {
+          "button-1": {
+            "label": "My Projects"
+          },
+          "button-2": {
+            "label": "My Journey"
+          },
+          "button-3": {
+            "label": "My Hobbies"
+          }
+        }
+      },
+      "aboutMe": {
+        "title": "Who am I?",
+        "paragraphs": [
+          "My name is Comănescu Andrei, I am a romanian student currently attending the Faculty of Mathematics and Computer Science at Babes-Bolyai University, studying Computer Science in English as an undergraduate.",
+          "In my free time, I usually like doing web development, learning any technologies.  I also like cooking, long walks and playing some games when im free."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "Contact Me"
+          }
+        }
+      },
+      "technicalSkills": {
+        "title": "Technical Skills",
+        "paragraph": [
+          "Here are all the technologies I know with some varying level of expertise."
+        ]
+      },
+      "journey": {
+        "title": "My Journey",
+        "paragraphs": [
+          "My programming journey at large, starting from Python in 2020."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "My Projects"
+          }
+        }
+      },
+      "hobbies": {
+        "title": "My Hobbies",
+        "paragraphs": [
+          "I don’t really have a lot of hobbies, but I really focus on the ones that I have."
+        ]
+      }
+    }
+  },
+  "contact": {
+    "sections": {
+      "hero": {
+        "title": "Contact Me",
+        "subtitle": "communication",
+        "desc": "I am a romanian student passionate about web development. Feel free to contact me for any type of project related reason or just for the fun of it I guess.",
+        "buttons": {
+          "button-1": {
+            "label": "Contact Me"
+          },
+          "button-2": {
+            "label": "Message Me"
+          },
+          "button-3": {
+            "label": "My Resume"
+          }
+        }
+      },
+      "methods": {
+        "title": "Methods & Resume",
+        "paragraphs": [
+          "Here are all the methods you can contact me. Also my resume is available for download as a PDF."
+        ],
+        "labels": {
+          "email": "Professional Email:",
+          "externals": "Externals:",
+          "resume": "Resume (PDF):",
+          "button": "My Resume"
+        }
+      },
+      "messageMe": {
+        "title": "Message Me",
+        "paragraphs": [
+          "Through this form you can send me a message through email. I usually respond within 24 hours."
+        ]
+      }
+    }
+  },
+  "dashboard": {},
+  "layout": {},
+  "common": {
+    "weeklyMealPrep": {
+      "title": "Weekly Meal Prep",
+      "paragraphs": [
+        "I do indeed like cooking up some meals in advance at least once a week. It tastes even better than it looks. Yummy. Very Yummy Yes."
+      ],
+      "buttons": {
+        "button-1": {
+          "label": "Meals Gallery"
+        }
+      }
+    },
+    "projectExternals": {
+      "githubLabel": "{name} Source Code",
+      "websiteLabel": "{name} Website",
+      "swaggerApiDocsLabel": "{name} Swagger Api Docs",
+      "buttonLabel": "See More"
+    },
+    "mealPrepViewDetails": {
+      "coverageLabel": "Coverage:",
+      "coverageValue": "{coverage} days",
+      "ingredientsUsedLabel": "Ingredients Used:"
+    }
   }
 }

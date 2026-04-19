@@ -1,5 +1,251 @@
 {
-  "HomePage": {
-    "title": "Hello world!"
+  "home": {
+    "sections": {
+      "hero": {
+        "title": "Comănescu Andrei",
+        "subtitle": "Développeur Web",
+        "desc": "Développeur full-stack passionné par la création de sites web. Actuellement étudiant en informatique à l'UBB.",
+        "buttons": {
+          "button-1": {
+            "label": "Mes Projets"
+          },
+          "button-2": {
+            "label": "Mon Parcours"
+          }
+        }
+      },
+      "aboutTeaser": {
+        "title": "Un Peu À Propos De Moi",
+        "paragraphs": [
+          "En tant qu'étudiant en informatique à l'UBB et développeur web full-stack, je travaille sur mes projets par une combinaison de satisfaction personnelle et de pur plaisir du métier.",
+          "J'ai également remporté quelques compétitions de développement web au niveau départemental et même obtenu une médaille de bronze au niveau national durant mes années de lycée."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "En Savoir Plus"
+          }
+        }
+      },
+      "featuredProjects": {
+        "title": "Projets Vedettes",
+        "paragraphs": [
+          "Voici quelques-uns de mes meilleurs projets de développement web / préférés. J'ai pris beaucoup de plaisir à travailler dessus même si j'ai très probablement consommé un peu trop de pepsi max."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "Plus De Projets"
+          }
+        }
+      },
+      "contactTeaser": {
+        "title": "Peut-être Me Contacter ?",
+        "paragraphs": [
+          "Comme on dit, quand on veut, on peut.",
+          "Également ouvert aux stages ou autres types de travail. Aussi, ça ne me dérangerait pas de collaborer sur des projets web / python."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "Me Contacter"
+          },
+          "button-2": {
+            "label": "Mon CV"
+          }
+        }
+      },
+      "technicalSkills": {
+        "title": "Compétences Techniques",
+        "paragraphs": [
+          "Une liste des technologies les plus importantes que je connais. Technologies frontend, technologies backend et autres outils."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "Plus De Détails"
+          }
+        }
+      }
+    }
+  },
+  "projects": {
+    "sections": {
+      "hero": {
+        "title": "Mes Projets",
+        "subtitle": "passion épanouie",
+        "buttons": {
+          "button-1": {
+            "label": "Tous Les Projets"
+          },
+          "button-2": {
+            "label": "Projets En Cours"
+          }
+        }
+      },
+      "projects": {
+        "title": "Projets",
+        "paragraphs": [
+          "Tous les projets sur lesquels j'ai travaillé jusqu'à présent. À travers ces projets, j'ai beaucoup appris sur le développement web moderne, mais j'ai l'impression de ne encore rien savoir. Curieux comment ça fonctionne hein."
+        ]
+      },
+      "ongoingProjects": {
+        "title": "Projets En Cours",
+        "subtitle": "les seuls et uniques"
+      }
+    }
+  },
+  "mealPreps": {
+    "sections": {
+      "hero": {
+        "title": "Préparations De Repas",
+        "subtitle": "repas insondables",
+        "buttons": {
+          "button-1": {
+            "label": "Préparation Hebdomadaire"
+          },
+          "button-2": {
+            "label": "Galerie De Repas"
+          }
+        }
+      }
+    }
+  },
+  "awards": {
+    "sections": {
+      "hero": {
+        "title": "Récompenses",
+        "subtitle": "trucs brillants",
+        "buttons": {
+          "button-1": {
+            "label": "Médaille De Bronze"
+          },
+          "button-2": {
+            "label": "Récompenses Lycée"
+          }
+        }
+      },
+      "bronzeMedal": {
+        "title": "Médaille De Bronze",
+        "subtitle": "truc rond et brillant",
+        "imageAlt": "Image Médaille De Bronze"
+      },
+      "highschoolAwards": {
+        "title": "Récompenses Du Lycée",
+        "paragraphs": [
+          "Toutes mes récompenses de lycée liées à la programmation (principalement développement web) dans l'ordre chronologique."
+        ]
+      }
+    }
+  },
+  "about": {
+    "sections": {
+      "hero": {
+        "title": "À Propos De Moi",
+        "subtitle": "informations",
+        "desc": "Je suis un étudiant roumain passionné par le développement web. Découvrez mes projets, mon parcours en programmation et mes loisirs.",
+        "buttons": {
+          "button-1": {
+            "label": "Mes Projets"
+          },
+          "button-2": {
+            "label": "Mon Parcours"
+          },
+          "button-3": {
+            "label": "Mes Loisirs"
+          }
+        }
+      },
+      "aboutMe": {
+        "title": "Qui suis-je ?",
+        "paragraphs": [
+          "Je m'appelle Comănescu Andrei, je suis un étudiant roumain actuellement à la Faculté de Mathématiques et d'Informatique de l'Université Babes-Bolyai, étudiant en licence Informatique en anglais.",
+          "Pendant mon temps libre, j'aime généralement faire du développement web, apprendre de nouvelles technologies. J'aime aussi cuisiner, faire de longues promenades et jouer à des jeux quand je suis libre."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "Me Contacter"
+          }
+        }
+      },
+      "technicalSkills": {
+        "title": "Compétences Techniques",
+        "paragraph": [
+          "Voici toutes les technologies que je connais avec différents niveaux d'expertise."
+        ]
+      },
+      "journey": {
+        "title": "Mon Parcours",
+        "paragraphs": [
+          "Mon parcours en programmation dans son ensemble, à commencer par Python en 2020."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "Mes Projets"
+          }
+        }
+      },
+      "hobbies": {
+        "title": "Mes Loisirs",
+        "paragraphs": [
+          "Je n'ai pas énormément de loisirs, mais je me concentre vraiment sur ceux que j'ai."
+        ]
+      }
+    }
+  },
+  "contact": {
+    "sections": {
+      "hero": {
+        "title": "Me Contacter",
+        "subtitle": "communication",
+        "desc": "Je suis un étudiant roumain passionné par le développement web. N'hésitez pas à me contacter pour toute raison liée à un projet ou juste pour le plaisir, je suppose.",
+        "buttons": {
+          "button-1": {
+            "label": "Me Contacter"
+          },
+          "button-2": {
+            "label": "M'Envoyer Un Message"
+          },
+          "button-3": {
+            "label": "Mon CV"
+          }
+        }
+      },
+      "methods": {
+        "title": "Méthodes & CV",
+        "paragraphs": [
+          "Voici toutes les méthodes par lesquelles vous pouvez me contacter. Mon CV est également disponible en téléchargement au format PDF."
+        ],
+        "labels": {
+          "email": "Email Professionnel :",
+          "externals": "Externes :",
+          "resume": "CV (PDF) :",
+          "button": "Mon CV"
+        }
+      },
+      "messageMe": {
+        "title": "M'Envoyer Un Message",
+        "paragraphs": [
+          "Via ce formulaire, vous pouvez m'envoyer un message par email. Je réponds généralement dans les 24 heures."
+        ]
+      }
+    }
+  },
+  "dashboard": {},
+  "layout": {},
+  "common": {
+    "weeklyMealPrep": {
+      "title": "Préparation Hebdomadaire",
+      "paragraphs": [
+        "J'aime effectivement préparer des repas à l'avance au moins une fois par semaine. C'est encore meilleur que ça en a l'air. Miam. Très Miam Oui."
+      ],
+      "buttons": {
+        "button-1": {
+          "label": "Galerie De Repas"
+        }
+      }
+    },
+    "projectExternals": {
+      "githubLabel": "{name} Code Source",
+      "websiteLabel": "{name} Site Web",
+      "swaggerApiDocsLabel": "{name} Documentation API Swagger",
+      "buttonLabel": "Voir Plus"
+    }
   }
 }

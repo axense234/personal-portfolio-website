@@ -8,9 +8,11 @@ import IconComponent from "../../IconComponent";
 // SCSS
 import projectExternalsStyles from "@/scss/components/shared/entity/project/ProjectExternals.module.scss";
 // Data
-import { websiteLogoPlaceholder } from "@/data";
+import { projectExternalsDocsIconSrc, websiteLogoPlaceholder } from "@/data";
 // Hooks
 import { useGetWindowWidth } from "@/hooks";
+// Translations
+import { useTranslations } from "next-intl";
 
 const ProjectExternals: FC<Project> = ({
   github_url,
@@ -19,6 +21,8 @@ const ProjectExternals: FC<Project> = ({
   website_url,
   docs_url,
 }) => {
+  const translations = useTranslations("common.projectExternals");
+
   const windowWidth = useGetWindowWidth();
   const iconSize = windowWidth && windowWidth <= 900 ? 24 : 32;
 
@@ -27,8 +31,8 @@ const ProjectExternals: FC<Project> = ({
       {github_url && (
         <IconComponent
           dest={github_url}
-          icon_src="https://res.cloudinary.com/birthdayreminder/image/upload/v1772997441/Personal%20Website/tech-icons/other/github_haotje.png"
-          label={`${name} Source Code`}
+          icon_src={projectExternalsDocsIconSrc}
+          label={translations("githubLabel", { name })}
           height={iconSize}
           id=""
         />
@@ -39,7 +43,7 @@ const ProjectExternals: FC<Project> = ({
           icon_src={
             website_logo_url ? website_logo_url : websiteLogoPlaceholder
           }
-          label={`${name} Website`}
+          label={translations("websiteLabel", { name })}
           height={iconSize}
           id=""
         />
@@ -47,8 +51,8 @@ const ProjectExternals: FC<Project> = ({
       {docs_url && (
         <IconComponent
           dest={docs_url}
-          icon_src="/misc/swagger.png"
-          label={`${name} Swagger Api Docs`}
+          icon_src={projectExternalsDocsIconSrc}
+          label={translations("swaggerApiDocsLabel", { name })}
           height={iconSize}
           id=""
         />

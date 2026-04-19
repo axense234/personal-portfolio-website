@@ -8,6 +8,8 @@ import { useGeneralStore } from "@/zustand/general/context";
 import { karla } from "@/app/fonts";
 // React Icons
 import { FaMoon } from "react-icons/fa";
+// Data
+import { colorSchemeToggleLabelTitle } from "@/data";
 
 const ColorSchemeToggle: FC = () => {
   const { colorTheme, toggleColorTheme } = useGeneralStore((state) => state);
@@ -23,8 +25,8 @@ const ColorSchemeToggle: FC = () => {
         style={{ color: labelTextColor }}
         className={karla.className}
         htmlFor="cst"
-        title={`Toggle Color Modes`}
-        aria-label={`Toggle Color Modes`}
+        title={colorSchemeToggleLabelTitle}
+        aria-label={colorSchemeToggleLabelTitle}
       >
         {labelText}
       </label>

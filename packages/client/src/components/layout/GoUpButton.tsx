@@ -5,6 +5,8 @@ import goUpButtonStyles from "@/scss/components/layout/GoUpButton.module.scss";
 import { FaChevronUp } from "react-icons/fa";
 // Hooks
 import { useHandleWindowScroll } from "@/hooks";
+// Data
+import { goUpButtonTitle } from "@/data";
 
 const GoUpButton = () => {
   const isVisible = useHandleWindowScroll(2);
@@ -22,8 +24,8 @@ const GoUpButton = () => {
         cursor: "pointer",
       }}
       onClick={scrollToTop}
-      aria-label="Go Up"
-      title="Go Up"
+      aria-label={goUpButtonTitle}
+      title={goUpButtonTitle}
     >
       <FaChevronUp />
     </div>

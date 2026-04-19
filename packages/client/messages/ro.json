@@ -1,5 +1,251 @@
 {
-  "HomePage": {
-    "title": "Hello world!"
+  "home": {
+    "sections": {
+      "hero": {
+        "title": "Comănescu Andrei",
+        "subtitle": "Dezvoltator Web",
+        "desc": "Student român pasionat de dezvoltarea web, urmând în prezent Facultatea de Matematică și Informatică din cadrul Universității Babeș-Bolyai, unde studiez Informatica în limba engleză.",
+        "buttons": {
+          "button-1": {
+            "label": "Proiecte"
+          },
+          "button-2": {
+            "label": "Călătoria mea"
+          }
+        }
+      },
+      "aboutTeaser": {
+        "title": "Un Pic Despre Mine",
+        "paragraphs": [
+          "În calitate de student în Informatică la UBB și dezvoltator web full-stack, lucrez la proiectele mele dintr-o combinație de satisfacție de sine și plăcere pură a meseriei.",
+          "Am câștigat, de asemenea, câteva competiții de dezvoltare web la nivel de județ și chiar o medalie de bronz la o olimpiadă națională în anii mei de liceu."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "Citește mai mult"
+          }
+        }
+      },
+      "featuredProjects": {
+        "title": "Cele Mai Bune Proiecte",
+        "paragraphs": [
+          "Aici sunt afișate unele dintre cele mai bune / preferate proiecte de dezvoltare web de ale mele, probabil consumând puțin cam prea mult pepsi max in procesul de creație."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "Mai multe Proiecte"
+          }
+        }
+      },
+      "contactTeaser": {
+        "title": "Contactați-mă",
+        "paragraphs": [
+          "Dacă există voință, există o cale, așa cum se spune.",
+          "De asemenea, sunt deschis pentru stagii de practică sau alte tipuri de muncă."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "Contactați-mă"
+          },
+          "button-2": {
+            "label": "CV-ul meu"
+          }
+        }
+      },
+      "technicalSkills": {
+        "title": "Competențe Tehnice",
+        "paragraphs": [
+          "O listă cu cele mai importante tehnologii pe care le cunosc. Tehnologii frontend, tehnologii backend și altele."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "Mai Multe Detalii"
+          }
+        }
+      }
+    }
+  },
+  "projects": {
+    "sections": {
+      "hero": {
+        "title": "Proiectele Mele",
+        "subtitle": "pasiune înflorită",
+        "buttons": {
+          "button-1": {
+            "label": "Toate Proiectele"
+          },
+          "button-2": {
+            "label": "Proiecte în derulare"
+          }
+        }
+      },
+      "projects": {
+        "title": "Proiecte",
+        "paragraphs": [
+          "Toate proiectele la care am lucrat până acum. Prin intermediul acestor proiecte am învățat destul de multe despre dezvoltarea web modernă."
+        ]
+      },
+      "ongoingProjects": {
+        "title": "Proiecte în Derulare ",
+        "subtitle": "proiecte în desfășurare"
+      }
+    }
+  },
+  "mealPreps": {
+    "sections": {
+      "hero": {
+        "title": "Meal Preps",
+        "subtitle": "mese de neconceput",
+        "buttons": {
+          "button-1": {
+            "label": "Meal Preps"
+          },
+          "button-2": {
+            "label": "Galeria Meselor"
+          }
+        }
+      }
+    }
+  },
+  "awards": {
+    "sections": {
+      "hero": {
+        "title": "Premii",
+        "subtitle": "chestii strălucitoare",
+        "buttons": {
+          "button-1": {
+            "label": "Medalia de Bronz"
+          },
+          "button-2": {
+            "label": "Premii din Liceu"
+          }
+        }
+      },
+      "bronzeMedal": {
+        "title": "Medalia de Bronz",
+        "subtitle": "rotundă și strălucitoare",
+        "imageAlt": "Imagine cu Medalia de Bronz"
+      },
+      "highschoolAwards": {
+        "title": "Premii din Liceu",
+        "paragraphs": [
+          "Toate premiile mele din liceu legate de programare (în mare parte dezvoltare web), în ordine cronologică."
+        ]
+      }
+    }
+  },
+  "about": {
+    "sections": {
+      "hero": {
+        "title": "Despre Mine",
+        "subtitle": "informații",
+        "desc": "Sunt un student român pasionat de dezvoltare web. Vezi proiectele mele, parcursul meu în programare și hobby-urile mele.",
+        "buttons": {
+          "button-1": {
+            "label": "Proiectele Mele"
+          },
+          "button-2": {
+            "label": "Călătoria Mea"
+          },
+          "button-3": {
+            "label": "Hobby-urile Mele"
+          }
+        }
+      },
+      "aboutMe": {
+        "title": "Cine sunt?",
+        "paragraphs": [
+          "Numele meu este Comănescu Andrei, sunt student român, urmând în prezent Facultatea de Matematică și Informatică din cadrul Universității Babeș-Bolyai, unde studiez Informatica în limba engleză.",
+          "În timpul liber, de obicei îmi place să practic dezvoltarea web, să învăț orice tip de tehnologie. Îmi place, de asemenea, să gătesc, să fac plimbări lungi și să mă joc niște jocuri când am timp liber (dacă se întâmplă)."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "Contactați-mă"
+          }
+        }
+      },
+      "technicalSkills": {
+        "title": "Competențe Tehnice",
+        "paragraph": [
+          "Iată toate tehnologiile pe care le cunosc, cu diverse niveluri de expertiză."
+        ]
+      },
+      "journey": {
+        "title": "Călătoria Mea",
+        "paragraphs": [
+          "Călătoria mea în programare în general, începând cu Python în 2020."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "Proiectele Mele"
+          }
+        }
+      },
+      "hobbies": {
+        "title": "Hobby-urile Mele",
+        "paragraphs": [
+          "Nu am prea multe hobby-uri, dar mă concentrez mai mult pe cele pe care le am."
+        ]
+      }
+    }
+  },
+  "contact": {
+    "sections": {
+      "hero": {
+        "title": "Contactați-mă",
+        "subtitle": "comunicare",
+        "desc": "Sunt un student român pasionat de dezvoltare web. Nu ezitați să mă contactați pentru orice tip de proiect sau doar de dragul de a mă contacta.",
+        "buttons": {
+          "button-1": {
+            "label": "Contactați-mă"
+          },
+          "button-2": {
+            "label": "Trimiteți-mi un Mesaj"
+          },
+          "button-3": {
+            "label": "CV-ul meu"
+          }
+        }
+      },
+      "methods": {
+        "title": "Metode de Contact & CV",
+        "paragraphs": [
+          "Iată toate metodele prin care mă puteți contacta. De asemenea, CV-ul meu este disponibil pentru descărcare în format PDF."
+        ],
+        "labels": {
+          "email": "E-mail profesional:",
+          "externals": "Externe:",
+          "resume": "CV (PDF):",
+          "button": "CV-ul meu"
+        }
+      },
+      "messageMe": {
+        "title": "Trimiteți-mi un Mesaj",
+        "paragraphs": [
+          "Prin intermediul acestui formular îmi puteți trimite un mesaj prin e-mail. De obicei, răspund în termen de 24 de ore."
+        ]
+      }
+    }
+  },
+  "dashboard": {},
+  "layout": {},
+  "common": {
+    "weeklyMealPrep": {
+      "title": "Meal Prep-ul Săptămânal",
+      "paragraphs": [
+        "Îmi place într-adevăr să gătesc niște mese în avans, cel puțin o dată pe săptămână. Au un gust mai bun decât arată. Delicios."
+      ],
+      "buttons": {
+        "button-1": {
+          "label": "Galeria Meselor"
+        }
+      }
+    },
+    "projectExternals": {
+      "githubLabel": "{name} Cod Sursă",
+      "websiteLabel": "{name} Site Web",
+      "swaggerApiDocsLabel": "{name} Documentație API Swagger",
+      "buttonLabel": "Vezi Mai Mult"
+    }
   }
 }

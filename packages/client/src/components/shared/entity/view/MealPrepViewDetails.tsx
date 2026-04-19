@@ -6,11 +6,21 @@ import { FC } from "react";
 import { MealPrepViewDetailsProps } from "@/core/interfaces";
 // Helpers
 import { dateToCustomFormat, ingredientToText } from "@/helpers";
+// Data
+import {
+  mealPrepViewDetailsCoverageLabel,
+  mealPrepViewDetailsCoverageValue,
+  mealPrepViewDetailsIngredientsUsedLabel,
+} from "@/data";
+import { useTranslations } from "next-intl";
 
 const MealPrepViewDetails: FC<MealPrepViewDetailsProps> = ({
   currentMealPrep,
 }) => {
   const { name, cookedAt, coverage, ingredients } = currentMealPrep;
+
+  const translations = useTranslations("common.mealPrepViewDetails");
+
   return (
     <div className={mealPrepDetailsStyles.container}>
       <div className={mealPrepDetailsStyles.intro}>
@@ -20,11 +30,11 @@ const MealPrepViewDetails: FC<MealPrepViewDetailsProps> = ({
         <p>{dateToCustomFormat(new Date(cookedAt))}</p>
       </div>
       <div className={mealPrepDetailsStyles.coverage}>
-        <h5>Coverage:</h5>
-        <p>{coverage} days</p>
+        <h5>{translations("coverageLabel")}</h5>
+        <p>{translations("coverageValue", { coverage })}</p>
       </div>
       <div className={mealPrepDetailsStyles.ingredientsWrapper}>
-        <h5>Ingredients Used:</h5>
+        <h5>{translations("ingredientsUsedLabel")}</h5>
         <ul className={mealPrepDetailsStyles.ingredients}>
           {ingredients?.map((ingredient) => {
             const ingredientLabel = ingredientToText(ingredient);

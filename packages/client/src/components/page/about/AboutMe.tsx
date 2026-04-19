@@ -6,14 +6,32 @@ import aboutMeStyles from "@/scss/components/page/about/AboutMe.module.scss";
 // Components
 import LinkButton from "@/components/shared/LinkButton";
 // Data
-import { aboutPageAboutMeSectionData } from "@/data";
+import {
+  aboutPageAboutMeSectionData,
+  imagePlaceholderTextAlt,
+  imagePlaceholderTextSrc,
+  imagePlaceholderTextTitle,
+} from "@/data";
 // Hooks
 import { useGetWindowWidth } from "@/hooks";
+// Translations
+import { useTranslations } from "next-intl";
+// Types
+import { SectionDataType } from "@/core/types";
 
 const AboutMe = () => {
-  const { paragraphs, title, buttons } = aboutPageAboutMeSectionData;
-
   const windowWidth = useGetWindowWidth();
+  const translations = useTranslations("about.sections.aboutMe");
+
+  const translatedData: SectionDataType = {
+    ...aboutPageAboutMeSectionData,
+    title: translations("title"),
+    paragraphs: translations.raw("paragraphs"),
+    buttons: aboutPageAboutMeSectionData?.buttons?.map((button) => ({
+      ...button,
+      label: translations(`buttons.button-${button.id}.label`),
+    })),
+  };
 
   let linkButtonSize: "large" | "small" | "medium" = "large";
   if (windowWidth && windowWidth <= 600) {
@@ -25,15 +43,18 @@ const AboutMe = () => {
   } else {
     linkButtonSize = "large";
   }
+
+  const { paragraphs, title, buttons } = translatedData;
+
   return (
     <section className={aboutMeStyles.container}>
       <Image
-        alt="A Cool Looking Image I Guess Man"
-        src={"/misc/placeholder.jpg"}
+        alt={imagePlaceholderTextAlt}
+        src={imagePlaceholderTextSrc}
         width={400}
         height={400}
-        title="Placeholder: Change this"
-        aria-label="Placeholder: Change this"
+        title={imagePlaceholderTextTitle}
+        aria-label={imagePlaceholderTextTitle}
       />
       <div className={aboutMeStyles.content}>
         <div className={aboutMeStyles.intro}>

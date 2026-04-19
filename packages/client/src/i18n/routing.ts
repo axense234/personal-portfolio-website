@@ -50,7 +50,7 @@ export const routing = defineRouting({
     },
 
     "/projects": {
-      ro: "/proitecte",
+      ro: "/proiecte",
       en: "/projects",
       fr: "/projets",
       de: "/projekte",

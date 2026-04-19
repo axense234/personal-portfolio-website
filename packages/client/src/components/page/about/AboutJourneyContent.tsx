@@ -2,7 +2,10 @@
 // SCSS
 import aboutJourneyContentStyles from "@/scss/components/page/about/AboutJourneyContent.module.scss";
 // Data
-import { aboutPageJourneyContentData } from "@/data";
+import {
+  aboutPageJourneyContentData,
+  aboutPageJourneyContentLinkLabel,
+} from "@/data";
 // Zustand
 import { useGetTech, useGetWindowWidth } from "@/hooks";
 // Next
@@ -97,7 +100,7 @@ const AboutJourneyContent = () => {
                       className={aboutJourneyContentStyles.external}
                       key={external_link.id}
                     >
-                      <span>Check out</span>
+                      <span>{aboutPageJourneyContentLinkLabel}</span>
                       <Link
                         href={external_link.link}
                         style={{ color: linkButtonColor }}

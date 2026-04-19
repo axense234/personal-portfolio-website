@@ -13,6 +13,8 @@ import { karla } from "@/app/fonts";
 import LinkButton from "../LinkButton";
 // Hooks
 import { useGetWindowWidth } from "@/hooks";
+// Data
+import { imagePlaceholderTextAlt, imagePlaceholderTextTitle } from "@/data";
 
 const CommonPageHero: FC<CommonPageHeroProps> = ({
   title,
@@ -22,6 +24,9 @@ const CommonPageHero: FC<CommonPageHeroProps> = ({
   buttons,
   titleHeadingUsed = "h1",
 }) => {
+  const windowWidth = useGetWindowWidth();
+  const imagePosition = windowWidth && windowWidth <= 1500 ? "top" : "bottom";
+
   const titleShown =
     titleHeadingUsed === "h1" ? (
       <h1 title={title} aria-label={title}>
@@ -32,9 +37,6 @@ const CommonPageHero: FC<CommonPageHeroProps> = ({
         {title}
       </h2>
     );
-
-  const windowWidth = useGetWindowWidth();
-  const imagePosition = windowWidth && windowWidth <= 1500 ? "top" : "bottom";
 
   let reservedImageSpace = 400;
 
@@ -56,12 +58,12 @@ const CommonPageHero: FC<CommonPageHeroProps> = ({
     <section className={commonPageHeroStyles.container}>
       {imagePosition === "top" && (
         <Image
-          alt="A Cool Looking Image I Guess Man"
+          alt={imagePlaceholderTextAlt}
           src={image}
           width={reservedImageSpace}
           height={reservedImageSpace}
-          title="Placeholder: This is where an eventual cool picture of myself is going to be"
-          aria-label="Placeholder: This is where an eventual cool picture of myself is going to be"
+          title={imagePlaceholderTextTitle}
+          aria-label={imagePlaceholderTextTitle}
         />
       )}
       <div className={commonPageHeroStyles.content}>

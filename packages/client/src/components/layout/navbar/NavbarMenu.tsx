@@ -6,7 +6,11 @@ import navbarMenuStyles from "@/scss/components/layout/navbar/NavbarMenu.module.
 import { TiDelete } from "react-icons/ti";
 import { LuSquareMenu } from "react-icons/lu";
 // Data
-import { navLinks } from "@/data";
+import {
+  navbarMenuOnCloseOverlayTitle,
+  navbarMenuOnOpenOverlayTitle,
+  navLinks,
+} from "@/data";
 // Link
 import { Link } from "@/i18n/navigation";
 
@@ -17,8 +21,8 @@ const NavbarMenu: FC = () => {
     return (
       <div className={navbarMenuStyles.overlay}>
         <TiDelete
-          title="Close Overlay"
-          aria-label="Close Overlay"
+          title={navbarMenuOnCloseOverlayTitle}
+          aria-label={navbarMenuOnCloseOverlayTitle}
           onClick={() => setIsOpen(false)}
         />
         <ul className={navbarMenuStyles.pages}>
@@ -44,8 +48,8 @@ const NavbarMenu: FC = () => {
   return (
     <div className={navbarMenuStyles.menu}>
       <LuSquareMenu
-        title="Open Overlay"
-        aria-label="Open Overlay"
+        title={navbarMenuOnOpenOverlayTitle}
+        aria-label={navbarMenuOnOpenOverlayTitle}
         onClick={() => setIsOpen(true)}
       />
     </div>

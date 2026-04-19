@@ -1,53 +1,49 @@
 // Types
 import { GeneralState } from "@/core/types";
 // Data
-import { defaultContactFormData } from "@/data";
+import {
+  defaultColorTheme,
+  defaultContactFormData,
+  defaultCurrentMealPrepId,
+  defaultCurrentMealPrepImage,
+  defaultCurrentOngoingProjectId,
+  defaultCurrentOngoingProjectImage,
+  defaultCurrentProjectId,
+  defaultCurrentProjectImage,
+  defaultCurrentTechSkill,
+  defaultCurrentTechSkillCategory,
+  defaultGetMealPrepsData,
+  defaultGetProjectsData,
+  defaultGetWeeklyMealPrepsData,
+  defaultProjectsQueryData,
+  defaultTechSkills,
+  defaultWeeklyMealPrepCurrentImageIndex,
+} from "@/data";
 
 export const defaultInitState: GeneralState = {
-  colorTheme: "dark",
+  colorTheme: defaultColorTheme,
 
-  weeklyMealPrepCurrentImageIndex: 0,
+  weeklyMealPrepCurrentImageIndex: defaultWeeklyMealPrepCurrentImageIndex,
 
-  currentTechSkillCategory: "FRONTEND",
-  currentTechSkill: undefined,
+  currentTechSkillCategory: defaultCurrentTechSkillCategory,
+  currentTechSkill: defaultCurrentTechSkill,
 
-  techSkills: [],
+  techSkills: defaultTechSkills,
 
-  getProjectsData: { isError: false, isLoading: true, projects: [] },
-  getMealPrepsData: { isError: false, isLoading: true, mealPreps: [] },
-  getWeeklyMealPrepData: {
-    isError: false,
-    isLoading: true,
-    mealPrep: undefined,
-  },
+  getProjectsData: defaultGetProjectsData,
+  getMealPrepsData: defaultGetMealPrepsData,
+  getWeeklyMealPrepData: defaultGetWeeklyMealPrepsData,
 
-  currentProjectId: "",
-  currentOngoingProjectId: "",
+  currentProjectId: defaultCurrentProjectId,
+  currentOngoingProjectId: defaultCurrentOngoingProjectId,
 
-  currentProjectImage: "",
-  currentOngoingProjectImage: "",
+  currentProjectImage: defaultCurrentProjectImage,
+  currentOngoingProjectImage: defaultCurrentOngoingProjectImage,
 
-  currentMealPrepId: "",
-  currentMealPrepImage: "",
+  currentMealPrepId: defaultCurrentMealPrepId,
+  currentMealPrepImage: defaultCurrentMealPrepImage,
 
   contactFormData: defaultContactFormData,
 
-  projectsQueryData: {
-    search: {
-      current: "",
-      searchFormControlData: (
-        current: string,
-        setter: (value: string) => void,
-      ) => ({
-        inputPlaceholder: "VitalPrep",
-        label: "Search",
-        inputType: "text",
-        flow: "row",
-        value: current,
-        onChange: setter,
-      }),
-    },
-    sortByTest: "",
-    filterValues: [],
-  },
+  projectsQueryData: defaultProjectsQueryData,
 };

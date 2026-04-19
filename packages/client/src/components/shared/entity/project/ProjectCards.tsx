@@ -1,5 +1,9 @@
 // Data
-import { buttonColors, projectCardsNoProjectsFoundMessage } from "@/data";
+import {
+  buttonColors,
+  projectCardsNoProjectsFoundMessage,
+  projectCardsNoProjectsFoundTitle,
+} from "@/data";
 // Helpers
 import { adaptProjectToCard } from "@/helpers";
 // Components
@@ -7,15 +11,25 @@ import Card from "../Card";
 // SCSS
 import projectCardsStyles from "@/scss/components/shared/entity/project/ProjectCards.module.scss";
 // Interfaces
-import { ProjectCardsProps } from "@/core/interfaces";
+import {
+  CardProps,
+  LinkButtonProps,
+  ProjectCardsProps,
+} from "@/core/interfaces";
 // React
 import { FC } from "react";
+import { useTranslations } from "next-intl";
 
 const ProjectCards: FC<ProjectCardsProps> = ({ projects, useGrid }) => {
+  const translations = useTranslations("common.projectExternals");
+
   if (projects.length < 1) {
     return (
       <div className={projectCardsStyles.zeroProjects}>
-        <p title="Hello" aria-label="Hello">
+        <p
+          title={projectCardsNoProjectsFoundTitle}
+          aria-label={projectCardsNoProjectsFoundTitle}
+        >
           {projectCardsNoProjectsFoundMessage}
         </p>
       </div>
@@ -33,9 +47,22 @@ const ProjectCards: FC<ProjectCardsProps> = ({ projects, useGrid }) => {
         const buttonColor = buttonColors[buttonColorsCurrentColorIndex];
 
         const cardProps = adaptProjectToCard(project, buttonColor);
+
+        const translatedCardProps: CardProps = {
+          ...cardProps,
+          externals: cardProps.externals?.map((external) => ({
+            ...external,
+            label: translations("githubLabel", { name: project.name }),
+          })),
+          button: {
+            ...(cardProps.button as LinkButtonProps),
+            label: translations("buttonLabel"),
+          },
+        };
+
         return (
           <li key={project.id}>
-            <Card {...cardProps} />;
+            <Card {...translatedCardProps} />;
           </li>
         );
       })}

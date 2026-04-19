@@ -13,9 +13,30 @@ import PageSectionWrapper from "@/components/shared/sections/PageSectionWrapper"
 // Hooks
 import { useCalculateEntityViewImagesProportions } from "@/hooks";
 import { useGetWindowWidth } from "@/hooks/general/useGetWindowWidth";
+// Translations
+import { useTranslations } from "next-intl";
+// Types
+import { SectionDataType } from "@/core/types";
 
 const AwardsBronzeMedal = () => {
   const { getProjectsData } = useGeneralStore((state) => state);
+
+  const translations = useTranslations("awards.sections.bronzeMedal");
+
+  const translatedData: SectionDataType = {
+    ...awardsPageBronzeMedalSectionData,
+    title: translations("title"),
+    paragraphs: translations.has("paragraphs")
+      ? translations.raw("paragraphs")
+      : undefined,
+    subtitle: translations.has("subtitle")
+      ? translations.raw("subtitle")
+      : undefined,
+    buttons: awardsPageBronzeMedalSectionData?.buttons?.map((button) => ({
+      ...button,
+      label: translations(`buttons.button-${button.id}.label`),
+    })),
+  };
 
   const bronzeMedalProject = getProjectsData?.projects?.find((project) =>
     project.topics.includes("BRONZE_MEDAL"),
@@ -32,13 +53,13 @@ const AwardsBronzeMedal = () => {
   }
 
   return (
-    <PageSectionWrapper pageSectionData={awardsPageBronzeMedalSectionData}>
+    <PageSectionWrapper pageSectionData={translatedData}>
       <div className={awardsBronzeMedalStyles.content}>
         <Image
           width={reservedImageAmount.height}
           height={reservedImageAmount.width}
           src={bronzeMedalImageSrc}
-          alt="Bronze Medal Image"
+          alt={translations("imageAlt")}
         />
         <ProjectViewDetails
           project={bronzeMedalProject}

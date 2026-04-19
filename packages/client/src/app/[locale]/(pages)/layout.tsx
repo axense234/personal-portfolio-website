@@ -2,7 +2,6 @@
 // Components
 import Navbar from "@/components/layout/navbar/Navbar";
 import Footer from "@/components/layout/footer/Footer";
-import ConstructionBanner from "@/components/layout/ConstructionBanner";
 import GoUpButton from "@/components/layout/GoUpButton";
 // SCSS
 import pagesLayoutStyles from "@/scss/components/layout/PagesLayout.module.scss";
@@ -19,7 +18,6 @@ const PagesLayout = ({ children }: { children: React.ReactNode }) => {
       data-theme={colorTheme}
       className={`${pagesLayoutStyles.appContainer} ${manrope.className}`}
     >
-      <ConstructionBanner />
       <Navbar />
       {children}
       <GoUpButton />

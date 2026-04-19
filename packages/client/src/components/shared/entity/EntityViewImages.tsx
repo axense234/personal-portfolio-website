@@ -14,6 +14,8 @@ import {
   useCalculateEntityViewImagesProportions,
   useGetWindowWidth,
 } from "@/hooks";
+// Data
+import { entityViewImagesImageAlt } from "@/data";
 
 const EntityViewImages: FC<EntityViewImagesProps> = ({
   images,
@@ -39,7 +41,7 @@ const EntityViewImages: FC<EntityViewImagesProps> = ({
         width={reservedImageAmount.width}
         height={reservedImageAmount.height}
         src={imageUsed}
-        alt={"TODO"}
+        alt={entityViewImagesImageAlt}
       />
       <EntityNavigationDots
         currentEntityId={imageUsed}

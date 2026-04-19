@@ -11,6 +11,14 @@ import { FC } from "react";
 import { ProjectViewDetailsProps } from "@/core/interfaces";
 // Hooks
 import { useGetWindowWidth } from "@/hooks";
+// Data
+import {
+  projectViewDetailsAwardsLabel,
+  projectViewDetailsCTADest,
+  projectViewDetailsCTALabel,
+  projectViewDetailsProjectDescriptionLabel,
+  projectViewDetailsProjectTechUsedLabel,
+} from "@/data";
 
 const ProjectViewDetails: FC<ProjectViewDetailsProps> = ({
   project,
@@ -42,7 +50,7 @@ const ProjectViewDetails: FC<ProjectViewDetailsProps> = ({
       <div className={projectViewDetailsStyles.content}>
         {viewType === "awards" && (
           <div className={projectViewDetailsStyles.awards}>
-            <h6>Project Awards</h6>
+            <h6>{projectViewDetailsAwardsLabel}</h6>
             <ul className={projectViewDetailsStyles.awardsWrapper}>
               {project.awards.map((award) => {
                 return (
@@ -55,11 +63,11 @@ const ProjectViewDetails: FC<ProjectViewDetailsProps> = ({
           </div>
         )}
         <div className={projectViewDetailsStyles.desc}>
-          <h6>Project Description</h6>
+          <h6>{projectViewDetailsProjectDescriptionLabel}</h6>
           <p>{project.short_desc}</p>
         </div>
         <div className={projectViewDetailsStyles.tech}>
-          <h6>Technologies Used</h6>
+          <h6>{projectViewDetailsProjectTechUsedLabel}</h6>
           <ul className={projectViewDetailsStyles.techWrapper}>
             {projectSkillsShown.map((skill) => {
               return (
@@ -74,8 +82,8 @@ const ProjectViewDetails: FC<ProjectViewDetailsProps> = ({
       <div className={projectViewDetailsStyles.buttons}>
         <LinkButton
           colorSpecifier={index}
-          dest="/projects"
-          label="See More"
+          dest={projectViewDetailsCTADest}
+          label={projectViewDetailsCTALabel}
           size={linkButtonSize}
         />
         <ProjectExternals {...project} />

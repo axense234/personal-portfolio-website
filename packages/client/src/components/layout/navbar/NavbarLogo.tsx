@@ -4,13 +4,15 @@ import { FC } from "react";
 import navbarLogoStyles from "@/scss/components/layout/navbar/NavbarLogo.module.scss";
 // Link
 import { Link } from "@/i18n/navigation";
+// Data
+import { navbarLogoHref, navbarLogoTitle } from "@/data";
 
 const NavbarLogo: FC = () => {
   return (
     <div className={navbarLogoStyles.container}>
-      <Link href={"/"}>
-        <h6 title="Comănescu Andrei" aria-label="Comănescu Andrei">
-          Comănescu Andrei
+      <Link href={navbarLogoHref}>
+        <h6 title={navbarLogoTitle} aria-label={navbarLogoTitle}>
+          {navbarLogoTitle}
         </h6>
       </Link>
     </div>

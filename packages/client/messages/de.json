@@ -1,5 +1,251 @@
 {
-  "HomePage": {
-    "title": "Hello world!"
+  "home": {
+    "sections": {
+      "hero": {
+        "title": "Comănescu Andrei",
+        "subtitle": "Webentwickler",
+        "desc": "Full-Stack Webentwickler mit Leidenschaft für die Erstellung von Websites. Studiere derzeit Informatik an der UBB.",
+        "buttons": {
+          "button-1": {
+            "label": "Meine Projekte"
+          },
+          "button-2": {
+            "label": "Meine Reise"
+          }
+        }
+      },
+      "aboutTeaser": {
+        "title": "Ein Wenig Über Mich",
+        "paragraphs": [
+          "Als Informatikstudent an der UBB und Full-Stack Webentwickler arbeite ich an meinen Projekten aus einer Kombination von Selbstzufriedenheit und reiner Freude am Handwerk.",
+          "Habe auch ein paar Webentwicklungswettbewerbe auf Kreisebene gewonnen und sogar eine Bronzemedaille bei einem nationalen Wettbewerb während meiner Schulzeit erhalten."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "Mehr Erfahren"
+          }
+        }
+      },
+      "featuredProjects": {
+        "title": "Ausgewählte Projekte",
+        "paragraphs": [
+          "Hier sind einige meiner besten / liebsten Webentwicklungsprojekte dargestellt. Hat viel Spaß gemacht, daran zu arbeiten, auch wenn ich höchstwahrscheinlich etwas zu viel Pepsi Max konsumiert habe."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "Weitere Projekte"
+          }
+        }
+      },
+      "contactTeaser": {
+        "title": "Mich Vielleicht Kontaktieren?",
+        "paragraphs": [
+          "Wo ein Wille ist, ist auch ein Weg, wie man so schön sagt.",
+          "Auch offen für Praktika oder andere Arten von Arbeit. Außerdem würde ich nichts gegen eine Zusammenarbeit bei Webentwicklungs- / Python-Projekten haben."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "Mich Kontaktieren"
+          },
+          "button-2": {
+            "label": "Mein Lebenslauf"
+          }
+        }
+      },
+      "technicalSkills": {
+        "title": "Technische Fähigkeiten",
+        "paragraphs": [
+          "Eine Liste der wichtigsten Technologien, die ich kenne. Frontend-Technologien, Backend-Technologien und andere Werkzeuge."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "Weitere Details"
+          }
+        }
+      }
+    }
+  },
+  "projects": {
+    "sections": {
+      "hero": {
+        "title": "Meine Projekte",
+        "subtitle": "erblühte Leidenschaft",
+        "buttons": {
+          "button-1": {
+            "label": "Alle Projekte"
+          },
+          "button-2": {
+            "label": "Laufende Projekte"
+          }
+        }
+      },
+      "projects": {
+        "title": "Projekte",
+        "paragraphs": [
+          "Alle Projekte, an denen ich bisher gearbeitet habe. Durch diese Projekte habe ich ziemlich viel über moderne Webentwicklung gelernt, aber ich habe das Gefühl, dass ich immer noch nichts weiß. Neugierig, wie das funktioniert, oder?"
+        ]
+      },
+      "ongoingProjects": {
+        "title": "Laufende Projekte",
+        "subtitle": "die einen und einzigen"
+      }
+    }
+  },
+  "mealPreps": {
+    "sections": {
+      "hero": {
+        "title": "Mahlzeitenvorbereitung",
+        "subtitle": "unergründliche Mahlzeiten",
+        "buttons": {
+          "button-1": {
+            "label": "Wöchentliche Mahlzeitenvorbereitung"
+          },
+          "button-2": {
+            "label": "Mahlzeitengalerie"
+          }
+        }
+      }
+    }
+  },
+  "awards": {
+    "sections": {
+      "hero": {
+        "title": "Auszeichnungen",
+        "subtitle": "glänzende Sachen",
+        "buttons": {
+          "button-1": {
+            "label": "Bronzemedaillen-Auszeichnung"
+          },
+          "button-2": {
+            "label": "Schulauszeichnungen"
+          }
+        }
+      },
+      "bronzeMedal": {
+        "title": "Bronzemedaille",
+        "subtitle": "glänzendes rundes Ding",
+        "imageAlt": "Bronzemedaillen-Bild"
+      },
+      "highschoolAwards": {
+        "title": "Schulauszeichnungen",
+        "paragraphs": [
+          "Alle meine programmierbezogenen (meist Webentwicklung) Schulauszeichnungen in chronologischer Reihenfolge."
+        ]
+      }
+    }
+  },
+  "about": {
+    "sections": {
+      "hero": {
+        "title": "Über Mich",
+        "subtitle": "Informationen",
+        "desc": "Ich bin ein rumänischer Student, der sich für Webentwicklung begeistert. Schauen Sie sich meine Projekte, meinen Programmierweg und meine Hobbys an.",
+        "buttons": {
+          "button-1": {
+            "label": "Meine Projekte"
+          },
+          "button-2": {
+            "label": "Meine Reise"
+          },
+          "button-3": {
+            "label": "Meine Hobbys"
+          }
+        }
+      },
+      "aboutMe": {
+        "title": "Wer Bin Ich?",
+        "paragraphs": [
+          "Mein Name ist Comănescu Andrei, ich bin ein rumänischer Student, der derzeit die Fakultät für Mathematik und Informatik an der Babes-Bolyai-Universität besucht und Informatik auf Englisch im Grundstudium studiert.",
+          "In meiner Freizeit beschäftige ich mich gerne mit Webentwicklung und lerne neue Technologien. Ich koche auch gerne, mache lange Spaziergänge und spiele ab und zu Spiele, wenn ich frei habe."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "Mich Kontaktieren"
+          }
+        }
+      },
+      "technicalSkills": {
+        "title": "Technische Fähigkeiten",
+        "paragraph": [
+          "Hier sind alle Technologien, die ich mit unterschiedlichem Fachwissen kenne."
+        ]
+      },
+      "journey": {
+        "title": "Meine Reise",
+        "paragraphs": [
+          "Meine Programmierreise im Großen und Ganzen, beginnend mit Python im Jahr 2020."
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "Meine Projekte"
+          }
+        }
+      },
+      "hobbies": {
+        "title": "Meine Hobbys",
+        "paragraphs": [
+          "Ich habe nicht wirklich viele Hobbys, aber ich konzentriere mich wirklich auf die, die ich habe."
+        ]
+      }
+    }
+  },
+  "contact": {
+    "sections": {
+      "hero": {
+        "title": "Mich Kontaktieren",
+        "subtitle": "Kommunikation",
+        "desc": "Ich bin ein rumänischer Student, der sich für Webentwicklung begeistert. Kontaktieren Sie mich gerne aus irgendeinem projektbezogenen Grund oder einfach nur zum Spaß, schätze ich.",
+        "buttons": {
+          "button-1": {
+            "label": "Mich Kontaktieren"
+          },
+          "button-2": {
+            "label": "Mir Schreiben"
+          },
+          "button-3": {
+            "label": "Mein Lebenslauf"
+          }
+        }
+      },
+      "methods": {
+        "title": "Methoden & Lebenslauf",
+        "paragraphs": [
+          "Hier sind alle Möglichkeiten, wie Sie mich kontaktieren können. Mein Lebenslauf steht auch als PDF zum Download zur Verfügung."
+        ],
+        "labels": {
+          "email": "Berufliche E-Mail:",
+          "externals": "Externe:",
+          "resume": "Lebenslauf (PDF):",
+          "button": "Mein Lebenslauf"
+        }
+      },
+      "messageMe": {
+        "title": "Mir Schreiben",
+        "paragraphs": [
+          "Über dieses Formular können Sie mir eine Nachricht per E-Mail senden. Ich antworte normalerweise innerhalb von 24 Stunden."
+        ]
+      }
+    }
+  },
+  "dashboard": {},
+  "layout": {},
+  "common": {
+    "weeklyMealPrep": {
+      "title": "Wöchentliche Mahlzeitenvorbereitung",
+      "paragraphs": [
+        "Ich bereite tatsächlich gerne mindestens einmal pro Woche Mahlzeiten im Voraus zu. Es schmeckt sogar noch besser, als es aussieht. Lecker. Sehr Lecker Ja."
+      ],
+      "buttons": {
+        "button-1": {
+          "label": "Mahlzeitengalerie"
+        }
+      }
+    },
+    "projectExternals": {
+      "githubLabel": "{name} Quellcode",
+      "websiteLabel": "{name} Website",
+      "swaggerApiDocsLabel": "{name} Swagger API Dokumentation",
+      "buttonLabel": "Mehr Ansehen"
+    }
   }
 }

@@ -12,6 +12,8 @@ import LinkButton from "../LinkButton";
 import IconComponent from "../IconComponent";
 // Hooks
 import { useGetWindowWidth } from "@/hooks";
+// Data
+import { cardImageTitle } from "@/data";
 
 const Card: FC<CardProps> = ({ desc, image, label, button, externals }) => {
   const windowWidth = useGetWindowWidth();
@@ -35,8 +37,8 @@ const Card: FC<CardProps> = ({ desc, image, label, button, externals }) => {
         height={280}
         src={image}
         alt={label}
-        title={`${label} Thumbnail Image`}
-        aria-label={`${label} Thumbnail Image`}
+        title={cardImageTitle(label)}
+        aria-label={cardImageTitle(label)}
       />
       <div className={cardStyles.contentWrapper}>
         <div className={cardStyles.content}>

@@ -19,6 +19,7 @@ import {
   projectViewDetailsProjectDescriptionLabel,
   projectViewDetailsProjectTechUsedLabel,
 } from "@/data";
+import { useTranslations } from "next-intl";
 
 const ProjectViewDetails: FC<ProjectViewDetailsProps> = ({
   project,
@@ -29,6 +30,8 @@ const ProjectViewDetails: FC<ProjectViewDetailsProps> = ({
     (skill) => skill.tech_id !== "ts-backend",
   );
   const windowWidth = useGetWindowWidth();
+  const translations = useTranslations("common.projectViewDetails");
+
   const iconSize = windowWidth && windowWidth <= 900 ? 32 : 40;
 
   let linkButtonSize: "large" | "small" | "medium" = "large";
@@ -50,7 +53,7 @@ const ProjectViewDetails: FC<ProjectViewDetailsProps> = ({
       <div className={projectViewDetailsStyles.content}>
         {viewType === "awards" && (
           <div className={projectViewDetailsStyles.awards}>
-            <h6>{projectViewDetailsAwardsLabel}</h6>
+            <h6>{translations("awardsLabel")}</h6>
             <ul className={projectViewDetailsStyles.awardsWrapper}>
               {project.awards.map((award) => {
                 return (
@@ -63,11 +66,11 @@ const ProjectViewDetails: FC<ProjectViewDetailsProps> = ({
           </div>
         )}
         <div className={projectViewDetailsStyles.desc}>
-          <h6>{projectViewDetailsProjectDescriptionLabel}</h6>
+          <h6>{translations("projectDescriptionLabel")}</h6>
           <p>{project.short_desc}</p>
         </div>
         <div className={projectViewDetailsStyles.tech}>
-          <h6>{projectViewDetailsProjectTechUsedLabel}</h6>
+          <h6>{translations("techUsedLabel")}</h6>
           <ul className={projectViewDetailsStyles.techWrapper}>
             {projectSkillsShown.map((skill) => {
               return (
@@ -83,7 +86,7 @@ const ProjectViewDetails: FC<ProjectViewDetailsProps> = ({
         <LinkButton
           colorSpecifier={index}
           dest={projectViewDetailsCTADest}
-          label={projectViewDetailsCTALabel}
+          label={translations("ctaLabel")}
           size={linkButtonSize}
         />
         <ProjectExternals {...project} />

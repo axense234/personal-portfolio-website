@@ -20,6 +20,7 @@ import {
 } from "@/data";
 // Hooks
 import { useGetWindowWidth } from "@/hooks";
+import { useTranslations } from "next-intl";
 
 const ContactForm = () => {
   const {
@@ -27,6 +28,8 @@ const ContactForm = () => {
     setContactFormDataKeyValue,
     sendEmailWithContactForm,
   } = useGeneralStore((state) => state);
+
+  const translations = useTranslations("contact.sections.contactForm");
 
   const windowWidth = useGetWindowWidth();
 
@@ -44,8 +47,8 @@ const ContactForm = () => {
       <form className={contactFormStyles.controls}>
         <div className={contactFormStyles.personal}>
           <TextFormControl
-            label={contactFormNameLabel}
-            inputPlaceholder={defaultContactFormName}
+            label={translations("labels.nameLabel")}
+            inputPlaceholder={translations("defaults.name")}
             inputType="text"
             onChange={(name: string) =>
               setContactFormDataKeyValue("name", name)
@@ -54,8 +57,8 @@ const ContactForm = () => {
             flow="column"
           />
           <TextFormControl
-            label={contactFormNameLabel}
-            inputPlaceholder={defaultContactFormEmail}
+            label={translations("labels.emailLabel")}
+            inputPlaceholder={translations("defaults.email")}
             inputType="email"
             onChange={(email: string) =>
               setContactFormDataKeyValue("email", email)
@@ -65,8 +68,8 @@ const ContactForm = () => {
           />
         </div>
         <TextFormControl
-          label={contactFormSubjectLabel}
-          inputPlaceholder={defaultContactFormSubject}
+          label={translations("labels.subjectLabel")}
+          inputPlaceholder={translations("defaults.subject")}
           inputType="text"
           onChange={(subject: string) =>
             setContactFormDataKeyValue("subject", subject)
@@ -75,8 +78,8 @@ const ContactForm = () => {
           flow="column"
         />
         <TextAreaFormControl
-          label={contactFormMessageLabel}
-          inputPlaceholder={defaultContactFormMessage}
+          label={translations("labels.messageLabel")}
+          inputPlaceholder={translations("defaults.message")}
           onChange={(message: string) =>
             setContactFormDataKeyValue("message", message)
           }
@@ -85,7 +88,7 @@ const ContactForm = () => {
       </form>
       <LinkButton
         colorSpecifier={"warning"}
-        label={contactFormOnSubmitButtonLabel}
+        label={translations("labels.onSubmitButtonLabel")}
         size={linkButtonSize}
         buttonType="submit"
         onClick={() => sendEmailWithContactForm(contactFormData)}

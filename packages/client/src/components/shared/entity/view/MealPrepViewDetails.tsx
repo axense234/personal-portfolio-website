@@ -6,12 +6,7 @@ import { FC } from "react";
 import { MealPrepViewDetailsProps } from "@/core/interfaces";
 // Helpers
 import { dateToCustomFormat, ingredientToText } from "@/helpers";
-// Data
-import {
-  mealPrepViewDetailsCoverageLabel,
-  mealPrepViewDetailsCoverageValue,
-  mealPrepViewDetailsIngredientsUsedLabel,
-} from "@/data";
+// Translations
 import { useTranslations } from "next-intl";
 
 const MealPrepViewDetails: FC<MealPrepViewDetailsProps> = ({

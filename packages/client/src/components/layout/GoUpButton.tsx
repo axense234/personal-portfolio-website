@@ -5,10 +5,11 @@ import goUpButtonStyles from "@/scss/components/layout/GoUpButton.module.scss";
 import { FaChevronUp } from "react-icons/fa";
 // Hooks
 import { useHandleWindowScroll } from "@/hooks";
-// Data
-import { goUpButtonTitle } from "@/data";
+// Translations
+import { useTranslations } from "next-intl";
 
 const GoUpButton = () => {
+  const translations = useTranslations("common.goUpButton");
   const isVisible = useHandleWindowScroll(2);
 
   const scrollToTop = () => {
@@ -24,8 +25,8 @@ const GoUpButton = () => {
         cursor: "pointer",
       }}
       onClick={scrollToTop}
-      aria-label={goUpButtonTitle}
-      title={goUpButtonTitle}
+      aria-label={translations("label")}
+      title={translations("label")}
     >
       <FaChevronUp />
     </div>

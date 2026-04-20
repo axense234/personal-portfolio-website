@@ -179,13 +179,116 @@
           "button-1": {
             "label": "Mes Projets"
           }
+        },
+        "content": {
+          "linkLabel": "Découvrir",
+          "data": {
+            "The Beginnings": {
+              "title": "Les débuts",
+              "paragraphs": [
+                "En me concentrant sur mon parcours de programmation en général, j'ai commencé à programmer en apprenant Python en janvier-février 2020. J'ai regardé quelques tutoriels sur YouTube et j'ai finalement trouvé un bon tutoriel qui recommandait également de faire des projets, et en suggérait même un : le Blackjack. Gardez à l'esprit que ces 2 projets ont été réalisés par moi quand j'étais adolescent, donc ils peuvent contenir des éléments un peu gênants.",
+                "Eh bien, pour clarifier, j'ai fait quelques autres petits projets Python comme un système de connexion / inscription en texte, basé sur la console, et quelques autres plus petits pour lesquels je n'ai pas créé de dépôt GitHub donc je ne m'en souviens pas. On peut donc dire que le Blackjack en Python a été mon tout premier « gros » projet, je suppose."
+              ],
+              "externalLabels": {
+                "Python Login System": "Système de connexion Python",
+                "Python Blackjack": "Blackjack en Python"
+              }
+            },
+            "Django Checkpoint": {
+              "title": "Django Checkpoint",
+              "paragraphs": [
+                "Toujours en lien avec Python, j'ai également créé un site web de calculatrice en utilisant le framework Django vers le moment où j'ai commencé à apprendre sérieusement le développement web."
+              ],
+              "externalLabels": {
+                "Django Math Site": "Site mathématique Django"
+              }
+            },
+            "Web Dev Basics": {
+              "title": "Bases du développement web",
+              "paragraphs": [
+                "Après avoir joué un peu avec Python, je voulais approfondir une « branche de la programmation », alors j'ai choisi au hasard et j'ai commencé à apprendre le développement web.",
+                "À l'été 2020, j'ai commencé à apprendre le développement web, ou peut-être plus tôt, je ne m'en souviens pas vraiment. J'ai commencé par apprendre les bases : HTML, CSS, JS. Pour apprendre HTML, j'ai regardé un tutoriel sur YouTube, puis j'ai fait quelques projets, le même processus a été appliqué pour apprendre CSS et JS."
+              ],
+              "externalLabels": {
+                "Beginner Projects": "Projets pour débutants"
+              }
+            },
+            "C++ in Highschool": {
+              "title": "C++ au lycée",
+              "paragraphs": [
+                "Je suis également allé dans un lycée qui avait un programme intensif en mathématiques et en informatique, où j'aimais beaucoup travailler avec le C++. J'ai même participé à quelques compétitions à cette époque, mais malheureusement je ne suis pas allé très loin, la programmation compétitive n'a jamais été et n'est toujours pas ma tasse de thé."
+              ],
+              "externalLabels": {
+                "Some C++ Projects": "Quelques projets C++"
+              }
+            },
+            "Serious Web Dev Stuff": {
+              "title": "Véritables enjeux du développement web",
+              "paragraphs": [
+                "Du côté du développement web, j'ai commencé à apprendre les technologies très lentement, une par une, en les utilisant avec d'autres technologies à mesure que je commençais à mieux les comprendre. Je crois que j'ai exploré et même atteint un niveau intermédiaire sur les technologies suivantes, dans l'ordre chronologique : Bootstrap, React, Sass/SCSS, Node, Express, MongoDB avec Mongoose, Typescript, PostgreSQL, Prisma, Redis, Redux avec Redux Toolkit, NextJS, NestJS et d'autres que j'ai peut-être oublié de mentionner ici."
+              ],
+              "externalLabels": {
+                "Some React Projects": "Quelques projets React"
+              }
+            },
+            "Big Projects, More Fun": {
+              "title": "Grands projets, plus de plaisir",
+              "paragraphs": [
+                "En apprenant ces technologies, j'ai également participé à pas mal de compétitions de développement web au niveau lycée, si je peux me permettre, où, à mon avis honnête, je m'en suis plutôt bien sorti. J'ai gagné quelques compétitions / olympiades départementales et j'ai même obtenu une médaille de bronze à l'une des olympiades nationales. Je sais que je ne suis pas au niveau des médailles d'or et tout ça, mais cette médaille de bronze, même si ce n'est que du bronze, m'a rendu assez fier de moi, plus précisément fier de mon apprentissage constant et assidu du développement web et du travail sur les projets."
+              ],
+              "externalLabels": {
+                "Highschool Site App (First Big Practice Project)": "Application site lycée (Premier grand projet pratique)",
+                "VitalPrep - Meal Prep Helper (Second Big Practice Project)": "VitalPrep - Aide à la préparation des repas (Deuxième grand projet pratique)",
+                "Research Manager (Third Big Practice Project)": "Research Manager (Troisième grand projet pratique)"
+              }
+            },
+            "I Suck at Web Design": {
+              "title": "Je suis nul en design web",
+              "paragraphs": [
+                "Toujours pendant mes années de lycée, j'ai trempé mes pieds dans le design web (je crois en octobre 2022 ou 2021) car mes compétences en design web étaient nulles, je concevais mes sites web à la volée dans ma tête, puis je codais ce design pour le concrétiser. Ce n'était pas une période amusante quand j'ai dû passer à l'échelle mes projets sans un design réel.",
+                "J'ai regardé quelques tutoriels sur figma, la typographie, le design web et tout ça, puis j'ai pratiqué le design de quelques anciens projets. Et devinez quoi, après un certain temps, ce parcours en design web m'a fait mieux comprendre le développement web en général. Cela m'a aussi fait réaliser que je suis vraiment nul en design web et en développement web en général."
+              ]
+            },
+            "Dabbling with DevOps": {
+              "title": "Toucher à DevOps",
+              "paragraphs": [
+                "Encore une fois, pendant mes années de lycée, j'ai trempé mes orteils dans DevOps (docker, jenkins, prometheus, voire kubernetes ou quoi que ce soit), bien qu'en tant qu'équipe d'une seule personne ne faisant pas de trucs compliqués, j'ai un peu oublié comment utiliser ces technologies (sauf docker), mais je me souviens encore de ce dont il s'agit, ce qui est utile dans une certaine mesure, je suppose.",
+                "Voilà l'essentiel de mon parcours en programmation, j'ai probablement manqué quelques trucs, mais si j'ai oublié de mentionner ces trucs, ce n'est probablement pas aussi important. Pour l'avenir, je suppose que je continuerai à apprendre à l'université et à construire une base encore plus solide en développement web, et qui sait, j'aurai peut-être même un emploi dans quelque chose qui n'a pas de lien avec le développement web à l'avenir. On ne sait vraiment jamais ce que la vie nous réserve, je suppose."
+              ]
+            }
+          }
         }
       },
       "hobbies": {
         "title": "Mes Loisirs",
         "paragraphs": [
           "Je n'ai pas énormément de loisirs, mais je me concentre vraiment sur ceux que j'ai."
-        ]
+        ],
+        "content": {
+          "data": {
+            "Web Development": {
+              "label": "Développement web",
+              "desc": "La principale chose que j'aime dans le développement web et que certains pourraient ne pas aimer, c'est la partie « assemblage » des technologies. C'est aussi assez relaxant d'une manière étrange.",
+              "buttonLabel": "Mes projets",
+              "externals": {
+                "githubLabel": "Mon compte GitHub"
+              }
+            },
+            "Meal Prepping": {
+              "label": "Préparation des repas",
+              "desc": "Je ne cuisine que 1 à 2 fois par semaine pour préparer les repas à l'avance. Cuisiner est extrêmement relaxant, la fiabilité et la valeur nutritionnelle des repas sont vraiment appréciées.",
+              "buttonLabel": "Mes préparations de repas"
+            },
+            "Relatively Long Walks": {
+              "label": "Promenades relativement longues",
+              "desc": "J'aime me promener environ 1 à 2 heures dans le quartier / les parcs environ 3 fois ou plus par semaine."
+            },
+            "Playing Games": {
+              "label": "Jouer à des jeux",
+              "desc": "Pendant mon temps libre, j'aime effectivement jouer à des jeux. Mes favoris actuels sont Risk of Rain 2, Terraria, Stardew Valley, Noita, Limbus Company, Brotato, Mewgenics."
+            }
+          }
+        }
       }
     }
   },
@@ -224,11 +327,41 @@
         "paragraphs": [
           "Via ce formulaire, vous pouvez m'envoyer un message par email. Je réponds généralement dans les 24 heures."
         ]
+      },
+      "contactForm": {
+        "labels": {
+          "emailLabel": "Votre email",
+          "nameLabel": "Votre nom",
+          "messageLabel": "Message",
+          "subjectLabel": "Sujet",
+          "onSubmitButtonLabel": "Envoyer le message"
+        },
+        "defaults": {
+          "email": "johnlikescheese@gmail.com",
+          "name": "John Cheese",
+          "message": "Je regarde.",
+          "subject": "J'aime le fromage"
+        }
       }
     }
   },
   "dashboard": {},
-  "layout": {},
+  "layout": {
+    "navigation": {
+      "pageLinks": {
+        "/": "Accueil",
+        "/projects": "Projets",
+        "/meal-prep": "Meal Preps",
+        "/awards": "Récompenses",
+        "/about": "À propos",
+        "/contact": "Contact",
+        "/dashboard": "Dashboard"
+      }
+    },
+    "footer": {
+      "copy": "© 2026 Comănescu Andrei. Tous droits réservés."
+    }
+  },
   "common": {
     "weeklyMealPrep": {
       "title": "Préparation Hebdomadaire",
@@ -246,6 +379,30 @@
       "websiteLabel": "{name} Site Web",
       "swaggerApiDocsLabel": "{name} Documentation API Swagger",
       "buttonLabel": "Voir Plus"
+    },
+    "mealPrepViewDetails": {
+      "coverageLabel": "Couverture :",
+      "coverageValue": "{coverage} jours",
+      "ingredientsUsedLabel": "Ingrédients utilisés :"
+    },
+    "projectViewDetails": {
+      "awardsLabel": "Récompenses du projet",
+      "ctaLabel": "Voir plus",
+      "projectDescriptionLabel": "Description du projet",
+      "techUsedLabel": "Technologies utilisées"
+    },
+    "colorSchemeToggle": {
+      "dark": "Sombre",
+      "light": "Clair",
+      "title": "Changer le thème de couleur"
+    },
+    "socialIcons": {
+      "icon-1": "Mon GitHub",
+      "icon-2": "Mon LinkedIn",
+      "icon-3": "Design du projet"
+    },
+    "goUpButton": {
+      "label": "Remonter"
     }
   }
 }

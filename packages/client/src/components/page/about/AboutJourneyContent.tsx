@@ -14,9 +14,11 @@ import Link from "next/link";
 import { getSpecificButtonColor } from "@/helpers";
 // Components
 import IconComponent from "@/components/shared/IconComponent";
+import { useTranslations } from "use-intl";
 
 const AboutJourneyContent = () => {
   const { isError, isLoading, tech } = useGetTech();
+  const translations = useTranslations("about.sections.journey.content");
 
   const windowWidth = useGetWindowWidth();
   const iconsPosition = windowWidth && windowWidth <= 1200 ? "top" : "bottom";
@@ -82,30 +84,36 @@ const AboutJourneyContent = () => {
           >
             <div className={aboutJourneyContentStyles.header}>
               {iconsPosition === "top" && shownIcons}
-              <h5>{articleData.title}</h5>
+              <h5>{translations(`data.${articleData.title}.title`)}</h5>
               {iconsPosition === "bottom" && shownIcons}
             </div>
             <div className={aboutJourneyContentStyles.content}>
               <div className={aboutJourneyContentStyles.paragraphs}>
-                {articleData?.paragraphs.map((paragraph, index) => {
-                  return <p key={index}>{paragraph}</p>;
-                })}
+                {translations
+                  .raw(`data.${articleData.title}.paragraphs`)
+                  .map((paragraph, index) => {
+                    return <p key={index}>{paragraph}</p>;
+                  })}
               </div>
               <div className={aboutJourneyContentStyles.externals}>
                 {articleData?.external_links?.map((external_link, index) => {
                   const linkButtonColor = getSpecificButtonColor(index);
+
+                  const translatedExternalLabel = translations(
+                    `data.${articleData.title}.externalLabels.${external_link.label}`,
+                  );
 
                   return (
                     <div
                       className={aboutJourneyContentStyles.external}
                       key={external_link.id}
                     >
-                      <span>{aboutPageJourneyContentLinkLabel}</span>
+                      <span>{translations("linkLabel")}</span>
                       <Link
                         href={external_link.link}
                         style={{ color: linkButtonColor }}
                       >
-                        {external_link.label}
+                        {translatedExternalLabel}
                       </Link>
                     </div>
                   );

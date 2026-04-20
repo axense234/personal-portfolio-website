@@ -21,7 +21,7 @@ export const aboutPageHobbiesContentData: CardProps[] = [
     ],
   },
   {
-    label: "Meal Prepping ",
+    label: "Meal Prepping",
     image: "/hobbies/mealprep.png",
     desc: "I only cook 1-2 times a week to prepare meals in advance. Cooking is relaxing asf, the reliability and the nutritional value of the meals is really appreciated.",
     button: {

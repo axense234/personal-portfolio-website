@@ -8,16 +8,19 @@ import { useGeneralStore } from "@/zustand/general/context";
 import { karla } from "@/app/fonts";
 // React Icons
 import { FaMoon } from "react-icons/fa";
-// Data
-import { colorSchemeToggleLabelTitle } from "@/data";
+// Translations
+import { useTranslations } from "use-intl";
 
 const ColorSchemeToggle: FC = () => {
   const { colorTheme, toggleColorTheme } = useGeneralStore((state) => state);
+  const translations = useTranslations("common.colorSchemeToggle");
 
-  const labelText = colorTheme === "dark" ? "Dark" : "Light";
   const labelTextColor = colorTheme === "dark" ? "#f8f9fa" : "#1f1f1f";
   const divBackgroundColor = colorTheme === "dark" ? "#f8f9fa" : "#1f1f1f";
   const svgColor = colorTheme === "light" ? "#f8f9fa" : "#1f1f1f";
+
+  const translatedLabelText = translations(colorTheme);
+  const translatedLabelTextTitle = translations("title");
 
   return (
     <div className={colorSchemeToggleStyles.container}>
@@ -25,10 +28,10 @@ const ColorSchemeToggle: FC = () => {
         style={{ color: labelTextColor }}
         className={karla.className}
         htmlFor="cst"
-        title={colorSchemeToggleLabelTitle}
-        aria-label={colorSchemeToggleLabelTitle}
+        title={translatedLabelTextTitle}
+        aria-label={translatedLabelTextTitle}
       >
-        {labelText}
+        {translatedLabelText}
       </label>
       <div style={{ backgroundColor: divBackgroundColor }}>
         <input

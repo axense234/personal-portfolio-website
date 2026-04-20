@@ -179,13 +179,116 @@
           "button-1": {
             "label": "Proiectele Mele"
           }
+        },
+        "content": {
+          "linkLabel": "Vezi",
+          "data": {
+            "The Beginnings": {
+              "title": "Începuturile",
+              "paragraphs": [
+                "Concentrându-mă pe parcursul meu de programator în general, am început să programez învățând Python în ianuarie-februarie 2020. Am urmărit câteva tutoriale pe YouTube și am găsit în cele din urmă unul bun care recomanda să fac proiecte și chiar sugera unul: Blackjack. Rețineți că acele 2 proiecte au fost făcute de mine în adolescență, așa că s-ar putea să aibă câteva elemente cringe.",
+                "Ei bine, ca să clarific, am mai făcut câteva proiecte mai mici în Python, cum ar fi un sistem de login / înregistrare bazat pe text și consolă, și alte câteva mai mici pentru care nu am creat un repo pe GitHub, așa că nu mi le mai amintesc. Deci este corect să spun că Blackjack în Python a fost primul meu proiect „mare”."
+              ],
+              "externalLabels": {
+                "Python Login System": "Sistem de autentificare Python",
+                "Python Blackjack": "Blackjack în Python"
+              }
+            },
+            "Django Checkpoint": {
+              "title": "Django Checkpoint",
+              "paragraphs": [
+                "Tot legat de Python, am făcut și un site web tip calculator folosind framework-ul Django când am început să învăț serios dezvoltarea web."
+              ],
+              "externalLabels": {
+                "Django Math Site": "Site matematică Django"
+              }
+            },
+            "Web Dev Basics": {
+              "title": "Bazele dezvoltării web",
+              "paragraphs": [
+                "După ce m-am jucat puțin cu Python, am vrut să aprofundez o „ramură a programării”, așa că am ales la întâmplare și am început să învăț dezvoltarea web.",
+                "În vara lui 2020 am început să învăț dezvoltarea web, sau poate chiar mai devreme, nu prea îmi amintesc. Am început să învăț bazele: HTML, CSS, JS. Pentru a învăța HTML, am urmărit un tutorial pe YouTube, apoi am făcut câteva proiecte, același proces aplicat și pentru CSS și JS."
+              ],
+              "externalLabels": {
+                "Beginner Projects": "Proiecte pentru începători"
+              }
+            },
+            "C++ in Highschool": {
+              "title": "C++ în liceu",
+              "paragraphs": [
+                "Am mers la un liceu care avea un program intensiv de matematică și informatică, unde mi-a plăcut foarte mult să lucrez cu C++. Am participat chiar la câteva competiții în acea perioadă, dar din păcate nu am ajuns departe, programarea competitivă nu a fost și încă nu este punctul meu forte."
+              ],
+              "externalLabels": {
+                "Some C++ Projects": "Câteva proiecte în C++"
+              }
+            },
+            "Serious Web Dev Stuff": {
+              "title": "Dezvoltare Web Serioasă",
+              "paragraphs": [
+                "Pe partea de dezvoltare web, am început să învăț câteva tehnologiile foarte lent, una câte una, folosindu-le împreună cu alte tehnologii pe măsură ce începeam să le înțeleg mai bine. Am explorat și chiar am atins un nivel intermediar la următoarele tehnologii, în ordine cronologică: Bootstrap, React, Sass/SCSS, Node, Express, MongoDB cu Mongoose, Typescript, PostgreSQL, Prisma, Redis, Redux cu Redux Toolkit, NextJS, NestJS și altele pe care poate am uitat să le menționez aici."
+              ],
+              "externalLabels": {
+                "Some React Projects": "Câteva proiecte în React"
+              }
+            },
+            "Big Projects, More Fun": {
+              "title": "Proiecte mari, distracția sufletului",
+              "paragraphs": [
+                "În procesul de învățare a acestor tehnologii, am participat și la destule competiții de dezvoltare web la nivel de liceu, după părerea mea, unde, sincer, m-am descurcat destul de bine. Am câștigat câteva competiții / olimpiade județene și chiar am obținut o medalie de bronz la una dintre olimpiadele naționale. Știu că nu sunt la nivelul medaliilor de aur și așa mai departe, dar acea medalie de bronz, chiar dacă este doar bronz, m-a făcut destul de mândru de mine, mai exact mândru de progresul meu."
+              ],
+              "externalLabels": {
+                "Highschool Site App (First Big Practice Project)": "Aplicație site liceu (Primul proiect mare de practică)",
+                "VitalPrep - Meal Prep Helper (Second Big Practice Project)": "VitalPrep - Asistent pentru pregătirea meselor în avans (Al doilea proiect mare de practică)",
+                "Research Manager (Third Big Practice Project)": "Research Manager (Al treilea proiect mare de practică)"
+              }
+            },
+            "I Suck at Web Design": {
+              "title": "Design web",
+              "paragraphs": [
+                "Tot în timpul liceului, m-am apucat de design web (cred că în octombrie 2022 sau 2021), deoarece abilitățile mele de design web erau slabe, adică îmi proiectam site-urile din zbor în cap, apoi transformam acel design în cod real. Nu a fost o perioadă plăcută când a trebuit să-mi scalez proiectele fără un design real.",
+                "Am urmărit câteva tutoriale despre Figma, tipografie și design web și toate chestiile astea, apoi am exersat designul unor proiecte vechi. Și ghici ce, după un timp, această călătorie în design web m-a făcut să înțeleg mai multe despre dezvoltarea web în general. De asemenea, m-a făcut să realizez că sunt foarte slab atât la design web, cât și la dezvoltarea web în general."
+              ]
+            },
+            "Dabbling with DevOps": {
+              "title": "DevOps",
+              "paragraphs": [
+                "Din nou, în timpul liceului, am încercat DevOps (docker, jenkins, prometheus, chiar și kubernetes sau cum se scrie), deși fiind o echipă de un singur om care nu face lucruri complicate, am cam uitat cum să folosesc aceste tehnologii (cu excepția docker), dar îmi amintesc totuși despre ce este vorba, ceea ce este util într-o oarecare măsură.",
+                "Asta este esența parcursului meu de programare, probabil am omis câteva lucruri, dar dacă am uitat să menționez acele lucruri, probabil nu sunt la fel de importante. Pentru viitor, cred că voi continua să învăț la universitate și să construiesc o fundație și mai solidă în dezvoltarea web, și cine știe, poate chiar voi găsi un loc de muncă în ceva care nu are legătură cu dezvoltarea web în viitor. Nu știi niciodată ce îți rezervă viața."
+              ]
+            }
+          }
         }
       },
       "hobbies": {
         "title": "Hobby-urile Mele",
         "paragraphs": [
           "Nu am prea multe hobby-uri, dar mă concentrez mai mult pe cele pe care le am."
-        ]
+        ],
+        "content": {
+          "data": {
+            "Web Development": {
+              "label": "Dezvoltare web",
+              "desc": "Principalul lucru care îmi place la dezvoltarea web și care s-ar putea să nu le placă unora este partea de „îmbinare” a tehnologiilor. De asemenea, este o activitate relaxantă.",
+              "buttonLabel": "Proiectele mele",
+              "externals": {
+                "githubLabel": "Contul meu de GitHub"
+              }
+            },
+            "Meal Prepping": {
+              "label": "Meal Prepping",
+              "desc": "Gătesc de vreo 1-2 ori pe săptămână pentru a avea ce mânca pe parcusul săptămânii. Gătitul este extrem de relaxant, iar comoditatea și valoarea nutrițională a meselor sunt foarte apreciate.",
+              "buttonLabel": "Mesele Mele Pregătite în Avans"
+            },
+            "Relatively Long Walks": {
+              "label": "Plimbări lungi pe jos",
+              "desc": "Îmi place să mă plimb aproximativ 1-2 ore prin cartier / parcuri cam de 3 ori sau mai mult pe săptămână."
+            },
+            "Playing Games": {
+              "label": "Jucat jocuri",
+              "desc": "În timpul liber, într-adevăr îmi place să mă joc niste jocuri. Preferatele mele actuale sunt Risk of Rain 2, Terraria, Stardew Valley, Noita, Limbus Company, Brotato, Mewgenics."
+            }
+          }
+        }
       }
     }
   },
@@ -224,11 +327,41 @@
         "paragraphs": [
           "Prin intermediul acestui formular îmi puteți trimite un mesaj prin e-mail. De obicei, răspund în termen de 24 de ore."
         ]
+      },
+      "contactForm": {
+        "labels": {
+          "emailLabel": "Emailul tău",
+          "nameLabel": "Numele tău",
+          "messageLabel": "Mesaj",
+          "subjectLabel": "Subiect",
+          "onSubmitButtonLabel": "Trimite mesajul"
+        },
+        "defaults": {
+          "email": "usturoiromanesc32@gmail.com",
+          "name": "Vasile Ionel Sârbu",
+          "message": "Mujdei.",
+          "subject": "Mujdei"
+        }
       }
     }
   },
   "dashboard": {},
-  "layout": {},
+  "layout": {
+    "navigation": {
+      "pageLinks": {
+        "/": "Acasă",
+        "/projects": "Proiecte",
+        "/meal-prep": "Meal Preps",
+        "/awards": "Premii",
+        "/about": "Despre Mine",
+        "/contact": "Contact",
+        "/dashboard": "Dashboard"
+      }
+    },
+    "footer": {
+      "copy": "© 2026 Comănescu Andrei. Toate drepturile rezervate."
+    }
+  },
   "common": {
     "weeklyMealPrep": {
       "title": "Meal Prep-ul Săptămânal",
@@ -246,6 +379,30 @@
       "websiteLabel": "{name} Site Web",
       "swaggerApiDocsLabel": "{name} Documentație API Swagger",
       "buttonLabel": "Vezi Mai Mult"
+    },
+    "mealPrepViewDetails": {
+      "coverageLabel": "Acoperire:",
+      "coverageValue": "{coverage} zile",
+      "ingredientsUsedLabel": "Ingrediente:"
+    },
+    "projectViewDetails": {
+      "awardsLabel": "Premii",
+      "ctaLabel": "Vezi mai mult",
+      "projectDescriptionLabel": "Descriere",
+      "techUsedLabel": "Tehnologii"
+    },
+    "colorSchemeToggle": {
+      "dark": "Întuneric",
+      "light": "Lumină",
+      "title": "Schimbă paleta de culori"
+    },
+    "socialIcons": {
+      "icon-1": "GitHub-ul meu",
+      "icon-2": "LinkedIn-ul meu",
+      "icon-3": "Design-ul proiectului"
+    },
+    "goUpButton": {
+      "label": "Sus"
     }
   }
 }

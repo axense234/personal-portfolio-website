@@ -18,6 +18,7 @@ import {
 } from "@/core/interfaces";
 // React
 import { FC } from "react";
+// Translations
 import { useTranslations } from "next-intl";
 
 const ProjectCards: FC<ProjectCardsProps> = ({ projects, useGrid }) => {

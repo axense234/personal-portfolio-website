@@ -79,6 +79,7 @@ const CommonPageHero: FC<CommonPageHeroProps> = ({
           aria-label={imagePlaceholderTextTitle}
           ref={imageRef}
           className="hiddenRTL"
+          fetchPriority="high"
         />
       )}
       <div

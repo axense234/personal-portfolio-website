@@ -1,5 +1,5 @@
 export const errorInterfaceImageAlt = "Stupid ahh cat image.";
-export const errorInterfaceImageSrc = "/stupid-ahh-cat.jpg";
+export const errorInterfaceImageSrc = "/misc/stupid-ahh-cat.jpg";
 
 export const errorInterfaceImageTitle =
   "An image depicting a cat who seems to disassociate while having a smoke + drink combo, thus promoting bad habbits when things get hard in life.";

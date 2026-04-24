@@ -10,6 +10,7 @@ import {
 
 export type GeneralActions = {
   toggleColorTheme: () => void;
+  setColorTheme: (theme: "dark" | "light") => void;
 
   handleWeeklyMealPrepImagesCarousel: (index: number) => void;
 

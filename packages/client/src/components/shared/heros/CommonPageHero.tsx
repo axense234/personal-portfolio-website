@@ -15,6 +15,9 @@ import LinkButton from "../LinkButton";
 import { useGetWindowWidth } from "@/hooks";
 // Data
 import { imagePlaceholderTextAlt, imagePlaceholderTextTitle } from "@/data";
+// Smooth Transitions
+import { useInView } from "react-intersection-observer";
+import usePopInAnimation from "@/hooks/general/usePopInTransition";
 
 const CommonPageHero: FC<CommonPageHeroProps> = ({
   title,
@@ -26,6 +29,16 @@ const CommonPageHero: FC<CommonPageHeroProps> = ({
 }) => {
   const windowWidth = useGetWindowWidth();
   const imagePosition = windowWidth && windowWidth <= 1500 ? "top" : "bottom";
+
+  const { ref: imageRef, inView: imageInView, entry: imageEntry } = useInView();
+  const {
+    ref: contentRef,
+    inView: contentInView,
+    entry: contentEntry,
+  } = useInView();
+
+  usePopInAnimation("showRTL", imageInView, imageEntry);
+  usePopInAnimation("showLTR", contentInView, contentEntry);
 
   const titleShown =
     titleHeadingUsed === "h1" ? (
@@ -64,9 +77,14 @@ const CommonPageHero: FC<CommonPageHeroProps> = ({
           height={reservedImageSpace}
           title={imagePlaceholderTextTitle}
           aria-label={imagePlaceholderTextTitle}
+          ref={imageRef}
+          className="hiddenRTL"
         />
       )}
-      <div className={commonPageHeroStyles.content}>
+      <div
+        className={`${commonPageHeroStyles.content} hiddenLTR`}
+        ref={contentRef}
+      >
         <div className={commonPageHeroStyles.header}>
           {titleShown}
           <h3>{subtitle}</h3>
@@ -88,6 +106,8 @@ const CommonPageHero: FC<CommonPageHeroProps> = ({
           height={reservedImageSpace}
           title="Placeholder: This is where an eventual cool picture of myself is going to be"
           aria-label="Placeholder: This is where an eventual cool picture of myself is going to be"
+          ref={imageRef}
+          className="hiddenRTL"
         />
       )}
     </section>

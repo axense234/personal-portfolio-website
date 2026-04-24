@@ -1,5 +1,6 @@
+"use client";
 // React
-import { FC } from "react";
+import { FC, useEffect } from "react";
 // SCSS
 import colorSchemeToggleStyles from "@/scss/components/layout/navbar/utils/ColorSchemeToggle.module.scss";
 // Zustand
@@ -12,7 +13,9 @@ import { FaMoon } from "react-icons/fa";
 import { useTranslations } from "use-intl";
 
 const ColorSchemeToggle: FC = () => {
-  const { colorTheme, toggleColorTheme } = useGeneralStore((state) => state);
+  const { colorTheme, toggleColorTheme, setColorTheme } = useGeneralStore(
+    (state) => state,
+  );
   const translations = useTranslations("common.colorSchemeToggle");
 
   const labelTextColor = colorTheme === "dark" ? "#f8f9fa" : "#1f1f1f";
@@ -21,6 +24,20 @@ const ColorSchemeToggle: FC = () => {
 
   const translatedLabelText = translations(colorTheme);
   const translatedLabelTextTitle = translations("title");
+
+  useEffect(() => {
+    const colorThemeFromLocalStorage = localStorage.getItem("colorTheme") as
+      | "dark"
+      | "light";
+
+    setColorTheme(colorThemeFromLocalStorage || "dark");
+  }, []);
+
+  const onColorSchemeToggleClick = () => {
+    toggleColorTheme();
+    // bad design
+    localStorage.setItem("colorTheme", colorTheme == "dark" ? "light" : "dark");
+  };
 
   return (
     <div className={colorSchemeToggleStyles.container}>
@@ -39,7 +56,7 @@ const ColorSchemeToggle: FC = () => {
           name="cst"
           id="cst"
           value={colorTheme === "dark" ? "true" : "false"}
-          onClick={toggleColorTheme}
+          onClick={onColorSchemeToggleClick}
         />
         <FaMoon style={{ color: svgColor }} />
       </div>

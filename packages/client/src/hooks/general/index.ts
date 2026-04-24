@@ -6,3 +6,4 @@ export * from "./useGetMealPrepViewDetails";
 export * from "./useGetWindowWidth";
 export * from "./useCalculateEntityViewImagesProportions";
 export * from "./useHandleWindowScroll";
+export * from "./usePopInTransition";

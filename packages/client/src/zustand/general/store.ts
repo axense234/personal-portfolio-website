@@ -35,6 +35,7 @@ import {
   setCurrentMealPrepImage,
   setGetMealPrepsData,
   setGetWeeklyMealPrepData,
+  setColorTheme,
 } from "./actions";
 // Thunks
 import { sendEmailWithContactForm } from "./thunks";
@@ -75,6 +76,8 @@ export const createGeneralStore = (
       setGetWeeklyMealPrepData(set, data),
 
     toggleColorTheme: () => toggleColorTheme(set),
+
+    setColorTheme: (theme: "dark" | "light") => setColorTheme(set, theme),
 
     handleWeeklyMealPrepImagesCarousel: (index: number) =>
       handleWeeklyMealPrepImagesCarousel(set, index),

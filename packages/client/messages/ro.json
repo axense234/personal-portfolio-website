@@ -403,6 +403,16 @@
     },
     "goUpButton": {
       "label": "Sus"
+    },
+    "errorInterface": {
+      "image": {
+        "alt": "Imagine cu o pisică stupidă.",
+        "title": "O imagine care înfățișează o pisică ce pare să se detașeze în timp ce fumează și bea, promovând astfel obiceiuri proaste atunci când lucrurile devin dificile în viață."
+      },
+      "section": {
+        "label": "Ceva nu a funcționat. Vă rugăm să încercați din nou mai târziu sau <link>contactați-mă</link>.",
+        "title": "Contactați-mă"
+      }
     }
   }
 }

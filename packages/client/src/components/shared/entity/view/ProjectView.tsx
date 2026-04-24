@@ -2,6 +2,8 @@
 // Components
 import ProjectViewDetails from "./ProjectViewDetails";
 import EntityViewImages from "../EntityViewImages";
+import ErrorInterface from "../../sections/ErrorInterface";
+import LoadingInterface from "../../sections/LoadingInterface";
 // SCSS
 import projectViewStyles from "@/scss/components/shared/entity/view/ProjectView.module.scss";
 // React
@@ -58,11 +60,13 @@ const ProjectView: FC<ProjectViewProps> = ({
   }, [currentProjectId]);
 
   if (isError) {
-    return <div>is error</div>;
+    return <ErrorInterface isError={isError} />;
   }
 
   if (isLoading) {
-    return <div>is loading</div>;
+    return (
+      <LoadingInterface isLoading={isLoading} message="Loading Project..." />
+    );
   }
 
   if (!usedProjects || usedProjects.length < 1) {

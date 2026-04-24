@@ -25,5 +25,8 @@
   "homepage": "https://github.com/axense234/personal-portfolio-website#readme",
   "devDependencies": {
     "lerna": "^9.0.5"
+  },
+  "dependencies": {
+    "react-spinners": "^0.17.0"
   }
 }

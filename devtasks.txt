@@ -6,10 +6,10 @@
 - need to add delete/update endpoints on the backend
 - need to replace placeholder photos
 - need to add a more silly placeholder image text
-- add section animations (introspection or whatever i forgot how they are called)
 - do some lighthouse tests, seo tests and improve in those areas
 - create cool loading / is error interfaces
 - because the meal prep images take a long time to load i might want to look into what i can display
 when the images are loading up
 - add translations for dynamic content
 - do some aria-label related tests (impairment tests or whatever i forgot)
+- add an interface for a 404 case

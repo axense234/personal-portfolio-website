@@ -4,6 +4,8 @@ import { useGetTech, useGetWindowWidth } from "@/hooks";
 import techIconsStyles from "@/scss/components/shared/entity/tech/TechIcons.module.scss";
 // Components
 import TechCategory from "./TechCategory";
+import ErrorInterface from "../../sections/ErrorInterface";
+import LoadingInterface from "../../sections/LoadingInterface";
 // React
 import { FC } from "react";
 // Interfaces
@@ -20,11 +22,13 @@ const TechIcons: FC<TechIconsProps> = ({
   const { isError, isLoading, tech } = useGetTech();
 
   if (isError) {
-    return <div>iserror</div>;
+    return <ErrorInterface isError={isError} />;
   }
 
   if (isLoading) {
-    return <div>isloading</div>;
+    return (
+      <LoadingInterface isLoading={isLoading} message="Loading Tech Icons..." />
+    );
   }
 
   const techCategories = Array.from(new Set(tech?.map((t) => t.category)));

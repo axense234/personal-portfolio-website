@@ -5,6 +5,8 @@ import projectsDashboardStyles from "@/scss/components/page/projects/ProjectsDas
 import TechIcons from "@/components/shared/entity/tech/TechIcons";
 import EntityNavigationBar from "@/components/shared/entity/EntityNavigationBar";
 import ProjectCards from "@/components/shared/entity/project/ProjectCards";
+import ErrorInterface from "@/components/shared/sections/ErrorInterface";
+import LoadingInterface from "@/components/shared/sections/LoadingInterface";
 // Zustand
 import { useGeneralStore } from "@/zustand/general";
 // Helpers
@@ -43,11 +45,13 @@ const ProjectsDashboard = () => {
   );
 
   if (isError) {
-    return <div>iserror</div>;
+    return <ErrorInterface isError={isError} />;
   }
 
   if (isLoading) {
-    return <div>isloading</div>;
+    return (
+      <LoadingInterface isLoading={isLoading} message="Loading Projects..." />
+    );
   }
 
   const shownProjects = queryProjects(

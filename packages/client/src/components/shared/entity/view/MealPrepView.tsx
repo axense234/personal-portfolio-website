@@ -2,6 +2,8 @@
 // Components
 import MealPrepViewDetails from "./MealPrepViewDetails";
 import EntityViewImages from "../EntityViewImages";
+import ErrorInterface from "../../sections/ErrorInterface";
+import LoadingInterface from "../../sections/LoadingInterface";
 // SCSS
 import mealPrepViewStyles from "@/scss/components/shared/entity/view/MealPrepView.module.scss";
 // React
@@ -52,11 +54,13 @@ const MealPrepView: FC<MealPrepViewProps> = ({
   }, [currentMealPrepId]);
 
   if (isError) {
-    return <div>is error</div>;
+    return <ErrorInterface isError={isError} />;
   }
 
   if (isLoading) {
-    return <div>is loading</div>;
+    return (
+      <LoadingInterface isLoading={isLoading} message="Loading Meal Prep..." />
+    );
   }
 
   if (!usedMealPreps || usedMealPreps.length < 1) {

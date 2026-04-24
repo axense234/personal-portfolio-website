@@ -403,6 +403,16 @@
     },
     "goUpButton": {
       "label": "Go Up"
+    },
+    "errorInterface": {
+      "image": {
+        "alt": "Stupid ahh cat image.",
+        "title": "An image depicting a cat who seems to disassociate while having a smoke + drink combo, thus promoting bad habbits when things get hard in life."
+      },
+      "section": {
+        "label": "Something went wrong. Please try again later or <link>contact me</link>.",
+        "title": "Contact me"
+      }
     }
   }
 }

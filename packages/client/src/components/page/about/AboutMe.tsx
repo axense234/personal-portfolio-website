@@ -18,10 +18,20 @@ import { useGetWindowWidth } from "@/hooks";
 import { useTranslations } from "next-intl";
 // Types
 import { SectionDataType } from "@/core/types";
+// Transitions
+import { useInView } from "react-intersection-observer";
+import usePopInAnimation from "@/hooks/general/usePopInTransition";
 
 const AboutMe = () => {
   const windowWidth = useGetWindowWidth();
   const translations = useTranslations("about.sections.aboutMe");
+
+  const {
+    ref: sectionRef,
+    inView: sectionInView,
+    entry: sectionEntry,
+  } = useInView();
+  usePopInAnimation("showBTT", sectionInView, sectionEntry);
 
   const translatedData: SectionDataType = {
     ...aboutPageAboutMeSectionData,
@@ -47,7 +57,10 @@ const AboutMe = () => {
   const { paragraphs, title, buttons } = translatedData;
 
   return (
-    <section className={aboutMeStyles.container}>
+    <section
+      className={`${aboutMeStyles.container} hiddenBTT`}
+      ref={sectionRef}
+    >
       <Image
         alt={imagePlaceholderTextAlt}
         src={imagePlaceholderTextSrc}

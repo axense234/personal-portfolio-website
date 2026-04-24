@@ -2,10 +2,7 @@
 // SCSS
 import aboutJourneyContentStyles from "@/scss/components/page/about/AboutJourneyContent.module.scss";
 // Data
-import {
-  aboutPageJourneyContentData,
-  aboutPageJourneyContentLinkLabel,
-} from "@/data";
+import { aboutPageJourneyContentData } from "@/data";
 // Zustand
 import { useGetTech, useGetWindowWidth } from "@/hooks";
 // Next
@@ -14,6 +11,9 @@ import Link from "next/link";
 import { getSpecificButtonColor } from "@/helpers";
 // Components
 import IconComponent from "@/components/shared/IconComponent";
+import ErrorInterface from "@/components/shared/sections/ErrorInterface";
+import LoadingInterface from "@/components/shared/sections/LoadingInterface";
+// Translations
 import { useTranslations } from "use-intl";
 
 const AboutJourneyContent = () => {
@@ -32,11 +32,11 @@ const AboutJourneyContent = () => {
   }
 
   if (isError) {
-    return <div>iserror</div>;
+    return <ErrorInterface isError={isError} />;
   }
 
   if (isLoading) {
-    return <div>isloading</div>;
+    return <LoadingInterface isLoading={isLoading} message="Loading Tech..." />;
   }
 
   const getTechById = (id: string) => {

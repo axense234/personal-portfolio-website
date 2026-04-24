@@ -9,6 +9,9 @@ import { PageSectionWrapperProps } from "@/core/interfaces";
 import LinkButton from "../LinkButton";
 // Hooks
 import { useGetWindowWidth } from "@/hooks";
+// Transitions
+import { useInView } from "react-intersection-observer";
+import usePopInAnimation from "@/hooks/general/usePopInTransition";
 
 const PageSectionWrapper: FC<PageSectionWrapperProps> = ({
   children,
@@ -21,6 +24,12 @@ const PageSectionWrapper: FC<PageSectionWrapperProps> = ({
   const { title, paragraphs, buttons, subtitle } = pageSectionData;
 
   const windowWidth = useGetWindowWidth();
+  const {
+    ref: sectionRef,
+    inView: sectionInView,
+    entry: sectionEntry,
+  } = useInView();
+  usePopInAnimation("showBTT", sectionInView, sectionEntry);
 
   let linkButtonSize: "large" | "small" | "medium" = "large";
   if (windowWidth && windowWidth <= 600) {
@@ -46,8 +55,9 @@ const PageSectionWrapper: FC<PageSectionWrapperProps> = ({
 
   return (
     <section
-      className={pageSectionWrapperStyles.container}
+      className={`${pageSectionWrapperStyles.container} hiddenBTT`}
       style={{ justifyContent }}
+      ref={sectionRef}
     >
       <div
         className={pageSectionWrapperStyles.content}

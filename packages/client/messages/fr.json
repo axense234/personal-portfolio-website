@@ -403,6 +403,16 @@
     },
     "goUpButton": {
       "label": "Remonter"
+    },
+    "errorInterface": {
+      "image": {
+        "alt": "Image de chat stupide.",
+        "title": "Une image représentant un chat qui semble dissocier tout en ayant une combinaison cigarette + boisson, promouvant ainsi de mauvaises habitudes quand les choses deviennent difficiles dans la vie."
+      },
+      "section": {
+        "label": "Quelque chose s'est mal passé. Veuillez réessayer plus tard ou <link>me contacter</link>.",
+        "title": "Me contacter"
+      }
     }
   }
 }

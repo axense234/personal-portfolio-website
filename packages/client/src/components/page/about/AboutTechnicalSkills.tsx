@@ -4,6 +4,8 @@ import { aboutPageTechnicalSkillsSectionData } from "@/data";
 // Components
 import PageSectionWrapper from "@/components/shared/sections/PageSectionWrapper";
 import TechSkills from "@/components/shared/entity/tech-skill/TechSkills";
+import ErrorInterface from "@/components/shared/sections/ErrorInterface";
+import LoadingInterface from "@/components/shared/sections/LoadingInterface";
 // Hooks
 import { useGetTechSkills } from "@/hooks";
 // Translations
@@ -32,11 +34,16 @@ const AboutTechnicalSkills = () => {
   };
 
   if (isError) {
-    return <div>iserror</div>;
+    return <ErrorInterface isError={isError} />;
   }
 
   if (isLoading) {
-    return <div>isloading</div>;
+    return (
+      <LoadingInterface
+        isLoading={isLoading}
+        message="Loading Tech Skills..."
+      />
+    );
   }
 
   return (

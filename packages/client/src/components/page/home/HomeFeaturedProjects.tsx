@@ -1,7 +1,10 @@
 "use client";
 // Components
 import ProjectCards from "@/components/shared/entity/project/ProjectCards";
+import ErrorInterface from "@/components/shared/sections/ErrorInterface";
+import LoadingInterface from "@/components/shared/sections/LoadingInterface";
 import PageSectionWrapper from "@/components/shared/sections/PageSectionWrapper";
+// Types
 import { SectionDataType } from "@/core/types";
 // Data
 import { homePageFeaturedProjectsSectionData } from "@/data";
@@ -24,11 +27,16 @@ const FeaturedProjects = () => {
   );
 
   if (isError) {
-    return <div>iserror</div>;
+    return <ErrorInterface isError={true} />;
   }
 
   if (isLoading) {
-    return <div>isloading</div>;
+    return (
+      <LoadingInterface
+        isLoading={true}
+        message="Loading Featured Projects..."
+      />
+    );
   }
 
   return (

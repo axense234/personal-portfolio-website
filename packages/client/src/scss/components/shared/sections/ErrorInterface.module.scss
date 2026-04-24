@@ -1,0 +1,45 @@
+@use "../../../abstracts" as *;
+
+.container {
+  @include flexCenter(column);
+  gap: 1.5rem;
+
+  > h6 {
+    @include headingWithSpacing("h6-laptop");
+    color: var(--primary-opposite);
+
+    transition: transform 0.2s ease;
+    text-align: center;
+
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.035);
+      font-style: italic;
+    }
+
+    @media (max-width: getScreenSize("laptop-1")) {
+      @include headingWithSpacing("h6-tablet");
+    }
+
+    @media (max-width: getScreenSize("laptop-2")) {
+      @include headingWithSpacing("small-h");
+    }
+
+    > a {
+      width: 100%;
+      text-decoration: none;
+      color: var(--active);
+
+      transition: transform 0.2s ease;
+
+      &:hover {
+        font-style: italic;
+      }
+    }
+  }
+
+  > img {
+    border-radius: 5%;
+  }
+}

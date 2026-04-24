@@ -403,6 +403,16 @@
     },
     "goUpButton": {
       "label": "Nach oben"
+    },
+    "errorInterface": {
+      "image": {
+        "alt": "Dummes Katzenbild.",
+        "title": "Ein Bild, das eine Katze zeigt, die zu dissoziieren scheint, während sie eine Kombination aus Rauchen und Trinken genießt, und somit schlechte Gewohnheiten fördert, wenn es im Leben schwierig wird."
+      },
+      "section": {
+        "label": "Etwas ist schiefgelaufen. Bitte versuchen Sie es später erneut oder <link>kontaktieren Sie mich</link>.",
+        "title": "Kontaktieren Sie mich"
+      }
     }
   }
 }

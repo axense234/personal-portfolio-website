@@ -1,0 +1,416 @@
+{
+  "home": {
+    "sections": {
+      "hero": {
+        "title": "Comănescu Andrei",
+        "subtitle": "网页开发者",
+        "desc": "全栈网页开发者，热衷于构建网站。目前正在UBB学习计算机科学。",
+        "buttons": {
+          "button-1": {
+            "label": "我的项目"
+          },
+          "button-2": {
+            "label": "我的历程"
+          }
+        }
+      },
+      "aboutTeaser": {
+        "title": "关于我",
+        "paragraphs": [
+          "作为UBB的计算机科学学生和全栈网页开发者，我致力于我的项目，既是出于自我满足，也是纯粹享受这门手艺。",
+          "在高中期间，我还赢得过几次县级网页开发比赛，甚至在全国比赛中获得了一枚铜牌。"
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "了解更多"
+          }
+        }
+      },
+      "featuredProjects": {
+        "title": "精选项目",
+        "paragraphs": [
+          "这里展示了一些我最好/最喜欢的网页开发项目。开发它们的过程非常有趣，尽管我很可能喝了太多百事可乐。"
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "更多项目"
+          }
+        }
+      },
+      "contactTeaser": {
+        "title": "也许联系我？",
+        "paragraphs": [
+          "俗话说，有志者事竟成。",
+          "也对实习或其他类型的工作持开放态度。另外，我不介意合作网页开发/Python项目。"
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "联系我"
+          },
+          "button-2": {
+            "label": "我的简历"
+          }
+        }
+      },
+      "technicalSkills": {
+        "title": "技术技能",
+        "paragraphs": [
+          "我所知道的最重要技术的列表。前端技术、后端技术和其他工具。"
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "更多详情"
+          }
+        }
+      }
+    }
+  },
+  "projects": {
+    "sections": {
+      "hero": {
+        "title": "我的项目",
+        "subtitle": "绽放的热情",
+        "buttons": {
+          "button-1": {
+            "label": "所有项目"
+          },
+          "button-2": {
+            "label": "进行中的项目"
+          }
+        }
+      },
+      "projects": {
+        "title": "项目",
+        "paragraphs": [
+          "迄今为止我参与过的所有项目。通过这些项目，我学到了很多关于现代网页开发的知识，但我仍然觉得自己什么都不知道。好奇这是怎么回事，是吧。"
+        ]
+      },
+      "ongoingProjects": {
+        "title": "进行中的项目",
+        "subtitle": "独一无二的"
+      }
+    }
+  },
+  "mealPreps": {
+    "sections": {
+      "hero": {
+        "title": "备餐",
+        "subtitle": "不可思议的餐食",
+        "buttons": {
+          "button-1": {
+            "label": "每周备餐"
+          },
+          "button-2": {
+            "label": "餐食图库"
+          }
+        }
+      },
+      "gallery": {
+        "title": "餐食图库",
+        "paragraphs": ["一个包含我所有拍摄过的备餐照片的图库。"]
+      }
+    }
+  },
+  "awards": {
+    "sections": {
+      "hero": {
+        "title": "奖项",
+        "subtitle": "闪亮的东西",
+        "buttons": {
+          "button-1": {
+            "label": "铜牌奖项"
+          },
+          "button-2": {
+            "label": "高中奖项"
+          }
+        }
+      },
+      "bronzeMedal": {
+        "title": "铜牌奖项",
+        "subtitle": "闪亮的圆形东西",
+        "imageAlt": "铜牌图片"
+      },
+      "highschoolAwards": {
+        "title": "高中奖项",
+        "paragraphs": [
+          "我所有与编程（主要是网页开发）相关的高中奖项，按时间顺序排列。"
+        ]
+      }
+    }
+  },
+  "about": {
+    "sections": {
+      "hero": {
+        "title": "关于我",
+        "subtitle": "信息",
+        "desc": "我是一名热爱网页开发的罗马尼亚学生。查看我的项目、编程历程和爱好。",
+        "buttons": {
+          "button-1": {
+            "label": "我的项目"
+          },
+          "button-2": {
+            "label": "我的历程"
+          },
+          "button-3": {
+            "label": "我的爱好"
+          }
+        }
+      },
+      "aboutMe": {
+        "title": "我是谁？",
+        "paragraphs": [
+          "我的名字是Comănescu Andrei，我是一名罗马尼亚学生，目前就读于巴贝什-博尧伊大学数学与计算机科学学院，本科学习计算机科学（英语授课）。",
+          "在空闲时间，我通常喜欢做网页开发，学习各种技术。我也喜欢烹饪、长距离散步，以及在有空的时候玩一些游戏。"
+        ],
+        "buttons": {
+          "button-1": {
+            "label": "联系我"
+          }
+        }
+      },
+      "technicalSkills": {
+        "title": "技术技能",
+        "paragraph": ["以下是我所知道的所有技术，掌握程度各不相同。"]
+      },
+      "journey": {
+        "title": "我的历程",
+        "paragraphs": ["我的编程历程概述，从2020年开始学习Python。"],
+        "buttons": {
+          "button-1": {
+            "label": "我的项目"
+          }
+        },
+        "content": {
+          "linkLabel": "查看",
+          "data": {
+            "The Beginnings": {
+              "title": "开端",
+              "paragraphs": [
+                "聚焦于我的编程历程，我从2020年1-2月开始通过学习Python编程。在YouTube上看了一些教程，最终找到了一个不错的教程，其中还推荐做项目，甚至建议了一个项目：二十一点。请记住，这两个项目是我十几岁时做的，所以可能有些尴尬的元素。",
+                "嗯，澄清一下，我还做过一些较小的Python项目，比如基于文本的控制台登录/注册系统，以及其他一些较小的项目，但我没有为它们创建GitHub仓库，所以记不太清了。所以可以说Python版的二十一点是我第一个“大”项目吧。"
+              ],
+              "externalLabels": {
+                "Python Login System": "Python登录系统",
+                "Python Blackjack": "Python二十一点"
+              }
+            },
+            "Django Checkpoint": {
+              "title": "Django里程碑",
+              "paragraphs": [
+                "仍然与Python相关，在我正式开始认真学习网页开发不久后，我还使用Django框架制作了一个计算器网站。"
+              ],
+              "externalLabels": {
+                "Django Math Site": "Django数学网站"
+              }
+            },
+            "Web Dev Basics": {
+              "title": "网页开发基础",
+              "paragraphs": [
+                "在玩了一段时间Python后，我想真正深入一个“编程分支”，于是我随机选择了一个方向，开始学习网页开发。",
+                "我在2020年夏天开始学习网页开发，或者可能更早一些，我记不太清了。开始学习基础知识：HTML、CSS、JS。为了学习HTML，我在YouTube上看了教程，然后做了一些项目，学习CSS和JS时也采用了同样的过程。"
+              ],
+              "externalLabels": {
+                "Beginner Projects": "初学者项目"
+              }
+            },
+            "C++ in Highschool": {
+              "title": "高中时的C++",
+              "paragraphs": [
+                "我就读的高中有强化数学和计算机科学课程，我非常喜欢用C++编程。在那段时间我甚至参加了一些比赛，但遗憾的是我并没有走得很远，竞争性编程过去不是、现在也不是我的强项。"
+              ],
+              "externalLabels": {
+                "Some C++ Projects": "一些C++项目"
+              }
+            },
+            "Serious Web Dev Stuff": {
+              "title": "认真的网页开发",
+              "paragraphs": [
+                "在网页开发方面，我开始非常缓慢地学习技术，一次一个，随着我对它们理解的加深，将它们与其他技术一起使用。我相信我已经涉足甚至达到了以下技术的中级水平，按时间顺序排列：Bootstrap、React、Sass/SCSS、Node、Express、MongoDB with Mongoose、Typescript、PostgreSQL、Prisma、Redis、Redux with Redux Toolkit、NextJS、NestJS以及其他我可能忘记提及的技术。"
+              ],
+              "externalLabels": {
+                "Some React Projects": "一些React项目"
+              }
+            },
+            "Big Projects, More Fun": {
+              "title": "大项目，更多乐趣",
+              "paragraphs": [
+                "在学习这些技术的过程中，我参加了不少与网页开发相关的高中级别比赛，老实说，我认为自己表现得相当不错。赢得了几个县级比赛/竞赛，甚至在全国奥林匹克竞赛中获得了一枚铜牌。我知道自己还没有达到金牌的水平，但那枚铜牌，尽管只是铜牌，让我为自己感到相当自豪，更具体地说是为自己对网页开发和项目工作的持续努力感到自豪。"
+              ],
+              "externalLabels": {
+                "Highschool Site App (First Big Practice Project)": "高中网站应用（第一个大型实践项目）",
+                "VitalPrep - Meal Prep Helper (Second Big Practice Project)": "VitalPrep - 备餐助手（第二个大型实践项目）",
+                "Research Manager (Third Big Practice Project)": "研究管理器（第三个大型实践项目）"
+              }
+            },
+            "I Suck at Web Design": {
+              "title": "我网页设计很糟糕",
+              "paragraphs": [
+                "仍然是在高中时期，我涉足了网页设计（我想是在2022年或2021年10月），因为我的网页设计技能很差，我是在脑海中即时设计网站，然后将设计编码成现实。当项目需要扩展而没有实际设计时，那是一段不好过的时光。",
+                "我看了一些关于figma、排版、网页设计等方面的教程，然后练习设计一些旧项目。你猜怎么着，经过一段时间，这段网页设计之旅让我对网页开发有了更深的理解。也让我意识到自己的网页设计和网页开发技能真的很差。"
+              ]
+            },
+            "Dabbling with DevOps": {
+              "title": "涉足DevOps",
+              "paragraphs": [
+                "同样在我的高中时期，我涉足了DevOps（docker、jenkins、prometheus，甚至kubernetes或者它的拼写），尽管作为一个不做复杂事情的独立团队，我已经有点忘了如何使用这些技术（除了docker），但我还记得它们是做什么的，这在某种程度上是有用的。",
+                "这就是我的编程历程的要点，可能遗漏了一些东西，但唉，如果我忘记提及这些东西，可能就不那么重要了。至于未来，我想我会继续在大学学习东西，建立更扎实的网页开发基础，谁知道呢，我甚至可能在将来得到一份与网页开发无关的工作。你永远不知道生活会给你带来什么。"
+              ]
+            }
+          }
+        }
+      },
+      "hobbies": {
+        "title": "我的爱好",
+        "paragraphs": ["我没有很多爱好，但我确实专注于我所拥有的那些。"],
+        "content": {
+          "data": {
+            "Web Development": {
+              "label": "网页开发",
+              "desc": "我喜欢网页开发的一个主要方面，而有些人可能不喜欢的是“将技术整合在一起”的部分。同时，这在一种奇怪的方式下有点令人放松。",
+              "buttonLabel": "我的项目",
+              "externals": {
+                "githubLabel": "我的GitHub账号"
+              }
+            },
+            "Meal Prepping": {
+              "label": "备餐",
+              "desc": "我每周只做饭1-2次，提前准备餐食。烹饪非常放松，餐食的可靠性和营养价值真的很受赞赏。",
+              "buttonLabel": "我的备餐"
+            },
+            "Relatively Long Walks": {
+              "label": "相对长距离散步",
+              "desc": "我喜欢每周3次或以上，在社区/公园散步约1-2小时。"
+            },
+            "Playing Games": {
+              "label": "玩游戏",
+              "desc": "在我的空闲时间，我确实喜欢玩游戏。目前最喜欢的是《雨中冒险2》、《泰拉瑞亚》、《星露谷物语》、《Noita》、《边狱巴士》、《土豆兄弟》、《Mewgenics》。"
+            }
+          }
+        }
+      }
+    }
+  },
+  "contact": {
+    "sections": {
+      "hero": {
+        "title": "联系我",
+        "subtitle": "沟通",
+        "desc": "我是一名热爱网页开发的罗马尼亚学生。无论是出于项目相关的原因，还是仅仅为了好玩，都可以随时联系我。",
+        "buttons": {
+          "button-1": {
+            "label": "联系我"
+          },
+          "button-2": {
+            "label": "给我留言"
+          },
+          "button-3": {
+            "label": "我的简历"
+          }
+        }
+      },
+      "methods": {
+        "title": "联系方式与简历",
+        "paragraphs": [
+          "这里列出了所有你可以联系我的方式。我的简历也可以作为PDF下载。"
+        ],
+        "labels": {
+          "email": "专业邮箱：",
+          "externals": "外部链接：",
+          "resume": "简历（PDF）：",
+          "button": "我的简历"
+        }
+      },
+      "messageMe": {
+        "title": "给我留言",
+        "paragraphs": [
+          "通过此表单，你可以通过电子邮件向我发送消息。我通常在24小时内回复。"
+        ]
+      },
+      "contactForm": {
+        "labels": {
+          "emailLabel": "您的邮箱",
+          "nameLabel": "您的姓名",
+          "messageLabel": "消息",
+          "subjectLabel": "主题",
+          "onSubmitButtonLabel": "发送消息"
+        },
+        "defaults": {
+          "email": "johnlikescheese@gmail.com",
+          "name": "约翰·奇斯",
+          "message": "我在看着呢。",
+          "subject": "我喜欢奶酪"
+        }
+      }
+    }
+  },
+  "dashboard": {},
+  "layout": {
+    "navigation": {
+      "pageLinks": {
+        "/": "首页",
+        "/projects": "项目",
+        "/meal-prep": "备餐",
+        "/awards": "奖项",
+        "/about": "关于",
+        "/contact": "联系",
+        "/dashboard": "仪表盘"
+      }
+    },
+    "footer": {
+      "copy": "© 2026 Comănescu Andrei。版权所有。"
+    }
+  },
+  "common": {
+    "weeklyMealPrep": {
+      "title": "每周备餐",
+      "paragraphs": [
+        "我确实喜欢每周至少提前烹饪一次餐食。味道比看起来还要好。美味。非常美味，是的。"
+      ],
+      "buttons": {
+        "button-1": {
+          "label": "餐食图库"
+        }
+      }
+    },
+    "projectExternals": {
+      "githubLabel": "{name}源代码",
+      "websiteLabel": "{name}网站",
+      "swaggerApiDocsLabel": "{name} Swagger API文档",
+      "buttonLabel": "查看更多"
+    },
+    "mealPrepViewDetails": {
+      "coverageLabel": "覆盖天数：",
+      "coverageValue": "{coverage}天",
+      "ingredientsUsedLabel": "使用的食材："
+    },
+    "projectViewDetails": {
+      "awardsLabel": "项目奖项",
+      "ctaLabel": "查看更多",
+      "projectDescriptionLabel": "项目描述",
+      "techUsedLabel": "使用的技术"
+    },
+    "colorSchemeToggle": {
+      "dark": "深色",
+      "light": "浅色",
+      "title": "切换颜色主题"
+    },
+    "socialIcons": {
+      "icon-1": "我的GitHub",
+      "icon-2": "我的领英",
+      "icon-3": "项目设计"
+    },
+    "goUpButton": {
+      "label": "回到顶部"
+    },
+    "errorInterface": {
+      "image": {
+        "alt": "愚蠢的猫图片。",
+        "title": "一张描绘一只似乎一边抽烟喝酒一边游离的猫的图片，从而宣扬了生活中遇到困难时的坏习惯。"
+      },
+      "section": {
+        "label": "出了点问题。请稍后重试或<link>联系我</link>。",
+        "title": "联系我"
+      }
+    }
+  }
+}

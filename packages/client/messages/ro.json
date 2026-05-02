@@ -104,6 +104,12 @@
             "label": "Galeria Meselor"
           }
         }
+      },
+      "gallery": {
+        "title": "Galeria Meselor",
+        "paragraphs": [
+          "O galerie de imagini cu aproape toate meal prep-urile gătite de mine."
+        ]
       }
     }
   },

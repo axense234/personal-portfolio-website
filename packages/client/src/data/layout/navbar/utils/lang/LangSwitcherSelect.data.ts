@@ -25,4 +25,10 @@ export const languageFlagsImages: LangFlagImageType[] = [
     label: "German",
     value: "de",
   },
+  {
+    id: 5,
+    rel: "/flags/Flag_of_the_People's_Republic_of_China.png",
+    label: "Mandarin Simplified",
+    value: "zh",
+  },
 ];

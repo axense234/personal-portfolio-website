@@ -1,6 +1,6 @@
 "use client";
 // React
-import { FC } from "react";
+import { FC, useState } from "react";
 // Interfaces
 import { EntityViewImagesProps } from "@/core/interfaces";
 // Next
@@ -31,6 +31,17 @@ const EntityViewImages: FC<EntityViewImagesProps> = ({
 
   const imageUsed = currentEntityImage || images[0];
 
+  const [currentEntityImageLocal, setCurrentEntityImageLocal] =
+    useState<string>(images[0]);
+
+  const currentEntityImageUsed = currentEntityImage
+    ? currentEntityImage
+    : currentEntityImageLocal;
+
+  const setCurrentEntityImageUsed = setCurrentEntityImage
+    ? setCurrentEntityImage
+    : setCurrentEntityImageLocal;
+
   if (!imageUsed) {
     return <div>loading image</div>;
   }
@@ -40,12 +51,12 @@ const EntityViewImages: FC<EntityViewImagesProps> = ({
       <Image
         width={reservedImageAmount.width}
         height={reservedImageAmount.height}
-        src={imageUsed}
+        src={currentEntityImageUsed}
         alt={entityViewImagesImageAlt}
       />
       <EntityNavigationDots
-        currentEntityId={imageUsed}
-        setCurrentEntityId={setCurrentEntityImage}
+        currentEntityId={currentEntityImageUsed}
+        setCurrentEntityId={setCurrentEntityImageUsed}
         entityIds={images}
         useCase="images"
       />

@@ -104,6 +104,12 @@
             "label": "Mahlzeitengalerie"
           }
         }
+      },
+      "gallery": {
+        "title": "Mahlzeitengalerie",
+        "paragraphs": [
+          "Eine Galerie mit Bildern aller Mahlzeitenvorbereitungen, von denen ich Fotos gemacht habe."
+        ]
       }
     }
   },

@@ -104,6 +104,12 @@
             "label": "Galerie De Repas"
           }
         }
+      },
+      "gallery": {
+        "title": "Galerie de Repas",
+        "paragraphs": [
+          "Une galerie d'images de toutes les préparations de repas dont j'ai pris des photos."
+        ]
       }
     }
   },

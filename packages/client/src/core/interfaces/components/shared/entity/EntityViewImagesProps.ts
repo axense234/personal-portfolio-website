@@ -3,6 +3,6 @@ export interface EntityViewImagesProps {
 
   entityType: "meal-prep" | "project-awards" | "project-images";
 
-  currentEntityImage: string;
-  setCurrentEntityImage: (img: string) => void;
+  currentEntityImage?: string;
+  setCurrentEntityImage?: (img: string) => void;
 }

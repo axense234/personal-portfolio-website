@@ -1,3 +1,4 @@
+"use client";
 // Data
 import { aboutPageJourneySectionData } from "@/data";
 // Components
@@ -7,8 +8,12 @@ import PageSectionWrapper from "@/components/shared/sections/PageSectionWrapper"
 import { useTranslations } from "next-intl";
 // Types
 import { SectionDataType } from "@/core/types";
+// Hooks
+import { useGetTech } from "@/hooks";
 
 const AboutJourney = () => {
+  useGetTech();
+
   const translations = useTranslations("about.sections.journey");
 
   const translatedData: SectionDataType = {

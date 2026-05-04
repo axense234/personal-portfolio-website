@@ -52,10 +52,10 @@ export const navLinks: NavLinkType[] = [
     dest: "/contact",
     icon: IoMdContact({}),
   },
-  {
-    id: 7,
-    label: "Dashboard",
-    dest: "/dashboard",
-    icon: MdDashboard({}),
-  },
+  // {
+  //   id: 7,
+  //   label: "Dashboard",
+  //   dest: "/dashboard",
+  //   icon: MdDashboard({}),
+  // },
 ];

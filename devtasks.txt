@@ -5,9 +5,7 @@
 - need to work on the Dashboard Page
 - need to add delete/update endpoints on the backend
 - need to replace placeholder photos
-- need to add a more silly placeholder image text
 - do some lighthouse tests, seo tests and improve in those areas
-- create cool loading / is error interfaces
 - because the meal prep images take a long time to load i might want to look into what i can display
 when the images are loading up
 - add translations for dynamic content

@@ -11,13 +11,17 @@ import { useTranslations } from "next-intl";
 
 const MealPrepViewDetails: FC<MealPrepViewDetailsProps> = ({
   currentMealPrep,
+  scale,
 }) => {
   const { name, cookedAt, coverage, ingredients } = currentMealPrep;
 
   const translations = useTranslations("common.mealPrepViewDetails");
 
   return (
-    <div className={mealPrepDetailsStyles.container}>
+    <div
+      className={mealPrepDetailsStyles.container}
+      style={{ transform: `scale(${scale ? scale : 1})` }}
+    >
       <div className={mealPrepDetailsStyles.intro}>
         <h4 title={name} aria-label={name}>
           {name}

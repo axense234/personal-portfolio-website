@@ -5,8 +5,12 @@ import AboutMe from "./AboutMe";
 import AboutTechnicalSkills from "./AboutTechnicalSkills";
 import AboutHobbies from "./AboutHobbies";
 import StandardPageWrapper from "../StandardPageWrapper";
+// Hooks
+import { useGetTech } from "@/hooks";
 
 const AboutPage = () => {
+  useGetTech();
+
   return (
     <StandardPageWrapper>
       <AboutHero />

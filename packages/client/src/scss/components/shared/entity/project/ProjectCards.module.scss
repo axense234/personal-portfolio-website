@@ -3,7 +3,7 @@
 .projects {
   @include flexCenter(row);
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   width: 100%;
   gap: 4rem;

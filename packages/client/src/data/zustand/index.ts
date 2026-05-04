@@ -1,6 +1,7 @@
 import {
   GetMealPrepsDataType,
   GetProjectsDataType,
+  GetTechDataType,
   GetWeeklyMealPrepDataType,
   ProjectsQueryDataType,
 } from "@/core/types";
@@ -24,6 +25,12 @@ export const defaultGetProjectsData: GetProjectsDataType = {
   isError: false,
   isLoading: true,
   projects: [],
+};
+
+export const defaultGetTechData: GetTechDataType = {
+  isError: false,
+  isLoading: true,
+  tech: [],
 };
 
 export const defaultGetMealPrepsData: GetMealPrepsDataType = {
@@ -68,6 +75,12 @@ export const defaultProjectsQueryData: ProjectsQueryDataType = {
       onChange: setter,
     }),
   },
-  sortByTest: "",
+  sortBy: {
+    scope: "sort",
+    label: "Sort",
+    sortingOptions: new Map(),
+    onAddSortingOption: () => {},
+    onRemoveSortingOption: () => {},
+  },
   filterValues: [],
 };

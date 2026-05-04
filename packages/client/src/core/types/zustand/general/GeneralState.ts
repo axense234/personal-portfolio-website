@@ -8,6 +8,7 @@ import {
 import {
   GetMealPrepsDataType,
   GetProjectsDataType,
+  GetTechDataType,
   GetWeeklyMealPrepDataType,
   ProjectsQueryDataType,
 } from "../entity";
@@ -22,6 +23,7 @@ export type GeneralState = {
   techSkills: TechSkillWithTechWithContent[];
 
   getProjectsData: GetProjectsDataType;
+  getTechData: GetTechDataType;
   getMealPrepsData: GetMealPrepsDataType;
   getWeeklyMealPrepData: GetWeeklyMealPrepDataType;
 

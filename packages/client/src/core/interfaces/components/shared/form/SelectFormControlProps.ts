@@ -7,6 +7,8 @@ export interface SelectFormControlProps {
   label?: string;
   current: string;
 
+  id: number;
+
   options: SelectOption[];
   onOptionSelect: ChangeEventHandler<HTMLSelectElement> | undefined;
 

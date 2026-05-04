@@ -12,52 +12,90 @@ import { useGeneralStore } from "@/zustand/general";
 // Helpers
 import { queryProjects } from "@/helpers";
 // Dum dum
-import {
-  useGetWindowWidth,
-  useHandleDumbStuffThatNeedsToBeChangedLaterAndThoughtOutCarefully,
-} from "@/hooks";
+import { useGetWindowWidth, useHandleEntityNavigationBarLogic } from "@/hooks";
+// Interfaces
+import { SelectOption, SortByFormControlProps } from "@/core/interfaces";
 
 const ProjectsDashboard = () => {
   const {
     projectsQueryData,
+    getTechData,
     getProjectsData,
     setProjectsQueryDataKeyValue,
     setProjectsQueryDataSearch,
+    setProjectsQueryDataSortBy,
+    setProjectsQueryDataSortByOptions,
+    setProjectsQueryDataSortByOption,
   } = useGeneralStore((state) => state);
 
-  const { isError, isLoading, projects } = getProjectsData;
-  const { search, sortByTest, filterValues } = projectsQueryData;
+  const {
+    isError: isErrorProjects,
+    isLoading: isLoadingProjects,
+    projects,
+  } = getProjectsData;
+  const { isError: isErrorTech, isLoading: isLoadingTech } = getTechData;
+
+  const { search, sortBy, filterValues } = projectsQueryData;
 
   const windowWidth = useGetWindowWidth();
   const searchFormControlFlow =
     windowWidth && windowWidth <= 600 ? "column" : "row";
 
-  const { filterFormControlData, sortFormControlData } =
-    useHandleDumbStuffThatNeedsToBeChangedLaterAndThoughtOutCarefully(
-      sortByTest,
-      setProjectsQueryDataKeyValue,
-      filterValues,
-    );
+  const filterFormControlData: SortByFormControlProps = {
+    scope: "filter",
+    sortingOptions:
+      filterValues?.length > 0
+        ? `You have ${filterValues?.length} technology filters applied.`
+        : "",
+    onAddSortingOption: () => {},
+    onRemoveSortingOption: () => {},
+  };
 
   const searchFormControlData = search.searchFormControlData(
     search.current,
     (value: string) => setProjectsQueryDataSearch(value),
   );
 
-  if (isError) {
-    return <ErrorInterface isError={isError} />;
+  const sortByOptions: SelectOption[] = [
+    { label: "Name", value: "name", specifier: "string" },
+    { label: "Creation Date", value: "createdAt", specifier: "date" },
+    { label: "Update Date", value: "updatedAt", specifier: "date" },
+  ];
+
+  useHandleEntityNavigationBarLogic(
+    sortByOptions,
+    setProjectsQueryDataSortBy,
+    setProjectsQueryDataSortByOptions,
+    setProjectsQueryDataSortByOption,
+  );
+
+  if (isErrorProjects) {
+    return <ErrorInterface isError={isErrorProjects} />;
   }
 
-  if (isLoading) {
+  if (isErrorTech) {
+    return <ErrorInterface isError={isErrorTech} />;
+  }
+
+  if (isLoadingProjects) {
     return (
-      <LoadingInterface isLoading={isLoading} message="Loading Projects..." />
+      <LoadingInterface
+        isLoading={isLoadingProjects}
+        message="Loading Projects..."
+      />
+    );
+  }
+
+  if (isLoadingTech) {
+    return (
+      <LoadingInterface isLoading={isLoadingTech} message="Loading Tech..." />
     );
   }
 
   const shownProjects = queryProjects(
     projects,
     filterValues,
-    sortByTest,
+    sortBy,
     search.current,
   );
 
@@ -81,7 +119,7 @@ const ProjectsDashboard = () => {
       <div className={projectsDashboardStyles.content}>
         <EntityNavigationBar
           search={{ ...searchFormControlData, flow: searchFormControlFlow }}
-          sort={sortFormControlData}
+          sort={sortBy}
           filter={filterFormControlData}
         />
         <ProjectCards projects={shownProjects} useGrid={false} />

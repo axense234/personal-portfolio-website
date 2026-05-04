@@ -1,15 +1,14 @@
 "use client";
+import { useGeneralStore } from "@/zustand/general";
 // Shared Types
-import { GetTechResponse, Tech } from "@personal-portfolio-website/shared";
+import { GetTechResponse } from "@personal-portfolio-website/shared";
 // Ky
 import ky from "ky";
 // React
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export const useGetTech = () => {
-  const [isError, setIsError] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [tech, setTech] = useState<Tech[]>([]);
+  const { setGetTechData } = useGeneralStore((state) => state);
 
   useEffect(() => {
     const getTech = async () => {
@@ -17,22 +16,20 @@ export const useGetTech = () => {
         const res = (await ky("/api/tech", {
           method: "get",
         }).json()) as GetTechResponse;
-        setTech(res.tech);
 
-        setIsError(false);
-        setIsLoading(false);
+        setGetTechData({
+          isError: false,
+          isLoading: false,
+          tech: res?.tech,
+        });
       } catch (error) {
-        console.log(error);
-        setIsError(true);
-        setIsLoading(false);
+        setGetTechData({
+          isError: true,
+          isLoading: false,
+          tech: [],
+        });
       }
     };
     getTech();
   }, []);
-
-  return {
-    tech,
-    isError,
-    isLoading,
-  };
 };

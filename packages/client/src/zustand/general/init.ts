@@ -14,6 +14,7 @@ import {
   defaultCurrentTechSkillCategory,
   defaultGetMealPrepsData,
   defaultGetProjectsData,
+  defaultGetTechData,
   defaultGetWeeklyMealPrepsData,
   defaultProjectsQueryData,
   defaultTechSkills,
@@ -31,6 +32,7 @@ export const defaultInitState: GeneralState = {
   techSkills: defaultTechSkills,
 
   getProjectsData: defaultGetProjectsData,
+  getTechData: defaultGetTechData,
   getMealPrepsData: defaultGetMealPrepsData,
   getWeeklyMealPrepData: defaultGetWeeklyMealPrepsData,
 

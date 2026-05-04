@@ -4,6 +4,7 @@ import {
   GeneralStore,
   GetMealPrepsDataType,
   GetProjectsDataType,
+  GetTechDataType,
   GetWeeklyMealPrepDataType,
 } from "@/core/types";
 import {
@@ -36,9 +37,18 @@ import {
   setGetMealPrepsData,
   setGetWeeklyMealPrepData,
   setColorTheme,
+  setProjectsQueryDataSortBy,
+  setProjectsQueryDataSortByOptions,
+  setProjectsQueryDataSortByOption,
+  setGetTechData,
 } from "./actions";
 // Thunks
 import { sendEmailWithContactForm } from "./thunks";
+// Interfaces
+import {
+  SelectFormControlProps,
+  SortByFormControlProps,
+} from "@/core/interfaces";
 
 export const createGeneralStore = (
   initState: GeneralState = defaultInitState,
@@ -51,6 +61,17 @@ export const createGeneralStore = (
 
     setProjectsQueryDataSearch: (value: string) =>
       setProjectsQueryDataSearch(set, value),
+
+    setProjectsQueryDataSortByOptions: (
+      value: SelectFormControlProps,
+      specifier: "remove" | "add",
+    ) => setProjectsQueryDataSortByOptions(set, value, specifier),
+
+    setProjectsQueryDataSortByOption: (value: SelectFormControlProps) =>
+      setProjectsQueryDataSortByOption(set, value),
+
+    setProjectsQueryDataSortBy: (value: SortByFormControlProps) =>
+      setProjectsQueryDataSortBy(set, value),
 
     setProjectsQueryDataKeyValue: (key: string, value: string) =>
       setProjectsQueryDataKeyValue(set, key, value),
@@ -68,6 +89,8 @@ export const createGeneralStore = (
 
     setGetProjectsData: (data: GetProjectsDataType) =>
       setGetProjectsData(set, data),
+
+    setGetTechData: (data: GetTechDataType) => setGetTechData(set, data),
 
     setGetMealPrepsData: (data: GetMealPrepsDataType) =>
       setGetMealPrepsData(set, data),

@@ -1,9 +1,14 @@
 // Types
-import { SetGeneralStoreFunctionType } from "@/core/interfaces";
+import {
+  SelectFormControlProps,
+  SetGeneralStoreFunctionType,
+  SortByFormControlProps,
+} from "@/core/interfaces";
 import {
   GeneralState,
   GetMealPrepsDataType,
   GetProjectsDataType,
+  GetTechDataType,
   GetWeeklyMealPrepDataType,
 } from "@/core/types";
 import {
@@ -73,6 +78,14 @@ export const setGetProjectsData = (
 ) =>
   set((state: GeneralState) => ({
     getProjectsData: data,
+  }));
+
+export const setGetTechData = (
+  set: SetGeneralStoreFunctionType,
+  data: GetTechDataType,
+) =>
+  set((state: GeneralState) => ({
+    getTechData: data,
   }));
 
 export const setGetMealPrepsData = (
@@ -165,5 +178,72 @@ export const setProjectsQueryDataSearch = (
     projectsQueryData: {
       ...state.projectsQueryData,
       search: { ...state.projectsQueryData.search, current: value },
+    },
+  }));
+
+export const setProjectsQueryDataSortByOptions = (
+  set: SetGeneralStoreFunctionType,
+  value: SelectFormControlProps,
+  specifier: "remove" | "add",
+) =>
+  set((state: GeneralState) => {
+    const currentMap = state.projectsQueryData.sortBy.sortingOptions as Map<
+      number,
+      SelectFormControlProps
+    >;
+    const newMap = new Map(currentMap);
+
+    if (specifier === "add") {
+      newMap.set(Number(value.id), { ...value });
+    } else if (specifier === "remove") {
+      newMap.delete(Number(value.id));
+    }
+
+    return {
+      projectsQueryData: {
+        ...state.projectsQueryData,
+        sortBy: {
+          ...state.projectsQueryData.sortBy,
+          sortingOptions: newMap,
+        },
+      },
+    };
+  });
+
+export const setProjectsQueryDataSortByOption = (
+  set: SetGeneralStoreFunctionType,
+  value: SelectFormControlProps,
+) =>
+  set((state: GeneralState) => {
+    const currentMap = state.projectsQueryData.sortBy.sortingOptions as Map<
+      number,
+      SelectFormControlProps
+    >;
+    const newMap = new Map(currentMap);
+
+    const existingValue = newMap.get(value.id);
+    newMap.set(value.id, { ...existingValue, ...value });
+
+    return {
+      projectsQueryData: {
+        ...state.projectsQueryData,
+        sortBy: {
+          ...state.projectsQueryData.sortBy,
+          sortingOptions: newMap,
+        },
+      },
+    };
+  });
+
+export const setProjectsQueryDataSortBy = (
+  set: SetGeneralStoreFunctionType,
+  value: SortByFormControlProps,
+) =>
+  set((state: GeneralState) => ({
+    projectsQueryData: {
+      ...state.projectsQueryData,
+      sortBy: {
+        ...value,
+      },
     },
   }));

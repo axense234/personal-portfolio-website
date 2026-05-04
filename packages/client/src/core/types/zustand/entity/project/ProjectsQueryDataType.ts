@@ -1,9 +1,12 @@
-import { TextFormControlProps } from "@/core/interfaces";
+import {
+  SortByFormControlProps,
+  TextFormControlProps,
+} from "@/core/interfaces";
 
 export type ProjectsQueryDataType = {
   filterValues: string[];
 
-  sortByTest: string;
+  sortBy: SortByFormControlProps;
 
   search: {
     current: string;

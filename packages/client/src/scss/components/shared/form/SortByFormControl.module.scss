@@ -9,6 +9,31 @@
     flex-direction: column;
     align-items: flex-start;
   }
+
+  > svg {
+    transition: transform 0.1s ease-in;
+    font-size: 1.35rem;
+
+    &:hover {
+      transform: rotate(360deg);
+    }
+
+    &:nth-of-type(1) {
+      color: var(--success-green);
+    }
+
+    &:nth-of-type(2) {
+      color: var(--delete-red);
+    }
+
+    @media (max-width: getScreenSize("tablet-1")) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: getScreenSize("tablet-2")) {
+      font-size: 0.75rem;
+    }
+  }
 }
 
 .message {
@@ -76,4 +101,7 @@
 .controls {
   @include flexCenter(row);
   gap: 2rem;
+
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }

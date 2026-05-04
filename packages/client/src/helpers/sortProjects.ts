@@ -4,7 +4,7 @@ export const sortProjectsByKey = (
   projects: ProjectWithEverything[],
   projectPropertyKey: string,
 ) => {
-  return projects.sort((p1, p2) => {
+  return [...projects].sort((p1, p2) => {
     const first = p1[projectPropertyKey];
     const second = p2[projectPropertyKey];
 
@@ -21,17 +21,17 @@ export const sortProjectsByKey = (
         secondSpecifier = second;
         break;
       default:
+        firstSpecifier = String(first);
+        secondSpecifier = String(second);
         break;
     }
 
     if (firstSpecifier > secondSpecifier) {
       return 1;
     }
-
     if (firstSpecifier < secondSpecifier) {
       return -1;
     }
-
     return 0;
   });
 };

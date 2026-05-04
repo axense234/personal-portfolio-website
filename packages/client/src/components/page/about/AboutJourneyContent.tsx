@@ -4,7 +4,8 @@ import aboutJourneyContentStyles from "@/scss/components/page/about/AboutJourney
 // Data
 import { aboutPageJourneyContentData } from "@/data";
 // Zustand
-import { useGetTech, useGetWindowWidth } from "@/hooks";
+import { useGetWindowWidth } from "@/hooks";
+import { useGeneralStore } from "@/zustand/general";
 // Next
 import Link from "next/link";
 // Helpers
@@ -17,7 +18,8 @@ import LoadingInterface from "@/components/shared/sections/LoadingInterface";
 import { useTranslations } from "use-intl";
 
 const AboutJourneyContent = () => {
-  const { isError, isLoading, tech } = useGetTech();
+  const { getTechData } = useGeneralStore((state) => state);
+  const { isError, isLoading, tech } = getTechData;
   const translations = useTranslations("about.sections.journey.content");
 
   const windowWidth = useGetWindowWidth();

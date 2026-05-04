@@ -1,5 +1,6 @@
+"use client";
 // Hooks
-import { useGetTech, useGetWindowWidth } from "@/hooks";
+import { useGetWindowWidth } from "@/hooks";
 // SCSS
 import techIconsStyles from "@/scss/components/shared/entity/tech/TechIcons.module.scss";
 // Components
@@ -10,6 +11,8 @@ import LoadingInterface from "../../sections/LoadingInterface";
 import { FC } from "react";
 // Interfaces
 import { TechIconsProps } from "@/core/interfaces";
+// Zustand
+import { useGeneralStore } from "@/zustand/general";
 
 const TechIcons: FC<TechIconsProps> = ({
   isFunctional,
@@ -19,7 +22,8 @@ const TechIcons: FC<TechIconsProps> = ({
 }) => {
   const windowWidth = useGetWindowWidth();
   const iconSize = windowWidth && windowWidth <= 900 ? 32 : 40;
-  const { isError, isLoading, tech } = useGetTech();
+  const { getTechData } = useGeneralStore((state) => state);
+  const { isError, isLoading, tech } = getTechData;
 
   if (isError) {
     return <ErrorInterface isError={isError} />;

@@ -45,14 +45,13 @@
   opacity: 0.9;
   background-color: var(--primary);
 
-  gap: 2rem;
+  gap: auto;
 
   padding: 0.5rem 8rem;
 
   list-style: none;
 
   @media (max-width: getScreenSize("laptop-2")) {
-    gap: auto;
     padding: 0.5rem 4rem;
   }
 

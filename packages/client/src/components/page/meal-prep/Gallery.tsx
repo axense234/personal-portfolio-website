@@ -2,7 +2,6 @@
 // SCSS
 import galleryStyles from "@/scss/components/page/meal-prep/Gallery.module.scss";
 // Components
-import EntityNavigationBar from "@/components/shared/entity/EntityNavigationBar";
 import ErrorInterface from "@/components/shared/sections/ErrorInterface";
 import LoadingInterface from "@/components/shared/sections/LoadingInterface";
 import EntityViewImages from "@/components/shared/entity/EntityViewImages";
@@ -33,6 +32,8 @@ const Gallery = () => {
               <EntityViewImages
                 images={mealPrep.images}
                 entityType="meal-prep"
+                allowMealPrepImagesOverlay
+                entity={mealPrep}
               />
             </li>
           );

@@ -5,8 +5,13 @@ import {
 import {
   GetMealPrepsDataType,
   GetProjectsDataType,
+  GetTechDataType,
   GetWeeklyMealPrepDataType,
 } from "../entity";
+import {
+  SelectFormControlProps,
+  SortByFormControlProps,
+} from "@/core/interfaces";
 
 export type GeneralActions = {
   toggleColorTheme: () => void;
@@ -21,6 +26,7 @@ export type GeneralActions = {
   handleOnTechSkillCategoryTabClick: (category: TechCategory) => void;
 
   setGetProjectsData: (data: GetProjectsDataType) => void;
+  setGetTechData: (data: GetTechDataType) => void;
   setGetMealPrepsData: (data: GetMealPrepsDataType) => void;
   setGetWeeklyMealPrepData: (data: GetWeeklyMealPrepDataType) => void;
 
@@ -38,4 +44,13 @@ export type GeneralActions = {
   setProjectsQueryDataKeyValue: (key: string, value: any) => void;
 
   setProjectsQueryDataSearch: (value: string) => void;
+
+  setProjectsQueryDataSortByOptions: (
+    value: SelectFormControlProps,
+    specifier: "remove" | "add",
+  ) => void;
+
+  setProjectsQueryDataSortByOption: (value: SelectFormControlProps) => void;
+
+  setProjectsQueryDataSortBy: (value: SortByFormControlProps) => void;
 };

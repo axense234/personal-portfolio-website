@@ -5,10 +5,15 @@ import Projects from "./Projects";
 import ProjectsHero from "./ProjectsHero";
 import StandardPageWrapper from "../StandardPageWrapper";
 // Hooks
-import { useGetProjects, useSetCurrentEntityIdBasedOnData } from "@/hooks";
+import {
+  useGetProjects,
+  useGetTech,
+  useSetCurrentEntityIdBasedOnData,
+} from "@/hooks";
 import { useGeneralStore } from "@/zustand/general";
 
 const ProjectsPage = () => {
+  useGetTech();
   useGetProjects();
 
   const { setCurrentProjectId, getProjectsData, currentProjectId } =

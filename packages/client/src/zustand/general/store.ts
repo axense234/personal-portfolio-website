@@ -41,6 +41,10 @@ import {
   setProjectsQueryDataSortByOptions,
   setProjectsQueryDataSortByOption,
   setGetTechData,
+  setMealPrepsQueryDataSortBy,
+  setMealPrepsQueryDataSortByOption,
+  setMealPrepsQueryDataSortByOptions,
+  setMealPrepsQueryDataSearch,
 } from "./actions";
 // Thunks
 import { sendEmailWithContactForm } from "./thunks";
@@ -62,6 +66,9 @@ export const createGeneralStore = (
     setProjectsQueryDataSearch: (value: string) =>
       setProjectsQueryDataSearch(set, value),
 
+    setMealPrepsQueryDataSearch: (value: string) =>
+      setMealPrepsQueryDataSearch(set, value),
+
     setProjectsQueryDataSortByOptions: (
       value: SelectFormControlProps,
       specifier: "remove" | "add",
@@ -72,6 +79,17 @@ export const createGeneralStore = (
 
     setProjectsQueryDataSortBy: (value: SortByFormControlProps) =>
       setProjectsQueryDataSortBy(set, value),
+
+    setMealPrepsQueryDataSortByOptions: (
+      value: SelectFormControlProps,
+      specifier: "remove" | "add",
+    ) => setMealPrepsQueryDataSortByOptions(set, value, specifier),
+
+    setMealPrepsQueryDataSortByOption: (value: SelectFormControlProps) =>
+      setMealPrepsQueryDataSortByOption(set, value),
+
+    setMealPrepsQueryDataSortBy: (value: SortByFormControlProps) =>
+      setMealPrepsQueryDataSortBy(set, value),
 
     setProjectsQueryDataKeyValue: (key: string, value: string) =>
       setProjectsQueryDataKeyValue(set, key, value),

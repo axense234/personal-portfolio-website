@@ -53,4 +53,15 @@ export type GeneralActions = {
   setProjectsQueryDataSortByOption: (value: SelectFormControlProps) => void;
 
   setProjectsQueryDataSortBy: (value: SortByFormControlProps) => void;
+
+  setMealPrepsQueryDataSearch: (value: string) => void;
+
+  setMealPrepsQueryDataSortByOptions: (
+    value: SelectFormControlProps,
+    specifier: "remove" | "add",
+  ) => void;
+
+  setMealPrepsQueryDataSortByOption: (value: SelectFormControlProps) => void;
+
+  setMealPrepsQueryDataSortBy: (value: SortByFormControlProps) => void;
 };

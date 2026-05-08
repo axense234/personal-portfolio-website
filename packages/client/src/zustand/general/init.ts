@@ -16,6 +16,7 @@ import {
   defaultGetProjectsData,
   defaultGetTechData,
   defaultGetWeeklyMealPrepsData,
+  defaultMealPrepsQueryData,
   defaultProjectsQueryData,
   defaultTechSkills,
   defaultWeeklyMealPrepCurrentImageIndex,
@@ -48,4 +49,5 @@ export const defaultInitState: GeneralState = {
   contactFormData: defaultContactFormData,
 
   projectsQueryData: defaultProjectsQueryData,
+  mealPrepsQueryData: defaultMealPrepsQueryData,
 };

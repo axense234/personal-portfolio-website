@@ -9,8 +9,8 @@ import { FC } from "react";
 import { WeeklyMealPrepProps } from "@/core/interfaces";
 // Translations
 import { useTranslations } from "next-intl";
-// Types
-import { SectionDataType } from "@/core/types";
+// Helpers
+import { translateGivenSectionDataType } from "@/helpers";
 
 const WeeklyMealPrep: FC<WeeklyMealPrepProps> = ({
   weeklyMealPrep,
@@ -19,15 +19,11 @@ const WeeklyMealPrep: FC<WeeklyMealPrepProps> = ({
 }) => {
   const translations = useTranslations("common.weeklyMealPrep");
 
-  const translatedData: SectionDataType = {
-    ...weeklyMealPrepSectionData,
-    title: translations("title"),
-    paragraphs: translations.raw("paragraphs"),
-    buttons: weeklyMealPrepSectionData?.buttons?.map((button) => ({
-      ...button,
-      label: translations(`buttons.button-${button.id}.label`),
-    })),
-  };
+  const translatedData = translateGivenSectionDataType(
+    translations,
+    weeklyMealPrepSectionData,
+  );
+
   return (
     <PageSectionWrapper pageSectionData={translatedData}>
       <MealPrepView

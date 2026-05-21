@@ -21,6 +21,7 @@ import { SectionDataType } from "@/core/types";
 // Transitions
 import { useInView } from "react-intersection-observer";
 import usePopInAnimation from "@/hooks/general/usePopInTransition";
+import { translateGivenSectionDataType } from "@/helpers";
 
 const AboutMe = () => {
   const windowWidth = useGetWindowWidth();
@@ -33,15 +34,10 @@ const AboutMe = () => {
   } = useInView();
   usePopInAnimation("showBTT", sectionInView, sectionEntry);
 
-  const translatedData: SectionDataType = {
-    ...aboutPageAboutMeSectionData,
-    title: translations("title"),
-    paragraphs: translations.raw("paragraphs"),
-    buttons: aboutPageAboutMeSectionData?.buttons?.map((button) => ({
-      ...button,
-      label: translations(`buttons.button-${button.id}.label`),
-    })),
-  };
+  const translatedData = translateGivenSectionDataType(
+    translations,
+    aboutPageAboutMeSectionData,
+  );
 
   let linkButtonSize: "large" | "small" | "medium" = "large";
   if (windowWidth && windowWidth <= 600) {

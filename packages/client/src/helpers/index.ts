@@ -7,3 +7,5 @@ export * from "./sortProjects";
 export * from "./queryProjects";
 export * from "./sortMealPreps";
 export * from "./queryMealPreps";
+export * from "./translateGivenSectionDataType";
+export * from "./translateGivenCommonPageHeroSectionDataType";

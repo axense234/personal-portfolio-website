@@ -1,8 +1,8 @@
 "use client";
 // Components
 import ViewBasedPageHero from "@/components/shared/heros/ViewBasedPageHero";
-// Types
-import { SectionDataType } from "@/core/types";
+// Helpers
+import { translateGivenSectionDataType } from "@/helpers";
 // Data
 import { projectsPageHeroContentData } from "@/data";
 // Zustand
@@ -21,20 +21,10 @@ const ProjectsHero = () => {
 
   const translations = useTranslations("projects.sections.hero");
 
-  const translatedData: SectionDataType = {
-    ...projectsPageHeroContentData,
-    title: translations("title"),
-    paragraphs: translations.has("paragraphs")
-      ? translations.raw("paragraphs")
-      : undefined,
-    subtitle: translations.has("subtitle")
-      ? translations.raw("subtitle")
-      : undefined,
-    buttons: projectsPageHeroContentData?.buttons?.map((button) => ({
-      ...button,
-      label: translations(`buttons.button-${button.id}.label`),
-    })),
-  };
+  const translatedData = translateGivenSectionDataType(
+    translations,
+    projectsPageHeroContentData,
+  );
 
   return (
     <ViewBasedPageHero

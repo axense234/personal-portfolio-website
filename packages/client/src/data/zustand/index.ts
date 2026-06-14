@@ -3,6 +3,7 @@ import {
   GetProjectsDataType,
   GetTechDataType,
   GetWeeklyMealPrepDataType,
+  MealsPrepsQueryDataType,
   ProjectsQueryDataType,
 } from "@/core/types";
 import {
@@ -68,6 +69,31 @@ export const defaultProjectsQueryData: ProjectsQueryDataType = {
       setter: (value: string) => void,
     ) => ({
       inputPlaceholder: "VitalPrep",
+      label: "Search",
+      inputType: "text",
+      flow: "row",
+      value: current,
+      onChange: setter,
+    }),
+  },
+  sortBy: {
+    scope: "sort",
+    label: "Sort",
+    sortingOptions: new Map(),
+    onAddSortingOption: () => {},
+    onRemoveSortingOption: () => {},
+  },
+  filterValues: [],
+};
+
+export const defaultMealPrepsQueryData: MealsPrepsQueryDataType = {
+  search: {
+    current: "",
+    searchFormControlData: (
+      current: string,
+      setter: (value: string) => void,
+    ) => ({
+      inputPlaceholder: "Devious Meals",
       label: "Search",
       inputType: "text",
       flow: "row",

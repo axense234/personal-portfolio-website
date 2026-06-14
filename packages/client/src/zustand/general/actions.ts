@@ -247,3 +247,81 @@ export const setProjectsQueryDataSortBy = (
       },
     },
   }));
+
+export const setMealPrepsQueryDataSearch = (
+  set: SetGeneralStoreFunctionType,
+  value: string,
+) =>
+  set((state: GeneralState) => ({
+    mealPrepsQueryData: {
+      ...state.mealPrepsQueryData,
+      search: { ...state.mealPrepsQueryData.search, current: value },
+    },
+  }));
+
+export const setMealPrepsQueryDataSortByOptions = (
+  set: SetGeneralStoreFunctionType,
+  value: SelectFormControlProps,
+  specifier: "remove" | "add",
+) =>
+  set((state: GeneralState) => {
+    const currentMap = state.mealPrepsQueryData.sortBy.sortingOptions as Map<
+      number,
+      SelectFormControlProps
+    >;
+    const newMap = new Map(currentMap);
+
+    if (specifier === "add") {
+      newMap.set(Number(value.id), { ...value });
+    } else if (specifier === "remove") {
+      newMap.delete(Number(value.id));
+    }
+
+    return {
+      mealPrepsQueryData: {
+        ...state.mealPrepsQueryData,
+        sortBy: {
+          ...state.mealPrepsQueryData.sortBy,
+          sortingOptions: newMap,
+        },
+      },
+    };
+  });
+
+export const setMealPrepsQueryDataSortByOption = (
+  set: SetGeneralStoreFunctionType,
+  value: SelectFormControlProps,
+) =>
+  set((state: GeneralState) => {
+    const currentMap = state.mealPrepsQueryData.sortBy.sortingOptions as Map<
+      number,
+      SelectFormControlProps
+    >;
+    const newMap = new Map(currentMap);
+
+    const existingValue = newMap.get(value.id);
+    newMap.set(value.id, { ...existingValue, ...value });
+
+    return {
+      mealPrepsQueryData: {
+        ...state.mealPrepsQueryData,
+        sortBy: {
+          ...state.mealPrepsQueryData.sortBy,
+          sortingOptions: newMap,
+        },
+      },
+    };
+  });
+
+export const setMealPrepsQueryDataSortBy = (
+  set: SetGeneralStoreFunctionType,
+  value: SortByFormControlProps,
+) =>
+  set((state: GeneralState) => ({
+    mealPrepsQueryData: {
+      ...state.mealPrepsQueryData,
+      sortBy: {
+        ...value,
+      },
+    },
+  }));

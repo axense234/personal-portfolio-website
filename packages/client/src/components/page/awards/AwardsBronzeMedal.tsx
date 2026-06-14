@@ -15,28 +15,18 @@ import { useCalculateEntityViewImagesProportions } from "@/hooks";
 import { useGetWindowWidth } from "@/hooks/general/useGetWindowWidth";
 // Translations
 import { useTranslations } from "next-intl";
-// Types
-import { SectionDataType } from "@/core/types";
+// Helpers
+import { translateGivenSectionDataType } from "@/helpers";
 
 const AwardsBronzeMedal = () => {
   const { getProjectsData } = useGeneralStore((state) => state);
 
   const translations = useTranslations("awards.sections.bronzeMedal");
 
-  const translatedData: SectionDataType = {
-    ...awardsPageBronzeMedalSectionData,
-    title: translations("title"),
-    paragraphs: translations.has("paragraphs")
-      ? translations.raw("paragraphs")
-      : undefined,
-    subtitle: translations.has("subtitle")
-      ? translations.raw("subtitle")
-      : undefined,
-    buttons: awardsPageBronzeMedalSectionData?.buttons?.map((button) => ({
-      ...button,
-      label: translations(`buttons.button-${button.id}.label`),
-    })),
-  };
+  const translatedData = translateGivenSectionDataType(
+    translations,
+    awardsPageBronzeMedalSectionData,
+  );
 
   const bronzeMedalProject = getProjectsData?.projects?.find((project) =>
     project.topics.includes("BRONZE_MEDAL"),

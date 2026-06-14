@@ -10,6 +10,7 @@ import {
   GetProjectsDataType,
   GetTechDataType,
   GetWeeklyMealPrepDataType,
+  MealsPrepsQueryDataType,
   ProjectsQueryDataType,
 } from "../entity";
 
@@ -39,4 +40,5 @@ export type GeneralState = {
   contactFormData: SendEmailOptions;
 
   projectsQueryData: ProjectsQueryDataType;
+  mealPrepsQueryData: MealsPrepsQueryDataType;
 };

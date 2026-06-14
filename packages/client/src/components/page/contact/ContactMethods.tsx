@@ -16,8 +16,8 @@ import PageSectionWrapper from "@/components/shared/sections/PageSectionWrapper"
 import { useGetWindowWidth } from "@/hooks";
 // Translations
 import { useTranslations } from "next-intl";
-// Types
-import { SectionDataType } from "@/core/types";
+// Helpers
+import { translateGivenSectionDataType } from "@/helpers";
 
 const ContactMethodsContent = () => {
   const windowWidth = useGetWindowWidth();
@@ -60,15 +60,10 @@ const ContactMethodsContent = () => {
 const ContactMethods = () => {
   const translations = useTranslations("contact.sections.methods");
 
-  const translatedData: SectionDataType = {
-    ...contactPageContactMethodsSectionData,
-    title: translations("title"),
-    paragraphs: translations.raw("paragraphs"),
-    buttons: contactPageContactMethodsSectionData?.buttons?.map((button) => ({
-      ...button,
-      label: translations(`buttons.button-${button.id}.label`),
-    })),
-  };
+  const translatedData = translateGivenSectionDataType(
+    translations,
+    contactPageContactMethodsSectionData,
+  );
 
   return (
     <PageSectionWrapper pageSectionData={translatedData}>

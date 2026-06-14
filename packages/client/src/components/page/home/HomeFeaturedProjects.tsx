@@ -4,8 +4,8 @@ import ProjectCards from "@/components/shared/entity/project/ProjectCards";
 import ErrorInterface from "@/components/shared/sections/ErrorInterface";
 import LoadingInterface from "@/components/shared/sections/LoadingInterface";
 import PageSectionWrapper from "@/components/shared/sections/PageSectionWrapper";
-// Types
-import { SectionDataType } from "@/core/types";
+// Helpers
+import { translateGivenSectionDataType } from "@/helpers";
 // Data
 import { homePageFeaturedProjectsSectionData } from "@/data";
 // Hooks
@@ -47,15 +47,10 @@ const FeaturedProjects = () => {
 const HomeFeaturedProjects = () => {
   const translations = useTranslations("home.sections.featuredProjects");
 
-  const translatedData: SectionDataType = {
-    ...homePageFeaturedProjectsSectionData,
-    title: translations("title"),
-    paragraphs: translations.raw("paragraphs"),
-    buttons: homePageFeaturedProjectsSectionData?.buttons?.map((button) => ({
-      ...button,
-      label: translations(`buttons.button-${button.id}.label`),
-    })),
-  };
+  const translatedData = translateGivenSectionDataType(
+    translations,
+    homePageFeaturedProjectsSectionData,
+  );
 
   return (
     <PageSectionWrapper pageSectionData={translatedData}>

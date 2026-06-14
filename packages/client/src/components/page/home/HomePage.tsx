@@ -8,11 +8,12 @@ import HomeHero from "./HomeHero";
 import HomeTechnicalSkills from "./HomeTechnicalSkills";
 import StandardPageWrapper from "../StandardPageWrapper";
 // Zustandy and Hooks
-import { useGetWeeklyMealPrep } from "@/hooks";
+import { useGetTech, useGetWeeklyMealPrep } from "@/hooks";
 import { useGeneralStore } from "@/zustand/general";
 
 const HomePage = () => {
   useGetWeeklyMealPrep();
+  useGetTech();
 
   const { getWeeklyMealPrepData } = useGeneralStore((state) => state);
 

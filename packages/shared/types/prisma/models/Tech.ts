@@ -179,7 +179,7 @@ export type TechGroupByOutputType = {
   _max: TechMaxAggregateOutputType | null
 }
 
-type GetTechGroupByPayload<T extends TechGroupByArgs> = Prisma.PrismaPromise<
+export type GetTechGroupByPayload<T extends TechGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<TechGroupByOutputType, T['by']> &
       {
@@ -1194,6 +1194,11 @@ export type TechFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
    * Skip the first `n` Teches.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of Teches.
+   */
   distinct?: Prisma.TechScalarFieldEnum | Prisma.TechScalarFieldEnum[]
 }
 

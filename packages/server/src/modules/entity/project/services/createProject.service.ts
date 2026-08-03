@@ -39,7 +39,7 @@ export class CreateProjectService {
         message: `Successfully created Project: ${createdProject.name}.`,
         project: createdProject,
       };
-    } catch (error) {
+    } catch (error: any) {
       if (error.name === 'PrismaClientValidationError') {
         throw new BadRequestException('Invalid body.');
       } else if (error.code === 'P2002') {

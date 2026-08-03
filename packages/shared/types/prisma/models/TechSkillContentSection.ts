@@ -161,7 +161,7 @@ export type TechSkillContentSectionGroupByOutputType = {
   _max: TechSkillContentSectionMaxAggregateOutputType | null
 }
 
-type GetTechSkillContentSectionGroupByPayload<T extends TechSkillContentSectionGroupByArgs> = Prisma.PrismaPromise<
+export type GetTechSkillContentSectionGroupByPayload<T extends TechSkillContentSectionGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<TechSkillContentSectionGroupByOutputType, T['by']> &
       {
@@ -1176,6 +1176,11 @@ export type TechSkillContentSectionFindManyArgs<ExtArgs extends runtime.Types.Ex
    * Skip the first `n` TechSkillContentSections.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of TechSkillContentSections.
+   */
   distinct?: Prisma.TechSkillContentSectionScalarFieldEnum | Prisma.TechSkillContentSectionScalarFieldEnum[]
 }
 

@@ -1,7 +1,7 @@
 // Nest
 import { Global, Module } from '@nestjs/common';
 // Services
-import { NodeMailerService } from './nodemailer.sevice';
+import { NodeMailerService } from './nodemailer.service';
 
 @Global()
 @Module({

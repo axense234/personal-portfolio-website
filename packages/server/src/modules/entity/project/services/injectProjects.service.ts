@@ -64,7 +64,7 @@ export class InjectProjectsService {
         message: `Successfully inserted ${injectedProjects.length} projects. Yay.`,
         projects: injectedProjects,
       };
-    } catch (error) {
+    } catch (error: any) {
       if (error.code === 'P2002') {
         console.log(error);
         throw new ConflictException(

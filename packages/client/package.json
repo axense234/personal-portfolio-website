@@ -9,7 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@personal-portfolio-website/shared": "^1.0.0",
+    "@personal-portfolio-website/shared": "file:../shared",
     "ky": "^1.14.3",
     "next": "16.1.6",
     "next-intl": "^4.8.3",

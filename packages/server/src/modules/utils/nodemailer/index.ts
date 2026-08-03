@@ -1,2 +1,2 @@
 export * from './nodemailer.module';
-export * from './nodemailer.sevice';
+export * from './nodemailer.service';

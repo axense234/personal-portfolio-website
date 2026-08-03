@@ -13,6 +13,7 @@ import {
   TechModule,
   NodeMailerModule,
   MailerModule,
+  HealthModule,
 } from './modules';
 
 @Module({
@@ -33,6 +34,7 @@ import {
     MealPrepModule,
     TechSkillModule,
     TechModule,
+    HealthModule,
   ],
 })
 export class AppModule {}

@@ -1,5 +1,5 @@
 // Nest
-import { NestFactory } from '@nestjs/core';
+import { NestFactory, Reflector } from '@nestjs/core';
 // Main Module
 import { AppModule } from './app.module';
 // Pipes
@@ -22,7 +22,7 @@ async function bootstrap() {
   });
 
   // Global guards man
-  app.useGlobalGuards(new ApiKeyGuard());
+  app.useGlobalGuards(new ApiKeyGuard(new Reflector()));
 
   // Security
   app.use(helmet());
